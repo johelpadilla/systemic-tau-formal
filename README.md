@@ -64,7 +64,14 @@ cd lean
 lake build
 ```
 
-**Note:** This environment may not ship `lake` yet. Lean sources are complete **stubs + partial proofs**; `FeigenbaumReduction.lean` still contains `sorry` (see `STATUS.md`).
+Requires [elan](https://github.com/leanprover/elan). After install:
+
+```bash
+export PATH="$HOME/.elan/bin:$PATH"
+cd lean && lake build   # currently PASS on Lean 4.14.0
+```
+
+`FeigenbaumReduction.lean` still contains `sorry` (see `STATUS.md`).
 
 ---
 
@@ -72,11 +79,12 @@ lake build
 
 | Item | Status |
 |------|--------|
-| Definition of τₛ (mean Kendall-τ, windows) | Interface + Python ✓ · Lean scaffold ✓ |
-| Thresholds 0.50 / 0.41 from δ | **Operational defaults** ✓ · full δ-derivation **open** |
-| Gate \(g(\tau_s)\) and \(\Delta t_k\) | Python ✓ · Lean gate lemmas ✓ |
+| Definition of τₛ (mean Kendall-τ, windows) | Interface + Python ✓ · Lean ✓ |
+| Thresholds 0.50 / 0.41 from δ | Operational ✓ · band lemmas ✓ · unique f(δ) **open** |
+| Gate \(g(\tau_s)\) and \(\Delta t_k\) | Python ✓ · Lean gate + δ^{-k} ✓ |
 | Feigenbaum reduction theorem | Preprint exists · Lean `sorry` |
 | 4-level ontology / Baron’s Trilemma | Spec in Lean + `docs/ONTOLOGY_BRIDGE.md` |
+| `lake build` | **PASS** (Lean 4.14.0) |
 
 ---
 

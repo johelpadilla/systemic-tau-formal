@@ -2,31 +2,40 @@
 
 Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 
+**Toolchain:** Lean 4.14.0 via elan · **`lake build`: PASS** (2026-07-23)
+
 | Module | Claim class | Status | Notes |
 |--------|-------------|--------|-------|
-| `Basic` | `[TEOREMA]` / definitions | **Scaffold** | Definitions of τₛ, windows, Kendall interface |
-| `Thresholds` | mix | **Scaffold** | Operational 0.50 / 0.41; full δ-derivation open |
-| `RECD` | definitions + `[CONJETURA]` | **Scaffold** | g(τₛ), Δtₖ matching `systemictau` reference |
-| `FeigenbaumReduction` | `[TEOREMA]` (preprint) | **Scaffold + `sorry`** | Target: port Feigenbaum reduction preprint |
-| `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Scaffold** | 4 levels + Baron's Trilemma avoidance (spec) |
+| `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque |
+| `Thresholds` | mix | **Builds + lemmas** | τ_ch < τ_st; prefactor bounds; 2/δ > τ_ch gap |
+| `RECD` | definitions + lemmas | **Builds** | gate cases; g(0)=prefactor; δ^{-k} skeleton |
+| `FeigenbaumReduction` | `[TEOREMA]` target | **`sorry`** | Statement only; preprint port pending |
+| `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 
 ## Build
 
 ```bash
-# Requires elan + Lean 4 (not bundled; see README)
+export PATH="$HOME/.elan/bin:$PATH"
 cd lean && lake build
 ```
 
-If Lean is not installed, Python verification still works:
+Python (no Lean required):
 
 ```bash
 cd python && pip install -e ".[dev]" && pytest -q
 ```
 
-## Honesty gate (do not collapse levels)
+## Honesty gate
 
-1. **Operational thresholds** 0.50 / ±0.41 are used in the reference implementation and papers as Feigenbaum-**motivated** bands. A fully closed machine-checked derivation from δ alone is a **goal of this repo**, not yet an established theorem.
-2. Early-warning lead times (4–6 weeks) are **empirical claims** about specific domains, not Lean theorems.
-3. Homology with Polo's efficient causality is **philosophical interpretation**, not a dynamical-systems theorem.
+1. **Operational thresholds** 0.50 / ±0.41 are Feigenbaum-**motivated** defaults. Machine-checked so far: band *ordering*, prefactor bounds, and gap `2/δ − τ_ch > 0` — **not** a unique closed form τ_ch = f(δ).
+2. Early-warning lead times are **empirical**, not Lean theorems.
+3. Polo homology is **ontological**, not dynamical-systems necessity.
+4. Any theorem with `sorry` must not be advertised as proved.
 
-Last updated: 2026-07-23 (v0.1.0 scaffold).
+## Next formal targets
+
+1. Pack ordinal-observability hypotheses for Feigenbaum reduction (remove `sorry` stepwise).  
+2. Prove gate monotonicity on `[0, τ_ch)`.  
+3. Link Python golden tests ↔ Lean rationals via exported fixtures.
+
+Last updated: 2026-07-23 (v0.1.1 — lake green).
