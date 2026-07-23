@@ -4,6 +4,7 @@
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516060.svg)](https://doi.org/10.5281/zenodo.21516060)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
 Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.4**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  

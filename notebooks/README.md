@@ -9,6 +9,12 @@ CLI twins (same logic, no plots): `01_*.py`, `02_*.py`, `03_*.py`.
 | [`02_aedes_puerto_rico.ipynb`](02_aedes_puerto_rico.ipynb) | Two-site trap schema (synthetic proxy) | `[OPERACIONAL]` until real data |
 | [`03_falsifiability_test.ipynb`](03_falsifiability_test.ipynb) | Load your CSV; protocol defaults | demo ops / your data empiric |
 
+## Run in the browser (Binder)
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
+
+First launch can take several minutes while the environment builds.
+
 ## Run locally
 
 From the **repo root**:

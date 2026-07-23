@@ -1,0 +1,7 @@
+# Binder / cloud runtime (repo root)
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+ipykernel>=6.0
+jupyter>=1.0
+-e ./python

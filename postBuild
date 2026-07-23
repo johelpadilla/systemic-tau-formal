@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# mybinder.org post-build: install local reference package
+set -euo pipefail
+python -m pip install -e ./python

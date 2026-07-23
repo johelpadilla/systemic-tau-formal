@@ -12,7 +12,7 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque |
 | `Thresholds` | mix | **Builds + lemmas** | bands; classify; **nonneg trichotomy** |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
-| `FeigenbaumReduction` | `[TEOREMA]` target | **partial** | structure inhabited; main thm `sorry` |
+| `FeigenbaumReduction` | mix | **partial** | strong tent unimodal **proved**; reduction `sorry` |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | CI | ops | **Workflow** | ubuntu-latest dual jobs |
@@ -45,6 +45,6 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 ## Next formal targets
 
-See [`ROADMAP.md`](ROADMAP.md). Immediate: Feigenbaum `sorry`, licensed Aedes data, notebook polish.
+See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (post-DOI: classify trichotomy).
+Last updated: 2026-07-23 (Feigenbaum partial + Binder).
