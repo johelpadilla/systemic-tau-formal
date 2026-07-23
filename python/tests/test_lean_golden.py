@@ -60,6 +60,12 @@ def test_gate_antitone_on_samples():
     assert gate_rat(b) <= gate_rat(a)
 
 
+def test_gate_even_on_chaos_band():
+    for t in [Fraction(0), Fraction(1, 10), Fraction(2, 10), Fraction(3, 10)]:
+        assert abs(t) < TAU_CHAOS
+        assert gate_rat(-t) == gate_rat(t)
+
+
 def test_gate_chaos_formula():
     tau = Fraction(1, 10)
     expected = GATE_PREFACTOR * (TAU_CHAOS - tau) / TAU_CHAOS

@@ -18,6 +18,17 @@ def absRat (q : Rat) : Rat := if q ≥ 0 then q else -q
 theorem absRat_of_nonneg {q : Rat} (h : 0 ≤ q) : absRat q = q := by
   simp [absRat, h]
 
+theorem absRat_of_nonpos {q : Rat} (h : q ≤ 0) : absRat q = -q := by
+  simp only [absRat]
+  split_ifs with hge
+  · have : q = 0 := le_antisymm h hge
+    simp [this]
+  · rfl
+
+theorem absRat_neg (q : Rat) : absRat (-q) = absRat q := by
+  simp only [absRat]
+  split_ifs with h1 h2 h2 <;> linarith
+
 theorem absRat_nonneg (q : Rat) : 0 ≤ absRat q := by
   simp only [absRat]
   split_ifs with h
@@ -93,6 +104,39 @@ theorem gate_chaos_center_nonneg : 0 ≤ gate 0 := by
 
 /-- Concrete check of antitone property on sample points. -/
 theorem gate_antitone_sample : gate (2 / 10) ≤ gate (1 / 10) := by
+  native_decide
+
+/-- On the full open chaotic band, gate depends only on |τ|. [TEOREMA] -/
+theorem gate_chaos_abs_formula
+    (tau : Rat) (h : absRat tau < tauChaos) :
+    gate tau = gatePrefactor * (tauChaos - absRat tau) / tauChaos := by
+  have h_not_stable : ¬ tau ≥ tauStable := by
+    intro hst
+    have hbound : absRat tau ≤ tau := by
+      -- |τ| ≤ τ is false in general; use |τ| < τ_ch < τ_st ≤ τ ⇒ contradiction via |τ|≥τ when τ≥0
+      have hpos : 0 ≤ tau := le_trans (by native_decide : (0 : Rat) ≤ tauStable) hst
+      simpa [absRat_of_nonneg hpos] using le_rfl
+    have : tauChaos < tauStable := tauChaos_lt_tauStable
+    have hlt : absRat tau < tauStable := lt_of_lt_of_le h (le_of_lt this)
+    have : tau < tauStable := by
+      have hpos : 0 ≤ tau := le_trans (by native_decide : (0 : Rat) ≤ tauStable) hst
+      simpa [absRat_of_nonneg hpos] using hlt
+    exact (not_le_of_gt this) hst
+  simp [gate, h_not_stable, h]
+
+/-- [TEOREMA] Evenness on the chaotic band: g(-τ) = g(τ) whenever |τ| < τ_ch. -/
+theorem gate_chaos_even
+    (tau : Rat) (h : absRat tau < tauChaos) :
+    gate (-tau) = gate tau := by
+  have hneg : absRat (-tau) < tauChaos := by simpa [absRat_neg] using h
+  rw [gate_chaos_abs_formula (-tau) hneg, gate_chaos_abs_formula tau h, absRat_neg]
+
+/-- Sample evenness check. -/
+theorem gate_even_sample : gate (-1 / 10) = gate (1 / 10) := by
+  native_decide
+
+/-- Outside chaos, anti-sync and stable are opposite signs (samples). -/
+theorem gate_extreme_opposite_sample : gate (3 / 4) = -(gate (-3 / 4)) := by
   native_decide
 
 /--

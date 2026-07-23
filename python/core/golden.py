@@ -87,5 +87,7 @@ def golden_payload() -> Dict[str, Any]:
             "gate_at_zero",
             "gate_antitone_on_nonneg_chaos",
             "gate_chaos_nonneg_formula",
+            "gate_chaos_abs_formula",
+            "gate_chaos_even",
         ],
     }
