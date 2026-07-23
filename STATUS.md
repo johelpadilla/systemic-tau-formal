@@ -43,9 +43,11 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 ## Citation / Zenodo
 
 - GitHub release: `v0.1.6`  
+- **DOI (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  
 - **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 - **DOI (v0.1.5):** [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329)  
 - **DOI (v0.1.4):** [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)  
+- Record: https://zenodo.org/records/21516523  
 - Deposit guide: [`docs/ZENODO.md`](docs/ZENODO.md)  
 - Prior corpus DOI: `10.5281/zenodo.20576241`
 
