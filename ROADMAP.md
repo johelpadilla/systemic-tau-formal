@@ -17,7 +17,8 @@ Public status after **v0.1.4** (DOI [10.5281/zenodo.21516060](https://doi.org/10
 - [x] Binder runtime files + badge (mybinder.org)
 - [x] Synthetic fixtures + Aedes **proxy** CSVs (`data/synthetic/`, `data/aedes/proxy/`)
 - [x] P3 noise / P4 anti-sync protocol tests + notebook `04_p3_noise_robustness.py`
-- [ ] Discharge main reduction `sorry` (ordinal ⇒ return map)
+- [x] Feigenbaum first-return skeleton + named open goals 1–3 (`docs/FEIGENBAUM_STATUS.md`)
+- [ ] Discharge open goals 1–3 / composite reduction `sorry` (research-level)
 - [ ] **Licensed** real Aedes / dengue into `data/aedes/raw/` (intake path ready)
 - [ ] Optional Mathlib dependency for analytic Feigenbaum path
 

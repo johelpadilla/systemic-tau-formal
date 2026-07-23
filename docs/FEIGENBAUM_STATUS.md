@@ -12,21 +12,39 @@ Epistemic labels: see `EPISTEMIC_LABELS.md`.
 | Result | Class | Status |
 |--------|-------|--------|
 | `StronglyUnimodal` structure | definition | ✓ |
-| Tent map `tentF` strongly unimodal on [-1,1] | `[TEOREMA]` example | ✓ proved |
+| Tent map `tentF` strongly unimodal on [-1,1] | `[TEOREMA]` | ✓ proved |
+| Tent period-2 orbit `1/4 ↔ 3/4` | `[TEOREMA]` | ✓ proved |
 | `iterate` / period-2 skeleton | definition | ✓ |
 | Logistic family ambient `logistic r` | `[OPERACIONAL]` lab | ✓ defined |
+| `CoherenceSeries` / `sectionValues` / `returnPairs` | definition | ✓ |
+| `FirstReturnData` / `ContinuumReturnMap` / `PreprintReturnSetup` | definition | ✓ |
+| `stronglyUnimodal_has_quadratic` | `[TEOREMA]` | ✓ proved |
+| `conditional_quadratic_from_setup` | `[TEOREMA]` | ✓ proved |
 | Package inhabited | theorem | ✓ |
-| Ordinal data ⇒ return map unimodal | `[TEOREMA]` target | **open** (`sorry`) |
-| Analytic δ-limit / class universality | `[TEOREMA]` target | **open** (`True` placeholders) |
+| Ordinal data ⇒ continuum return | `[TEOREMA]` | **open** (`open_ordinal_induces_continuum_return`) |
+| Continuum return strongly unimodal | `[TEOREMA]` | **open** (`open_return_strongly_unimodal`) |
+| Analytic δ / class universality | `[TEOREMA]` | **open** (`open_analytic_feigenbaum`) |
+| Full composite reduction | `[TEOREMA]` | **open** (`coherence_return_map_feigenbaum`) |
+
+## Named open goals
+
+The main `sorry` is split so progress can land one lemma at a time:
+
+1. **`open_ordinal_induces_continuum_return`** — discrete Poincaré pairs extend to a total map on the coherence interval.  
+2. **`open_return_strongly_unimodal`** — that map is strongly unimodal with quadratic tip.  
+3. **`open_analytic_feigenbaum`** — Feigenbaum δ-limit / class universality (real analysis; optional Mathlib).
+
+Conditional progress already machine-checked: *if* a `PreprintReturnSetup` supplies strong unimodality, the quadratic-location obligation follows from the mode (`conditional_quadratic_from_setup`).
 
 ## What this does *not* mean
 
 - The tent example is **not** the claim that τₛ dynamics are a tent map.
-- `FeigenbaumUniversal.delta_limit : True` is a **placeholder**, not a proof of δ ≈ 4.669…
+- `FeigenbaumUniversal.delta_limit : True` remains a **placeholder** field type, not a proof of δ ≈ 4.669…  
+- Discharging the composite theorem by returning `tentStrong` under arbitrary hypotheses would be **invalid** — we keep the honest `sorry`.
 - Dengue / empirical lead times are unrelated to this module.
 
 ## Next formal steps
 
-1. Encode first-return construction from an abstract ordinal coherence series.  
-2. State unimodality hypotheses that match the preprint without overclaiming.  
-3. Optional Mathlib: real-analytic logistic cascade (large dependency).
+1. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  
+2. Optional Mathlib: real-analytic logistic cascade and δ.  
+3. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1–3.
