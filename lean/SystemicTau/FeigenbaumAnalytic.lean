@@ -197,9 +197,11 @@ structure AnalyticTrackStatus where
   cascade_limit_open : True := trivial
   /-- Class universality. OPEN. -/
   class_universal_open : True := trivial
-  /-- Real/Tendsto Mathlib discharge. OPEN / optional. -/
+  /-- Real/Tendsto Mathlib interface. Encoded in `FeigenbaumTendsto`; limit still OPEN. -/
   mathlib_real_open : True := trivial
 
 def currentAnalyticStatus : AnalyticTrackStatus := {}
+
+-- Real / `Tendsto` claim shapes: `SystemicTau.FeigenbaumTendsto`
 
 end SystemicTau.FeigenbaumAnalytic

@@ -26,7 +26,8 @@ Public status after **v0.1.6** (concept DOI [10.5281/zenodo.21516059](https://do
 - [ ] Discharge open goals 1–3 / composite reduction `sorry` (research-level)
 - [ ] **Licensed** real Aedes / dengue into `data/aedes/raw/` (intake path ready)
 - [x] Mathlib dependency wired (`mathlib4` v4.14.0) + `FeigenbaumAnalytic` claim shapes
-- [ ] Real/Tendsto discharge of cascade limit (Mathlib analysis path)
+- [x] Real/`Tendsto` claim shapes (`FeigenbaumTendsto`; limit still open/`sorry`)
+- [ ] Real/Tendsto **discharge** of cascade limit (research + ε–N bridge bookkeeping)
 
 ## Medium term
 

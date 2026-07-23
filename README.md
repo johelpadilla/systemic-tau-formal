@@ -102,7 +102,7 @@ export PATH="$HOME/.elan/bin:$PATH"
 cd lean && lake build   # currently PASS on Lean 4.14.0
 ```
 
-`FeigenbaumReduction.lean` / `FeigenbaumAnalytic.lean` still contain honest `sorry`s (see `STATUS.md`).  
+`FeigenbaumReduction.lean` / `FeigenbaumAnalytic.lean` / `FeigenbaumTendsto.lean` still contain honest `sorry`s (see `STATUS.md`).  
 Mathlib (v4.14.0) is required for ℚ order/tactics: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 ---

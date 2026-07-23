@@ -14,7 +14,8 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
 | `FeigenbaumReduction` | mix | **partial** | tent strong+period-2; first-return skeleton; 3 named open `sorry`s |
 | `FeigenbaumAnalytic` | mix | **partial** | cascade / δ ε–N interfaces; open goals 3a–3c `sorry` |
-| Mathlib | dep | **wired** | mathlib4 `v4.14.0` · `docs/MATHLIB.md` |
+| `FeigenbaumTendsto` | mix | **partial** | Real / `Tendsto` interfaces; 3aℝ–3cℝ + ε–N bridge `sorry` |
+| Mathlib | dep | **wired** | mathlib4 `v4.14.0` · Real/Topology for Tendsto · `docs/MATHLIB.md` |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
@@ -61,4 +62,4 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (Mathlib scaffold + FeigenbaumAnalytic).
+Last updated: 2026-07-23 (Real/Tendsto claim scaffold in FeigenbaumTendsto).
