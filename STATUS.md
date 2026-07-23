@@ -37,15 +37,16 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 ## Citation / Zenodo
 
 - GitHub release: `v0.1.4`  
+- **DOI (v0.1.4):** [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)  
+- **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
+- Record: https://zenodo.org/records/21516060  
 - Deposit guide: [`docs/ZENODO.md`](docs/ZENODO.md)  
-- Metadata: [`zenodo/metadata.json`](zenodo/metadata.json)  
-- **DOI for this monorepo:** *pending* (run GitHub↔Zenodo or `scripts/deposit_zenodo.py` with `ZENODO_TOKEN`)  
 - Prior corpus DOI: `10.5281/zenodo.20576241`
 
 ## Next formal targets
 
-1. Mint monorepo DOI (Zenodo) and write it into `CITATION.cff`.  
-2. Remove `sorry` from `coherence_return_map_feigenbaum` (hard).  
-3. Optional: Mathlib dependency for real-analysis Feigenbaum path.
+1. Remove `sorry` from `coherence_return_map_feigenbaum` (hard).  
+2. Optional: Mathlib dependency for real-analysis Feigenbaum path.  
+3. New Zenodo version on next tagged release (`scripts/deposit_zenodo.py`).
 
-Last updated: 2026-07-23 (v0.1.4 — CI + release packaging).
+Last updated: 2026-07-23 (v0.1.4 — Zenodo published).

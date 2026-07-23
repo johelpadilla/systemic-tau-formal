@@ -3,9 +3,12 @@
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516060.svg)](https://doi.org/10.5281/zenodo.21516060)
 
 Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.4**  
-**GitHub:** https://github.com/johelpadilla/systemic-tau-formal
+**GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
+**DOI (this version):** https://doi.org/10.5281/zenodo.21516060  
+**Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 
@@ -114,12 +117,23 @@ See [`CITATION.cff`](CITATION.cff).
 
 | What | Identifier |
 |------|------------|
-| This formal monorepo | GitHub release `v0.1.4` · Zenodo DOI *pending* ([`docs/ZENODO.md`](docs/ZENODO.md)) |
+| This formal monorepo (v0.1.4) | [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060) |
+| Concept DOI (all versions) | [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) |
+| GitHub | https://github.com/johelpadilla/systemic-tau-formal · release `v0.1.4` |
 | Prior Systemic Tau corpus / software archive | [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241) |
 
-```bash
-# Optional: create Zenodo draft (needs ZENODO_TOKEN)
-python scripts/deposit_zenodo.py
+```bibtex
+@software{padilla_systemic_tau_formal_2026,
+  author       = {Padilla-Villanueva, Johel},
+  title        = {systemic-tau-formal: Machine-verifiable Systemic Tau
+                   (τₛ) and RECD},
+  month        = jul,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {0.1.4},
+  doi          = {10.5281/zenodo.21516060},
+  url          = {https://doi.org/10.5281/zenodo.21516060}
+}
 ```
 
 ---

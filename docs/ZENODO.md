@@ -1,22 +1,24 @@
 # Zenodo deposit guide
 
-Goal: citable DOI for **this** formal monorepo (distinct from the Magna/software archive `10.5281/zenodo.20576241`).
+## Published DOIs (v0.1.4)
 
-## Option A — GitHub ↔ Zenodo (recommended)
+| Role | DOI | Link |
+|------|-----|------|
+| **This version** | `10.5281/zenodo.21516060` | https://doi.org/10.5281/zenodo.21516060 |
+| **Concept** (all versions) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
+| Record page | — | https://zenodo.org/records/21516060 |
 
-1. Log in at [zenodo.org](https://zenodo.org) with the same GitHub account.  
-2. **GitHub** → enable the `systemic-tau-formal` repository.  
-3. On GitHub: create a release (or use the existing `v0.1.4`).  
-4. Zenodo mints a DOI automatically for the release archive.  
-5. Paste the DOI into `CITATION.cff` and `STATUS.md`, then commit.
+Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
-## Option B — Manual API deposit
+## New versions
 
 ```bash
-export ZENODO_TOKEN='...'   # deposit:write (+ deposit:actions to publish)
-python scripts/deposit_zenodo.py           # draft only
-python scripts/deposit_zenodo.py --publish # irreversible publish
+# bump version in CITATION.cff / zenodo/metadata.json / archive name in script
+export ZENODO_TOKEN='...'   # or ~/.zenodo_token
+python scripts/deposit_zenodo.py --publish
 ```
+
+Or use Zenodo “New version” on the existing concept record.
 
 Metadata template: `zenodo/metadata.json`.
 
@@ -24,10 +26,7 @@ Metadata template: `zenodo/metadata.json`.
 
 | Artifact | Cite when |
 |----------|-----------|
-| This monorepo DOI (pending first deposit) | Formal Lean/Python verification package |
+| `10.5281/zenodo.21516060` | This formal Lean/Python monorepo (v0.1.4) |
+| `10.5281/zenodo.21516059` | Concept (always points to latest) |
 | `10.5281/zenodo.20576241` | Broader Systemic Tau corpus / prior software |
 | PyPI `systemictau` | Production analysis pipeline |
-
-## Version alignment
-
-Release tags should match `CITATION.cff` `version` (currently **0.1.4**).
