@@ -49,6 +49,29 @@ def main():
     print("\nLean twins: sectionValues / returnPairs / FirstReturnData")
     print("Open: continuum extension + strong unimodality (named sorry goals).")
 
+    # Optional scatter (headless-friendly) — good first issue #8
+    if pairs_max and "--plot" in sys.argv:
+        try:
+            import matplotlib
+
+            matplotlib.use("Agg")
+            import matplotlib.pyplot as plt
+
+            xs = [a for a, _ in pairs_max]
+            ys = [b for _, b in pairs_max]
+            fig, ax = plt.subplots(figsize=(4.5, 4.5))
+            ax.scatter(xs, ys, s=12, alpha=0.7)
+            ax.set_xlabel(r"section $\tau_i$")
+            ax.set_ylabel(r"section $\tau_{i+1}$")
+            ax.set_title("First-return pairs (local max) [OPERACIONAL]")
+            ax.axline((0, 0), slope=1, color="gray", ls="--", lw=0.8)
+            out = Path("/tmp/tau_first_return_pairs.png")
+            fig.savefig(out, dpi=120, bbox_inches="tight")
+            plt.close(fig)
+            print(f"\nWrote plot {out}")
+        except Exception as exc:  # pragma: no cover
+            print(f"Plot skipped: {exc}")
+
 
 if __name__ == "__main__":
     main()

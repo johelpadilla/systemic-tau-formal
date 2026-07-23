@@ -36,6 +36,7 @@ jobs:
           python notebooks/02_aedes_puerto_rico.py
           python notebooks/04_p3_noise_robustness.py
           python notebooks/05_first_return_poincare.py
+          python notebooks/06_cross_domain_c3.py
           python notebooks/03_falsifiability_test.py data/synthetic/regime_switch.csv
 
   lean:

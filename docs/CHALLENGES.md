@@ -23,6 +23,8 @@ Success criterion: proof sketch or formal statement + numerical check; PR agains
 
 Success criterion: follows `EXPERIMENTAL_PROTOCOL.md`; reports both positive and negative findings.
 
+**Synthetic starters (not hits):** [`CROSS_DOMAIN.md`](CROSS_DOMAIN.md) · `notebooks/06_cross_domain_c3.py` · tracking issue [#4](https://github.com/johelpadilla/systemic-tau-formal/issues/4).
+
 ## Philosophy challenge (optional track)
 
 Critique the 4-level architecture’s claim to avoid Baron’s Trilemma (infinite regress / circularity / dogmatism) without collapsing into one of the three horns. Label: `philosophy-challenge`.

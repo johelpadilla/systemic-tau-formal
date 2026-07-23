@@ -51,4 +51,4 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (τ_ch candidate class + first-return Python twin).
+Last updated: 2026-07-23 (C3 synthetic cross-domain starters).

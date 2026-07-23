@@ -12,11 +12,15 @@ from .first_return import (
     return_pairs,
     section_values,
 )
+from .report import format_report, pipeline_report
 from .synthetic import (
     add_column_noise,
     aedes_proxy_two_sites,
     anti_synchronized,
     coupled_logistic,
+    eeg_like_channels,
+    finance_like_returns,
+    grid_like_loads,
     independent_noise,
     regime_switch,
     synchronized_seasonal,
@@ -44,9 +48,14 @@ __all__ = [
     "aedes_proxy_two_sites",
     "anti_synchronized",
     "coupled_logistic",
+    "eeg_like_channels",
+    "finance_like_returns",
+    "grid_like_loads",
     "independent_noise",
     "regime_switch",
     "synchronized_seasonal",
+    "pipeline_report",
+    "format_report",
 ]
 
 __version__ = "0.1.5"

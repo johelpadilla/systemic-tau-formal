@@ -29,7 +29,8 @@ Public status after **v0.1.5** (concept DOI [10.5281/zenodo.21516059](https://do
 - [ ] Full derivation of τ_ch from δ *or* agreed larger class with uniqueness/non-existence
 - [x] Stress-Test 2026 workshop brief + issue board (`docs/WORKSHOP_STRESS_TEST_2026.md`, `docs/ISSUE_BOARD.md`)
 - [x] First-return Python twin (`python/core/first_return.py`, notebook 05)
-- [ ] Cross-domain challenge track (finance / EEG / networks) — templates ready; results pending
+- [x] C3 synthetic starters (finance / EEG / grid-like) + `docs/CROSS_DOMAIN.md`
+- [ ] Cross-domain **field** results (licensed data) — pending community / intake
 
 ## Non-goals (for honesty)
 

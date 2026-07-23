@@ -130,6 +130,125 @@ def aedes_proxy_two_sites(
     }
 
 
+# ---------------------------------------------------------------------------
+# Cross-domain *synthetic* labs (C3 starters) — not market / clinical / grid data
+# ---------------------------------------------------------------------------
+
+
+def finance_like_returns(
+    T: int = 500,
+    N: int = 5,
+    t_break: Optional[int] = None,
+    rho_pre: float = 0.75,
+    rho_post: float = 0.05,
+    seed: int = 10,
+) -> Tuple[np.ndarray, Dict[str, float]]:
+    """
+    Synthetic multi-asset log-return panel with a correlation break.
+
+    [OPERACIONAL] Not real market data. Endpoint proxy: known *t_break*.
+    """
+    if t_break is None:
+        t_break = T // 2
+    t_break = int(t_break)
+    rng = np.random.default_rng(seed)
+
+    def block(n_rows: int, rho: float) -> np.ndarray:
+        # equicorrelated Gaussian factor model
+        f = rng.normal(size=n_rows)
+        idio = rng.normal(size=(n_rows, N))
+        w = np.sqrt(max(rho, 0.0))
+        wi = np.sqrt(max(1.0 - rho, 0.0))
+        return w * f[:, None] + wi * idio
+
+    A = block(t_break, rho_pre)
+    B = block(T - t_break, rho_post)
+    X = np.vstack([A, B])
+    meta = {
+        "domain": "finance_like",
+        "t_break": float(t_break),
+        "rho_pre": float(rho_pre),
+        "rho_post": float(rho_post),
+        "label": "[OPERACIONAL]",
+    }
+    return X, meta
+
+
+def eeg_like_channels(
+    T: int = 800,
+    N: int = 6,
+    t_desync: Optional[int] = None,
+    seed: int = 11,
+) -> Tuple[np.ndarray, Dict[str, float]]:
+    """
+    Synthetic multi-channel oscillatory panel (phase-locked → independent).
+
+    [OPERACIONAL] Not clinical EEG. Frequencies are lab parameters only.
+    """
+    if t_desync is None:
+        t_desync = T // 2
+    t_desync = int(t_desync)
+    rng = np.random.default_rng(seed)
+    t = np.arange(T, dtype=float)
+    # shared alpha-like carrier before desync
+    f0 = 0.08
+    shared = np.sin(2 * np.pi * f0 * t)
+    cols = []
+    for i in range(N):
+        phase = 0.15 * i
+        locked = shared + 0.15 * np.sin(2 * np.pi * f0 * t + phase)
+        # independent after desync
+        fi = f0 * (1.0 + 0.3 * (i + 1) / N)
+        free = np.sin(2 * np.pi * fi * t + rng.uniform(0, 2 * np.pi))
+        x = np.where(t < t_desync, locked, free)
+        x = x + 0.08 * rng.normal(size=T)
+        cols.append(x)
+    X = np.column_stack(cols)
+    meta = {
+        "domain": "eeg_like",
+        "t_desync": float(t_desync),
+        "label": "[OPERACIONAL]",
+    }
+    return X, meta
+
+
+def grid_like_loads(
+    T: int = 400,
+    N: int = 4,
+    t_event: Optional[int] = None,
+    seed: int = 12,
+) -> Tuple[np.ndarray, Dict[str, float]]:
+    """
+    Synthetic nodal load / frequency-deviation proxy with a common shock.
+
+    [OPERACIONAL] Not SCADA or utility data.
+    """
+    if t_event is None:
+        t_event = (2 * T) // 3
+    t_event = int(t_event)
+    rng = np.random.default_rng(seed)
+    t = np.arange(T, dtype=float)
+    diurnal = np.sin(2 * np.pi * t / 48.0)  # half-day-ish index
+    cols = []
+    for i in range(N):
+        base = 1.0 + 0.2 * diurnal + 0.05 * i
+        noise = 0.05 * rng.normal(size=T)
+        # after event: one node detaches (anti-ish), others jitter
+        shock = np.zeros(T)
+        if i == 0:
+            shock[t_event:] = -0.8 + 0.3 * rng.normal(size=T - t_event)
+        else:
+            shock[t_event:] = 0.2 * rng.normal(size=T - t_event)
+        cols.append(base + noise + shock)
+    X = np.column_stack(cols)
+    meta = {
+        "domain": "grid_like",
+        "t_event": float(t_event),
+        "label": "[OPERACIONAL]",
+    }
+    return X, meta
+
+
 def add_column_noise(
     X: np.ndarray,
     rho: float,
