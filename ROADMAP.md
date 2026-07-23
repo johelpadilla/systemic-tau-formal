@@ -12,9 +12,10 @@ Public status after **v0.1.4** (DOI [10.5281/zenodo.21516060](https://doi.org/10
 
 ## Near term (v0.2)
 
+- [x] Documented Jupyter notebooks 01–03 (with CLI `.py` twins)
 - [ ] Discharge or shrink `sorry` in `FeigenbaumReduction` (hypothesis packing → partial lemmas)
 - [ ] Real Aedes / dengue fixtures under license into `data/aedes/`
-- [ ] Convert demos `notebooks/*.py` → documented Jupyter + binder/colab badge
+- [ ] Binder / Colab badge (optional cloud runtime)
 - [ ] Optional Mathlib dependency for analytic Feigenbaum path
 
 ## Medium term

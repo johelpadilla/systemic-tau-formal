@@ -53,14 +53,25 @@ pip install -e ".[dev]"
 pytest -q
 ```
 
-### 2. Synthetic demos
+### 2. Notebooks / demos
+
+Jupyter (from repo root, after `pip install -e ".[dev]"` in `python/`):
+
+| Notebook | What it does |
+|----------|----------------|
+| [`notebooks/01_synthetic_chaos.ipynb`](notebooks/01_synthetic_chaos.ipynb) | Logistic maps → τₛ, g, T_RECD + plots |
+| [`notebooks/02_aedes_puerto_rico.ipynb`](notebooks/02_aedes_puerto_rico.ipynb) | Aedes-schema **proxy** (not field data) |
+| [`notebooks/03_falsifiability_test.ipynb`](notebooks/03_falsifiability_test.ipynb) | Load your CSV under protocol defaults |
+
+CLI twins (no Jupyter required):
 
 ```bash
 python notebooks/01_synthetic_chaos.py
-python notebooks/02_aedes_puerto_rico.py   # synthetic proxy until public Aedes data
-python notebooks/03_falsifiability_test.py # or pass your.csv
+python notebooks/02_aedes_puerto_rico.py
+python notebooks/03_falsifiability_test.py   # or pass your.csv
 ```
 
+See [`notebooks/README.md`](notebooks/README.md).
 ### 3. Lean 4 (optional until toolchain installed)
 
 ```bash
