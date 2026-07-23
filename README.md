@@ -110,7 +110,17 @@ Full text: [`docs/FALSIFIABLE_PREDICTIONS.md`](docs/FALSIFIABLE_PREDICTIONS.md)
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). Preferred corpus DOI: `10.5281/zenodo.20576241`.
+See [`CITATION.cff`](CITATION.cff).
+
+| What | Identifier |
+|------|------------|
+| This formal monorepo | GitHub release `v0.1.4` · Zenodo DOI *pending* ([`docs/ZENODO.md`](docs/ZENODO.md)) |
+| Prior Systemic Tau corpus / software archive | [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241) |
+
+```bash
+# Optional: create Zenodo draft (needs ZENODO_TOKEN)
+python scripts/deposit_zenodo.py
+```
 
 ---
 

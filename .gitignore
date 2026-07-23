@@ -38,3 +38,5 @@ data/**/*.tar.gz
 # Local secrets
 secrets.*
 *.pem
+.zenodo_token
+zenodo/deposition_state.json
