@@ -2,7 +2,7 @@
   "metadata": {
     "title": "systemic-tau-formal: Machine-verifiable Systemic Tau (τₛ) and RECD",
     "upload_type": "software",
-    "description": "<p><strong>systemic-tau-formal</strong> v0.1.5 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (τₛ) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p><p><strong>What is new in v0.1.5</strong></p><ul><li>Synthetic multi-regime CSV fixtures and Aedes <em>proxy</em> schema under <code>data/</code> (not field entomology).</li><li>P3 noise robustness and P4 anti-sync protocol tests; notebook <code>04_p3_noise_robustness.py</code>.</li><li>Lean Feigenbaum module: first-return combinatorial skeleton, tent period-2, conditional quadratic lemma; composite reduction split into three named open goals (honest <code>sorry</code>).</li><li>Binder runtime + badge; Jupyter notebooks 01–03.</li></ul><p><strong>Stack</strong></p><ul><li><strong>Lean 4.14</strong> (<code>lake build</code>): operational gate g(τₛ), band lemmas, Feigenbaum partial formalization.</li><li><strong>Python</strong> reference core + golden rational bridge + pytest.</li><li>Public falsifiable predictions, experimental protocol, epistemic labels.</li></ul><p>Companion production package: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p><p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 are Feigenbaum-motivated defaults; a unique closed-form τ_ch = f(δ) remains open. Feigenbaum reduction open goals 1–3 remain <code>sorry</code>.</p>",
+    "description": "<p><strong>systemic-tau-formal</strong> v0.1.6 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (τₛ) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p><p><strong>What is new in v0.1.6</strong></p><ul><li>C3 synthetic cross-domain starters: finance / EEG / grid-like generators, <code>pipeline_report</code>, notebook <code>06_cross_domain_c3.py</code>, <code>docs/CROSS_DOMAIN.md</code>.</li><li>First-return Poincaré Python twin + notebook <code>05_first_return_poincare.py</code> (<code>--plot</code>).</li><li>Lean <code>failedSimpleCandidates</code>: finite simple algebraic forms of τ_ch = f(δ) ruled out; see <code>docs/TAU_CH_DELTA.md</code>.</li><li>Stress-Test 2026 workshop brief + public issue board (<code>docs/WORKSHOP_STRESS_TEST_2026.md</code>, <code>docs/ISSUE_BOARD.md</code>).</li></ul><p><strong>Stack</strong></p><ul><li><strong>Lean 4.14</strong> (<code>lake build</code>): operational gate g(τₛ), band lemmas, Feigenbaum partial formalization, simple-candidate non-identity lemmas.</li><li><strong>Python</strong> reference core + golden rational bridge + pytest (46 tests).</li><li>Public falsifiable predictions, experimental protocol, epistemic labels.</li></ul><p>Companion production package: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p><p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 are Feigenbaum-motivated defaults; a unique closed-form τ_ch = f(δ) remains open. Feigenbaum reduction open goals 1–3 remain <code>sorry</code>. C3 kits are synthetic generators, not licensed field results.</p>",
     "creators": [
       {
         "name": "Padilla-Villanueva, Johel",
@@ -18,12 +18,13 @@
       "early warning signals",
       "complex systems",
       "ordinal dynamics",
-      "formal verification"
+      "formal verification",
+      "cross-domain"
     ],
     "license": "mit",
     "access_right": "open",
     "language": "eng",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "related_identifiers": [
       {
         "identifier": "https://github.com/johelpadilla/systemic-tau-formal",
@@ -38,7 +39,7 @@
         "scheme": "doi"
       },
       {
-        "identifier": "10.5281/zenodo.21516060",
+        "identifier": "10.5281/zenodo.21516329",
         "relation": "isNewVersionOf",
         "resource_type": "software",
         "scheme": "doi"

@@ -4,8 +4,9 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.5)** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
+| **v0.1.6** | *(record after publish; concept DOI above always points to latest)* | — |
+| **v0.1.5** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
 | **v0.1.4** | `10.5281/zenodo.21516060` | https://doi.org/10.5281/zenodo.21516060 |
 | Record page (v0.1.5) | — | https://zenodo.org/records/21516329 |
 
@@ -37,8 +38,8 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
-| `10.5281/zenodo.21516329` | This formal monorepo (v0.1.5) |
-| `10.5281/zenodo.21516059` | Concept / always-latest |
+| `10.5281/zenodo.21516059` | Concept / always-latest (preferred for “current”) |
+| `10.5281/zenodo.21516329` | Pin v0.1.5 |
 | `10.5281/zenodo.21516060` | Pin v0.1.4 |
 | `10.5281/zenodo.20576241` | Broader Systemic Tau corpus / prior software |
 | PyPI `systemictau` | Production analysis pipeline |

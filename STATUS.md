@@ -17,7 +17,10 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
 | Aedes proxy | `[OPERACIONAL]` | **CSV** | `data/aedes/proxy/` (not field data) |
+| C3 synthetic kits | `[OPERACIONAL]` | **generators + nb** | finance/EEG/grid · `docs/CROSS_DOMAIN.md` |
+| First-return twin | `[OPERACIONAL]` | **Python + nb 05** | `python/core/first_return.py` |
 | Real Aedes raw | `[EMPÍRICO]` | **pending license** | drop under `data/aedes/raw/` |
+| C3 field results | `[EMPÍRICO]` | **pending** | licensed intake + community |
 | CI | ops | **Workflow** | ubuntu-latest dual jobs |
 
 ## Asymmetry of the operational gate
@@ -39,11 +42,10 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 ## Citation / Zenodo
 
-- GitHub release: `v0.1.5`  
-- **DOI (v0.1.5):** [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329)  
+- GitHub release: `v0.1.6`  
 - **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
+- **DOI (v0.1.5):** [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329)  
 - **DOI (v0.1.4):** [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)  
-- Record: https://zenodo.org/records/21516329  
 - Deposit guide: [`docs/ZENODO.md`](docs/ZENODO.md)  
 - Prior corpus DOI: `10.5281/zenodo.20576241`
 
@@ -51,4 +53,4 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (C3 synthetic cross-domain starters).
+Last updated: 2026-07-23 (release v0.1.6).

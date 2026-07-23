@@ -1,6 +1,6 @@
 # Roadmap
 
-Public status after **v0.1.5** (concept DOI [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)).
+Public status after **v0.1.6** (concept DOI [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)).
 
 ## Done
 
@@ -10,6 +10,7 @@ Public status after **v0.1.5** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Python ↔ Lean golden bridge + CI
 - [x] GitHub public + release `v0.1.4` + Zenodo DOI
 - [x] Release `v0.1.5`: fixtures, P3/P4, Feigenbaum first-return skeleton, Binder
+- [x] Release `v0.1.6`: C3 synthetic kits, first-return Python twin, τ_ch simple-candidate non-identity, Stress-Test 2026 board
 
 ## Near term (v0.2)
 
@@ -19,6 +20,9 @@ Public status after **v0.1.5** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Synthetic fixtures + Aedes **proxy** CSVs (`data/synthetic/`, `data/aedes/proxy/`)
 - [x] P3 noise / P4 anti-sync protocol tests + notebook `04_p3_noise_robustness.py`
 - [x] Feigenbaum first-return skeleton + named open goals 1–3 (`docs/FEIGENBAUM_STATUS.md`)
+- [x] First-return Python twin + notebook 05
+- [x] C3 synthetic starters + notebook 06 + `docs/CROSS_DOMAIN.md`
+- [x] Workshop brief + issue board
 - [ ] Discharge open goals 1–3 / composite reduction `sorry` (research-level)
 - [ ] **Licensed** real Aedes / dengue into `data/aedes/raw/` (intake path ready)
 - [ ] Optional Mathlib dependency for analytic Feigenbaum path
@@ -27,10 +31,8 @@ Public status after **v0.1.5** (concept DOI [10.5281/zenodo.21516059](https://do
 
 - [x] Partial: finite simple f(δ) candidates ≠ τ_ch (`docs/TAU_CH_DELTA.md`, Lean `failedSimpleCandidates`)
 - [ ] Full derivation of τ_ch from δ *or* agreed larger class with uniqueness/non-existence
-- [x] Stress-Test 2026 workshop brief + issue board (`docs/WORKSHOP_STRESS_TEST_2026.md`, `docs/ISSUE_BOARD.md`)
-- [x] First-return Python twin (`python/core/first_return.py`, notebook 05)
-- [x] C3 synthetic starters (finance / EEG / grid-like) + `docs/CROSS_DOMAIN.md`
 - [ ] Cross-domain **field** results (licensed data) — pending community / intake
+- [ ] Workshop date / host (issue #1)
 
 ## Non-goals (for honesty)
 

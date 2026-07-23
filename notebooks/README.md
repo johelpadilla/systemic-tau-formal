@@ -1,7 +1,7 @@
 # Notebooks
 
 Interactive demos for Systemic Tau (τₛ) + RECD.  
-CLI twins (same logic, no plots): `01_*.py` … `04_*.py`.
+CLI twins (same logic, no Jupyter): `01_*.py` … `06_*.py`.
 
 | Notebook | Content | Label |
 |----------|---------|--------|

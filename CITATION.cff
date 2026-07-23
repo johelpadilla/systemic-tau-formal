@@ -2,19 +2,22 @@ cff-version: 1.2.0
 message: "If you use Systemic Tau / RECD formal materials, please cite as below."
 type: software
 title: "systemic-tau-formal — Machine-verifiable Systemic Tau (τₛ) + RECD"
-version: "0.1.5"
+version: "0.1.6"
 date-released: "2026-07-23"
 license: MIT
-doi: "10.5281/zenodo.21516329"
+doi: "10.5281/zenodo.21516059"
 repository-code: "https://github.com/johelpadilla/systemic-tau-formal"
-url: "https://doi.org/10.5281/zenodo.21516329"
+url: "https://doi.org/10.5281/zenodo.21516059"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21516329"
-    description: "This version (v0.1.5)"
-  - type: doi
     value: "10.5281/zenodo.21516059"
-    description: "Concept DOI (all versions)"
+    description: "Concept DOI (resolves to latest version; update after Zenodo publish)"
+  - type: doi
+    value: "10.5281/zenodo.21516329"
+    description: "v0.1.5"
+  - type: doi
+    value: "10.5281/zenodo.21516060"
+    description: "v0.1.4"
   - type: url
     value: "https://github.com/johelpadilla/systemic-tau-formal"
     description: "Source repository"
@@ -38,10 +41,10 @@ preferred-citation:
       given-names: "Johel"
       orcid: "https://orcid.org/0000-0002-5797-6931"
   title: "systemic-tau-formal: Machine-verifiable Systemic Tau (τₛ) and RECD"
-  version: "0.1.5"
+  version: "0.1.6"
   year: 2026
-  doi: "10.5281/zenodo.21516329"
-  url: "https://doi.org/10.5281/zenodo.21516329"
+  doi: "10.5281/zenodo.21516059"
+  url: "https://doi.org/10.5281/zenodo.21516059"
 references:
   - type: report
     authors:
