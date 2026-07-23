@@ -50,12 +50,14 @@ theorem gate_chaos_nonneg_formula
     gate tau = gatePrefactor * (tauChaos - tau) / tauChaos := by
   have h_not_stable : ¬ tau ≥ tauStable := by
     intro hst
-    have : tauChaos < tauStable := tauChaos_lt_tauStable
-    have : tau < tauStable := lt_of_lt_of_le h1 (le_of_lt this)
-    exact (not_le_of_gt this) hst
+    have hlt : tauChaos < tauStable := tauChaos_lt_tauStable
+    have hts : tau < tauStable := lt_trans h1 hlt
+    exact not_le_of_gt hts hst
   have habs : absRat tau = tau := absRat_of_nonneg h0
   have h_chaos : absRat tau < tauChaos := by simpa [habs] using h1
-  simp [gate, h_not_stable, h_chaos, habs]
+  unfold gate
+  rw [if_neg h_not_stable, if_pos h_chaos, habs]
+
 
 /--
   [TEOREMA] On [0, τ_ch), g is antitone (decreases as τ increases toward the edge).
@@ -176,15 +178,15 @@ theorem deltaInvPow_zero : deltaInvPow 0 = 1 := rfl
 
 theorem deltaInvPow_one :
     deltaInvPow 1 = (feigenbaumDeltaDen : Rat) / (feigenbaumDeltaNum : Rat) := by
-  simp [deltaInvPow]
-  ring
+  simp only [deltaInvPow]
+  -- 1 / (num/den) = den/num
+  field_simp
 
 theorem deltaInvPow_succ (k : Nat) :
     deltaInvPow (k + 1) =
       deltaInvPow k * ((feigenbaumDeltaDen : Rat) / (feigenbaumDeltaNum : Rat)) := by
-  simp [deltaInvPow]
+  simp only [deltaInvPow]
   field_simp
-  ring
 
 /-- Increment skeleton Δt ∝ δ^{-k} · |τ| (unit dt0=1, w=1). -/
 def deltaT_unit (tau : Rat) (k : Nat) : Rat :=

@@ -54,8 +54,21 @@ Combinatorial first-return extraction (no continuum claims):
 
 Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md) (finite simple forms ruled out in Lean).
 
+## Analytic track (`FeigenbaumAnalytic.lean`)
+
+| Interface | Status |
+|-----------|--------|
+| `feigenbaumDeltaApprox` bounds | ✓ proved |
+| `BifurcationSequence` / `scalingRatio` / `cascadeDeltaLimit` | ✓ encoded |
+| Toy cascade scaling checks | ✓ proved |
+| OPEN 3a cascade → δ (ε–N) | `sorry` |
+| OPEN 3b class shares δ | `sorry` |
+| OPEN 3c bridge → `FeigenbaumUniversal` | `sorry` |
+
+Mathlib enablement and Real/`Tendsto` notes: [`MATHLIB.md`](MATHLIB.md).
+
 ## Next formal steps
 
 1. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  
-2. Optional Mathlib: real-analytic logistic cascade and δ.  
+2. Mathlib analysis: `Tendsto` form of δ_n → δ (extends 3a).  
 3. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1–3.

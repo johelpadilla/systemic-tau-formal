@@ -31,6 +31,7 @@ This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 | Issue board | [`docs/ISSUE_BOARD.md`](docs/ISSUE_BOARD.md) |
 | τ_ch vs δ | [`docs/TAU_CH_DELTA.md`](docs/TAU_CH_DELTA.md) |
 | C3 cross-domain | [`docs/CROSS_DOMAIN.md`](docs/CROSS_DOMAIN.md) |
+| Mathlib | [`docs/MATHLIB.md`](docs/MATHLIB.md) |
 | Build status | [`STATUS.md`](STATUS.md) |
 
 Related production code: PyPI [`systemictau`](https://pypi.org/project/systemictau/) · DOI [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241)
@@ -101,7 +102,8 @@ export PATH="$HOME/.elan/bin:$PATH"
 cd lean && lake build   # currently PASS on Lean 4.14.0
 ```
 
-`FeigenbaumReduction.lean` still contains `sorry` (see `STATUS.md`).
+`FeigenbaumReduction.lean` / `FeigenbaumAnalytic.lean` still contain honest `sorry`s (see `STATUS.md`).  
+Mathlib (v4.14.0) is required for ℚ order/tactics: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 ---
 

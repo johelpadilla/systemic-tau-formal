@@ -157,9 +157,7 @@ theorem deltaMinusOne_over_twoDelta_ne_tauChaos :
 
 /-- [TEOREMA] τ_st ≠ τ_ch (band separation). -/
 theorem tauStable_ne_tauChaos : tauStable ≠ tauChaos := by
-  intro h
-  have := tauChaos_lt_tauStable
-  exact (ne_of_gt this) h.symm
+  exact ne_of_gt tauChaos_lt_tauStable
 
 /--
   Finite candidate class that fails equality with operational τ_ch.

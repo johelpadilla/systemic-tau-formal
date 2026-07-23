@@ -5,6 +5,11 @@
   multivariate series. Full combinatorial Kendall is refined later;
   this module fixes names and types used by RECD.
 -/
+import Mathlib.Algebra.Order.Ring.Unbundled.Rat
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+
 namespace SystemicTau
 
 /-- Feigenbaum δ as a rational approximation (placeholder for ℝ formalization).
@@ -20,7 +25,7 @@ structure Window where
 def defaultWindow : Window := ⟨13, by decide⟩
 
 /-- Abstract Kendall-τ on two samples (implementation deferred). -/
-opaque kendallTau : List Int → List Int → Rat
+opaque kendallTau (xs : List Int) (ys : List Int) : ℚ
 
 /-- Number of unordered pairs among n variables. -/
 def numPairs (n : Nat) : Nat := n * (n - 1) / 2

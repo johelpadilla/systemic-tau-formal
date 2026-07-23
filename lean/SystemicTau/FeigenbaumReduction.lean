@@ -154,7 +154,8 @@ def tentLike : UnimodalMap := tentStrong.toUnimodalMap
 theorem tentLike_has_critical : HasQuadraticCriticalPoint tentLike :=
   stronglyUnimodal_has_quadratic tentStrong
 
-theorem tentStrong_mode : tentStrong.mode = 0 := rfl
+theorem tentStrong_mode : tentStrong.mode = 0 := by
+  rfl
 
 theorem tentF_at_mode : tentF 0 = 1 := by native_decide
 
@@ -244,9 +245,10 @@ theorem returnPairs_three (x y z : Rat) :
 -/
 structure FirstReturnData where
   series : CoherenceSeries
-  pred : Rat → Bool
-  section : List Rat := sectionValues pred series
-  pairs : List (Rat × Rat) := returnPairs section
+  pred : ℚ → Bool
+  /-- Section samples (not the Lean keyword `section`). -/
+  sectionVals : List ℚ := sectionValues pred series
+  pairs : List (ℚ × ℚ) := returnPairs sectionVals
 
 /-- Number of observed return transitions. -/
 def FirstReturnData.nReturns (D : FirstReturnData) : Nat := D.pairs.length
@@ -270,10 +272,14 @@ def agreesOnPairs (R : Rat → Rat) (pairs : List (Rat × Rat)) : Prop :=
 -/
 structure PreprintReturnSetup where
   series : CoherenceSeries
-  pred : Rat → Bool
+  pred : ℚ → Bool
   continuum : ContinuumReturnMap
   /-- Discrete skeleton. -/
-  data : FirstReturnData := ⟨series, pred, sectionValues pred series, returnPairs (sectionValues pred series)⟩
+  data : FirstReturnData :=
+    { series := series
+      pred := pred
+      sectionVals := sectionValues pred series
+      pairs := returnPairs (sectionValues pred series) }
   /-- Continuum map realizes the observed pairs. OPEN to discharge in applications. -/
   realizes : agreesOnPairs continuum.R data.pairs
   /-- Strong unimodality of the continuum return. OPEN in general. -/
@@ -331,6 +337,8 @@ theorem open_return_strongly_unimodal
 /--
   OPEN GOAL 3 — Analytic Feigenbaum universality (δ-limit / class universality).
   Status: `sorry` (requires real analysis / optional Mathlib).
+  Refined claim shapes: `SystemicTau.FeigenbaumAnalytic` (cascade, ratios, ε–N limit).
+  Opt-in Mathlib enablement: `docs/MATHLIB.md`.
 -/
 theorem open_analytic_feigenbaum
     (_U : UnimodalMap) (_hq : HasQuadraticCriticalPoint _U) :

@@ -58,8 +58,12 @@ jobs:
           path: |
             ~/.elan
             lean/.lake
-          key: lean-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain', 'lean/lake-manifest.json', 'lean/**/*.lean') }}
+          key: lean-mathlib-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain', 'lean/lake-manifest.json', 'lean/lakefile.lean') }}
           restore-keys: |
+            lean-mathlib-${{ runner.os }}-
             lean-${{ runner.os }}-
+      - name: Mathlib olean cache
+        run: lake exe cache get || true
       - name: lake build
         run: lake build
+        # Mathlib import closure; cache get keeps this tractable on Ubuntu.

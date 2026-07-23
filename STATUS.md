@@ -9,10 +9,12 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 
 | Module | Claim class | Status | Notes |
 |--------|-------------|--------|-------|
-| `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque |
+| `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque; **Mathlib** ℚ |
 | `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** vs τ_ch |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
 | `FeigenbaumReduction` | mix | **partial** | tent strong+period-2; first-return skeleton; 3 named open `sorry`s |
+| `FeigenbaumAnalytic` | mix | **partial** | cascade / δ ε–N interfaces; open goals 3a–3c `sorry` |
+| Mathlib | dep | **wired** | mathlib4 `v4.14.0` · `docs/MATHLIB.md` |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
@@ -36,9 +38,13 @@ Documented and tested; do not “fix” by forcing odd/even symmetry globally.
 
 ```bash
 export PATH="$HOME/.elan/bin:$PATH"
-cd lean && lake build
+cd lean
+lake exe cache get   # recommended (Ubuntu CI); may fail on some macOS — then source build
+lake build
 cd ../python && pip install -e ".[dev]" && pytest -q
 ```
+
+Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 ## Citation / Zenodo
 
@@ -55,4 +61,4 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (release v0.1.6).
+Last updated: 2026-07-23 (Mathlib scaffold + FeigenbaumAnalytic).
