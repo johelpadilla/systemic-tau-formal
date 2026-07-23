@@ -15,12 +15,14 @@ namespace SystemicTau
 /-- Absolute value on rationals. -/
 def absRat (q : Rat) : Rat := if q ≥ 0 then q else -q
 
+theorem absRat_of_nonneg {q : Rat} (h : 0 ≤ q) : absRat q = q := by
+  simp [absRat, h]
+
 theorem absRat_nonneg (q : Rat) : 0 ≤ absRat q := by
   simp only [absRat]
   split_ifs with h
   · exact h
-  · -- q < 0 ⇒ -q > 0
-    have : q < 0 := lt_of_not_ge h
+  · have : q < 0 := lt_of_not_ge h
     exact le_of_lt (neg_pos.mpr this)
 
 /-- Gate function g(τₛ) on ℚ. [OPERACIONAL] -/
@@ -30,6 +32,44 @@ def gate (tau : Rat) : Rat :=
     gatePrefactor * (tauChaos - absRat tau) / tauChaos
   else if tau ≤ -tauChaos then -1
   else 0
+
+/-- On the nonnegative chaotic half-band, gate has closed form. [TEOREMA] -/
+theorem gate_chaos_nonneg_formula
+    (tau : Rat) (h0 : 0 ≤ tau) (h1 : tau < tauChaos) :
+    gate tau = gatePrefactor * (tauChaos - tau) / tauChaos := by
+  have h_not_stable : ¬ tau ≥ tauStable := by
+    intro hst
+    have : tauChaos < tauStable := tauChaos_lt_tauStable
+    have : tau < tauStable := lt_of_lt_of_le h1 (le_of_lt this)
+    exact (not_le_of_gt this) hst
+  have habs : absRat tau = tau := absRat_of_nonneg h0
+  have h_chaos : absRat tau < tauChaos := by simpa [habs] using h1
+  simp [gate, h_not_stable, h_chaos, habs]
+
+/--
+  [TEOREMA] On [0, τ_ch), g is antitone (decreases as τ increases toward the edge).
+-/
+theorem gate_antitone_on_nonneg_chaos
+    (a b : Rat)
+    (ha0 : 0 ≤ a) (hab : a ≤ b) (hb : b < tauChaos) :
+    gate b ≤ gate a := by
+  have ha1 : a < tauChaos := lt_of_le_of_lt hab hb
+  have ha0' := ha0
+  have hb0 : 0 ≤ b := le_trans ha0 hab
+  rw [gate_chaos_nonneg_formula a ha0' ha1, gate_chaos_nonneg_formula b hb0 hb]
+  -- gatePrefactor > 0, τ_ch > 0, and (τ_ch - b) ≤ (τ_ch - a)
+  have hpref : 0 < gatePrefactor := (gatePrefactor_bounds).1
+  have hch : 0 < tauChaos := by native_decide
+  have hdiff : tauChaos - b ≤ tauChaos - a := by
+    have : -b ≤ -a := neg_le_neg hab
+    linarith
+  have hnum : 0 ≤ gatePrefactor * (tauChaos - b) :=
+    mul_nonneg (le_of_lt hpref) (sub_nonneg.mpr (le_of_lt hb))
+  -- compare quotients: (p * x) / c ≤ (p * y) / c when x ≤ y, c > 0, p > 0
+  have hx : tauChaos - b ≤ tauChaos - a := hdiff
+  have : gatePrefactor * (tauChaos - b) ≤ gatePrefactor * (tauChaos - a) :=
+    mul_le_mul_of_nonneg_left hx (le_of_lt hpref)
+  exact div_le_div_of_nonneg_right this (le_of_lt hch)
 
 /-- Stable regime opens the gate positively. -/
 theorem gate_stable_pos : gate (3 / 4) = 1 := by
@@ -47,13 +87,16 @@ theorem gate_intermediate_zero : gate (45 / 100) = 0 := by
 theorem gate_at_zero : gate 0 = gatePrefactor := by
   native_decide
 
-/-- Chaotic-band gate is nonnegative when |τ| < τ_ch (at τ = 0). -/
+/-- Chaotic-band gate is nonnegative at center. -/
 theorem gate_chaos_center_nonneg : 0 ≤ gate 0 := by
+  native_decide
+
+/-- Concrete check of antitone property on sample points. -/
+theorem gate_antitone_sample : gate (2 / 10) ≤ gate (1 / 10) := by
   native_decide
 
 /--
   RECD depth scaling factor δ^{-k} as iterated division of 1 by δ.
-  For k = 1 this is 1/δ.
 -/
 def deltaInvPow : Nat → Rat
   | 0 => 1
@@ -66,11 +109,26 @@ theorem deltaInvPow_one :
   simp [deltaInvPow]
   ring
 
-/-- Increment skeleton Δt ∝ δ^{-k} · |τ| · dt0 / w  (unit dt0=1, w=1). -/
+theorem deltaInvPow_succ (k : Nat) :
+    deltaInvPow (k + 1) =
+      deltaInvPow k * ((feigenbaumDeltaDen : Rat) / (feigenbaumDeltaNum : Rat)) := by
+  simp [deltaInvPow]
+  field_simp
+  ring
+
+/-- Increment skeleton Δt ∝ δ^{-k} · |τ| (unit dt0=1, w=1). -/
 def deltaT_unit (tau : Rat) (k : Nat) : Rat :=
   deltaInvPow k * absRat tau
 
 theorem deltaT_unit_zero_depth (tau : Rat) : deltaT_unit tau 0 = absRat tau := by
   simp [deltaT_unit, deltaInvPow]
+
+/-- Tick contribution g(τ)·Δt_unit. -/
+def recdTick_unit (tau : Rat) (k : Nat) : Rat :=
+  gate tau * deltaT_unit tau k
+
+/-- In stable regime, |τ| does not drive chaotic Δt depth runs (gate=1 but k=0 by ops). -/
+theorem recdTick_stable_unit (k : Nat) : recdTick_unit (3 / 4) k = deltaT_unit (3 / 4) k := by
+  simp [recdTick_unit, gate_stable_pos]
 
 end SystemicTau
