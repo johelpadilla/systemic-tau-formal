@@ -14,6 +14,8 @@ Use GitHub issues as the board of record. This file is the static map.
 | [#4](https://github.com/johelpadilla/systemic-tau-formal/issues/4) | C3 domain transfer |
 | [#5](https://github.com/johelpadilla/systemic-tau-formal/issues/5) | Feigenbaum open goals 1–3 |
 | [#6](https://github.com/johelpadilla/systemic-tau-formal/issues/6) | Philosophy / Baron’s trilemma |
+| [#7](https://github.com/johelpadilla/systemic-tau-formal/issues/7) | good first: more f(δ) disequalities |
+| [#8](https://github.com/johelpadilla/systemic-tau-formal/issues/8) | good first: plot first-return pairs |
 
 ## Labels
 
