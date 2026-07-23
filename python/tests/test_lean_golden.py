@@ -66,6 +66,21 @@ def test_gate_even_on_chaos_band():
         assert gate_rat(-t) == gate_rat(t)
 
 
+def test_gate_intermediate_positive_closed():
+    """τ_ch ≤ τ < τ_st ⇒ g = 0 (positive intermediate only)."""
+    for t in [Fraction(41, 100), Fraction(45, 100), Fraction(49, 100)]:
+        assert TAU_CHAOS <= t < TAU_STABLE
+        assert gate_rat(t) == 0
+
+
+def test_gate_negative_edge_is_anti_not_intermediate():
+    """Reference law: τ ≤ -τ_ch ⇒ g = -1 even if |τ| < τ_st."""
+    t = Fraction(-45, 100)
+    assert abs(t) < TAU_STABLE
+    assert t <= -TAU_CHAOS
+    assert gate_rat(t) == -1
+
+
 def test_gate_chaos_formula():
     tau = Fraction(1, 10)
     expected = GATE_PREFACTOR * (TAU_CHAOS - tau) / TAU_CHAOS

@@ -139,6 +139,7 @@
     "gate_antitone_on_nonneg_chaos",
     "gate_chaos_nonneg_formula",
     "gate_chaos_abs_formula",
-    "gate_chaos_even"
+    "gate_chaos_even",
+    "gate_intermediate_nonneg"
   ]
 }

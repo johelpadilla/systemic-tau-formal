@@ -2,7 +2,9 @@
 
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
-Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.3**  
+[![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
+
+Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.4**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:

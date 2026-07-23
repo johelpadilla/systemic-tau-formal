@@ -90,8 +90,34 @@ theorem gate_stable_pos : gate (3 / 4) = 1 := by
 theorem gate_anti_neg : gate (-3 / 4) = -1 := by
   native_decide
 
-/-- Intermediate band (between 0.41 and 0.50) keeps gate closed. -/
+/-- Intermediate sample (between 0.41 and 0.50) keeps gate closed. -/
 theorem gate_intermediate_zero : gate (45 / 100) = 0 := by
+  native_decide
+
+/--
+  [TEOREMA] Positive intermediate band: τ_ch ≤ τ < τ_st ⇒ g(τ) = 0.
+
+  Asymmetry [OPERACIONAL]: τ ≤ -τ_ch yields g = -1 (anti-sync), even when
+  |τ| < τ_st. There is no matching open interval with g ≡ 0 on the negative side.
+-/
+theorem gate_intermediate_nonneg
+    (tau : Rat) (h_lo : tauChaos ≤ tau) (h_hi : tau < tauStable) :
+    gate tau = 0 := by
+  have h_not_stable : ¬ tau ≥ tauStable := not_le_of_gt h_hi
+  have habs : absRat tau = tau := absRat_of_nonneg (le_trans (by native_decide : (0 : Rat) ≤ tauChaos) h_lo)
+  have h_not_chaos : ¬ absRat tau < tauChaos := by
+    simpa [habs] using not_lt_of_ge h_lo
+  have h_not_anti : ¬ tau ≤ -tauChaos := by
+    intro h
+    have hpos : 0 ≤ tau := le_trans (by native_decide : (0 : Rat) ≤ tauChaos) h_lo
+    have : tau ≤ 0 := le_trans h (by native_decide : -tauChaos ≤ 0)
+    have : tau = 0 := le_antisymm this hpos
+    have : tauChaos ≤ 0 := by simpa [this] using h_lo
+    exact (not_le_of_gt (by native_decide : (0 : Rat) < tauChaos)) this
+  simp [gate, h_not_stable, h_not_chaos, h_not_anti]
+
+/-- Under the reference law, τ = -0.45 is anti-sync (g = -1), not intermediate. -/
+theorem gate_neg_near_chaos_is_anti : gate (-45 / 100) = -1 := by
   native_decide
 
 /-- Center of chaotic band: g(0) = (δ−1)/δ. -/
