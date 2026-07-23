@@ -27,6 +27,8 @@ This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 | Falsifiable list | [`docs/FALSIFIABLE_PREDICTIONS.md`](docs/FALSIFIABLE_PREDICTIONS.md) |
 | Protocol | [`docs/EXPERIMENTAL_PROTOCOL.md`](docs/EXPERIMENTAL_PROTOCOL.md) |
 | Challenges | [`docs/CHALLENGES.md`](docs/CHALLENGES.md) |
+| Workshop 2026 | [`docs/WORKSHOP_STRESS_TEST_2026.md`](docs/WORKSHOP_STRESS_TEST_2026.md) |
+| Issue board | [`docs/ISSUE_BOARD.md`](docs/ISSUE_BOARD.md) |
 | Build status | [`STATUS.md`](STATUS.md) |
 
 Related production code: PyPI [`systemictau`](https://pypi.org/project/systemictau/) · DOI [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241)
@@ -123,7 +125,9 @@ Full text: [`docs/FALSIFIABLE_PREDICTIONS.md`](docs/FALSIFIABLE_PREDICTIONS.md)
 
 ## Workshop (proposed)
 
-**Systemic Tau Stress-Test 2026** — open 48h destruction workshop (dynamics + philosophy of time + Polo specialists). Format TBD; track issues with labels `contradiction`, `improvement`, `new-domain`, `philosophy-challenge`.
+**Systemic Tau Stress-Test 2026** — open 48h destruction workshop (dynamics + formal + philosophy).  
+Full brief: [`docs/WORKSHOP_STRESS_TEST_2026.md`](docs/WORKSHOP_STRESS_TEST_2026.md) · board: [`docs/ISSUE_BOARD.md`](docs/ISSUE_BOARD.md).  
+Track issues with labels `contradiction`, `improvement`, `new-domain`, `philosophy-challenge`, `workshop`.
 
 ---
 

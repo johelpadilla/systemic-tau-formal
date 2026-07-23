@@ -3,6 +3,8 @@
 These are invitations to break, extend, or transfer the framework.  
 Label issues: `new-domain`, `improvement`, `contradiction`, or `philosophy-challenge`.
 
+**Stress-Test 2026:** [`WORKSHOP_STRESS_TEST_2026.md`](WORKSHOP_STRESS_TEST_2026.md) · board map: [`ISSUE_BOARD.md`](ISSUE_BOARD.md)
+
 ## C1 — Systematic false early warnings
 
 **Find** a dynamical system (deterministic or stochastic) where τₛ produces **systematic false-positive** early-warning signals (alerts without subsequent critical transition under a pre-agreed endpoint definition).

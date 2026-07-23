@@ -51,4 +51,4 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (v0.1.5 published).
+Last updated: 2026-07-23 (Stress-Test 2026 brief + issue board).

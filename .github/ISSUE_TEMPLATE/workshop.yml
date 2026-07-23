@@ -1,0 +1,29 @@
+name: Workshop / Stress-Test 2026
+description: Logistics, track report, or abstract for the destruction workshop
+title: "[workshop] "
+labels: ["workshop"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Logistics / hosting
+        - Track A report (dynamics)
+        - Track B report (formal)
+        - Track C report (philosophy)
+        - Abstract (≤300 words)
+    validations:
+      required: true
+  - type: textarea
+    id: body
+    attributes:
+      label: Content
+      description: See docs/WORKSHOP_STRESS_TEST_2026.md for schedule and success criteria.
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Repo commit or version attacked
+      placeholder: "v0.1.5 or abc1234"

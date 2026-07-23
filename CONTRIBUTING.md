@@ -24,8 +24,12 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 | `improvement` | Clearer proofs, docs, API |
 | `new-domain` | Domain transfer experiments |
 | `philosophy-challenge` | Ontology / Polo / trilemma critique |
+| `workshop` | Stress-Test 2026 logistics / track reports |
+| `open-goal` | Tracked formal open problem |
 
-Templates live in `.github/ISSUE_TEMPLATE/`.
+Templates: `.github/ISSUE_TEMPLATE/`.  
+Board map: `docs/ISSUE_BOARD.md`.  
+Workshop brief: `docs/WORKSHOP_STRESS_TEST_2026.md`.
 
 ## Pull requests
 

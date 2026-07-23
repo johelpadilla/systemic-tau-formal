@@ -1,0 +1,44 @@
+name: New domain transfer (C3)
+description: Apply RECD / τₛ outside the reference setting; report confirm or refute
+title: "[new-domain] "
+labels: ["new-domain"]
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: e.g. EEG, equities, power grid, climate, ANN activations
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data source and license
+      description: N, T, sampling rate, public URL or restricted access terms.
+    validations:
+      required: true
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Protocol adherence
+      description: Confirm docs/EXPERIMENTAL_PROTOCOL.md (w, stride, thresholds, no leakage).
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Preliminary outcome
+      options:
+        - Supports operational predictions (state which of P1–P4)
+        - Refutes / fails (state which)
+        - Inconclusive
+        - Exploratory only
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Commit hash, commands, figures, repo link.
+    validations:
+      required: true

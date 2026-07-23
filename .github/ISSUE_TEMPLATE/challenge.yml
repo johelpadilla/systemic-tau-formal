@@ -1,5 +1,5 @@
-name: Challenge problem
-description: False positives, new math, or new domain
+name: Challenge problem (C1–C3)
+description: False positives, new math, or domain transfer results
 title: "[challenge] "
 labels: ["improvement"]
 body:
@@ -11,12 +11,22 @@ body:
         - C1 systematic false positives
         - C2 new mathematical relation
         - C3 new domain transfer
-        - philosophy-challenge
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        Full statements: `docs/CHALLENGES.md`.  
+        For pure domain transfer prefer the **New domain** template; for failed P1–P4 use **Contradiction**.
   - type: textarea
     id: proposal
     attributes:
       label: Proposal or result
+      description: Endpoint definition, baseline, code/data links, and whether the challenge succeeds.
     validations:
       required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit hash or release
+      placeholder: "v0.1.5"

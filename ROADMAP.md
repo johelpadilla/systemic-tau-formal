@@ -26,8 +26,8 @@ Public status after **v0.1.5** (concept DOI [10.5281/zenodo.21516059](https://do
 ## Medium term
 
 - [ ] Machine-checked derivation sketch of τ_ch from δ (or formal proof that no unique simple form exists among a candidate class)
-- [ ] Stress-Test 2026 workshop brief + issue board
-- [ ] Cross-domain challenge track (finance / EEG / networks)
+- [x] Stress-Test 2026 workshop brief + issue board (`docs/WORKSHOP_STRESS_TEST_2026.md`, `docs/ISSUE_BOARD.md`)
+- [ ] Cross-domain challenge track (finance / EEG / networks) — templates ready; results pending
 
 ## Non-goals (for honesty)
 

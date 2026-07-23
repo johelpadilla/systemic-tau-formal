@@ -1,0 +1,37 @@
+name: Philosophy challenge
+description: Ontology, Polo, Baron’s trilemma — without collapsing epistemic labels
+title: "[philosophy] "
+labels: ["philosophy-challenge"]
+body:
+  - type: dropdown
+    id: focus
+    attributes:
+      label: Focus
+      options:
+        - Baron’s trilemma (regress / circularity / dogmatism)
+        - Ontological levels Local / Medium / Global
+        - Polo efficient cause vs Feigenbaum δ
+        - Other (describe in body)
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Your claim
+      description: State the target claim from ONTOLOGY_BRIDGE.md or the papers, then the critique.
+    validations:
+      required: true
+  - type: textarea
+    id: labels
+    attributes:
+      label: Epistemic discipline
+      description: Confirm you are not treating ontology as [TEOREMA] or field data as metaphysical proof.
+      value: |
+        I have read docs/EPISTEMIC_LABELS.md and will keep levels separate.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Primary sources (Polo, Baron, prior monographs) if any.

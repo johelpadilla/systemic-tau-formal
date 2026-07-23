@@ -1,0 +1,32 @@
+name: Improvement (docs, Lean, API)
+description: Clearer proofs, discharged lemmas, docs, tooling — not a falsification report
+title: "[improvement] "
+labels: ["improvement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Lean formalization
+        - Python reference core
+        - Notebooks / Binder
+        - Documentation
+        - CI / packaging
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change and why. Link FEIGENBAUM_STATUS open goals if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How we know this is done (tests, lake build, STATUS.md update).
+    validations:
+      required: true
