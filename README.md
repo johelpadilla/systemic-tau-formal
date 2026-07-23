@@ -3,13 +3,13 @@
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516060.svg)](https://doi.org/10.5281/zenodo.21516060)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516059.svg)](https://doi.org/10.5281/zenodo.21516059)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
-Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.4**  
+Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.5**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
-**DOI (this version):** https://doi.org/10.5281/zenodo.21516060  
-**Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
+**Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059  
+**Prior version DOI (v0.1.4):** https://doi.org/10.5281/zenodo.21516060
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 
@@ -133,9 +133,9 @@ See [`CITATION.cff`](CITATION.cff).
 
 | What | Identifier |
 |------|------------|
-| This formal monorepo (v0.1.4) | [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060) |
-| Concept DOI (all versions) | [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) |
-| GitHub | https://github.com/johelpadilla/systemic-tau-formal · release `v0.1.4` |
+| Concept DOI (always latest) | [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) |
+| v0.1.4 (archived) | [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060) |
+| GitHub | https://github.com/johelpadilla/systemic-tau-formal · release `v0.1.5` |
 | Prior Systemic Tau corpus / software archive | [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241) |
 
 ```bibtex
@@ -146,9 +146,9 @@ See [`CITATION.cff`](CITATION.cff).
   month        = jul,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {0.1.4},
-  doi          = {10.5281/zenodo.21516060},
-  url          = {https://doi.org/10.5281/zenodo.21516060}
+  version      = {0.1.5},
+  doi          = {10.5281/zenodo.21516059},
+  url          = {https://doi.org/10.5281/zenodo.21516059}
 }
 ```
 
@@ -160,7 +160,7 @@ See [`CITATION.cff`](CITATION.cff).
 systemic-tau-formal/
 ├── lean/                 # Lean 4 library SystemicTau
 ├── python/               # minimal reference core + tests
-├── notebooks/            # 01 synthetic · 02 aedes proxy · 03 falsify
+├── notebooks/            # 01 synthetic · 02 aedes proxy · 03 falsify · 04 P3 noise
 ├── papers/               # index to Zenodo / local catalog
 ├── data/                 # synthetic + aedes placeholder
 ├── docs/                 # layers, protocol, challenges, labels

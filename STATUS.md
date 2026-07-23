@@ -39,10 +39,9 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 ## Citation / Zenodo
 
-- GitHub release: `v0.1.4`  
-- **DOI (v0.1.4):** [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)  
+- GitHub release: `v0.1.5`  
 - **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
-- Record: https://zenodo.org/records/21516060  
+- **DOI (v0.1.4):** [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)  
 - Deposit guide: [`docs/ZENODO.md`](docs/ZENODO.md)  
 - Prior corpus DOI: `10.5281/zenodo.20576241`
 
@@ -50,4 +49,4 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (Feigenbaum first-return skeleton + named open goals).
+Last updated: 2026-07-23 (release v0.1.5 prep).

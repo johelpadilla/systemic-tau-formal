@@ -1,6 +1,6 @@
 # Roadmap
 
-Public status after **v0.1.4** (DOI [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)).
+Public status after **v0.1.5** (concept DOI [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)).
 
 ## Done
 
@@ -9,6 +9,7 @@ Public status after **v0.1.4** (DOI [10.5281/zenodo.21516060](https://doi.org/10
 - [x] Regime classification lemmas + nonnegative trichotomy
 - [x] Python ↔ Lean golden bridge + CI
 - [x] GitHub public + release `v0.1.4` + Zenodo DOI
+- [x] Release `v0.1.5`: fixtures, P3/P4, Feigenbaum first-return skeleton, Binder
 
 ## Near term (v0.2)
 
