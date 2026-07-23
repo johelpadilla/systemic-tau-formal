@@ -1,0 +1,13 @@
+{
+  "schema": "systemic-tau-formal/aedes-proxy/v1",
+  "label": "[OPERACIONAL]",
+  "note": "Synthetic stand-in only. Not field entomology.",
+  "sites": [
+    "Cano_Martin_Pena_proxy",
+    "Candelaria_proxy"
+  ],
+  "T": 200,
+  "traps_per_site": 3,
+  "seed": 1,
+  "sampling": "index as week-like unit (not calendar-stamped)"
+}

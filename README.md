@@ -61,16 +61,20 @@ Jupyter (from repo root, after `pip install -e ".[dev]"` in `python/`):
 | Notebook | What it does |
 |----------|----------------|
 | [`notebooks/01_synthetic_chaos.ipynb`](notebooks/01_synthetic_chaos.ipynb) | Logistic maps → τₛ, g, T_RECD + plots |
-| [`notebooks/02_aedes_puerto_rico.ipynb`](notebooks/02_aedes_puerto_rico.ipynb) | Aedes-schema **proxy** (not field data) |
+| [`notebooks/02_aedes_puerto_rico.ipynb`](notebooks/02_aedes_puerto_rico.ipynb) | Aedes-schema **proxy** (`data/aedes/proxy/`) |
 | [`notebooks/03_falsifiability_test.ipynb`](notebooks/03_falsifiability_test.ipynb) | Load your CSV under protocol defaults |
+| [`notebooks/04_p3_noise_robustness.py`](notebooks/04_p3_noise_robustness.py) | P3 noise scan ρ ≤ 20% |
 
 CLI twins (no Jupyter required):
 
 ```bash
 python notebooks/01_synthetic_chaos.py
 python notebooks/02_aedes_puerto_rico.py
-python notebooks/03_falsifiability_test.py   # or pass your.csv
+python notebooks/03_falsifiability_test.py data/synthetic/regime_switch.csv
+python notebooks/04_p3_noise_robustness.py
 ```
+
+Committed lab fixtures: [`data/synthetic/`](data/synthetic/), [`data/aedes/proxy/`](data/aedes/proxy/).
 
 See [`notebooks/README.md`](notebooks/README.md).
 ### 3. Lean 4 (optional until toolchain installed)

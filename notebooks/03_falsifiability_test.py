@@ -4,8 +4,7 @@
 Usage:
   python notebooks/03_falsifiability_test.py path/to/data.csv
 
-CSV: rows = time, columns = variables (N>=2). No header required;
-if header present, numeric columns only are used.
+CSV: rows = time, columns = variables (N>=2). Optional header row allowed.
 
 Labels outcomes as [EMPÍRICO] only when data are real; else [OPERACIONAL].
 """
@@ -20,23 +19,13 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "python"))
 
-from core import THETA_CHAOS, THETA_STABLE, accumulate_time, compute_taus  # noqa: E402
-
-
-def load_csv(path: Path) -> np.ndarray:
-    try:
-        data = np.genfromtxt(path, delimiter=",", names=None)
-    except Exception as exc:
-        raise SystemExit(f"Failed to read {path}: {exc}") from exc
-    X = np.asarray(data, dtype=float)
-    if X.ndim == 1:
-        raise SystemExit("Need at least 2 columns")
-    # drop non-finite columns
-    mask = np.isfinite(X).all(axis=0)
-    X = X[:, mask]
-    if X.shape[1] < 2:
-        raise SystemExit("Need ≥2 finite numeric columns")
-    return X
+from core import (  # noqa: E402
+    THETA_CHAOS,
+    THETA_STABLE,
+    accumulate_time,
+    compute_taus,
+    load_matrix_csv,
+)
 
 
 def report(X: np.ndarray, label: str):
@@ -57,7 +46,13 @@ def report(X: np.ndarray, label: str):
 def main(argv=None):
     argv = argv or sys.argv[1:]
     if not argv:
-        # self-demo with random walk multivariate
+        demo = ROOT / "data" / "synthetic" / "regime_switch.csv"
+        if demo.is_file():
+            X = load_matrix_csv(demo)
+            print("=== 03_falsifiability_test (demo fixture) ===")
+            print(f"Default: {demo.relative_to(ROOT)}\n")
+            report(X, str(demo.relative_to(ROOT)))
+            return
         rng = np.random.default_rng(0)
         X = np.cumsum(rng.normal(size=(300, 4)), axis=0)
         print("=== 03_falsifiability_test (demo random walk) ===")
@@ -65,7 +60,7 @@ def main(argv=None):
         report(X, "demo_random_walk")
         return
     path = Path(argv[0])
-    X = load_csv(path)
+    X = load_matrix_csv(path)
     print("=== 03_falsifiability_test ===\n")
     report(X, str(path))
 

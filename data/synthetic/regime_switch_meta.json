@@ -1,0 +1,9 @@
+{
+  "schema": "systemic-tau-formal/synthetic/v1",
+  "label": "[OPERACIONAL]",
+  "description": "Sync seasonal then independent noise",
+  "t_switch": 200,
+  "T": 400,
+  "N": 4,
+  "seed": 3
+}

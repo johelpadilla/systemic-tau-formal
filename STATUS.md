@@ -15,6 +15,9 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `FeigenbaumReduction` | mix | **partial** | strong tent unimodal **proved**; reduction `sorry` |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
+| Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
+| Aedes proxy | `[OPERACIONAL]` | **CSV** | `data/aedes/proxy/` (not field data) |
+| Real Aedes raw | `[EMPÍRICO]` | **pending license** | drop under `data/aedes/raw/` |
 | CI | ops | **Workflow** | ubuntu-latest dual jobs |
 
 ## Asymmetry of the operational gate
@@ -47,4 +50,4 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (Feigenbaum partial + Binder).
+Last updated: 2026-07-23 (synthetic + Aedes proxy fixtures, P3/P4 tests).

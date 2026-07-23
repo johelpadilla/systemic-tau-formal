@@ -30,6 +30,12 @@ jobs:
         run: pytest -q
       - name: Golden export (smoke)
         run: python scripts/export_golden.py
+      - name: Notebooks smoke (CLI)
+        working-directory: ${{ github.workspace }}
+        run: |
+          python notebooks/02_aedes_puerto_rico.py
+          python notebooks/04_p3_noise_robustness.py
+          python notebooks/03_falsifiability_test.py data/synthetic/regime_switch.csv
 
   lean:
     name: Lean lake build

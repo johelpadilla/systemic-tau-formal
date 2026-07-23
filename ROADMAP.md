@@ -15,8 +15,10 @@ Public status after **v0.1.4** (DOI [10.5281/zenodo.21516060](https://doi.org/10
 - [x] Documented Jupyter notebooks 01–03 (with CLI `.py` twins)
 - [x] Feigenbaum module: strong unimodality example + honest open/sorry split (`docs/FEIGENBAUM_STATUS.md`)
 - [x] Binder runtime files + badge (mybinder.org)
+- [x] Synthetic fixtures + Aedes **proxy** CSVs (`data/synthetic/`, `data/aedes/proxy/`)
+- [x] P3 noise / P4 anti-sync protocol tests + notebook `04_p3_noise_robustness.py`
 - [ ] Discharge main reduction `sorry` (ordinal ⇒ return map)
-- [ ] Real Aedes / dengue fixtures under license into `data/aedes/`
+- [ ] **Licensed** real Aedes / dengue into `data/aedes/raw/` (intake path ready)
 - [ ] Optional Mathlib dependency for analytic Feigenbaum path
 
 ## Medium term
