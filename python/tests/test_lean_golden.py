@@ -15,6 +15,7 @@ from core.golden import (
     TAU_CHAOS,
     TAU_STABLE,
     TWO_OVER_DELTA,
+    classify_rat,
     delta_inv_pow,
     gate_rat,
     golden_payload,
@@ -79,6 +80,34 @@ def test_gate_negative_edge_is_anti_not_intermediate():
     assert abs(t) < TAU_STABLE
     assert t <= -TAU_CHAOS
     assert gate_rat(t) == -1
+
+
+def test_classify_nonneg_trichotomy():
+    """Every τ ≥ 0 is chaotic, intermediate, or stable — exclusive."""
+    samples = [
+        Fraction(0),
+        Fraction(1, 10),
+        Fraction(41, 100),
+        Fraction(45, 100),
+        Fraction(1, 2),
+        Fraction(3, 4),
+        Fraction(1),
+    ]
+    for t in samples:
+        lab = classify_rat(t)
+        if t < TAU_CHAOS:
+            assert lab == "chaotic"
+        elif t < TAU_STABLE:
+            assert lab == "intermediate"
+        else:
+            assert lab == "stable"
+
+
+def test_classify_gate_consistency():
+    assert classify_rat(Fraction(3, 4)) == "stable" and gate_rat(Fraction(3, 4)) == 1
+    assert classify_rat(Fraction(-3, 4)) == "antiSync" and gate_rat(Fraction(-3, 4)) == -1
+    assert classify_rat(Fraction(45, 100)) == "intermediate" and gate_rat(Fraction(45, 100)) == 0
+    assert classify_rat(Fraction(0)) == "chaotic"
 
 
 def test_gate_chaos_formula():

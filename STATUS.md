@@ -10,8 +10,8 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Module | Claim class | Status | Notes |
 |--------|-------------|--------|-------|
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque |
-| `Thresholds` | mix | **Builds + lemmas** | τ_ch < τ_st; prefactor bounds; 2/δ gap |
-| `RECD` | definitions + lemmas | **Builds** | chaos formula; antitone; evenness; **intermediate g=0 (+)** |
+| `Thresholds` | mix | **Builds + lemmas** | bands; classify; **nonneg trichotomy** |
+| `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
 | `FeigenbaumReduction` | `[TEOREMA]` target | **partial** | structure inhabited; main thm `sorry` |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
@@ -45,8 +45,6 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 ## Next formal targets
 
-1. Remove `sorry` from `coherence_return_map_feigenbaum` (hard).  
-2. Optional: Mathlib dependency for real-analysis Feigenbaum path.  
-3. New Zenodo version on next tagged release (`scripts/deposit_zenodo.py`).
+See [`ROADMAP.md`](ROADMAP.md). Immediate: Feigenbaum `sorry`, licensed Aedes data, notebook polish.
 
-Last updated: 2026-07-23 (v0.1.4 — Zenodo published).
+Last updated: 2026-07-23 (post-DOI: classify trichotomy).

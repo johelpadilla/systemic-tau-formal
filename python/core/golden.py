@@ -37,6 +37,17 @@ def gate_rat(tau: Fraction) -> Fraction:
     return Fraction(0)
 
 
+def classify_rat(tau: Fraction) -> str:
+    """Exact regime label matching Lean `classify`."""
+    if tau >= TAU_STABLE:
+        return "stable"
+    if -TAU_CHAOS < tau < TAU_CHAOS:
+        return "chaotic"
+    if tau <= -TAU_CHAOS:
+        return "antiSync"
+    return "intermediate"
+
+
 def delta_inv_pow(k: int) -> Fraction:
     """δ^{-k} as rational, matching Lean deltaInvPow."""
     acc = Fraction(1)
@@ -90,5 +101,8 @@ def golden_payload() -> Dict[str, Any]:
             "gate_chaos_abs_formula",
             "gate_chaos_even",
             "gate_intermediate_nonneg",
+            "classify_nonneg_trichotomy",
+            "gate_of_stable",
+            "gate_of_antiSync",
         ],
     }

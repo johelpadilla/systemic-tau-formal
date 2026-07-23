@@ -201,4 +201,37 @@ def recdTick_unit (tau : Rat) (k : Nat) : Rat :=
 theorem recdTick_stable_unit (k : Nat) : recdTick_unit (3 / 4) k = deltaT_unit (3 / 4) k := by
   simp [recdTick_unit, gate_stable_pos]
 
+/-- [TEOREMA] Stable classification ⇒ gate = +1. -/
+theorem gate_of_stable (tau : Rat) (h : tau ≥ tauStable) : gate tau = 1 := by
+  simp [gate, h]
+
+/-- [TEOREMA] Anti-sync classification ⇒ gate = -1. -/
+theorem gate_of_antiSync (tau : Rat) (h : tau ≤ -tauChaos) : gate tau = -1 := by
+  have h_not_stable : ¬ tau ≥ tauStable := by
+    intro hs
+    have : tauStable ≤ -tauChaos := le_trans hs h
+    exact (not_le_of_gt (by native_decide : (-tauChaos : Rat) < tauStable)) this
+  have h_not_chaos : ¬ absRat tau < tauChaos := by
+    intro habs
+    -- |τ| < τ_ch and τ ≤ -τ_ch ⇒ |τ| ≥ τ_ch when τ ≤ 0
+    have hnonpos : tau ≤ 0 := le_trans h (by native_decide : (-tauChaos : Rat) ≤ 0)
+    have : absRat tau = -tau := absRat_of_nonpos hnonpos
+    have : -tau < tauChaos := by simpa [this] using habs
+    have : -tauChaos < tau := by linarith
+    exact (not_lt_of_ge h) this
+  simp [gate, h_not_stable, h_not_chaos, h]
+
+/-- Consistency samples: classify ↔ gate sign pattern. -/
+theorem classify_gate_stable_sample :
+    classify (3 / 4) = Regime.stable ∧ gate (3 / 4) = 1 := by
+  native_decide
+
+theorem classify_gate_anti_sample :
+    classify (-3 / 4) = Regime.antiSync ∧ gate (-3 / 4) = -1 := by
+  native_decide
+
+theorem classify_gate_inter_sample :
+    classify (45 / 100) = Regime.intermediate ∧ gate (45 / 100) = 0 := by
+  native_decide
+
 end SystemicTau
