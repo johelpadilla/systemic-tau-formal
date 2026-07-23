@@ -2,6 +2,7 @@
 
 Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 
+**Public repo:** https://github.com/johelpadilla/systemic-tau-formal  
 **Toolchain:** Lean 4.14.0 via elan · **`lake build`: PASS**  
 **Python:** `pytest` + Lean-aligned golden rationals in `python/core/golden.py`
 
@@ -9,7 +10,7 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 |--------|-------------|--------|-------|
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque |
 | `Thresholds` | mix | **Builds + lemmas** | τ_ch < τ_st; prefactor bounds; 2/δ gap |
-| `RECD` | definitions + lemmas | **Builds** | chaos formula; **antitone on [0,τ_ch)**; δ^{-k} |
+| `RECD` | definitions + lemmas | **Builds** | chaos formula; antitone; **evenness g(-τ)=g(τ)**; δ^{-k} |
 | `FeigenbaumReduction` | `[TEOREMA]` target | **partial** | structure inhabited (tent-like); main thm `sorry` |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` matches Lean ints/Rats |
@@ -35,7 +36,7 @@ python scripts/export_golden.py   # → fixtures/golden_constants.json
 ## Next formal targets
 
 1. Remove `sorry` from `coherence_return_map_feigenbaum` (hard).  
-2. Prove gate symmetry `gate(-τ) = gate(τ)` on the chaotic band.  
-3. Publish GitHub remote when ready.
+2. Intermediate-band characterization (`τ_ch ≤ |τ| < τ_st` ⇒ g = 0).  
+3. Zenodo DOI for this formal monorepo release.
 
-Last updated: 2026-07-23 (v0.1.2).
+Last updated: 2026-07-23 (v0.1.3 — public on GitHub).
