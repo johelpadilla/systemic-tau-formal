@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "systemic-tau-formal"
+version = "0.1.0"
+description = "Reference Python core for Systemic Tau (τₛ) + RECD formal monorepo"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Johel Padilla-Villanueva", email = "johel.padilla@upr.edu" },
+]
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ipykernel>=6.0", "matplotlib>=3.7"]
+full = ["systemictau>=3.0"]
+
+[project.urls]
+Homepage = "https://github.com/johelpadilla/systemic-tau-formal"
+Documentation = "https://github.com/johelpadilla/systemic-tau-formal#readme"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["core*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

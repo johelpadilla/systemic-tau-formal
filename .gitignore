@@ -1,0 +1,40 @@
+# Lean / Lake
+.lake/
+**/build/
+**/lake-packages/
+*.olean
+*.ilean
+*.c
+*.o
+*.trace
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.html
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Data (keep READMEs; ignore large raw dumps by default)
+data/aedes/raw/
+data/**/*.zip
+data/**/*.tar.gz
+
+# Local secrets
+secrets.*
+*.pem

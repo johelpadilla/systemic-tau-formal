@@ -1,0 +1,22 @@
+name: Challenge problem
+description: False positives, new math, or new domain
+title: "[challenge] "
+labels: ["improvement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Challenge type
+      options:
+        - C1 systematic false positives
+        - C2 new mathematical relation
+        - C3 new domain transfer
+        - philosophy-challenge
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal or result
+    validations:
+      required: true

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use Systemic Tau / RECD formal materials, please cite as below."
+type: software
+title: "systemic-tau-formal — Machine-verifiable Systemic Tau (τₛ) + RECD"
+version: "0.1.0"
+date-released: "2026-07-23"
+license: MIT
+authors:
+  - family-names: "Padilla-Villanueva"
+    given-names: "Johel"
+    orcid: "https://orcid.org/0000-0002-5797-6931"
+    affiliation: "University of Puerto Rico, Medical Sciences Campus"
+keywords:
+  - systemic tau
+  - RECD
+  - Feigenbaum
+  - early warning signals
+  - Lean 4
+  - complex systems
+  - ordinal dynamics
+references:
+  - type: report
+    authors:
+      - family-names: "Padilla-Villanueva"
+        given-names: "Johel"
+    title: "Síntesis Magna del Tau Sistémico"
+    year: 2026
+    doi: "10.5281/zenodo.20576241"
+  - type: software
+    authors:
+      - family-names: "Padilla-Villanueva"
+        given-names: "Johel"
+    title: "systemictau (PyPI)"
+    year: 2026
+    doi: "10.5281/zenodo.20576241"

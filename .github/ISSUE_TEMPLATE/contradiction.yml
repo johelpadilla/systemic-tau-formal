@@ -1,0 +1,38 @@
+name: Contradiction / falsification
+description: Report a failed prediction or internal contradiction
+title: "[contradiction] "
+labels: ["contradiction"]
+body:
+  - type: dropdown
+    id: prediction
+    attributes:
+      label: Which claim fails?
+      options:
+        - P1 lead time 4–6 weeks
+        - P2 fractal dimension ≈ 1.98
+        - P3 noise robustness ≤ 20%
+        - P4 anti-sync interval structure
+        - Other (describe)
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What breaks, in one paragraph.
+    validations:
+      required: true
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Protocol checklist
+      description: Confirm EXPERIMENTAL_PROTOCOL.md steps; attach params.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Data license, commit hash, commands, figures.
+    validations:
+      required: true
