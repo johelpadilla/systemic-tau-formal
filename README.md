@@ -29,6 +29,7 @@ This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 | Challenges | [`docs/CHALLENGES.md`](docs/CHALLENGES.md) |
 | Workshop 2026 | [`docs/WORKSHOP_STRESS_TEST_2026.md`](docs/WORKSHOP_STRESS_TEST_2026.md) |
 | Issue board | [`docs/ISSUE_BOARD.md`](docs/ISSUE_BOARD.md) |
+| τ_ch vs δ | [`docs/TAU_CH_DELTA.md`](docs/TAU_CH_DELTA.md) |
 | Build status | [`STATUS.md`](STATUS.md) |
 
 Related production code: PyPI [`systemictau`](https://pypi.org/project/systemictau/) · DOI [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241)

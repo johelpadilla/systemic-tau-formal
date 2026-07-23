@@ -10,7 +10,7 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Module | Claim class | Status | Notes |
 |--------|-------------|--------|-------|
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque |
-| `Thresholds` | mix | **Builds + lemmas** | bands; classify; **nonneg trichotomy** |
+| `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** vs τ_ch |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
 | `FeigenbaumReduction` | mix | **partial** | tent strong+period-2; first-return skeleton; 3 named open `sorry`s |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
@@ -51,4 +51,4 @@ cd ../python && pip install -e ".[dev]" && pytest -q
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (Stress-Test 2026 brief + issue board).
+Last updated: 2026-07-23 (τ_ch candidate class + first-return Python twin).

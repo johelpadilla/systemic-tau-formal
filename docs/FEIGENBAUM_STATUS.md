@@ -43,6 +43,17 @@ Conditional progress already machine-checked: *if* a `PreprintReturnSetup` suppl
 - Discharging the composite theorem by returning `tentStrong` under arbitrary hypotheses would be **invalid** — we keep the honest `sorry`.
 - Dengue / empirical lead times are unrelated to this module.
 
+## Python twin
+
+Combinatorial first-return extraction (no continuum claims):
+
+- `python/core/first_return.py`
+- `notebooks/05_first_return_poincare.py`
+
+## Related open problem
+
+Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md) (finite simple forms ruled out in Lean).
+
 ## Next formal steps
 
 1. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  

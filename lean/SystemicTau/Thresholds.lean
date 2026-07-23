@@ -122,9 +122,64 @@ theorem classify_nonneg_trichotomy (tau : Rat) (h0 : 0 ≤ tau) :
     · have h_lo : tauChaos ≤ tau := le_of_not_gt hc
       exact Or.inr (Or.inl ⟨h_lo, h_hi, classify_intermediate_pos tau h_lo h_hi⟩)
 
+/-! ### Candidate closed forms vs operational τ_ch
+
+  [OPERACIONAL] τ_ch = 41/100 is fixed for protocol.
+  [TEOREMA] None of the following simple rational forms in δ equals τ_ch
+  (machine-checked disequalities — *not* a proof that no f(δ) exists at all).
+-/
+
+/-- 1/δ (rational approximation of δ). -/
+def oneOverDelta : Rat :=
+  (feigenbaumDeltaDen : Rat) / feigenbaumDeltaNum
+
+/-- (δ − 1)/(2δ). -/
+def deltaMinusOne_over_twoDelta : Rat :=
+  (feigenbaumDeltaNum - feigenbaumDeltaDen : Rat) / (2 * feigenbaumDeltaNum)
+
+/-- [TEOREMA] 2/δ ≠ τ_ch (already 2/δ > τ_ch). -/
+theorem twoOverDelta_ne_tauChaos : twoOverDelta ≠ tauChaos := by
+  intro h
+  exact (ne_of_gt twoOverDelta_gt_tauChaos) h
+
+/-- [TEOREMA] 1/δ ≠ τ_ch. -/
+theorem oneOverDelta_ne_tauChaos : oneOverDelta ≠ tauChaos := by
+  native_decide
+
+/-- [TEOREMA] (δ−1)/δ ≠ τ_ch. -/
+theorem gatePrefactor_ne_tauChaos : gatePrefactor ≠ tauChaos := by
+  native_decide
+
+/-- [TEOREMA] (δ−1)/(2δ) ≠ τ_ch. -/
+theorem deltaMinusOne_over_twoDelta_ne_tauChaos :
+    deltaMinusOne_over_twoDelta ≠ tauChaos := by
+  native_decide
+
+/-- [TEOREMA] τ_st ≠ τ_ch (band separation). -/
+theorem tauStable_ne_tauChaos : tauStable ≠ tauChaos := by
+  intro h
+  have := tauChaos_lt_tauStable
+  exact (ne_of_gt this) h.symm
+
+/--
+  Finite candidate class that fails equality with operational τ_ch.
+  Extending the class is welcome; closing a *unique* f(δ)=τ_ch remains open.
+-/
+structure FailedSimpleCandidates where
+  two_over_delta : twoOverDelta ≠ tauChaos := twoOverDelta_ne_tauChaos
+  one_over_delta : oneOverDelta ≠ tauChaos := oneOverDelta_ne_tauChaos
+  gate_prefactor : gatePrefactor ≠ tauChaos := gatePrefactor_ne_tauChaos
+  half_prefactor : deltaMinusOne_over_twoDelta ≠ tauChaos :=
+    deltaMinusOne_over_twoDelta_ne_tauChaos
+  stable_band : tauStable ≠ tauChaos := tauStable_ne_tauChaos
+
+def failedSimpleCandidates : FailedSimpleCandidates := {}
+
 /--
   [CONJETURA] Universal thresholds determined by δ without dataset fit.
-  Remaining obligation: choose a canonical f(δ) = τ_ch with zero residual.
+  Partial progress: finite simple-form class ruled out (`failedSimpleCandidates`).
+  Remaining: choose a canonical f(δ) = τ_ch with zero residual, or prove no
+  unique simple form exists among a larger agreed class.
 -/
 theorem thresholds_from_delta_open : True := trivial
 

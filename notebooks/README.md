@@ -9,6 +9,7 @@ CLI twins (same logic, no plots): `01_*.py` … `04_*.py`.
 | [`02_aedes_puerto_rico.ipynb`](02_aedes_puerto_rico.ipynb) | Two-site trap schema (`data/aedes/proxy/`) | `[OPERACIONAL]` until real data |
 | [`03_falsifiability_test.ipynb`](03_falsifiability_test.ipynb) | Load your CSV; protocol defaults | demo ops / your data empiric |
 | [`04_p3_noise_robustness.py`](04_p3_noise_robustness.py) | P3 noise scan ρ ≤ 20% (script) | `[OPERACIONAL]` on synthetic |
+| [`05_first_return_poincare.py`](05_first_return_poincare.py) | Poincaré section on τₛ (Lean twin) | `[OPERACIONAL]` combinatorial |
 
 ## Run in the browser (Binder)
 
@@ -36,6 +37,7 @@ python notebooks/02_aedes_puerto_rico.py
 python notebooks/03_falsifiability_test.py your.csv
 python notebooks/03_falsifiability_test.py data/synthetic/regime_switch.csv
 python notebooks/04_p3_noise_robustness.py
+python notebooks/05_first_return_poincare.py
 ```
 
 ## Epistemic rules
