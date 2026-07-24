@@ -26,6 +26,7 @@ Epistemic labels: see `EPISTEMIC_LABELS.md`.
 | Goal 1b: ordinal+smooth ⇒ dynamical continuum return | `[TEOREMA]` | **open** (`open_ordinal_induces_continuum_return`) |
 | Goal 2a: strong unimodal ⇒ quadratic location | `[TEOREMA]` | ✓ `goal_2a_quadratic_of_strong` |
 | Goal 2: continuum return strongly unimodal | `[TEOREMA]` | **open** (`open_return_strongly_unimodal`) |
+| Goal 2†: if `C.R = tentF` then strong + quadratic | `[TEOREMA · bookkeeping]` | ✓ `goal_2_when_return_is_tent` (lab only) |
 | Analytic δ / class universality | `[TEOREMA]` | **open** (`open_analytic_feigenbaum`) |
 | Composite *under* hypotheses 1–3 | `[TEOREMA · bookkeeping]` | ✓ `coherence_return_map_feigenbaum_of` |
 | Full composite reduction (from H alone) | `[TEOREMA]` | **open** (`coherence_return_map_feigenbaum`) |
@@ -38,7 +39,8 @@ The main `sorry` is split so progress can land one lemma at a time:
    - **1a proved:** `exists_realizer_of_functional` — any *functional* finite pair list has *some* total realizer (`lookupPair`). Pure discrete graph theory.  
 2. **`open_return_strongly_unimodal`** — that map is strongly unimodal with quadratic tip.  
    - **2a proved:** `goal_2a_quadratic_of_strong` / `stronglyUnimodal_has_quadratic` — mode ⇒ quadratic location once strong unimodality is known.  
-3. **`open_analytic_feigenbaum`** — Feigenbaum δ-limit / class universality (real dynamics; ε–N ↔ `Tendsto` bookkeeping is already proved in `FeigenbaumTendsto`).
+   - **2† proved (lab only):** `goal_2_when_return_is_tent` — if `C.R = tentF`, package follows; **not** discharge for arbitrary returns.  
+3. **`open_analytic_feigenbaum`** — Feigenbaum δ-limit / class universality (real dynamics; ε–N ↔ `Tendsto` bookkeeping is already proved in `FeigenbaumTendsto`; toy cascade **proved not** a witness).
 
 **Composition skeleton (proved):** `coherence_return_map_feigenbaum_of` — if continuum map + strong unimodality + `FeigenbaumUniversal` are granted, the composite package follows. This does **not** discharge goals 1–3.
 
@@ -69,8 +71,11 @@ Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md) (finite simple for
 | `feigenbaumDeltaApprox` bounds | ✓ proved |
 | `BifurcationSequence` / `scalingRatio` / `cascadeDeltaLimit` | ✓ encoded |
 | Toy cascade scaling checks | ✓ proved |
+| `toy_scalingRatio_succ` (ratios ≡ 1) | ✓ proved |
+| **`toy_not_cascadeDeltaLimit_feigenbaum`** | ✓ **honesty** (blocks fake 3a) |
 | OPEN 3a cascade → δ (ε–N) | `sorry` |
-| OPEN 3b class shares δ | `sorry` |
+| `FiniteClassSharesDelta` / nil vacuous | ✓ encoded |
+| OPEN 3b non-empty class shares δ | `sorry` (was vacuous `True`) |
 | OPEN 3c bridge → `FeigenbaumUniversal` | `sorry` |
 
 ## Real / Tendsto track (`FeigenbaumTendsto.lean`)
@@ -84,8 +89,9 @@ Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md) (finite simple for
 | Bookkeeping ε–N ⇒ Tendsto | ✓ proved |
 | Bookkeeping Tendsto ⇒ ε–N | ✓ proved |
 | `cascadeDeltaLimit_iff_tendsto` | ✓ proved |
+| **`toy_not_cascadeApproachesFeigenbaumDelta`** | ✓ **honesty** (blocks fake 3aℝ) |
 | OPEN 3aℝ cascade → Feigenbaum δ (`Tendsto`) | `sorry` |
-| OPEN 3bℝ class shares δ | `sorry` |
+| OPEN 3bℝ non-empty class shares δ | `sorry` (was vacuous `True`) |
 | OPEN 3cℝ bridge → `FeigenbaumUniversal` | `sorry` |
 
 Mathlib notes: [`MATHLIB.md`](MATHLIB.md).
@@ -93,7 +99,8 @@ Mathlib notes: [`MATHLIB.md`](MATHLIB.md).
 ## Next formal steps
 
 1. Research discharge of **1b** (dynamical continuum from ordinal+smooth — not lookup).  
-2. Research discharge of **2** (strong unimodality of that return).  
-3. Research discharge of **3 / 3aℝ** for a cited cascade — **not** the toy sequence.  
+2. Research discharge of **2** (strong unimodality of that return) — tent-conditional is only lab.  
+3. Research discharge of **3 / 3aℝ** for a **cited** cascade — toy is **proved not** a witness.  
 4. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  
-5. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1b–3.
+5. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1b–3.  
+6. Optional: refine `FeigenbaumUniversal` fields off `True` placeholders (link to `cascadeDeltaLimitTendsto`) once 3a has a real witness shape.

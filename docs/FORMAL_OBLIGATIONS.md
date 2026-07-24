@@ -68,6 +68,7 @@ Preprint target (informal):
 | 1a | Functional finite pairs admit a total realizer | `exists_realizer_of_functional` | ✓ bookkeeping |
 | 2a | Strong unimodal + same map as continuum ⇒ quadratic location | `goal_2a_quadratic_of_strong` | ✓ bookkeeping |
 | C∘ | If continuum + strong \(U\) + `FeigenbaumUniversal`, composite package | `coherence_return_map_feigenbaum_of` | ✓ bookkeeping |
+| 2† | *If* continuum return = tent map ⇒ strong + quadratic | `goal_2_when_return_is_tent` | ✓ conditional lab only |
 
 ### 3.2 Research open (`sorry`)
 
@@ -114,12 +115,16 @@ Preprint target (informal):
 | ID | Statement | Module | Status |
 |----|-----------|--------|--------|
 | A | Cascade / scaling / rational ε–N interfaces | `FeigenbaumAnalytic` | ✓ encoded |
+| A¬ | Toy arithmetic cascade **does not** approach δ (ε–N) | `toy_not_cascadeDeltaLimit_feigenbaum` | ✓ honesty |
 | A3a–c | Cascade → δ; class; bridge (ε–N form) | same | ○ `sorry` |
 | R | `scalingRatioReal`, `cascadeDeltaLimitTendsto` | `FeigenbaumTendsto` | ✓ encoded |
 | B | ε–N ↔ `Tendsto` for the cast sequence | `cascadeDeltaLimit_iff_tendsto` | ✓ bookkeeping |
+| R¬ | Toy cascade **does not** tend to Feigenbaum δ (`Tendsto`) | `toy_not_cascadeApproachesFeigenbaumDelta` | ✓ honesty |
 | R3a–c | Cascade → Feigenbaum δ; class; bridge (`Tendsto`) | same | ○ `sorry` |
 
 Bookkeeping **B** equates two *interfaces*. It does **not** prove any physical cascade limits to \(\delta\approx 4.669\ldots\).
+
+**Honesty blocks (2026-07-24):** A¬ / R¬ machine-check that the lab toy cascade is **not** a witness for open goal 3. Do not discharge 3a/3aℝ with `toyIncreasingCascade`.
 
 ---
 
@@ -128,8 +133,8 @@ Bookkeeping **B** equates two *interfaces*. It does **not** prove any physical c
 | Goal | Acceptable discharge path | Unacceptable |
 |------|---------------------------|--------------|
 | 1b | Cited construction: ordinal data + smoothness ⇒ unique/canonical continuum return; or reduced hypotheses with explicit axioms | `exact ⟨idContinuum, …⟩` under dummy `H` |
-| 2 | Proof that that \(R\) is strongly unimodal (or generic in a Mathlib class) | Reuse `tentStrong` for arbitrary `C.R` |
-| 3 | Import/formalize classical Feigenbaum (or restricted class) with citations | Toy cascade ratios → 1, or `True` placeholders filled with `trivial` while claiming δ |
+| 2 | Proof that that \(R\) is strongly unimodal (or generic in a Mathlib class) | Reuse `tentStrong` for arbitrary `C.R` (allowed only under `C.R = tentF` via `goal_2_when_return_is_tent`) |
+| 3 | Import/formalize classical Feigenbaum (or restricted class) with citations | Toy cascade ratios → 1 (**blocked** by `toy_not_*`); or `True` placeholders filled with `trivial` while claiming δ |
 | ★ | Compose 1b–3 via `coherence_return_map_feigenbaum_of` | Single `sorry` replaced by tent witness |
 
 Placeholders still in `FeigenbaumUniversal` (`delta_limit : True`, `class_universal : True`) must be refined to real props (e.g. linked to `cascadeDeltaLimitTendsto`) **before** claiming analytic discharge.
@@ -193,6 +198,7 @@ open_cascade_tendsto_feigenbaum_delta
 |-----------|---------------------|
 | v0.1.4–0.1.6 | Gate, bands, first-return skeleton, C3 synth, simple \(f(\delta)\) non-ids |
 | **v0.1.7** | Mathlib; Analytic + Tendsto interfaces; ε–N↔Tendsto; goals 1a/2a/C∘; this map |
+| post-v0.1.7 formal pack | Goal 2 tent-conditional; toy ↛ δ (ε–N + Tendsto); class-share Prop de-vacuous |
 | **Still not claimed** | Full Feigenbaum reduction; field dengue; unique \(\tau_{\mathrm{ch}}\) |
 
-Last updated: 2026-07-23 (shipped with **v0.1.7**).
+Last updated: 2026-07-24 (Feigenbaum honesty pack; open 1b/2/3 still `sorry`).

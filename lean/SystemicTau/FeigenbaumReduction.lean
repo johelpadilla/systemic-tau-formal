@@ -535,12 +535,43 @@ theorem open_ordinal_induces_continuum_return
   Status: `sorry`.
   Partial: `HasQuadraticCriticalPoint` follows from `StronglyUnimodal` once the
   unimodality half is known (`stronglyUnimodal_has_quadratic`).
+  Conditional discharge when the return *is* the tent lab map: see
+  `goal_2_when_return_is_tent` (does **not** close this goal for arbitrary `C`).
 -/
 theorem open_return_strongly_unimodal
     (_H : ReductionHypotheses) (_C : ContinuumReturnMap) :
     ∃ U : StronglyUnimodal,
       U.f = _C.R ∧ HasQuadraticCriticalPoint U.toUnimodalMap := by
   sorry
+
+/-- Continuum packaging of the tent lab map on the coherence interval. -/
+def tentContinuum : ContinuumReturnMap where
+  I := coherenceInterval
+  R := tentF
+  maps_into := by
+    intro x hx1 hx2
+    exact tentF_maps_into x hx1 hx2
+
+theorem tentContinuum_R : tentContinuum.R = tentF := rfl
+
+/--
+  [TEOREMA · bookkeeping · goal 2 conditional]
+  If the continuum return *is* the tent map (laboratory identification),
+  then strong unimodality + quadratic location follow from `tentStrong`.
+  This is **not** a discharge of open goal 2 for arbitrary continuum returns.
+-/
+theorem goal_2_when_return_is_tent
+    (C : ContinuumReturnMap) (hR : C.R = tentF) :
+    ∃ U : StronglyUnimodal,
+      U.f = C.R ∧ HasQuadraticCriticalPoint U.toUnimodalMap := by
+  refine ⟨tentStrong, ?_, tentLike_has_critical⟩
+  simp [tentStrong, hR]
+
+/-- Specialization: tent continuum package discharges goal-2 shape for itself. -/
+theorem goal_2_tentContinuum :
+    ∃ U : StronglyUnimodal,
+      U.f = tentContinuum.R ∧ HasQuadraticCriticalPoint U.toUnimodalMap :=
+  goal_2_when_return_is_tent tentContinuum rfl
 
 /--
   [TEOREMA · bookkeeping · goal 2a]
@@ -623,6 +654,8 @@ structure ReductionStatus where
   from_ordinal_open : True := trivial
   /-- Goal 2: continuum return strongly unimodal. OPEN. -/
   unimodal_return_open : True := trivial
+  /-- Goal 2 when return = tentF. PROVED (conditional, lab only). -/
+  goal_2_tent_conditional_ok : True := trivial
   /-- Goal 2a: strong ⇒ quadratic location. PROVED. -/
   goal_2a_quadratic_ok : True := trivial
   /-- Goal 3: Analytic Feigenbaum δ limit. OPEN. -/

@@ -164,6 +164,28 @@ theorem cascadeDeltaLimit_iff_tendsto
     cascadeDeltaLimit B δ ↔ cascadeDeltaLimitTendsto B (δ : ℝ) :=
   ⟨cascadeDeltaLimit_implies_tendsto B δ, tendsto_implies_cascadeDeltaLimit B δ⟩
 
+/--
+  Toy scaling ratios are constantly 1 in ℝ for stages \(n \ge 1\).
+-/
+theorem toy_scalingRatioReal_succ (n : ℕ) :
+    scalingRatioReal toyIncreasingCascade (n + 1) = 1 := by
+  unfold scalingRatioReal
+  exact_mod_cast (toy_scalingRatio_succ n)
+
+/--
+  [TEOREMA · honesty] Toy cascade ratios do **not** tend to operational
+  Feigenbaum δ in ℝ. Follows from the rational ε–N negative + ε–N ↔ Tendsto.
+  Blocks discharging `open_cascade_tendsto_feigenbaum_delta` with the toy.
+-/
+theorem toy_not_cascadeApproachesFeigenbaumDelta :
+    ¬ cascadeApproachesFeigenbaumDelta toyIncreasingCascade := by
+  intro h
+  have hEq : cascadeDeltaLimitTendsto toyIncreasingCascade (feigenbaumDeltaApprox : ℝ) := by
+    simpa [cascadeApproachesFeigenbaumDelta, feigenbaumDeltaReal] using h
+  have hQ : cascadeDeltaLimit toyIncreasingCascade feigenbaumDeltaApprox :=
+    tendsto_implies_cascadeDeltaLimit toyIncreasingCascade feigenbaumDeltaApprox hEq
+  exact toy_not_cascadeDeltaLimit_feigenbaum hQ
+
 /-- Backward-compatible names (formerly `open_*` / `sorry`). -/
 theorem open_cascadeDeltaLimit_implies_tendsto
     (B : BifurcationSequence) (δ : ℚ)
@@ -190,18 +212,31 @@ theorem open_cascade_tendsto_feigenbaum_delta
   sorry
 
 /--
-  OPEN GOAL 3bℝ — class universality in the Tendsto form.
-  Continuum open set of quadratic-unimodal maps sharing the same δ-limit.
-  Placeholder package until continuum maps are formalized.
+  Finite-lab Tendsto form of class universality (parallel to Analytic).
+  **Not** ∀ cascades — toy is a counterexample.
+-/
+def FiniteClassSharesDeltaTendsto (cascades : List BifurcationSequence) (δ : ℝ) : Prop :=
+  ∀ B ∈ cascades, cascadeDeltaLimitTendsto B δ
+
+theorem FiniteClassSharesDeltaTendsto_nil (δ : ℝ) :
+    FiniteClassSharesDeltaTendsto ([] : List BifurcationSequence) δ := by
+  intro B h; cases h
+
+/--
+  OPEN GOAL 3bℝ — non-empty cascade list shares δ in Tendsto form.
+  Status: `sorry` (research). Prior stub was `True := sorry`.
 -/
 theorem open_class_shares_delta_tendsto
-    (_S : QuadraticUnimodalSample) :
-    True := by
+    (_S : QuadraticUnimodalSample)
+    (cascades : List BifurcationSequence)
+    (_hne : cascades ≠ []) :
+    FiniteClassSharesDeltaTendsto cascades feigenbaumDeltaReal := by
   sorry
 
 /--
   OPEN GOAL 3cℝ — bridge Tendsto limit + quadratic tip → `FeigenbaumUniversal`.
   Still blocked on placeholder fields in `FeigenbaumUniversal` and goals 1–2.
+  Status: `sorry` — not discharged by toy (`toy_not_cascadeApproachesFeigenbaumDelta`).
 -/
 theorem open_bridge_tendsto_to_feigenbaum_universal
     (U : FeigenbaumReduction.UnimodalMap)
@@ -220,6 +255,8 @@ structure TendstoTrackStatus where
   tendsto_interface_ok : True := trivial
   /-- Toy cast + const-Tendsto sanity. -/
   toy_real_sanity_ok : True := trivial
+  /-- Toy does **not** tend to Feigenbaum δ. PROVED (honesty). -/
+  toy_not_feigenbaum_ok : True := trivial
   /-- ε–N ↔ Tendsto bridge. Proved (bookkeeping only). -/
   eps_tendsto_bridge_ok : True := trivial
   /-- Cascade → Feigenbaum δ (Tendsto). OPEN (research). -/

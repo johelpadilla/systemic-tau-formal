@@ -121,6 +121,67 @@ theorem toy_scaling_stage_two :
     scalingRatio toyIncreasingCascade 2 = 1 := by
   native_decide
 
+/--
+  Arithmetic-progression cascade has scaling ratio 1 at every stage \(n \ge 1\).
+  [TEOREMA · bookkeeping] — used to **block** fake discharge of open goal 3a.
+-/
+theorem toy_scalingRatio_succ (n : Nat) :
+    scalingRatio toyIncreasingCascade (n + 1) = 1 := by
+  -- r_k = k ⇒ δ_n = 1/1 = 1 for every stage n ≥ 1
+  -- `scalingRatio` matches on `Nat.succ`; reduce definitionally then simplify.
+  have hdef :
+      scalingRatio toyIncreasingCascade (Nat.succ n) =
+        (let num := toyIncreasingCascade.r (n + 1) - toyIncreasingCascade.r n
+         let den := toyIncreasingCascade.r (n + 2) - toyIncreasingCascade.r (n + 1)
+         if den = 0 then 0 else num / den) :=
+    rfl
+  rw [Nat.succ_eq_add_one] at hdef
+  rw [hdef]
+  -- r k = (k : ℚ)
+  change (let num := ((n + 1 : ℕ) : ℚ) - (n : ℕ)
+          let den := ((n + 2 : ℕ) : ℚ) - ((n + 1 : ℕ) : ℚ)
+          if den = 0 then 0 else num / den) = 1
+  have hnum : ((n + 1 : ℕ) : ℚ) - (n : ℕ) = 1 := by push_cast; ring
+  have hden : ((n + 2 : ℕ) : ℚ) - ((n + 1 : ℕ) : ℚ) = 1 := by push_cast; ring
+  simp [hnum, hden]
+  -- residual: `if 1 = 0 then 0 else 1⁻¹` (or equivalent concrete form)
+  native_decide
+
+/-- Residual |1 − δ_op| is strictly larger than 3 (operational δ ∈ (4,5)). -/
+theorem absQ_one_sub_feigenbaumDelta_gt_three :
+    (3 : Rat) < absQ (1 - feigenbaumDeltaApprox) := by
+  have hgt : (4 : Rat) < feigenbaumDeltaApprox := feigenbaumDeltaApprox_gt_four
+  have hle : 1 - feigenbaumDeltaApprox < 0 := by linarith
+  have habs : absQ (1 - feigenbaumDeltaApprox) = feigenbaumDeltaApprox - 1 := by
+    have : absQ (1 - feigenbaumDeltaApprox) = -(1 - feigenbaumDeltaApprox) :=
+      absQ_of_nonpos (le_of_lt hle)
+    linarith [this]
+  rw [habs]
+  linarith
+
+/--
+  [TEOREMA · honesty] The toy arithmetic cascade does **not** approach
+  operational Feigenbaum δ in the rational ε–N sense.
+  Blocks discharging `open_cascade_ratios_to_delta` with `toyIncreasingCascade`.
+-/
+theorem toy_not_cascadeDeltaLimit_feigenbaum :
+    ¬ cascadeDeltaLimit toyIncreasingCascade feigenbaumDeltaApprox := by
+  intro hlim
+  -- Take ε = 3: residual |1 − δ| > 3 for every stage n ≥ 1
+  have hε : (0 : Rat) < 3 := by native_decide
+  obtain ⟨N, hN⟩ := hlim 3 hε
+  let n := max N 1
+  have hnN : N ≤ n := Nat.le_max_left N 1
+  have hn1 : 1 ≤ n := Nat.le_max_right N 1
+  have hratio : scalingRatio toyIncreasingCascade n = 1 := by
+    have : ∃ k, n = k + 1 := Nat.exists_eq_succ_of_ne_zero (Nat.pos_iff_ne_zero.mp hn1)
+    obtain ⟨k, hk⟩ := this
+    rw [hk, toy_scalingRatio_succ]
+  have hbound := hN n hnN
+  rw [hratio] at hbound
+  have hgt := absQ_one_sub_feigenbaumDelta_gt_three
+  linarith
+
 /-! ### Quadratic class (finite lab sample; continuum class needs Mathlib) -/
 
 /--
@@ -151,17 +212,39 @@ theorem open_cascade_ratios_to_delta
   sorry
 
 /--
-  OPEN GOAL 3b — Same limit constant for every map in a quadratic-unimodal class.
-  Continuum class + Real analysis → Mathlib path (`docs/MATHLIB.md`).
+  Finite-lab form of “class shares δ”: every cascade in a provided list
+  approaches the same operational constant. Association map↔cascade is
+  laboratory data until a dynamical construction is formalized.
+
+  **Do not** quantify over *all* `BifurcationSequence` — the toy cascade is a
+  counterexample (`toy_not_cascadeDeltaLimit_feigenbaum`).
+-/
+def FiniteClassSharesDelta (cascades : List BifurcationSequence) (δ : Rat) : Prop :=
+  ∀ B ∈ cascades, cascadeDeltaLimit B δ
+
+/-- Empty cascade list shares any δ (vacuous bookkeeping). -/
+theorem FiniteClassSharesDelta_nil (δ : Rat) :
+    FiniteClassSharesDelta ([] : List BifurcationSequence) δ := by
+  intro B h; cases h
+
+/--
+  OPEN GOAL 3b — Non-vacuous class universality: a *non-empty* list of
+  cascades associated to a quadratic-unimodal sample all share operational δ.
+  Status: `sorry` (research; continuum open-set class → Mathlib).
+  Prior stub was `True := sorry` (vacuous); this is a real Prop obligation.
 -/
 theorem open_class_shares_delta
-    (_S : QuadraticUnimodalSample) :
-    True := by
+    (S : QuadraticUnimodalSample)
+    (cascades : List BifurcationSequence)
+    (_hne : cascades ≠ [])
+    (_associated : True := trivial) :
+    FiniteClassSharesDelta cascades feigenbaumDeltaApprox := by
   sorry
 
 /--
   OPEN GOAL 3c — Bridge from cascade limit + quadratic tip to `FeigenbaumUniversal`.
   Currently `FeigenbaumUniversal` fields are still `True` placeholders until Mathlib.
+  Status: `sorry` — **not** discharged by toy cascade (`toy_not_cascadeDeltaLimit_feigenbaum`).
 -/
 theorem open_bridge_to_feigenbaum_universal
     (U : UnimodalMap) (_hq : HasQuadraticCriticalPoint U)
@@ -191,6 +274,8 @@ structure AnalyticTrackStatus where
   cascade_interface_ok : True := trivial
   /-- Toy cascade scaling sanity. -/
   toy_scaling_ok : True := trivial
+  /-- Toy cascade does **not** approach Feigenbaum δ (honesty block). PROVED. -/
+  toy_not_feigenbaum_ok : True := trivial
   /-- Tent quadratic sample inhabited. -/
   tent_sample_ok : True := trivial
   /-- Cascade → δ limit. OPEN. -/
