@@ -30,7 +30,9 @@ Public status after **v0.1.7** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Feigenbaum goal **1a** (functional pairs realizer) + **2a** (strong⇒quadratic) + composite-of-hypotheses skeleton
 - [ ] Discharge open goals **1b–3** / composite from `H` alone (research-level)
 - [x] Real Aedes into `data/aedes/raw/` (SJU1/2/3 2018 + raw-first loader + nb 07 report)
-- [ ] P1 with pre-registered transition endpoints on field series
+- [x] P3 noise scan on field Aedes (nb 08 + tests; agreement @ρ≤0.20)
+- [x] P1 endpoint scaffold (`endpoints.example.json` + scorer; no invented dates)
+- [ ] Fill real `endpoints.json` (pre-registered t_obs) and score P1
 - [ ] Expand `raw/` with more years / municipalities
 - [x] Mathlib dependency wired (`mathlib4` v4.14.0) + `FeigenbaumAnalytic` claim shapes
 - [x] Real/`Tendsto` claim shapes (`FeigenbaumTendsto`; limit still open/`sorry`)

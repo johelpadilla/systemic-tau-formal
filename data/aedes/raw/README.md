@@ -32,15 +32,18 @@ Regenerate SJU-1 / SJU-2 from Excel (requires `pandas`, `xlrd`, `openpyxl`):
 python python/scripts/import_aedes_thesis.py
 ```
 
-## Empirical report
+## Empirical reports
 
 ```bash
 python notebooks/07_aedes_field_report.py
-python notebooks/07_aedes_field_report.py --json data/aedes/raw/last_field_report.json
+python notebooks/08_aedes_p3_field.py          # P3 noise ρ≤0.20 on field matrices
 ```
 
-**Honesty:** the report does **not** score P1 (4–6 week lead) without a pre-registered
-observable transition endpoint. It reports τₛ regimes, RECD clock, and chaos-band run lengths.
+**Honesty:**
+- nb 07 does **not** score P1 without a pre-registered endpoint.
+- nb 08 runs protocol noise on field series (usable band labels at ρ≤0.20 in tests).
+- For P1 later: copy `endpoints.example.json` → `endpoints.json` (gitignored), set
+  `t_obs` + `pre_registered: true`. Scorer: `python/core/p1_endpoints.py`.
 
 ## How to add more
 
