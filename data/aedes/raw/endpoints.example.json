@@ -1,0 +1,14 @@
+{
+  "schema": "systemic-tau-formal/aedes-endpoints/v1",
+  "note": "Copy to endpoints.json and fill. P1 is only scored when this file exists with valid t_obs.",
+  "label": "[EMPÍRICO]",
+  "series": [
+    {
+      "file": "San_Juan_SJU3_2018_12traps.csv",
+      "t_obs": null,
+      "t_obs_unit": "row_index_0_based",
+      "endpoint_definition": "Describe domain-observable transition (e.g. outbreak week, trap surge).",
+      "pre_registered": false
+    }
+  ]
+}

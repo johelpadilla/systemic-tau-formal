@@ -35,6 +35,7 @@ data/aedes/raw/*
 !data/aedes/raw/README.md
 !data/aedes/raw/manifest.json
 !data/aedes/raw/*.csv
+!data/aedes/raw/endpoints.example.json
 data/aedes/raw/**/*.xls
 data/aedes/raw/**/*.xlsx
 data/**/*.zip
