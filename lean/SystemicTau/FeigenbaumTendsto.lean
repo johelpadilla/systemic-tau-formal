@@ -12,12 +12,14 @@
   · This module **encodes** the real-analysis interface for open goal 3.
   · It does **not** prove that any physical cascade converges to Feigenbaum δ.
   · Open theorems stay `sorry`. Do not discharge with the toy cascade.
-  · A future bridge `cascadeDeltaLimit → Tendsto` is pure bookkeeping
-    (ε–N ↔ metric limit), not a Feigenbaum theorem — still open here.
+  · The bridge `cascadeDeltaLimit ↔ Tendsto` is pure bookkeeping
+    (ε–N ↔ metric limit on the cast sequence) — **proved** below.
+    That equivalence is not a Feigenbaum theorem.
 
   See `docs/MATHLIB.md`, `docs/FEIGENBAUM_STATUS.md`, `docs/EPISTEMIC_LABELS.md`.
 -/
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Real.Archimedean
 import Mathlib.Topology.Instances.Real
 import Mathlib.Order.Filter.AtTopBot
 import SystemicTau.FeigenbaumAnalytic
@@ -25,7 +27,8 @@ import SystemicTau.FeigenbaumAnalytic
 namespace SystemicTau.FeigenbaumTendsto
 
 open SystemicTau.FeigenbaumAnalytic
-open Filter Topology
+open SystemicTau.FeigenbaumReduction (absQ)
+open Filter Topology Metric
 
 /-! ### Real lifts of operational quantities -/
 
@@ -87,28 +90,92 @@ theorem toy_scalingRatioReal_one :
 theorem tendsto_const_one : Tendsto (fun _ : ℕ ↦ (1 : ℝ)) atTop (𝓝 1) :=
   tendsto_const_nhds
 
-/-! ### Bridge shapes (bookkeeping — still open) -/
+/-! ### Bookkeeping bridge: rational ε–N ↔ real `Tendsto`
+
+  These lemmas equate two *interfaces* for the same cast sequence.
+  They do **not** assert that any bifurcation cascade approaches Feigenbaum δ.
+-/
+
+/-- Local `absQ` coincides with Mathlib absolute value on `ℚ`. -/
+theorem absQ_eq_abs (q : ℚ) : absQ q = |q| := by
+  simp only [absQ]
+  split_ifs with h
+  · rw [abs_of_nonneg h]
+  · rw [abs_of_nonpos (le_of_not_ge h)]
 
 /--
-  OPEN BOOKKEEPING — rational ε–N package ⇒ real `Tendsto`.
-  When discharged: metric/ε–N equivalence for the cast sequence, **not**
-  a proof that any cascade equals Feigenbaum δ.
+  Distance of cast scaling ratios equals cast of `absQ` residual.
+  Pure arithmetic identity used by both bridge directions.
 -/
+theorem dist_scalingRatioReal_eq_absQ
+    (B : BifurcationSequence) (δ : ℚ) (n : ℕ) :
+    dist (scalingRatioReal B n) (δ : ℝ) = (absQ (scalingRatio B n - δ) : ℝ) := by
+  have habs : absQ (scalingRatio B n - δ) = |scalingRatio B n - δ| := absQ_eq_abs _
+  calc dist (scalingRatioReal B n) (δ : ℝ)
+      = |(scalingRatioReal B n) - (δ : ℝ)| := Real.dist_eq _ _
+    _ = |((scalingRatio B n : ℝ) - (δ : ℝ))| := by rfl
+    _ = |((scalingRatio B n - δ : ℚ) : ℝ)| := by norm_cast
+    _ = ((|scalingRatio B n - δ| : ℚ) : ℝ) := by simp [abs_eq_max_neg]
+    _ = (absQ (scalingRatio B n - δ) : ℝ) := by rw [habs]
+
+/--
+  [TEOREMA · bookkeeping] Rational ε–N package ⇒ real `Tendsto`.
+  Not a Feigenbaum discharge — only metric/ε–N equivalence for the cast sequence.
+-/
+theorem cascadeDeltaLimit_implies_tendsto
+    (B : BifurcationSequence) (δ : ℚ)
+    (h : cascadeDeltaLimit B δ) :
+    cascadeDeltaLimitTendsto B (δ : ℝ) := by
+  rw [cascadeDeltaLimitTendsto, Metric.tendsto_atTop]
+  intro ε εpos
+  obtain ⟨q, hqpos, hqlt⟩ := exists_pos_rat_lt εpos
+  obtain ⟨N, hN⟩ := h q hqpos
+  refine ⟨N, fun n hn => ?_⟩
+  have hbound : absQ (scalingRatio B n - δ) ≤ q := hN n hn
+  have hcast : (absQ (scalingRatio B n - δ) : ℝ) ≤ (q : ℝ) := by exact_mod_cast hbound
+  calc dist (scalingRatioReal B n) (δ : ℝ)
+      = (absQ (scalingRatio B n - δ) : ℝ) := dist_scalingRatioReal_eq_absQ B δ n
+    _ ≤ (q : ℝ) := hcast
+    _ < ε := hqlt
+
+/--
+  [TEOREMA · bookkeeping] Real `Tendsto` ⇒ rational ε–N package (same δ).
+  Converse interface bridge.
+-/
+theorem tendsto_implies_cascadeDeltaLimit
+    (B : BifurcationSequence) (δ : ℚ)
+    (h : cascadeDeltaLimitTendsto B (δ : ℝ)) :
+    cascadeDeltaLimit B δ := by
+  intro ε hε
+  have εpos : (0 : ℝ) < (ε : ℝ) := by exact_mod_cast hε
+  have hT : Tendsto (scalingRatioReal B) atTop (𝓝 (δ : ℝ)) := h
+  rw [Metric.tendsto_atTop] at hT
+  obtain ⟨N, hN⟩ := hT (ε : ℝ) εpos
+  refine ⟨N, fun n hn => ?_⟩
+  have hd : dist (scalingRatioReal B n) (δ : ℝ) < (ε : ℝ) := hN n hn
+  have hltR : (absQ (scalingRatio B n - δ) : ℝ) < (ε : ℝ) := by
+    rwa [← dist_scalingRatioReal_eq_absQ B δ n]
+  have hlt : absQ (scalingRatio B n - δ) < ε := by exact_mod_cast hltR
+  exact le_of_lt hlt
+
+/-- Bidirectional bookkeeping equivalence. -/
+theorem cascadeDeltaLimit_iff_tendsto
+    (B : BifurcationSequence) (δ : ℚ) :
+    cascadeDeltaLimit B δ ↔ cascadeDeltaLimitTendsto B (δ : ℝ) :=
+  ⟨cascadeDeltaLimit_implies_tendsto B δ, tendsto_implies_cascadeDeltaLimit B δ⟩
+
+/-- Backward-compatible names (formerly `open_*` / `sorry`). -/
 theorem open_cascadeDeltaLimit_implies_tendsto
     (B : BifurcationSequence) (δ : ℚ)
-    (_h : cascadeDeltaLimit B δ) :
-    cascadeDeltaLimitTendsto B (δ : ℝ) := by
-  sorry
+    (h : cascadeDeltaLimit B δ) :
+    cascadeDeltaLimitTendsto B (δ : ℝ) :=
+  cascadeDeltaLimit_implies_tendsto B δ h
 
-/--
-  OPEN BOOKKEEPING — real `Tendsto` ⇒ rational ε–N package (same δ).
-  Converse direction of the interface bridge.
--/
 theorem open_tendsto_implies_cascadeDeltaLimit
     (B : BifurcationSequence) (δ : ℚ)
-    (_h : cascadeDeltaLimitTendsto B (δ : ℝ)) :
-    cascadeDeltaLimit B δ := by
-  sorry
+    (h : cascadeDeltaLimitTendsto B (δ : ℝ)) :
+    cascadeDeltaLimit B δ :=
+  tendsto_implies_cascadeDeltaLimit B δ h
 
 /-! ### Named open goals (real track) -/
 
@@ -153,8 +220,8 @@ structure TendstoTrackStatus where
   tendsto_interface_ok : True := trivial
   /-- Toy cast + const-Tendsto sanity. -/
   toy_real_sanity_ok : True := trivial
-  /-- ε–N ↔ Tendsto bridge. OPEN (bookkeeping). -/
-  eps_tendsto_bridge_open : True := trivial
+  /-- ε–N ↔ Tendsto bridge. Proved (bookkeeping only). -/
+  eps_tendsto_bridge_ok : True := trivial
   /-- Cascade → Feigenbaum δ (Tendsto). OPEN (research). -/
   cascade_tendsto_open : True := trivial
   /-- Class universality (Tendsto). OPEN. -/

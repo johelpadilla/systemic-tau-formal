@@ -72,8 +72,10 @@ Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md) (finite simple for
 | `feigenbaumDeltaReal` bounds (cast) | ✓ proved |
 | `scalingRatioReal` / `cascadeDeltaLimitTendsto` | ✓ encoded |
 | Toy cast + `tendsto_const_one` sanity | ✓ proved |
-| OPEN bookkeeping ε–N ⇒ Tendsto | `sorry` |
-| OPEN bookkeeping Tendsto ⇒ ε–N | `sorry` |
+| `absQ_eq_abs` / `dist_scalingRatioReal_eq_absQ` | ✓ proved |
+| Bookkeeping ε–N ⇒ Tendsto | ✓ proved |
+| Bookkeeping Tendsto ⇒ ε–N | ✓ proved |
+| `cascadeDeltaLimit_iff_tendsto` | ✓ proved |
 | OPEN 3aℝ cascade → Feigenbaum δ (`Tendsto`) | `sorry` |
 | OPEN 3bℝ class shares δ | `sorry` |
 | OPEN 3cℝ bridge → `FeigenbaumUniversal` | `sorry` |
@@ -83,6 +85,6 @@ Mathlib notes: [`MATHLIB.md`](MATHLIB.md).
 ## Next formal steps
 
 1. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  
-2. Discharge ε–N ↔ `Tendsto` bookkeeping (analysis only; not Feigenbaum).  
-3. Research discharge of 3aℝ for a cited cascade — **not** the toy sequence.  
+2. Research discharge of 3aℝ for a cited cascade — **not** the toy sequence.  
+3. Lean goals 1–2 (ordinal→continuum return / strong unimodality).  
 4. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1–3.
