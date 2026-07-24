@@ -1,0 +1,38 @@
+{
+  "deposition_id": 21523232,
+  "base": "https://zenodo.org",
+  "conceptrecid": "21523231",
+  "doi": "10.5281/zenodo.21523232",
+  "version": "0.1.8-r3",
+  "links": {
+    "self": "https://zenodo.org/api/records/21523232",
+    "html": "https://zenodo.org/records/21523232",
+    "doi": "https://doi.org/10.5281/zenodo.21523232",
+    "parent_doi": "https://doi.org/10.5281/zenodo.21523231",
+    "badge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.21523232.svg",
+    "conceptbadge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.21523231.svg",
+    "files": "https://zenodo.org/api/records/21523232/files",
+    "bucket": "https://zenodo.org/api/files/b0323062-ee72-4595-b628-04bd71d60751",
+    "thumb250": "https://zenodo.org/record/21523232/thumb250",
+    "thumbs": {
+      "10": "https://zenodo.org/record/21523232/thumb10",
+      "50": "https://zenodo.org/record/21523232/thumb50",
+      "100": "https://zenodo.org/record/21523232/thumb100",
+      "250": "https://zenodo.org/record/21523232/thumb250",
+      "750": "https://zenodo.org/record/21523232/thumb750",
+      "1200": "https://zenodo.org/record/21523232/thumb1200"
+    },
+    "latest_draft": "https://zenodo.org/api/deposit/depositions/21523232",
+    "latest_draft_html": "https://zenodo.org/deposit/21523232",
+    "publish": "https://zenodo.org/api/deposit/depositions/21523232/actions/publish",
+    "edit": "https://zenodo.org/api/deposit/depositions/21523232/actions/edit",
+    "discard": "https://zenodo.org/api/deposit/depositions/21523232/actions/discard",
+    "newversion": "https://zenodo.org/api/deposit/depositions/21523232/actions/newversion",
+    "record": "https://zenodo.org/api/records/21523232",
+    "record_html": "https://zenodo.org/record/21523232",
+    "latest": "https://zenodo.org/api/records/21523232/versions/latest",
+    "latest_html": "https://zenodo.org/records/21523232/latest"
+  },
+  "published": true,
+  "kind": "preprint-standard-formal"
+}

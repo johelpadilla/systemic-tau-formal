@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "title": "A Machine-Checkable Operational Standard for Systemic Tau τₛ and the Discrete Extramental Clock (RECD)",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "description": "<p>We present <strong>systemic-tau-formal</strong> v0.1.8 as documented in this English preprint (document version <strong>0.1.8-r3</strong>): an open monorepository that states the operational core of the Systemic Tau (τₛ) paradigm and the Discrete Extramental Clock (RECD) in a form accepted by a formal verifier.</p><p>The Lean&nbsp;4 + Mathlib package encodes regime bands, the gate function <em>g</em>(τₛ), partition and monotonicity lemmas, and a laboratory construction package that links the operational criterion to period-doubling cascade ideas and Feigenbaum’s constant δ. The artifact is accompanied by a Python reference core, golden rational bridges, continuous integration, and a citable Zenodo software deposit.</p><p><strong>What is offered is not a closed narrative of dynamical universality</strong>, but a verifiable operational standard: an explicit decision rule, a machine checker that accepts it, and an open door to public scrutiny. Laboratory maps and scale identifications are presented as named, cited constructions, not as field theorems.</p><p><em>Software pin:</em> systemic-tau-formal <strong>v0.1.8</strong> — DOI <a href=\"https://doi.org/10.5281/zenodo.21522882\">10.5281/zenodo.21522882</a> (concept <a href=\"https://doi.org/10.5281/zenodo.21516059\">10.5281/zenodo.21516059</a>). Source: <a href=\"https://github.com/johelpadilla/systemic-tau-formal\">github.com/johelpadilla/systemic-tau-formal</a> · path <code>papers/preprint-standard-formal/</code>.</p>",
+    "creators": [
+      {
+        "name": "Padilla-Villanueva, Johel",
+        "affiliation": "University of Puerto Rico, Medical Sciences Campus",
+        "orcid": "0000-0002-5797-6931"
+      }
+    ],
+    "keywords": [
+      "Systemic Tau",
+      "RECD",
+      "operational standard",
+      "Lean 4",
+      "Mathlib",
+      "formal verification",
+      "early warning signals",
+      "Feigenbaum",
+      "complex systems",
+      "preprint"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "language": "eng",
+    "version": "0.1.8-r3",
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.21522882",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.5281/zenodo.21516059",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/johelpadilla/systemic-tau-formal",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "url"
+      },
+      {
+        "identifier": "10.5281/zenodo.20576241",
+        "relation": "cites",
+        "resource_type": "publication",
+        "scheme": "doi"
+      }
+    ],
+    "notes": "Preprint document 0.1.8-r3 aligned to software v0.1.8. Does not claim classical Feigenbaum universality or field-derived τₛ dynamics. Files: frozen PDF + LaTeX source + VERSION/CHANGELOG."
+  }
+}
