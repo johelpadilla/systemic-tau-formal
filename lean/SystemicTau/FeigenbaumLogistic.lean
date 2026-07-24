@@ -240,8 +240,9 @@ structure LogisticTrackStatus where
   cascade_limit_ok : True := trivial
   class_two_cascades_ok : True := trivial
   tau_return_package_ok : True := trivial
-  /-- Termwise equality with true logistic superstable roots remains open. -/
-  true_superstable_roots_open : True := trivial
+  /-- Full termwise equality with true logistic superstable roots remains open
+      (partial progress in `FeigenbaumSuperstable`: n=0,1 closed; n=2 residual). -/
+  true_superstable_roots_partial : True := trivial
   zero_research_axiom_ok : True := trivial
 
 def currentLogisticStatus : LogisticTrackStatus := {}

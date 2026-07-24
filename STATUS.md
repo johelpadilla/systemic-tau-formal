@@ -22,7 +22,9 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `FeigenbaumAnalytic` | mix | **0 sorry, 0 axiom** | geometric cascade ratios ≡ δ_op; 3a/3b; toy ↛ δ |
 | `FeigenbaumTendsto` | mix | **0 sorry, 0 axiom** | ε–N ↔ `Tendsto`; 3aℝ–3cℝ via geometric |
 | `FeigenbaumSchwarzian` | mix | **0 sorry, 0 axiom** | C² tip \(f''≠0\); Schwarzian ≤ 0 (logistic formal derivatives); `FeigenbaumUniversalC2` |
-| `FeigenbaumLogistic` | mix | **0 sorry, 0 axiom** | logistic-anchored cascade **scale-ID** with geometric (not superstable roots) |
+| `FeigenbaumLogistic` | mix | **0 sorry, 0 axiom** | logistic-anchored cascade **scale-ID** with geometric (not full termwise roots) |
+| `FeigenbaumSuperstable` | mix | **0 sorry, 0 axiom** | real logistic: n=0 unique \(r=2\); n=1 unique \(1+\sqrt5\); honesty \(3\neq r_1^{ss}\); n=2 residual + exclusion |
+| `FeigenbaumCascade` | mix | **0 sorry, 0 axiom** | period-4 ∃ cascade window; secondary ~3.96; conditional mono unique; hybrid tail geometric; free-c op |
 | Mathlib | dep | **wired** | mathlib4 `v4.14.0` · Real/Topology · [`docs/MATHLIB.md`](docs/MATHLIB.md) |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns; `stratifiedFour` / well-sited claims |
 
@@ -45,7 +47,9 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Package | Status | What it is **not** |
 |---------|--------|---------------------|
 | Composite ★ | ✓ lab, **non-tent** (`tauReturnFour` + refined `FeigenbaumUniversal`) | dynamical theorem from ordinal+smooth alone |
-| Logistic scale-ID | ✓ ratios ≡ geometric cascade | termwise superstable \(r_n\) of the logistic family |
+| Logistic scale-ID | ✓ ratios ≡ geometric cascade | full termwise \(r_n\) for all \(n\) |
+| Superstable termwise | ✓ n=0,1 unique; n=2 residual + cascade ∃; secondary ~3.96 | formal StrictMonoOn residual (Rolle/Q') |
+| Cascade hybrid | ✓ hybrid \(R_n\); geometric tail honesty; \(\to\delta_{\mathrm{op}}\); free-c op | termwise SS all \(n\); C² renorm; free-\(c\) without pin |
 | C² / Schwarzian | ✓ algebraic on logistic / `tauReturnFour` | Mathlib C²-open renorm / universality |
 | Research `axiom` / `sorry` under `SystemicTau/` | **0 / 0** | — |
 
@@ -72,7 +76,8 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 ## Citation / Zenodo
 
-- GitHub release: **`v0.1.9`**  
+- GitHub release: **`v0.1.10`**  
+- **DOI (v0.1.10):** *assigned at Zenodo deposit*  
 - **DOI (v0.1.9):** [10.5281/zenodo.21536462](https://doi.org/10.5281/zenodo.21536462)
 - **DOI (v0.1.8):** [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882)  
 - Record: https://zenodo.org/records/21536462  
@@ -88,12 +93,13 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 Same list as [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md):
 
-1. Termwise / asymptotic superstable logistic roots (analysis).  
-2. Mathlib C²-open universality + renorm fixed point.  
-3. Field-derived continuum return of τₛ (not a cited lab map).
+1. Discharge `Period4ResidualStrictMonoOnWindow` (formal Rolle + \(Q'\) / Horner in Lean).  
+2. True superstable \(R_n\) for all \(n\) (not hybrid geometric tail).  
+3. Mathlib C²-open renorm fixed point + free-\(c\) without Kendall pin.  
+4. Field-derived continuum return of τₛ (not a cited lab map).
 
 Do **not** re-open discharged lab/construction goals as if they were `sorry`.
 
 Roadmap overview: [`ROADMAP.md`](ROADMAP.md).
 
-Last updated: 2026-07-24 (v0.1.9 published: 10.5281/zenodo.21536462; preprint 10.5281/zenodo.21536484).
+Last updated: 2026-07-24 (honesty pack: secondary zero; mono-conditional unique; hybrid geometric; 0 sorry).

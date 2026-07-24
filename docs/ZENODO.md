@@ -6,7 +6,8 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
+| **This version (v0.1.10)** | *pending deposit* | — |
+| **Prior (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
 | Record page (v0.1.9) | — | https://zenodo.org/records/21536462 |
 | **v0.1.8** | `10.5281/zenodo.21522882` | https://doi.org/10.5281/zenodo.21522882 |
@@ -19,7 +20,8 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **Preprint 0.1.9-r2** | `10.5281/zenodo.21536484` | https://doi.org/10.5281/zenodo.21536484 |
+| **Preprint 0.1.10-r1** | *pending deposit* | — |
+| **Prior preprint 0.1.9-r2** | `10.5281/zenodo.21536484` | https://doi.org/10.5281/zenodo.21536484 |
 | **Concept** (preprint series) | `10.5281/zenodo.21523231` | https://doi.org/10.5281/zenodo.21523231 |
 | Record page | — | https://zenodo.org/records/21536484 |
 | Prior preprint 0.1.9-r1 | `10.5281/zenodo.21536465` | https://doi.org/10.5281/zenodo.21536465 |
@@ -29,7 +31,7 @@
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
-## v0.1.9 description source
+## v0.1.10 description source
 
 Deposit description is in `zenodo/metadata.json` (adapted from
 [`FORMAL_OBLIGATIONS.md` §7.2](FORMAL_OBLIGATIONS.md)).

@@ -13,4 +13,6 @@ import SystemicTau.FeigenbaumAnalytic
 import SystemicTau.FeigenbaumTendsto
 import SystemicTau.FeigenbaumSchwarzian
 import SystemicTau.FeigenbaumLogistic
+import SystemicTau.FeigenbaumSuperstable
+import SystemicTau.FeigenbaumCascade
 import SystemicTau.Ontology

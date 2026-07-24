@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "title": "systemic-tau-formal: Machine-verifiable Systemic Tau (\u03c4\u209b) and RECD",
+    "title": "systemic-tau-formal: Machine-verifiable Systemic Tau (τₛ) and RECD",
     "upload_type": "software",
-    "description": "<p><strong>systemic-tau-formal</strong> v0.1.9 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (\u03c4\u209b) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p><p><strong>What is new in v0.1.9</strong></p><ul><li><strong>ThresholdFromDelta:</strong> unique operational inverse-scale bridge <code>f(\u03b4)=c/\u03b4</code> with pin <code>f(\u03b4_op)=\u03c4_ch</code>, scale constant <code>c\u22c6=\u03c4_ch\u00b7\u03b4_op</code>, antitonicity, band/gate compatibility, and \u03ba-scaled relation to the simple candidate 2/\u03b4. Classical free-<code>c</code> derivation remains open (naive 2/\u03b4 fails machine-checked).</li><li><strong>failedSimpleCandidates extended</strong> (10 rational forms \u2260 \u03c4_ch): includes 2/(\u03b4+1), (\u03b4\u22122)/\u03b4, 3/(2\u03b4), 4/\u03b4\u00b2, 5/\u03b4.</li><li><strong>Ontology:</strong> L0\u2013L3 claim registry, <code>stratifiedFour</code>, well-sited claims; package for the f(\u03b4) bridge.</li><li>Still <strong>zero <code>sorry</code> / zero research <code>axiom</code></strong> under <code>SystemicTau/</code>.</li><li>GitHub: closed good-first #7; community tracks #1\u2013#4,#6 updated.</li></ul><p><strong>Carried from v0.1.8</strong></p><ul><li>Lab/construction Feigenbaum pack: non-tent <code>tauReturnFour</code>, logistic scale-ID, C\u00b2/Schwarzian algebra, geometric cascade \u2192 \u03b4_op.</li><li>Lean 4.14 + Mathlib; Python golden bridge; CI; Aedes/C3 paths.</li></ul><p><strong>Still research-scale</strong></p><ul><li>Classical free-<code>c</code> derivation of \u03c4_ch from pure Feigenbaum</li><li>Termwise superstable logistic roots; Mathlib C\u00b2-open renorm</li><li>Field-derived continuum return of \u03c4\u209b</li><li>Multi-site empirical P1/P4 discharge</li></ul><p>Companion: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p><p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 remain protocol pins; uniqueness of f is <strong>inside</strong> the inverse-scale class with operational pin \u2014 not classical universality.</p>",
+    "description": "<p><strong>systemic-tau-formal</strong> v0.1.10 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (τₛ) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p>\n<p><strong>What is new in v0.1.10</strong></p>\n<ul>\n<li><strong>FeigenbaumSuperstable:</strong> termwise logistic superstable roots — unique period-1 <code>r=2</code>; unique strict period-2 <code>r=1+√5</code>; honesty that onset <code>r=3</code> is not period-2 superstable; period-4 residual characterization and strict exclusion of lower stages.</li>\n<li><strong>FeigenbaumCascade:</strong> existence of a strict period-4 superstable in cascade isolating window [3.498, 3.499] (IVT + exact ℚ residual); secondary residual zero near 3.96 proving uniqueness fails on full (1+√5, 4); conditional uniqueness under <code>StrictMonoOn residual</code>; Horner lower bound certificate for classical Q'&gt;0 input; hybrid cascade R_n (true SS n≤2 + geometric Feigenbaum tail n≥3) with tail ratios → δ_op; free-c operational pack (unique inverse-scale bridge; naive 2/δ fails).</li>\n<li>Still <strong>zero <code>sorry</code> / zero research <code>axiom</code></strong> under <code>SystemicTau/</code>.</li>\n</ul>\n<p><strong>Carried from v0.1.9</strong></p>\n<ul>\n<li>ThresholdFromDelta unique operational f(δ)=c/δ; extended simple candidates; Ontology L0–L3.</li>\n<li>Lab Feigenbaum pack: non-tent tauReturnFour, logistic scale-ID, C²/Schwarzian algebra, geometric cascade.</li>\n</ul>\n<p><strong>Still research-scale</strong></p>\n<ul>\n<li>Formal discharge of residual mono on the cascade window (Rolle + cleared poly Q' in Lean)</li>\n<li>True termwise superstable R_n for all n (not hybrid geometric tail)</li>\n<li>Mathlib C²-open renorm fixed point + free-c without Kendall pin</li>\n<li>Field-derived continuum return of τₛ; multi-site empirical P1/P4</li>\n</ul>\n<p>Companion: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p>\n<p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 remain protocol pins; cascade hybrid tail is geometric construction, not termwise logistic roots for all n.</p>",
     "creators": [
       {
         "name": "Padilla-Villanueva, Johel",
@@ -29,7 +29,7 @@
     "license": "mit",
     "access_right": "open",
     "language": "eng",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "related_identifiers": [
       {
         "identifier": "https://github.com/johelpadilla/systemic-tau-formal",
@@ -44,7 +44,7 @@
         "scheme": "doi"
       },
       {
-        "identifier": "10.5281/zenodo.21522882",
+        "identifier": "10.5281/zenodo.21536462",
         "relation": "isNewVersionOf",
         "resource_type": "software",
         "scheme": "doi"
