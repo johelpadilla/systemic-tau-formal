@@ -2,7 +2,7 @@
 
 | Layer | Exact content in this repo | Audience |
 |-------|----------------------------|----------|
-| **Núcleo formal** | `lean/` (Lean 4), `STATUS.md`, derivation notes in `Thresholds` | Mathematicians, theoretical physicists, dynamical systems |
+| **Núcleo formal** | `lean/` (Lean 4), `STATUS.md`, [`FORMAL_OBLIGATIONS.md`](FORMAL_OBLIGATIONS.md), derivation notes in `Thresholds` | Mathematicians, theoretical physicists, dynamical systems |
 | **Exposición técnica** | `python/`, `notebooks/01_*.ipynb`, algorithm notes | Complex-systems researchers, epidemiologists, data scientists |
 | **Puente semitécnico** | `docs/ONTOLOGY_BRIDGE.md`, papers index | Philosophers of science, ontologists |
 | **Versión pública rigurosa** | `docs/FALSIFIABLE_PREDICTIONS.md`, `docs/EXPERIMENTAL_PROTOCOL.md`, limitations in README | Technical public, risk managers, science journalists |
@@ -21,5 +21,5 @@
 
 1. **Quick public:** README → FALSIFIABLE_PREDICTIONS → notebook 01  
 2. **Technical:** python package + protocol → notebook 03  
-3. **Formal:** STATUS → lean modules → Feigenbaum preprint in `papers/`  
+3. **Formal:** STATUS → [`FORMAL_OBLIGATIONS.md`](FORMAL_OBLIGATIONS.md) → lean modules → Feigenbaum preprint in `papers/`  
 4. **Philosophical:** ONTOLOGY_BRIDGE → Summa / monographs (external)

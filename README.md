@@ -32,6 +32,7 @@ This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 | τ_ch vs δ | [`docs/TAU_CH_DELTA.md`](docs/TAU_CH_DELTA.md) |
 | C3 cross-domain | [`docs/CROSS_DOMAIN.md`](docs/CROSS_DOMAIN.md) |
 | Mathlib | [`docs/MATHLIB.md`](docs/MATHLIB.md) |
+| Formal obligations map | [`docs/FORMAL_OBLIGATIONS.md`](docs/FORMAL_OBLIGATIONS.md) |
 | Build status | [`STATUS.md`](STATUS.md) |
 
 Related production code: PyPI [`systemictau`](https://pypi.org/project/systemictau/) · DOI [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241)
@@ -114,7 +115,7 @@ Mathlib (v4.14.0) is required for ℚ order/tactics: [`docs/MATHLIB.md`](docs/MA
 | Definition of τₛ (mean Kendall-τ, windows) | Interface + Python ✓ · Lean ✓ |
 | Thresholds 0.50 / 0.41 from δ | Operational ✓ · band lemmas ✓ · unique f(δ) **open** |
 | Gate \(g(\tau_s)\) and \(\Delta t_k\) | Python ✓ · Lean gate + δ^{-k} ✓ |
-| Feigenbaum reduction theorem | Preprint exists · Lean `sorry` |
+| Feigenbaum reduction theorem | Preprint exists · 1a/2a/ε–N↔Tendsto ✓ · goals 1b–3 `sorry` · [map](docs/FORMAL_OBLIGATIONS.md) |
 | 4-level ontology / Baron’s Trilemma | Spec in Lean + `docs/ONTOLOGY_BRIDGE.md` |
 | `lake build` | **PASS** (Lean 4.14.0) |
 

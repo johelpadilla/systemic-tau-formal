@@ -55,7 +55,8 @@ List: [`FALSIFIABLE_PREDICTIONS.md`](FALSIFIABLE_PREDICTIONS.md).
 | Composite skeleton | `coherence_return_map_feigenbaum_of` | **proved** (if 1–3 granted) |
 | Composite from H | `coherence_return_map_feigenbaum` | `open-goal` |
 
-Status narrative: [`FEIGENBAUM_STATUS.md`](FEIGENBAUM_STATUS.md).
+Status narrative: [`FEIGENBAUM_STATUS.md`](FEIGENBAUM_STATUS.md) ·  
+Single-page map: [`FORMAL_OBLIGATIONS.md`](FORMAL_OBLIGATIONS.md).
 
 ## Workshop
 

@@ -12,10 +12,21 @@
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
+## Draft notes for next version (not deposited yet)
+
+Post-v0.1.6 formal track on `main` (Mathlib, Tendsto, goals 1a/2a, obligations map)
+is summarized for the next deposit description in:
+
+[`FORMAL_OBLIGATIONS.md` §7](FORMAL_OBLIGATIONS.md) (suggested Zenodo blurb).
+
+Do **not** claim Feigenbaum goals 1b–3 closed. Prefer version **v0.1.7** (docs+formal
+bookkeeping) or **v0.2** if bundling workshop/data milestones.
+
 ## New versions
 
 ```bash
 # 1. Bump version in zenodo/metadata.json + CITATION.cff + README/STATUS
+#    (paste/adapt FORMAL_OBLIGATIONS §7 into metadata description)
 # 2. Commit + git tag vX.Y.Z + GitHub release
 # 3. Publish under the same concept:
 export ZENODO_TOKEN='...'   # or ~/.zenodo_token

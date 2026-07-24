@@ -14,6 +14,8 @@ Public status after **v0.1.6** (concept DOI [10.5281/zenodo.21516059](https://do
 
 ## Near term (v0.2)
 
+- [x] Formal obligations map for scrutiny / Zenodo prep (`docs/FORMAL_OBLIGATIONS.md`)
+- [ ] Cut release **v0.2** (or v0.1.7) + Zenodo new version using draft text in FORMAL_OBLIGATIONS §7
 - [x] Documented Jupyter notebooks 01–03 (with CLI `.py` twins)
 - [x] Feigenbaum module: strong unimodality example + honest open/sorry split (`docs/FEIGENBAUM_STATUS.md`)
 - [x] Binder runtime files + badge (mybinder.org)

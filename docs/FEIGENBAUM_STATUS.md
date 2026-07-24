@@ -1,6 +1,7 @@
 # Feigenbaum reduction — formal status
 
-Epistemic labels: see `EPISTEMIC_LABELS.md`.
+Epistemic labels: see `EPISTEMIC_LABELS.md`.  
+**Full obligation map (v0.2 prep):** [`FORMAL_OBLIGATIONS.md`](FORMAL_OBLIGATIONS.md).
 
 ## Claim of the preprint (target)
 

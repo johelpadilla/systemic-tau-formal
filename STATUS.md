@@ -60,6 +60,7 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 ## Next formal targets
 
-See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
+See [`ROADMAP.md`](ROADMAP.md), [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md),  
+and the single-page honesty board [`docs/FORMAL_OBLIGATIONS.md`](docs/FORMAL_OBLIGATIONS.md) (v0.2 prep).
 
-Last updated: 2026-07-23 (Feigenbaum goals 1a/2a + composite-of-hypotheses proved; 1b/2/3 research open).
+Last updated: 2026-07-23 (FORMAL_OBLIGATIONS map; 1a/2a/Tendsto bookkeeping ✓; 1b/2/3 open).
