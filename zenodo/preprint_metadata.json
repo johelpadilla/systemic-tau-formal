@@ -3,7 +3,7 @@
     "title": "A Machine-Checkable Operational Standard for Systemic Tau \u03c4\u209b and the Discrete Extramental Clock (RECD)",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "description": "<p>We present <strong>systemic-tau-formal</strong> v0.1.9 as documented in this English preprint (document version <strong>0.1.9-r1</strong>): an open monorepository that states the operational core of the Systemic Tau (\u03c4\u209b) paradigm and the Discrete Extramental Clock (RECD) in a form accepted by a formal verifier.</p><p><strong>New in this document/software pin:</strong> unique operational inverse-scale bridge <em>f</em>(\u03b4)=c/\u03b4 with pin at \u03b4_op (module ThresholdFromDelta); extended class of simple closed forms ruled out vs \u03c4_ch; four-level ontology registry for the threshold package. Laboratory Feigenbaum constructions from v0.1.8 are retained. Classical free-<em>c</em> derivation of \u03c4_ch remains open.</p><p>The Lean&nbsp;4 + Mathlib package encodes regime bands, the gate function <em>g</em>(\u03c4\u209b), partition and monotonicity lemmas, and a laboratory construction package linked to period-doubling cascade ideas and Feigenbaum\u2019s constant \u03b4. Accompanied by a Python reference core, golden rational bridges, continuous integration, and a citable Zenodo software deposit.</p><p><em>Source:</em> <a href=\"https://github.com/johelpadilla/systemic-tau-formal\">github.com/johelpadilla/systemic-tau-formal</a> \u00b7 path <code>papers/preprint-standard-formal/</code>.</p><p><em>Software pin:</em> systemic-tau-formal <strong>v0.1.9</strong> \u2014 DOI <a href=\"https://doi.org/10.5281/zenodo.21536462\">10.5281/zenodo.21536462</a> (concept <a href=\"https://doi.org/10.5281/zenodo.21516059\">10.5281/zenodo.21516059</a>).</p>",
+    "description": "<p>We present <strong>systemic-tau-formal</strong> v0.1.9 as documented in this English preprint (document version <strong>0.1.9-r2</strong>): an open monorepository that states the operational core of the Systemic Tau (\u03c4\u209b) paradigm and the Discrete Extramental Clock (RECD) in a form accepted by a formal verifier.</p><p><strong>New in this document/software pin:</strong> unique operational inverse-scale bridge <em>f</em>(\u03b4)=c/\u03b4 with pin at \u03b4_op (module ThresholdFromDelta); extended class of simple closed forms ruled out vs \u03c4_ch; four-level ontology registry for the threshold package. Laboratory Feigenbaum constructions from v0.1.8 are retained. Classical free-<em>c</em> derivation of \u03c4_ch remains open.</p><p>The Lean&nbsp;4 + Mathlib package encodes regime bands, the gate function <em>g</em>(\u03c4\u209b), partition and monotonicity lemmas, and a laboratory construction package linked to period-doubling cascade ideas and Feigenbaum\u2019s constant \u03b4. Accompanied by a Python reference core, golden rational bridges, continuous integration, and a citable Zenodo software deposit.</p><p><em>Source:</em> <a href=\"https://github.com/johelpadilla/systemic-tau-formal\">github.com/johelpadilla/systemic-tau-formal</a> \u00b7 path <code>papers/preprint-standard-formal/</code>.</p><p><em>Software pin:</em> systemic-tau-formal <strong>v0.1.9</strong> \u2014 DOI <a href=\"https://doi.org/10.5281/zenodo.21536462\">10.5281/zenodo.21536462</a> (concept <a href=\"https://doi.org/10.5281/zenodo.21516059\">10.5281/zenodo.21516059</a>).</p>",
     "creators": [
       {
         "name": "Padilla-Villanueva, Johel",
@@ -27,7 +27,7 @@
     "license": "cc-by-4.0",
     "access_right": "open",
     "language": "eng",
-    "version": "0.1.9-r1",
+    "version": "0.1.9-r2",
     "related_identifiers": [
       {
         "identifier": "10.5281/zenodo.21536462",
@@ -60,6 +60,6 @@
         "scheme": "doi"
       }
     ],
-    "notes": "Preprint document 0.1.9-r1 aligned to software v0.1.9. Does not claim classical Feigenbaum universality or free-c derivation of \u03c4_ch. Files: frozen PDF + LaTeX source + VERSION/CHANGELOG."
+    "notes": "Preprint document 0.1.9-r2 aligned to software v0.1.9. Does not claim classical Feigenbaum universality or free-c derivation of \u03c4_ch. Files: frozen PDF + LaTeX source + VERSION/CHANGELOG."
   }
 }

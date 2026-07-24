@@ -19,9 +19,10 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **Preprint 0.1.9-r1** | `10.5281/zenodo.21536465` | https://doi.org/10.5281/zenodo.21536465 |
+| **Preprint 0.1.9-r2** | `10.5281/zenodo.21536484` | https://doi.org/10.5281/zenodo.21536484 |
 | **Concept** (preprint series) | `10.5281/zenodo.21523231` | https://doi.org/10.5281/zenodo.21523231 |
-| Record page | — | https://zenodo.org/records/21536465 |
+| Record page | — | https://zenodo.org/records/21536484 |
+| Prior preprint 0.1.9-r1 | `10.5281/zenodo.21536465` | https://doi.org/10.5281/zenodo.21536465 |
 | Prior preprint 0.1.8-r3 | `10.5281/zenodo.21523232` | https://doi.org/10.5281/zenodo.21523232 |
 | Deposit script | `scripts/deposit_preprint_zenodo.py` | metadata `zenodo/preprint_metadata.json` |
 | State | `zenodo/preprint_deposition_state.json` | — |
@@ -63,7 +64,7 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
-| `10.5281/zenodo.21536465` | **English operational-standard preprint** (0.1.9-r1) |
+| `10.5281/zenodo.21536484` | **English operational-standard preprint** (0.1.9-r2) |
 | `10.5281/zenodo.21523232` | Prior preprint 0.1.8-r3 |
 | `10.5281/zenodo.21523231` | Preprint concept / always-latest document version |
 | `10.5281/zenodo.21536462` | This formal monorepo (v0.1.9) |

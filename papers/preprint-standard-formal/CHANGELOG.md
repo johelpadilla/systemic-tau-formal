@@ -3,7 +3,7 @@
 Document ID: `preprint-standard-formal`  
 Software pin: `systemic-tau-formal` **v0.1.9**
 
-## 0.1.9-r1 — 2026-07-24
+## 0.1.9-r2 — 2026-07-24
 
 Aligned to software **v0.1.9**:
 
@@ -14,7 +14,7 @@ Aligned to software **v0.1.9**:
 - Module inventory includes `ThresholdFromDelta`.
 - Appendix release note relative to v0.1.8.
 
-Frozen PDF: `pins/standard-formal-v0.1.9-r1.pdf`
+Frozen PDF: `pins/standard-formal-v0.1.9-r2.pdf`
 
 ## 0.1.8-r3 — 2026-07-24
 

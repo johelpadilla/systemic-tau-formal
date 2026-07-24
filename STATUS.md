@@ -96,4 +96,4 @@ Do **not** re-open discharged lab/construction goals as if they were `sorry`.
 
 Roadmap overview: [`ROADMAP.md`](ROADMAP.md).
 
-Last updated: 2026-07-24 (v0.1.9 published: 10.5281/zenodo.21536462; preprint 10.5281/zenodo.21536465).
+Last updated: 2026-07-24 (v0.1.9 published: 10.5281/zenodo.21536462; preprint 10.5281/zenodo.21536484).
