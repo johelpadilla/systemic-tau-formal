@@ -3,13 +3,13 @@
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516059.svg)](https://doi.org/10.5281/zenodo.21516059)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21522346.svg)](https://doi.org/10.5281/zenodo.21522346)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
 Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.7**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
-**Concept DOI (all versions → latest):** https://doi.org/10.5281/zenodo.21516059  
-**DOI (v0.1.6):** https://doi.org/10.5281/zenodo.21516523
+**DOI (this version):** https://doi.org/10.5281/zenodo.21522346  
+**Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 
@@ -146,7 +146,7 @@ See [`CITATION.cff`](CITATION.cff).
 
 | What | Identifier |
 |------|------------|
-| This formal monorepo (v0.1.7) | Concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) *(version DOI after Zenodo publish)* |
+| This formal monorepo (v0.1.7) | [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346) |
 | Concept DOI (always latest) | [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) |
 | v0.1.6 (archived) | [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523) |
 | v0.1.5 (archived) | [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329) |
@@ -163,8 +163,8 @@ See [`CITATION.cff`](CITATION.cff).
   year         = 2026,
   publisher    = {Zenodo},
   version      = {0.1.7},
-  doi          = {10.5281/zenodo.21516059},
-  url          = {https://doi.org/10.5281/zenodo.21516059}
+  doi          = {10.5281/zenodo.21522346},
+  url          = {https://doi.org/10.5281/zenodo.21522346}
 }
 ```
 

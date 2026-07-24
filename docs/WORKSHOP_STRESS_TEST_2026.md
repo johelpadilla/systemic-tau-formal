@@ -110,7 +110,7 @@ Submit a critique that **names which horn** of Baron’s trilemma is allegedly r
 
 Cite the monorepo version you attacked:
 
-- v0.1.7: concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) (version DOI after publish)
+- v0.1.7: [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)
 - v0.1.6: [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)
 - Concept / latest: [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)
 - v0.1.5: [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329)  

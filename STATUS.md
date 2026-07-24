@@ -50,10 +50,12 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 ## Citation / Zenodo
 
 - GitHub release: `v0.1.7`  
-- **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) (version DOI filled after Zenodo publish)  
+- **DOI (v0.1.7):** [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)  
+- **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 - **DOI (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  
 - **DOI (v0.1.5):** [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329)  
 - **DOI (v0.1.4):** [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)  
+- Record: https://zenodo.org/records/21522346  
 - Deposit guide: [`docs/ZENODO.md`](docs/ZENODO.md)  
 - Prior corpus DOI: `10.5281/zenodo.20576241`
 

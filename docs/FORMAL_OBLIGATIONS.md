@@ -10,6 +10,7 @@ version note: what Lean **checks**, what is **bookkeeping**, and what remains
 **Mathlib / Tendsto:** [`MATHLIB.md`](MATHLIB.md)
 
 **Release:** **v0.1.7** packages this map + the formal track on `main` (Mathlib → Tendsto → 1a/2a → obligations).  
+**DOI (v0.1.7):** [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)  
 **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 **Prior pin (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)
 

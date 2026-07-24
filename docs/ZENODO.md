@@ -4,12 +4,12 @@
 
 | Role | DOI | Link |
 |------|-----|------|
+| **This version (v0.1.7)** | `10.5281/zenodo.21522346` | https://doi.org/10.5281/zenodo.21522346 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
-| **v0.1.7** | *(record after publish; concept DOI above always points to latest)* | — |
 | **v0.1.6** | `10.5281/zenodo.21516523` | https://doi.org/10.5281/zenodo.21516523 |
 | **v0.1.5** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
 | **v0.1.4** | `10.5281/zenodo.21516060` | https://doi.org/10.5281/zenodo.21516060 |
-| Record page (v0.1.6) | — | https://zenodo.org/records/21516523 |
+| Record page (v0.1.7) | — | https://zenodo.org/records/21522346 |
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
@@ -47,7 +47,8 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
-| Concept `10.5281/zenodo.21516059` | Always-latest formal monorepo (until v0.1.7 version DOI recorded) |
+| `10.5281/zenodo.21522346` | This formal monorepo (v0.1.7) |
+| `10.5281/zenodo.21516059` | Concept / always-latest |
 | `10.5281/zenodo.21516523` | Pin v0.1.6 |
 | `10.5281/zenodo.21516329` | Pin v0.1.5 |
 | `10.5281/zenodo.21516060` | Pin v0.1.4 |
