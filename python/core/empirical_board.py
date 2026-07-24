@@ -13,7 +13,8 @@ from typing import Any, Dict, List, Optional
 import numpy as np
 
 from .aedes_io import AedesLoadResult, load_aedes_sites
-from .p1_endpoints import load_endpoints, score_endpoints_file
+from .field_return import multi_site_field_return
+from .p1_endpoints import exploratory_lead_scan, load_endpoints, score_endpoints_file
 from .p4_sync import p4_series_report
 from .regimes import p3_noise_scan, regime_fracs
 from .tau import compute_taus
@@ -149,31 +150,61 @@ def build_empirical_board(
             )
     p1 = _p1_board_status(root, loaded.sites, window_size=window_size)
 
+    # Critical-path diagnostics (never invent pre-registered P1)
+    if loaded.source == "raw" and loaded.sites:
+        field_ret = multi_site_field_return(
+            loaded.sites, window_size=window_size
+        )
+        p1_expl = exploratory_lead_scan(loaded.sites, window_size=window_size)
+    else:
+        field_ret = {
+            "schema": "systemic-tau-formal/field-return/v1",
+            "n_sites": 0,
+            "headline": "no raw sites",
+            "sites": [],
+        }
+        p1_expl = {
+            "status": "no_raw",
+            "p1_discharge": False,
+            "rows": [],
+            "note": "exploratory lead scan needs EMPÍRICO raw matrices",
+        }
+
     n = len(series_rows)
     p3_ok = sum(1 for r in series_rows if r["p3"]["status"] == "ok")
     p4_anti = sum(1 for r in series_rows if r["p4"]["premise_anti"])
+    fr_pairs = int(field_ret.get("n_with_run_pairs") or 0)
     summary = {
         "n_series": n,
         "n_skipped": len(skipped),
         "p1_status": p1["status"],
+        "p1_exploratory_status": p1_expl.get("status"),
+        "p1_discharge": False,  # never auto-claim from exploratory
+        "field_return_sites_with_pairs": fr_pairs,
         "p3_ok_at_rho020": p3_ok,
         "p3_all_ok": n > 0 and p3_ok == n,
         "p4_with_anti_premise": p4_anti,
         "p4_field_discharge": False,  # never auto-claim
-        "headline": _headline(loaded, p1, n, p3_ok, p4_anti),
+        "headline": _headline(loaded, p1, p1_expl, field_ret, n, p3_ok, p4_anti),
     }
     return {
-        "schema": "systemic-tau-formal/empirical-board/v1",
+        "schema": "systemic-tau-formal/empirical-board/v2",
         "label_series": loaded.label,
         "source": loaded.source,
         "window_size": window_size,
         "summary": summary,
         "p1": p1,
+        "p1_exploratory": p1_expl,
+        "field_return": field_ret,
         "series": series_rows,
         "skipped": skipped,
         "honesty": (
-            "P1 requires pre-registered t_obs. P3 noise is OPERACIONAL on EMPÍRICO "
-            "series. P4 field discharge requires strong-anti premise (τₛ ≤ −0.41 mass); "
+            "P1 discharge requires pre-registered t_obs in endpoints.json. "
+            "p1_exploratory uses trap-surge endpoints from the same matrix "
+            "(not outbreak dates; not pre-registered). "
+            "field_return is observational Poincaré on τₛ / chaos runs — not "
+            "lab logistic unimodality. P3 noise is OPERACIONAL on EMPÍRICO series. "
+            "P4 field discharge requires strong-anti premise (τₛ ≤ −0.41 mass); "
             "2018 SJU multi-trap matrices are co-moving → no_strong_anti_regime is expected."
         ),
     }
@@ -182,15 +213,21 @@ def build_empirical_board(
 def _headline(
     loaded: AedesLoadResult,
     p1: dict,
+    p1_expl: dict,
+    field_ret: dict,
     n: int,
     p3_ok: int,
     p4_anti: int,
 ) -> str:
     if loaded.source != "raw":
         return "No field raw series — board is empty of EMPÍRICO rows."
+    fr_pairs = field_ret.get("n_with_run_pairs", 0)
+    expl_n = p1_expl.get("n_scored", 0)
     parts = [
         f"{n} field series",
         f"P1={p1['status']}",
+        f"P1-expl scored={expl_n}",
+        f"field-return pairs@sites={fr_pairs}",
         f"P3@0.20 ok={p3_ok}/{n}",
         f"P4 anti-premise={p4_anti}/{n}",
     ]

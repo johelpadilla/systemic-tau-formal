@@ -36,7 +36,9 @@ Public status after **v0.1.8** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Real Aedes into `data/aedes/raw/` (SJU1/2/3 2018 + raw-first loader + nb 07 report)
 - [x] P3 noise scan on field Aedes (nb 08 + tests; agreement @ρ≤0.20)
 - [x] P1 endpoint scaffold (`endpoints.example.json` + scorer; no invented dates)
-- [ ] Fill real `endpoints.json` (pre-registered t_obs) and score P1
+- [x] Field-derived multi-site return + exploratory trap-surge leads (nb 11; **not** P1 discharge)
+- [x] Empirical board v2 wires `field_return` + `p1_exploratory` (`docs/FIELD_EMPIRICAL_STATUS.md`)
+- [ ] Fill real `endpoints.json` (pre-registered external t_obs) and score true P1
 - [ ] Expand `raw/` with more years / municipalities
 - [x] Mathlib dependency wired (`mathlib4` v4.14.0) + `FeigenbaumAnalytic` claim shapes
 - [x] Real/`Tendsto` claim shapes (`FeigenbaumTendsto`; limit still open/`sorry`)

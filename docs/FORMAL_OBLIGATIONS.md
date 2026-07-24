@@ -175,6 +175,8 @@ C² package: `FeigenbaumUniversalC2`.
 | Aedes field under `data/aedes/raw/` (SJU1/2/3 2018) | ✓ CSV + nb 07 |
 | P3 on field Aedes (ρ≤0.20, no re-fit) | ✓ nb 08 + tests |
 | P1 with pre-registered `endpoints.json` | ○ scaffold only (example file) |
+| Field return multi-site (τₛ runs + Poincaré diagnostics) | ✓ `core.field_return` + nb 11 |
+| Exploratory trap-surge leads (not pre-registered) | ✓ `exploratory_lead_scan` — never P1 discharge |
 | P4 field scan on SJU1–3 (structure vs baselines) | ✓ nb 09 + tests; **no strong-anti premise** on 2018 matrices (honest) |
 | Unified empirical board (P1/P3/P4) + multi-year raw intake | ✓ nb 10 + recursive `raw/**/*.csv` |
 | More years/sites (anti-regime windows for true P4 discharge) | ○ pending (drop CSVs under `raw/YYYY/`) |

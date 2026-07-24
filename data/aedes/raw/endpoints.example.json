@@ -1,13 +1,27 @@
 {
   "schema": "systemic-tau-formal/aedes-endpoints/v1",
-  "note": "Copy to endpoints.json and fill. P1 is only scored when this file exists with valid t_obs.",
+  "note": "Copy to endpoints.json (gitignored). P1 scores only with non-null t_obs AND pre_registered:true. Use external domain dates (outbreak, intervention) — do not paste exploratory trap-surge indices as pre-registered.",
   "label": "[EMPÍRICO]",
   "series": [
+    {
+      "file": "San_Juan_SJU1_Repto_Metropolitano_2018.csv",
+      "t_obs": null,
+      "t_obs_unit": "row_index_0_based",
+      "endpoint_definition": "External domain transition (e.g. outbreak week, intervention) — not trap-surge max.",
+      "pre_registered": false
+    },
+    {
+      "file": "San_Juan_SJU2_2018_epiweeks.csv",
+      "t_obs": null,
+      "t_obs_unit": "row_index_0_based",
+      "endpoint_definition": "External domain transition.",
+      "pre_registered": false
+    },
     {
       "file": "San_Juan_SJU3_2018_12traps.csv",
       "t_obs": null,
       "t_obs_unit": "row_index_0_based",
-      "endpoint_definition": "Describe domain-observable transition (e.g. outbreak week, trap surge).",
+      "endpoint_definition": "External domain transition.",
       "pre_registered": false
     }
   ]

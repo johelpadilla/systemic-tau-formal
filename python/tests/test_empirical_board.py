@@ -52,6 +52,11 @@ def test_empirical_board_on_committed_raw():
     assert board["p1"]["status"] == "scaffold_only"
     assert board["p1"]["scored"] is False
     assert board["summary"]["p4_field_discharge"] is False
+    assert board["summary"]["p1_discharge"] is False
+    assert board["p1_exploratory"]["status"] == "exploratory_not_pre_registered"
+    assert board["p1_exploratory"]["p1_discharge"] is False
+    assert board["field_return"]["n_ok"] >= 3
+    assert "field_return" in board
     for s in board["series"]:
         assert s["p3"]["rho"] == 0.20
         assert 0.0 <= s["p3"]["agree_vs_rho0"] <= 1.0

@@ -21,6 +21,11 @@ from .p4_sync import (
     pairwise_corr_stats,
 )
 from .empirical_board import build_empirical_board
+from .field_return import (
+    chaos_band_runs,
+    field_return_report,
+    multi_site_field_return,
+)
 from .first_return import (
     first_return_crossing,
     first_return_from_local_maxima,
@@ -28,6 +33,7 @@ from .first_return import (
     return_pairs,
     section_values,
 )
+from .p1_endpoints import exploratory_lead_scan, trap_surge_t_obs
 from .report import format_report, pipeline_report
 from .synthetic import (
     add_column_noise,
@@ -69,6 +75,11 @@ __all__ = [
     "p4_series_report",
     "p4_field_scan",
     "build_empirical_board",
+    "chaos_band_runs",
+    "field_return_report",
+    "multi_site_field_return",
+    "exploratory_lead_scan",
+    "trap_surge_t_obs",
     "first_return_crossing",
     "first_return_from_local_maxima",
     "nonneg_pred",

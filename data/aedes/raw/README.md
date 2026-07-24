@@ -45,9 +45,12 @@ python notebooks/10_aedes_empirical_board.py   # unified P1/P3/P4 board
 - nb 07 does **not** score P1 without a pre-registered endpoint.
 - nb 08 runs protocol noise on field series (usable band labels at ρ≤0.20 in tests).
 - nb 09 does **not** claim P4 discharge without strong-anti premise (`τₛ ≤ −0.41` mass).
-- nb 10 aggregates the above into one JSON board (`build_empirical_board`).
-- For P1 later: copy `endpoints.example.json` → `endpoints.json` (gitignored), set
-  `t_obs` + `pre_registered: true`. Scorer: `python/core/p1_endpoints.py`.
+- nb 10 aggregates P1/P3/P4 + **field return** + **exploratory leads** (`build_empirical_board` v2).
+- nb 11 — multi-site **field-derived first-return** + trap-surge exploratory leads
+  (`core.field_return`, `exploratory_lead_scan`). See `docs/FIELD_EMPIRICAL_STATUS.md`.
+- For true P1: copy `endpoints.example.json` → `endpoints.json` (gitignored), set
+  `t_obs` + `pre_registered: true` from an **external** domain date. Scorer:
+  `python/core/p1_endpoints.py`. Trap-surge leads are **never** auto-promoted to P1.
 
 ## How to add more (multi-year intake)
 

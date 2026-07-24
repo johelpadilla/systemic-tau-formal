@@ -35,7 +35,9 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
 | Aedes proxy | `[OPERACIONAL]` | **CSV** | `data/aedes/proxy/` (fallback only) |
-| Aedes field (`raw/`) | `[EMPÍRICO]` | **3 series + P3/P4 scan** | SJU1/2/3 · nb 07–10; P1 scaffold only |
+| Aedes field (`raw/`) | `[EMPÍRICO]` | **3 series + P3/P4 + field return** | SJU1/2/3 · nb 07–11; P1 scaffold; exploratory leads only |
+| Field return multi-site | `[EMPÍRICO]` diagnostic | **Board v2** | `core.field_return` · not lab unimodality |
+| P1 exploratory trap-surge | `[EMPÍRICO]` characterization | **Tests** | never `pre_registered`; true P1 still open |
 | C3 synthetic kits | `[OPERACIONAL]` | **generators + nb** | finance/EEG/grid · `docs/CROSS_DOMAIN.md` |
 | First-return twin | `[OPERACIONAL]` | **Python + nb 05** | `python/core/first_return.py` |
 | More Aedes series | `[EMPÍRICO]` | **intake ready** | CSVs under `data/aedes/raw/` |
