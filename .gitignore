@@ -40,6 +40,7 @@ data/aedes/raw/**/*.xlsx
 data/**/*.zip
 data/**/*.tar.gz
 data/synthetic/cross_domain_last_run.json
+data/aedes/raw/last_field_report.json
 
 # Local secrets
 secrets.*

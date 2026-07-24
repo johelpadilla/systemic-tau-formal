@@ -19,15 +19,18 @@ Names are **not** field entomology. Notebook `02_aedes_puerto_rico` falls back h
 
 ## Field intake (`raw/`)
 
-See [`raw/README.md`](raw/README.md). Committed starter:
+See [`raw/README.md`](raw/README.md). Committed 2018 San Juan clusters:
 
-- `raw/San_Juan_SJU3_2018_12traps.csv` — San Juan SJU-3, 2018, 12 traps
-
-Drop additional matrix CSVs under `raw/`, register them in `raw/manifest.json`, and re-run notebook 02 / tests.
+- `San_Juan_SJU3_2018_12traps.csv` — SJU-3 (30 × 12)
+- `San_Juan_SJU1_Repto_Metropolitano_2018.csv` — SJU-1 (49 × 21)
+- `San_Juan_SJU2_2018_epiweeks.csv` — SJU-2 (46 × 22)
 
 ```bash
 python notebooks/02_aedes_puerto_rico.py
+python notebooks/07_aedes_field_report.py
 cd python && pytest -q tests/test_aedes_raw.py
+# re-import SJU1/2 from thesis Excel:
+python python/scripts/import_aedes_thesis.py
 ```
 
 Regenerate **proxy only** (never overwrites `raw/`):

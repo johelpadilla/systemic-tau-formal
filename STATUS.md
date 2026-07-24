@@ -20,7 +20,7 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
 | Aedes proxy | `[OPERACIONAL]` | **CSV** | `data/aedes/proxy/` (fallback only) |
-| Aedes field (`raw/`) | `[EMPÍRICO]` | **CSV + loader** | `San_Juan_SJU3_2018_12traps.csv` · `load_aedes_sites` |
+| Aedes field (`raw/`) | `[EMPÍRICO]` | **3 series + report** | SJU1/2/3 2018 · `load_aedes_sites` · nb 07 |
 | C3 synthetic kits | `[OPERACIONAL]` | **generators + nb** | finance/EEG/grid · `docs/CROSS_DOMAIN.md` |
 | First-return twin | `[OPERACIONAL]` | **Python + nb 05** | `python/core/first_return.py` |
 | More Aedes series | `[EMPÍRICO]` | **intake ready** | add matrix CSVs under `data/aedes/raw/` |
@@ -65,4 +65,4 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 See [`ROADMAP.md`](ROADMAP.md), [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md),  
 and the single-page honesty board [`docs/FORMAL_OBLIGATIONS.md`](docs/FORMAL_OBLIGATIONS.md).
 
-Last updated: 2026-07-23 (Aedes `raw/` intake: SJU3 2018 + raw-first loader).
+Last updated: 2026-07-23 (Aedes raw: SJU1/2/3 + field report nb 07).

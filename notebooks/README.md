@@ -1,16 +1,17 @@
 # Notebooks
 
 Interactive demos for Systemic Tau (τₛ) + RECD.  
-CLI twins (same logic, no Jupyter): `01_*.py` … `06_*.py`.
+CLI twins (same logic, no Jupyter): `01_*.py` … `07_*.py`.
 
 | Notebook | Content | Label |
 |----------|---------|--------|
 | [`01_synthetic_chaos.ipynb`](01_synthetic_chaos.ipynb) | Coupled logistic maps → τₛ, g, T_RECD | `[OPERACIONAL]` |
-| [`02_aedes_puerto_rico.ipynb`](02_aedes_puerto_rico.ipynb) | Two-site trap schema (`data/aedes/proxy/`) | `[OPERACIONAL]` until real data |
+| [`02_aedes_puerto_rico.ipynb`](02_aedes_puerto_rico.ipynb) | Aedes raw-first (field → proxy fallback) | `[EMPÍRICO]` if raw present |
 | [`03_falsifiability_test.ipynb`](03_falsifiability_test.ipynb) | Load your CSV; protocol defaults | demo ops / your data empiric |
 | [`04_p3_noise_robustness.py`](04_p3_noise_robustness.py) | P3 noise scan ρ ≤ 20% (script) | `[OPERACIONAL]` on synthetic |
 | [`05_first_return_poincare.py`](05_first_return_poincare.py) | Poincaré section on τₛ (Lean twin; `--plot`) | `[OPERACIONAL]` combinatorial |
 | [`06_cross_domain_c3.py`](06_cross_domain_c3.py) | Finance / EEG / grid-like synthetic C3 kits | `[OPERACIONAL]` not field data |
+| [`07_aedes_field_report.py`](07_aedes_field_report.py) | τₛ/RECD on `data/aedes/raw/` (SJU1–3) | `[EMPÍRICO]` series; P1 not scored |
 
 ## Run in the browser (Binder)
 
@@ -41,6 +42,7 @@ python notebooks/04_p3_noise_robustness.py
 python notebooks/05_first_return_poincare.py
 python notebooks/05_first_return_poincare.py --plot   # optional PNG
 python notebooks/06_cross_domain_c3.py
+python notebooks/07_aedes_field_report.py
 ```
 
 ## Epistemic rules

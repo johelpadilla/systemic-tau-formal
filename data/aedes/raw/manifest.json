@@ -1,6 +1,6 @@
 {
   "schema": "systemic-tau-formal/aedes-raw/v1",
-  "label": "[EMPÍRICO]",
+  "label": "[EMP\u00cdRICO]",
   "note": "Field / thesis-derived trap matrices. Not synthetic proxy.",
   "files": [
     {
@@ -12,6 +12,26 @@
       "year": 2018,
       "region": "San Juan, Puerto Rico (SJU-3 cluster)",
       "provenance": "Standardized long export from thesis / PRVCU-related trap program; copied from tau-sistemic Standardized_Long_Datasets"
+    },
+    {
+      "path": "San_Juan_SJU1_Repto_Metropolitano_2018.csv",
+      "site_id": "San_Juan_SJU1_Repto_2018",
+      "T": 49,
+      "N": 21,
+      "sampling": "epi weeks 4\u201352; missing trap-weeks filled with 0",
+      "year": 2018,
+      "region": "San Juan Repto Metropolitano (SJU-1 cluster)",
+      "provenance": "Thesis aedes_tesis / Mosquitos Aedes en Repto Metropolitano.xlsx"
+    },
+    {
+      "path": "San_Juan_SJU2_2018_epiweeks.csv",
+      "site_id": "San_Juan_SJU2_2018",
+      "T": 46,
+      "N": 22,
+      "sampling": "epi weeks 7\u201352; missing trap-weeks filled with 0",
+      "year": 2018,
+      "region": "San Juan (SJU-2 cluster)",
+      "provenance": "Thesis aedes_tesis / SanJuan Mosquito Data epi weeks_2018 SUMMER.xls (identical to WINTER book)"
     }
   ]
 }

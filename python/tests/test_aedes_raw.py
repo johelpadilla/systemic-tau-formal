@@ -50,3 +50,36 @@ def test_discover_raw_csvs_nonempty_when_committed():
     if not SJU3.is_file():
         pytest.skip("no raw CSVs")
     assert "San_Juan_SJU3_2018_12traps" in found
+
+
+@pytest.mark.parametrize(
+    "name,min_t,min_n",
+    [
+        ("San_Juan_SJU3_2018_12traps.csv", 20, 10),
+        ("San_Juan_SJU1_Repto_Metropolitano_2018.csv", 40, 15),
+        ("San_Juan_SJU2_2018_epiweeks.csv", 40, 15),
+    ],
+)
+def test_all_committed_raw_series_pipeline(name, min_t, min_n):
+    path = RAW / name
+    if not path.is_file():
+        pytest.skip(f"missing {name}")
+    X = load_matrix_csv(path)
+    assert X.shape[0] >= min_t and X.shape[1] >= min_n
+    assert np.all(np.isfinite(X))
+    assert np.all(X >= 0)
+    tg, _ = compute_taus(X, window_size=13)
+    T, _, _, _ = accumulate_time(tg, window_size=13)
+    assert np.isfinite(T[-1])
+
+
+def test_load_aedes_sites_finds_three_clusters_when_present():
+    result = load_aedes_sites(root=REPO, prefer_raw=True)
+    if result.source != "raw":
+        pytest.skip("raw empty")
+    # Starter pack: SJU1 + SJU2 + SJU3
+    stems = set(result.sites)
+    if len(stems) >= 3:
+        assert any("SJU1" in s or "SJU1" in s.upper() or "Repto" in s for s in stems)
+        assert any("SJU2" in s for s in stems)
+        assert any("SJU3" in s for s in stems)
