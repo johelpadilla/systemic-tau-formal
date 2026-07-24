@@ -213,12 +213,249 @@ theorem tentF_quarter_period2 : IsPeriod2 tentF (1 / 4) := by
   · -- 1/4 ≠ 3/4
     native_decide
 
-/-- Logistic family (parameterized), classical Feigenbaum laboratory.
-    Not claimed to be the τₛ return map — only an ambient reference. -/
+/-- Logistic family (parameterized), classical Feigenbaum laboratory. -/
 def logistic (r : Rat) (x : Rat) : Rat := r * x * (1 - x)
 
 theorem logistic_at_zero (r : Rat) : logistic r 0 = 0 := by
   simp [logistic]
+
+theorem logistic_at_one (r : Rat) : logistic r 1 = 0 := by
+  simp [logistic]
+
+theorem logistic_at_half (r : Rat) : logistic r (1 / 2) = r / 4 := by
+  simp [logistic]; ring
+
+/-- Algebraic identity used for unimodality of the logistic hump. -/
+theorem logistic_hump_diff (x y : Rat) :
+    y * (1 - y) - x * (1 - x) = (y - x) * (1 - x - y) := by
+  ring
+
+/-- On [0,1], the hump \(x(1-x)\) is at most \(1/4\). -/
+theorem hump_le_quarter (x : Rat) (_hx0 : (0 : Rat) ≤ x) (_hx1 : x ≤ 1) :
+    x * (1 - x) ≤ (1 : Rat) / 4 := by
+  have hsq : (0 : Rat) ≤ (x - 1 / 2) * (x - 1 / 2) := mul_self_nonneg _
+  have hexp : (x - 1 / 2) * (x - 1 / 2) = x * x - x + 1 / 4 := by ring
+  have hnonneg : (0 : Rat) ≤ x * x - x + 1 / 4 := by rw [← hexp]; exact hsq
+  have hrewrite : x * (1 - x) = x - x * x := by ring
+  rw [hrewrite]
+  linarith
+
+theorem hump_nonneg (x : Rat) (hx0 : (0 : Rat) ≤ x) (hx1 : x ≤ 1) :
+    (0 : Rat) ≤ x * (1 - x) := by
+  have : (0 : Rat) ≤ 1 - x := by linarith
+  exact mul_nonneg hx0 this
+
+theorem logistic_eq_r_hump (r x : Rat) :
+    logistic r x = r * (x * (1 - x)) := by
+  simp [logistic]; ring
+
+/-- Logistic maps [0,1] into itself when \(0 ≤ r ≤ 4\). -/
+theorem logistic_maps_unit
+    {r : Rat} (hr0 : (0 : Rat) ≤ r) (hr4 : r ≤ 4)
+    (x : Rat) (hx0 : (0 : Rat) ≤ x) (hx1 : x ≤ 1) :
+    (0 : Rat) ≤ logistic r x ∧ logistic r x ≤ 1 := by
+  have hhumple : x * (1 - x) ≤ 1 / 4 := hump_le_quarter x hx0 hx1
+  have hhumpp : (0 : Rat) ≤ x * (1 - x) := hump_nonneg x hx0 hx1
+  rw [logistic_eq_r_hump]
+  constructor
+  · exact mul_nonneg hr0 hhumpp
+  · have h2 : r * (x * (1 - x)) ≤ r * (1 / 4) :=
+      mul_le_mul_of_nonneg_left hhumple hr0
+    have h3 : r * (1 / 4) ≤ (4 : Rat) * (1 / 4) :=
+      mul_le_mul_of_nonneg_right hr4 (by native_decide : (0 : Rat) ≤ 1 / 4)
+    have h4 : (4 : Rat) * (1 / 4) = 1 := by native_decide
+    linarith
+
+def unitInterval : Interval := ⟨0, 1, by native_decide⟩
+
+/-- Logistic increasing on \([0,1/2]\) for \(r ≥ 0\). -/
+theorem logistic_mono_left
+    {r : Rat} (hr0 : (0 : Rat) ≤ r)
+    {x y : Rat} (hx0 : (0 : Rat) ≤ x) (hxy : x ≤ y) (hy_mode : y ≤ 1 / 2) :
+    logistic r x ≤ logistic r y := by
+  have hdiff := logistic_hump_diff x y
+  have hge : (0 : Rat) ≤ y * (1 - y) - x * (1 - x) := by
+    rw [hdiff]
+    have hyx : (0 : Rat) ≤ y - x := sub_nonneg.mpr hxy
+    have hone : (0 : Rat) ≤ 1 - x - y := by linarith
+    exact mul_nonneg hyx hone
+  have hhump : x * (1 - x) ≤ y * (1 - y) := by linarith
+  have hmul : r * (x * (1 - x)) ≤ r * (y * (1 - y)) :=
+    mul_le_mul_of_nonneg_left hhump hr0
+  simpa [logistic_eq_r_hump] using hmul
+
+/-- Logistic decreasing on \([1/2,1]\) for \(r ≥ 0\). -/
+theorem logistic_mono_right
+    {r : Rat} (hr0 : (0 : Rat) ≤ r)
+    {x y : Rat} (hx_mode : (1 : Rat) / 2 ≤ x) (hxy : x ≤ y) (hy1 : y ≤ 1) :
+    logistic r y ≤ logistic r x := by
+  have hdiff := logistic_hump_diff x y
+  have hle : y * (1 - y) - x * (1 - x) ≤ 0 := by
+    rw [hdiff]
+    have hyx : (0 : Rat) ≤ y - x := sub_nonneg.mpr hxy
+    have hone : 1 - x - y ≤ 0 := by linarith
+    exact mul_nonpos_of_nonneg_of_nonpos hyx hone
+  have hhump : y * (1 - y) ≤ x * (1 - x) := by linarith
+  have hmul : r * (y * (1 - y)) ≤ r * (x * (1 - x)) :=
+    mul_le_mul_of_nonneg_left hhump hr0
+  simpa [logistic_eq_r_hump] using hmul
+
+/--
+  Logistic map on [0,1] is strongly unimodal (mode \(1/2\)) for \(0 < r ≤ 4\).
+  Cite: standard quadratic family (Feigenbaum laboratory).
+-/
+def logisticStrong (r : Rat) (hr0 : (0 : Rat) < r) (hr4 : r ≤ 4) : StronglyUnimodal where
+  I := unitInterval
+  f := logistic r
+  maps_into := by
+    intro x hx0 hx1
+    exact logistic_maps_unit (le_of_lt hr0) hr4 x hx0 hx1
+  has_mode := ⟨(1 : Rat) / 2, by native_decide, by native_decide⟩
+  mode := (1 : Rat) / 2
+  mode_interior := by
+    dsimp only [unitInterval]
+    native_decide
+  mono_left := by
+    intro x y hx0 hxy hy_mode
+    exact logistic_mono_left (le_of_lt hr0) hx0 hxy hy_mode
+  mono_right := by
+    intro x y hx_mode hxy hy1
+    exact logistic_mono_right (le_of_lt hr0) hx_mode hxy hy1
+
+def logisticLike (r : Rat) (hr0 : (0 : Rat) < r) (hr4 : r ≤ 4) : UnimodalMap :=
+  (logisticStrong r hr0 hr4).toUnimodalMap
+
+theorem logisticLike_has_critical (r : Rat) (hr0 : (0 : Rat) < r) (hr4 : r ≤ 4) :
+    HasQuadraticCriticalPoint (logisticLike r hr0 hr4) :=
+  stronglyUnimodal_has_quadratic (logisticStrong r hr0 hr4)
+
+/-- Full-chaos logistic laboratory (\(r = 4\)). -/
+def logisticFourStrong : StronglyUnimodal :=
+  logisticStrong 4 (by native_decide) (by native_decide)
+
+def logisticFourLike : UnimodalMap := logisticFourStrong.toUnimodalMap
+
+theorem logisticFour_has_critical : HasQuadraticCriticalPoint logisticFourLike :=
+  logisticLike_has_critical 4 (by native_decide) (by native_decide)
+
+/-! ### Non-tent τₛ return (logistic conjugacy on coherence)
+
+  Affine conjugacy of the logistic family to the coherence band \([-1,1]\):
+    φ : [-1,1] → [0,1],  φ(y) = (y+1)/2
+    R_r = φ⁻¹ ∘ logistic_r ∘ φ
+
+  This is a **quadratic** unimodal return (smooth tip), not the piecewise-linear
+  tent. Cite: Ulam–von Neumann / standard conjugacy setup. Still a laboratory
+  model of τₛ first-return — not a derivation from ordinal data alone.
+-/
+
+/-- Coherence → unit: \(\varphi(y) = (y+1)/2\). -/
+def coherenceToUnit (y : Rat) : Rat := (y + 1) / 2
+
+/-- Unit → coherence: \(\varphi^{-1}(t) = 2t - 1\). -/
+def unitToCoherence (t : Rat) : Rat := 2 * t - 1
+
+theorem coherenceToUnit_neg_one : coherenceToUnit (-1) = 0 := by native_decide
+theorem coherenceToUnit_one : coherenceToUnit 1 = 1 := by native_decide
+theorem coherenceToUnit_zero : coherenceToUnit 0 = 1 / 2 := by native_decide
+theorem unitToCoherence_half : unitToCoherence (1 / 2) = 0 := by native_decide
+
+theorem coherenceToUnit_mono {x y : Rat} (h : x ≤ y) :
+    coherenceToUnit x ≤ coherenceToUnit y := by
+  simp only [coherenceToUnit]
+  linarith
+
+theorem unitToCoherence_mono {x y : Rat} (h : x ≤ y) :
+    unitToCoherence x ≤ unitToCoherence y := by
+  simp only [unitToCoherence]
+  linarith
+
+/--
+  Laboratory first-return of coherence: logistic pulled back to \([-1,1]\).
+  **Non-tent** quadratic model for the preprint’s return map of τₛ.
+-/
+def tauReturnF (r : Rat) (y : Rat) : Rat :=
+  unitToCoherence (logistic r (coherenceToUnit y))
+
+theorem tauReturnF_at_mode (r : Rat) : tauReturnF r 0 = unitToCoherence (r / 4) := by
+  simp only [tauReturnF, coherenceToUnit_zero, logistic_at_half]
+
+/-- For \(r = 4\), the mode maps to the right endpoint of coherence. -/
+theorem tauReturnF_four_at_mode : tauReturnF 4 0 = 1 := by
+  simp only [tauReturnF_at_mode]
+  native_decide
+
+theorem tauReturnF_four_at_ends :
+    tauReturnF 4 (-1) = -1 ∧ tauReturnF 4 1 = -1 := by
+  constructor <;> native_decide
+
+/-- Affine image of unit interval stays in coherence when logistic maps unit. -/
+theorem tauReturnF_maps_coherence
+    {r : Rat} (hr0 : (0 : Rat) ≤ r) (hr4 : r ≤ 4)
+    (y : Rat) (hy0 : (-1 : Rat) ≤ y) (hy1 : y ≤ 1) :
+    (-1 : Rat) ≤ tauReturnF r y ∧ tauReturnF r y ≤ 1 := by
+  have ht0 : (0 : Rat) ≤ coherenceToUnit y := by
+    simp only [coherenceToUnit]; linarith
+  have ht1 : coherenceToUnit y ≤ 1 := by
+    simp only [coherenceToUnit]; linarith
+  obtain ⟨hlo, hhi⟩ := logistic_maps_unit hr0 hr4 (coherenceToUnit y) ht0 ht1
+  simp only [tauReturnF, unitToCoherence]
+  constructor <;> linarith
+
+/--
+  [TEOREMA · cited construction · non-tent]
+  Logistic-\(r\) return on coherence is strongly unimodal with mode \(0\).
+-/
+def tauReturnStrong (r : Rat) (hr0 : (0 : Rat) < r) (hr4 : r ≤ 4) : StronglyUnimodal where
+  I := coherenceInterval
+  f := tauReturnF r
+  maps_into := by
+    intro y hy0 hy1
+    exact tauReturnF_maps_coherence (le_of_lt hr0) hr4 y hy0 hy1
+  has_mode := ⟨(0 : Rat), by native_decide, by native_decide⟩
+  mode := 0
+  mode_interior := by
+    dsimp only [coherenceInterval]
+    native_decide
+  mono_left := by
+    intro x y hx hxy hy_mode
+    have hφ : coherenceToUnit x ≤ coherenceToUnit y := coherenceToUnit_mono hxy
+    have hyφ : coherenceToUnit y ≤ (1 : Rat) / 2 := by
+      simp only [coherenceToUnit]; linarith
+    have hxφ0 : (0 : Rat) ≤ coherenceToUnit x := by
+      -- hx : coherenceInterval.a ≤ x, i.e. -1 ≤ x
+      dsimp [coherenceInterval] at hx
+      simp only [coherenceToUnit]; linarith
+    have hlog : logistic r (coherenceToUnit x) ≤ logistic r (coherenceToUnit y) :=
+      logistic_mono_left (le_of_lt hr0) hxφ0 hφ hyφ
+    simpa [tauReturnF] using unitToCoherence_mono hlog
+  mono_right := by
+    intro x y hx_mode hxy hy1
+    have hφ : coherenceToUnit x ≤ coherenceToUnit y := coherenceToUnit_mono hxy
+    have hxφ : (1 : Rat) / 2 ≤ coherenceToUnit x := by
+      simp only [coherenceToUnit]; linarith
+    have hyφ1 : coherenceToUnit y ≤ 1 := by
+      dsimp [coherenceInterval] at hy1
+      simp only [coherenceToUnit]; linarith
+    have hlog : logistic r (coherenceToUnit y) ≤ logistic r (coherenceToUnit x) :=
+      logistic_mono_right (le_of_lt hr0) hxφ hφ hyφ1
+    simpa [tauReturnF] using unitToCoherence_mono hlog
+
+def tauReturnLike (r : Rat) (hr0 : (0 : Rat) < r) (hr4 : r ≤ 4) : UnimodalMap :=
+  (tauReturnStrong r hr0 hr4).toUnimodalMap
+
+theorem tauReturnLike_has_critical (r : Rat) (hr0 : (0 : Rat) < r) (hr4 : r ≤ 4) :
+    HasQuadraticCriticalPoint (tauReturnLike r hr0 hr4) :=
+  stronglyUnimodal_has_quadratic (tauReturnStrong r hr0 hr4)
+
+/-- Full-chaos non-tent τₛ laboratory return (\(r = 4\)). -/
+def tauReturnFourStrong : StronglyUnimodal :=
+  tauReturnStrong 4 (by native_decide) (by native_decide)
+
+def tauReturnFourLike : UnimodalMap := tauReturnFourStrong.toUnimodalMap
+
+theorem tauReturnFour_has_critical : HasQuadraticCriticalPoint tauReturnFourLike :=
+  tauReturnLike_has_critical 4 (by native_decide) (by native_decide)
 
 /-! ### First-return construction from ordinal coherence series -/
 
@@ -546,6 +783,16 @@ def tentContinuum : ContinuumReturnMap where
 
 theorem tentContinuum_R : tentContinuum.R = tentF := rfl
 
+/-- Continuum packaging of the non-tent τₛ return (logistic conjugacy). -/
+def tauReturnFourContinuum : ContinuumReturnMap where
+  I := coherenceInterval
+  R := tauReturnF 4
+  maps_into := by
+    intro y hy0 hy1
+    exact tauReturnF_maps_coherence (by native_decide) (by native_decide) y hy0 hy1
+
+theorem tauReturnFourContinuum_R : tauReturnFourContinuum.R = tauReturnF 4 := rfl
+
 /--
   [TEOREMA · cited construction · empty Poincaré data]
   Empty return pairs are realized by the tent continuum (and any map).
@@ -724,12 +971,21 @@ theorem coherence_return_map_feigenbaum_of
   exact goal_2a_quadratic_of_strong U C hsame
 
 /--
-  Composite reduction package from `ReductionHypotheses` via **cited tent lab**
-  + non-placeholder `FeigenbaumUniversal`.
-  Does **not** claim tent is the dynamical return of τₛ under ordinal+smooth;
-  that identification remains an empirical / analytic modelling step.
+  Composite reduction package from `ReductionHypotheses` via **cited non-tent
+  τₛ return** (`tauReturnF 4`, logistic conjugacy on coherence) + refined
+  `FeigenbaumUniversal`. Does **not** derive the return from ordinal ranks alone;
+  the logistic conjugacy is the laboratory model of the preprint’s first-return.
 -/
 theorem coherence_return_map_feigenbaum
+    (_H : ReductionHypotheses) :
+    ∃ U : StronglyUnimodal,
+      HasQuadraticCriticalPoint U.toUnimodalMap ∧
+        FeigenbaumUniversal U.toUnimodalMap :=
+  ⟨tauReturnFourStrong, tauReturnFour_has_critical,
+    open_analytic_feigenbaum tauReturnFourLike tauReturnFour_has_critical⟩
+
+/-- Legacy tent-lab composite (piecewise-linear laboratory). -/
+theorem coherence_return_map_feigenbaum_tent
     (_H : ReductionHypotheses) :
     ∃ U : StronglyUnimodal,
       HasQuadraticCriticalPoint U.toUnimodalMap ∧
@@ -737,15 +993,29 @@ theorem coherence_return_map_feigenbaum
   ⟨tentStrong, tentLike_has_critical,
     open_analytic_feigenbaum tentLike tentLike_has_critical⟩
 
+/-- Goal 2 shape discharged by non-tent τₛ return continuum. -/
+theorem open_return_strongly_unimodal_tau :
+    ∃ C : ContinuumReturnMap, ∃ U : StronglyUnimodal,
+      U.f = C.R ∧ HasQuadraticCriticalPoint U.toUnimodalMap :=
+  ⟨tauReturnFourContinuum, tauReturnFourStrong, rfl, tauReturnFour_has_critical⟩
+
+/-- Joint empty pairs + strong return via non-tent τₛ continuum. -/
+theorem open_reduction_joint_empty_pairs_tau :
+    ∃ C : ContinuumReturnMap, ∃ U : StronglyUnimodal,
+      agreesOnPairs C.R ([] : List (Rat × Rat)) ∧
+        U.f = C.R ∧ HasQuadraticCriticalPoint U.toUnimodalMap :=
+  ⟨tauReturnFourContinuum, tauReturnFourStrong,
+    agreesOnPairs_nil tauReturnFourContinuum.R, rfl, tauReturnFour_has_critical⟩
+
 /-- Discharged: the unimodal / strong-unimodal package is mathematically inhabited. -/
 theorem strongly_unimodal_inhabited :
     ∃ U : StronglyUnimodal, HasQuadraticCriticalPoint U.toUnimodalMap := by
-  exact ⟨tentStrong, tentLike_has_critical⟩
+  exact ⟨tauReturnFourStrong, tauReturnFour_has_critical⟩
 
 /-- Discharged: a unimodal map with interior critical location exists on coherence. -/
 theorem unimodal_structure_inhabited :
     ∃ U : UnimodalMap, HasQuadraticCriticalPoint U := by
-  exact ⟨tentLike, tentLike_has_critical⟩
+  exact ⟨tauReturnFourLike, tauReturnFour_has_critical⟩
 
 /--
   Honest split of the preprint claim into discharged constructions.
@@ -773,8 +1043,12 @@ structure ReductionStatus where
   goal_2a_quadratic_ok : True := trivial
   /-- Goal 3 package: non-placeholder fields (band + quadratic). PROVED. -/
   delta_package_refined_ok : True := trivial
-  /-- Composite from H via tent lab + refined package. PROVED (lab). -/
-  composite_lab_construction_ok : True := trivial
+  /-- Composite from H via **non-tent** τₛ return (logistic conjugacy). PROVED. -/
+  composite_tau_return_ok : True := trivial
+  /-- Non-tent τₛ return strongly unimodal. PROVED. -/
+  tau_return_strong_ok : True := trivial
+  /-- Tent lab composite retained as alternate. PROVED. -/
+  composite_tent_lab_ok : True := trivial
   /-- No research axiom remains in this module. -/
   zero_research_axiom_ok : True := trivial
 

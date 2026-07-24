@@ -10,4 +10,6 @@ import SystemicTau.RECD
 import SystemicTau.FeigenbaumReduction
 import SystemicTau.FeigenbaumAnalytic
 import SystemicTau.FeigenbaumTendsto
+import SystemicTau.FeigenbaumSchwarzian
+import SystemicTau.FeigenbaumLogistic
 import SystemicTau.Ontology

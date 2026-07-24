@@ -12,10 +12,13 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque; **Mathlib** ℚ |
 | `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** vs τ_ch |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
-| `FeigenbaumReduction` | mix | **builds (0 sorry, 0 axiom)** | 1a/1b lookupTent / 2 tent / ★ lab; `FeigenbaumUniversal` refined |
+| `FeigenbaumReduction` | mix | **builds (0 sorry, 0 axiom)** | 1a/1b lookupTent / 2 tent+**tauReturn** / ★ **non-tent**; logistic strong |
 | `FeigenbaumAnalytic` | mix | **builds (0 sorry, 0 axiom)** | geometric cascade ≡ δ; 3a/3b construction; toy ↛ δ |
 | `FeigenbaumTendsto` | mix | **builds (0 sorry, 0 axiom)** | ε–N↔Tendsto; 3aℝ–3cℝ via geometric |
+| `FeigenbaumSchwarzian` | mix | **builds (0 sorry, 0 axiom)** | C² tip \(f''≠0\); Schwarzian ≤ 0 for logistic |
+| `FeigenbaumLogistic` | mix | **builds (0 sorry, 0 axiom)** | logistic-anchored cascade scale-ID with geometric |
 | Mathlib | dep | **wired** | mathlib4 `v4.14.0` · Real/Topology for Tendsto · `docs/MATHLIB.md` |
+
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
