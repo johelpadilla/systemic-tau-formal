@@ -12,7 +12,7 @@ Use GitHub issues as the board of record. This file is the static map.
 | [#2](https://github.com/johelpadilla/systemic-tau-formal/issues/2) | C1 false early warnings |
 | [#3](https://github.com/johelpadilla/systemic-tau-formal/issues/3) | C2 new math |
 | [#4](https://github.com/johelpadilla/systemic-tau-formal/issues/4) | C3 domain transfer |
-| [#5](https://github.com/johelpadilla/systemic-tau-formal/issues/5) | Feigenbaum open goals 1–3 |
+| [#5](https://github.com/johelpadilla/systemic-tau-formal/issues/5) | Feigenbaum goals 1–3 · **closed** (v0.1.8 lab/construction) |
 | [#6](https://github.com/johelpadilla/systemic-tau-formal/issues/6) | Philosophy / Baron’s trilemma |
 | [#7](https://github.com/johelpadilla/systemic-tau-formal/issues/7) | good first: more f(δ) disequalities |
 | [#8](https://github.com/johelpadilla/systemic-tau-formal/issues/8) | good first: plot first-return pairs |
@@ -62,7 +62,7 @@ List: [`FALSIFIABLE_PREDICTIONS.md`](FALSIFIABLE_PREDICTIONS.md).
 Status narrative: [`FEIGENBAUM_STATUS.md`](FEIGENBAUM_STATUS.md) ·  
 Single-page map: [`FORMAL_OBLIGATIONS.md`](FORMAL_OBLIGATIONS.md) ·  
 Constructions: [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md).  
-Live GitHub issue #5 may lag this table — prefer docs on `main`.
+GitHub issue [#5](https://github.com/johelpadilla/systemic-tau-formal/issues/5) **closed** (completed) with v0.1.8 discharge note. Residual classical work → new issues, not reopen #5.
 
 ## Workshop
 
