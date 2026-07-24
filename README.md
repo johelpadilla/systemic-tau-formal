@@ -74,6 +74,8 @@ Jupyter (from repo root, after `pip install -e ".[dev]"` in `python/`):
 | [`notebooks/06_cross_domain_c3.py`](notebooks/06_cross_domain_c3.py) | C3 synthetic finance / EEG / grid kits |
 | [`notebooks/07_aedes_field_report.py`](notebooks/07_aedes_field_report.py) | Empirical τₛ/RECD on `data/aedes/raw/` (no fake P1) |
 | [`notebooks/08_aedes_p3_field.py`](notebooks/08_aedes_p3_field.py) | P3 noise scan on field Aedes (ρ≤20%) |
+| [`notebooks/09_aedes_p4_field.py`](notebooks/09_aedes_p4_field.py) | P4 structure vs baselines (no false anti discharge) |
+| [`notebooks/10_aedes_empirical_board.py`](notebooks/10_aedes_empirical_board.py) | Unified P1/P3/P4 empirical board |
 
 CLI twins (no Jupyter required):
 
@@ -86,6 +88,8 @@ python notebooks/05_first_return_poincare.py --plot
 python notebooks/06_cross_domain_c3.py
 python notebooks/07_aedes_field_report.py
 python notebooks/08_aedes_p3_field.py
+python notebooks/09_aedes_p4_field.py
+python notebooks/10_aedes_empirical_board.py
 ```
 
 Committed lab fixtures: [`data/synthetic/`](data/synthetic/), [`data/aedes/proxy/`](data/aedes/proxy/).

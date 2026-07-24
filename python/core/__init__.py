@@ -20,6 +20,7 @@ from .p4_sync import (
     p4_series_report,
     pairwise_corr_stats,
 )
+from .empirical_board import build_empirical_board
 from .first_return import (
     first_return_crossing,
     first_return_from_local_maxima,
@@ -67,6 +68,7 @@ __all__ = [
     "p4_nearest_baseline",
     "p4_series_report",
     "p4_field_scan",
+    "build_empirical_board",
     "first_return_crossing",
     "first_return_from_local_maxima",
     "nonneg_pred",

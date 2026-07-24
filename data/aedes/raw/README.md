@@ -37,26 +37,31 @@ python python/scripts/import_aedes_thesis.py
 ```bash
 python notebooks/07_aedes_field_report.py
 python notebooks/08_aedes_p3_field.py          # P3 noise ρ≤0.20 on field matrices
+python notebooks/09_aedes_p4_field.py          # P4 structure vs baselines
+python notebooks/10_aedes_empirical_board.py   # unified P1/P3/P4 board
 ```
 
 **Honesty:**
 - nb 07 does **not** score P1 without a pre-registered endpoint.
 - nb 08 runs protocol noise on field series (usable band labels at ρ≤0.20 in tests).
+- nb 09 does **not** claim P4 discharge without strong-anti premise (`τₛ ≤ −0.41` mass).
+- nb 10 aggregates the above into one JSON board (`build_empirical_board`).
 - For P1 later: copy `endpoints.example.json` → `endpoints.json` (gitignored), set
   `t_obs` + `pre_registered: true`. Scorer: `python/core/p1_endpoints.py`.
 
-## How to add more
+## How to add more (multi-year intake)
 
-1. Place a matrix CSV here (`*.csv` is trackable).  
-2. Register it in `manifest.json`.  
-3. Re-run notebook 02 / 07 and tests.
+1. **Flat:** place `Site_Year.csv` in this directory, **or**  
+   **Year folder:** `raw/2019/Site_A.csv` → loader key `2019_Site_A`.
+2. Register it in `manifest.json` (path relative to `raw/`).
+3. Re-run notebooks 02 / 07 / 10 and tests.
 
 Bulk Excel (`.xls`/`.xlsx`) stays **gitignored** — convert via the import script or by hand.
 
 ## Loader priority
 
-`core.load_aedes_sites()` (and notebooks 02 / 07):
+`core.load_aedes_sites()` (and notebooks 02 / 07 / 10):
 
-1. **All** `raw/*.csv` if any exist → label `[EMPÍRICO]`  
+1. **All** `raw/**/*.csv` if any exist → label `[EMPÍRICO]` (recursive year folders)  
 2. Else committed `proxy/*.csv` → `[OPERACIONAL]`  
 3. Else in-memory proxy generator

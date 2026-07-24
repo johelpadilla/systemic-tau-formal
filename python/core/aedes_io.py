@@ -29,14 +29,34 @@ def _repo_root_from_here() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
-def discover_matrix_csvs(directory: Path) -> Dict[str, Path]:
-    """Map stem → path for every ``*.csv`` in *directory* (non-recursive)."""
+def discover_matrix_csvs(
+    directory: Path,
+    *,
+    recursive: bool = False,
+) -> Dict[str, Path]:
+    """
+    Map series key → path for every ``*.csv`` under *directory*.
+
+    - ``recursive=False`` (default for proxy): only the top-level directory.
+    - ``recursive=True`` (raw multi-year intake): also ``year/`` subfolders.
+      Nested keys use ``parent_stem`` with ``/`` → ``_``
+      (e.g. ``2019/Site_A.csv`` → ``2019_Site_A``).
+    """
     if not directory.is_dir():
         return {}
     out: Dict[str, Path] = {}
-    for path in sorted(directory.glob("*.csv")):
-        if path.is_file():
-            out[path.stem] = path
+    pattern = "**/*.csv" if recursive else "*.csv"
+    for path in sorted(directory.glob(pattern)):
+        if not path.is_file():
+            continue
+        if recursive:
+            rel = path.relative_to(directory)
+            key = str(rel.with_suffix("")).replace("\\", "/").replace("/", "_")
+        else:
+            key = path.stem
+        # later paths with same key should not silently clobber — keep first
+        if key not in out:
+            out[key] = path
     return out
 
 
@@ -51,7 +71,7 @@ def load_aedes_sites(
 
     Priority:
 
-    1. ``data/aedes/raw/*.csv`` if any (``[EMPÍRICO]``)
+    1. ``data/aedes/raw/**/*.csv`` if any (``[EMPÍRICO]``; recursive year folders OK)
     2. committed ``data/aedes/proxy/*.csv`` (``[OPERACIONAL]``)
     3. in-memory ``aedes_proxy_two_sites()`` (``[OPERACIONAL]``)
     """
@@ -60,7 +80,7 @@ def load_aedes_sites(
     proxy_dir = root / "data" / "aedes" / "proxy"
 
     if prefer_raw:
-        raw_paths = discover_matrix_csvs(raw_dir)
+        raw_paths = discover_matrix_csvs(raw_dir, recursive=True)
         if raw_paths:
             sites = {name: load_matrix_csv(p) for name, p in raw_paths.items()}
             if clip_nonneg:
@@ -72,7 +92,7 @@ def load_aedes_sites(
                 directory=raw_dir,
             )
 
-    proxy_paths = discover_matrix_csvs(proxy_dir)
+    proxy_paths = discover_matrix_csvs(proxy_dir, recursive=False)
     if proxy_paths:
         sites = {name: load_matrix_csv(p) for name, p in proxy_paths.items()}
         if clip_nonneg:

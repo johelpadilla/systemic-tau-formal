@@ -31,13 +31,17 @@ venv/
 *.swp
 
 # Data: track standardized Aedes CSVs + README/manifest; ignore bulk dumps
+# Nested year folders (e.g. raw/2019/*.csv) are allowed via **/*.csv
 data/aedes/raw/*
 !data/aedes/raw/README.md
 !data/aedes/raw/manifest.json
-!data/aedes/raw/*.csv
+!data/aedes/raw/**/*.csv
 !data/aedes/raw/endpoints.example.json
+!data/aedes/raw/**/
 data/aedes/raw/**/*.xls
 data/aedes/raw/**/*.xlsx
+# Board / report dumps under raw (optional local artifacts)
+data/aedes/raw/last_*.json
 data/**/*.zip
 data/**/*.tar.gz
 data/synthetic/cross_domain_last_run.json
