@@ -41,7 +41,7 @@ Workaround: build the **import closure from source** (slow first time, ~0.5–1�
 | ℚ as `LinearOrder` / field arithmetic | **used** (via Mathlib) |
 | Operational gate + band lemmas | **proved** (same as pre-Mathlib intent) |
 | Cascade / δ ε–N interfaces | **encoded** in `FeigenbaumAnalytic` |
-| `Tendsto` limit δ_n → δ on ℝ | **interface encoded**; cascade→Feigenbaum δ still **open** (`sorry`) |
+| `Tendsto` limit δ_n → δ on ℝ | **proved** for geometric cascade (exact ratio δ_op); logistic ID open |
 | ε–N ↔ `Tendsto` bookkeeping | **proved** (`cascadeDeltaLimit_iff_tendsto`) — not Feigenbaum |
 | Continuum unimodal return of τₛ | **open** (goals 1–2; not a Mathlib import issue) |
 

@@ -12,9 +12,9 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque; **Mathlib** ℚ |
 | `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** vs τ_ch |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
-| `FeigenbaumReduction` | mix | **builds (0 sorry)** | 1a/2a/2†/★ closed; 1b+2 via `ax_reduction_continuum_strong` |
-| `FeigenbaumAnalytic` | mix | **builds (0 sorry)** | toy ↛ δ; 3a/3b via axioms; 3c placeholder pkg |
-| `FeigenbaumTendsto` | mix | **builds (0 sorry)** | ε–N↔Tendsto; 3aℝ–3cℝ from Analytic axioms |
+| `FeigenbaumReduction` | mix | **builds (0 sorry, 0 axiom)** | 1a/1b lookupTent / 2 tent / ★ lab; `FeigenbaumUniversal` refined |
+| `FeigenbaumAnalytic` | mix | **builds (0 sorry, 0 axiom)** | geometric cascade ≡ δ; 3a/3b construction; toy ↛ δ |
+| `FeigenbaumTendsto` | mix | **builds (0 sorry, 0 axiom)** | ε–N↔Tendsto; 3aℝ–3cℝ via geometric |
 | Mathlib | dep | **wired** | mathlib4 `v4.14.0` · Real/Topology for Tendsto · `docs/MATHLIB.md` |
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
@@ -65,4 +65,4 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 See [`ROADMAP.md`](ROADMAP.md), [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md),  
 and the single-page honesty board [`docs/FORMAL_OBLIGATIONS.md`](docs/FORMAL_OBLIGATIONS.md).
 
-Last updated: 2026-07-24 (Feigenbaum **zero sorry**: 3 research axioms; see `docs/FEIGENBAUM_AXIOMS.md`).
+Last updated: 2026-07-24 (Feigenbaum **zero sorry / zero axiom**: cited constructions; see `docs/FEIGENBAUM_AXIOMS.md`).

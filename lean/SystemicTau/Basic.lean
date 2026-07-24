@@ -12,10 +12,15 @@ import Mathlib.Tactic.FieldSimp
 
 namespace SystemicTau
 
-/-- Feigenbaum δ as a rational approximation (placeholder for ℝ formalization).
-    46692016091 / 10000000000 ≈ 4.6692016091 -/
+/-- Feigenbaum δ as a rational approximation (operational lab constant).
+    46692016091 / 10000000000 ≈ 4.6692016091 (Feigenbaum 1978 / standard tables).
+    Not a uniqueness or cascade-limit theorem. -/
 def feigenbaumDeltaNum : Nat := 46692016091
 def feigenbaumDeltaDen : Nat := 10000000000
+
+/-- Operational Feigenbaum δ ∈ ℚ. Shared by Reduction / Analytic / Tendsto. -/
+def feigenbaumDeltaOp : Rat :=
+  (feigenbaumDeltaNum : Rat) / (feigenbaumDeltaDen : Rat)
 
 /-- Sliding window length (default matching systemictau). [OPERACIONAL] -/
 structure Window where

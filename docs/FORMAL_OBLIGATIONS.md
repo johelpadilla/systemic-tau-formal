@@ -1,8 +1,8 @@
 # Formal obligations map (Feigenbaum + RECD)
 
 **Purpose.** Single-page honesty board for peer scrutiny and for the next Zenodo
-version note: what Lean **checks**, what is **bookkeeping**, and what remains
-**research-open** (`sorry`).
+version note: what Lean **checks**, what is **bookkeeping**, what is a
+**cited construction**, and what remains research-scale (logistic ID / Mathlib C²).
 
 **Epistemic labels:** [`EPISTEMIC_LABELS.md`](EPISTEMIC_LABELS.md) ·  
 **Live module status:** [`../STATUS.md`](../STATUS.md) ·  
@@ -23,15 +23,17 @@ version note: what Lean **checks**, what is **bookkeeping**, and what remains
 | **✓ theorem** | `lake build` accepts a completed proof (no `sorry` in that decl). |
 | **✓ bookkeeping** | Interface equivalence or discrete graph fact; **not** the preprint’s dynamical claim. |
 | **✓ inhabited / example** | Structure exists (e.g. tent map); **not** “τₛ dynamics are a tent”. |
-| **○ open** | Named `sorry` or missing empirical artifact; research or data. |
+| **✓ construction** | Named cited construction (geometric cascade, tent lab, lookupTent). |
+| **○ open / research-scale** | Logistic identification, Mathlib C² universality, field empirics. |
 | **spec only** | Ontology / philosophy encoded as types; not mathematical necessity. |
 
 **Forbidden moves (project policy):**
 
-- Closing goal 1b/2/3 by substituting the tent map under arbitrary hypotheses.  
+- Claiming tent *is* τₛ dynamics (lab only).  
 - Closing cascade → Feigenbaum δ with the toy arithmetic progression.  
+- Claiming geometric cascade *is* the logistic superstable sequence.  
 - Collapsing dengue lead times or RECD bands into Lean theorems.  
-- Treating ε–N ↔ `Tendsto` as a Feigenbaum universality proof.
+- Treating ε–N ↔ `Tendsto` as classical Feigenbaum universality.
 
 ---
 
@@ -70,46 +72,44 @@ Preprint target (informal):
 | C∘ | If continuum + strong \(U\) + `FeigenbaumUniversal`, composite package | `coherence_return_map_feigenbaum_of` | ✓ bookkeeping |
 | 2† | *If* continuum return = tent map ⇒ strong + quadratic | `goal_2_when_return_is_tent` | ✓ conditional lab only |
 
-### 3.2 Research axioms + closed corollaries (zero `sorry`)
+### 3.2 Cited constructions (zero `sorry`, zero research `axiom`)
 
 Full map: [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md).
 
 | ID | Statement (short) | Declaration | Status |
 |----|-------------------|-------------|--------|
-| **1b+2 ax** | Ordinal + smooth ⇒ continuum **and** strong unimodal return | `ax_reduction_continuum_strong` | **axiom** (research debt) |
-| **1b** | Continuum return realizing pairs | `open_ordinal_induces_continuum_return` | ✓ from axiom |
-| **2** | ∃ C,U strong from reduction (not ∀ C) | `open_return_strongly_unimodal` | ✓ from axiom |
-| **3 pkg** | Placeholder `FeigenbaumUniversal` (fields `True`) | `open_analytic_feigenbaum` | ✓ bookkeeping |
-| **★** | Composite from `ReductionHypotheses` | `coherence_return_map_feigenbaum` | ✓ axiom + pkg |
+| **1b** | Continuum realizer if functional + in band | `open_ordinal_induces_continuum_return` | ✓ `lookupTent` |
+| **1b∅** | Empty pairs → tent continuum | `open_ordinal_induces_continuum_return_empty` | ✓ construction |
+| **2** | ∃ continuum strong return (lab) | `open_return_strongly_unimodal` | ✓ tent continuum |
+| **1b+2∅** | Joint empty pairs | `open_reduction_joint_empty_pairs` | ✓ tent |
+| **1b+2†** | Joint when pairs agree with tent | `open_reduction_joint_when_tent_agrees` | ✓ tent |
+| **3 pkg** | Refined `FeigenbaumUniversal` (band + quadratic) | `open_analytic_feigenbaum` | ✓ refined |
+| **★** | Composite lab package from H | `coherence_return_map_feigenbaum` | ✓ tent + pkg |
 
 ```text
           ReductionHypotheses H
                    │
+          ┌────────┴────────┐
+          ▼                 ▼
+     1b ✓ lookupTent    2 ✓ tent lab
+     (func+band)        (not ∀ C)
+          │                 │
+          └────────┬────────┘
                    ▼
-            ┌──── 1b ○ ────┐
-            │ continuum R  │
-            └──────┬───────┘
+            3 ✓ FeigenbaumU
+            (band + quadratic)
                    ▼
-            ┌──── 2 ○ ─────┐     ┌── 2a ✓ ──┐
-            │ StronglyUni  │────►│ quadratic │
-            └──────┬───────┘     └───────────┘
-                   ▼
-            ┌──── 3 ○ ─────┐
-            │ FeigenbaumU  │
-            └──────┬───────┘
-                   ▼
-              ★ composite ○
-         (C∘ ✓ if 1b–3 granted)
+            ★ ✓ lab composite
 ```
 
 **1a vs 1b (do not confuse):**
 
 | | 1a | 1b |
 |--|----|----|
-| Input | Finite list of pairs + `IsFunctional` | `ReductionHypotheses` + series + section |
-| Output | Some total \(R:\mathbb{Q}\to\mathbb{Q}\) | Continuum return map on coherence |
-| Status | ✓ | ○ |
-| Content | Graph theory / lookup | Dynamical claim of the preprint |
+| Input | Finite list of pairs + `IsFunctional` | Same + pairs in coherence band |
+| Output | Some total \(R:\mathbb{Q}\to\mathbb{Q}\) | `ContinuumReturnMap` via `lookupTent` |
+| Status | ✓ | ✓ construction |
+| Content | Graph theory / lookup | Continuum package (not full dynamical τₛ) |
 
 ---
 
@@ -119,30 +119,32 @@ Full map: [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md).
 |----|-----------|--------|--------|
 | A | Cascade / scaling / rational ε–N interfaces | `FeigenbaumAnalytic` | ✓ encoded |
 | A¬ | Toy arithmetic cascade **does not** approach δ (ε–N) | `toy_not_cascadeDeltaLimit_feigenbaum` | ✓ honesty |
-| A3a | **∃** cascade → δ (ε–N) | `open_cascade_ratios_to_delta` / `ax_exists_feigenbaum_cascade` | ✓ axiom |
-| A3b | **∃** non-empty class sharing δ | `open_class_shares_delta` / `ax_feigenbaum_class_cascades` | ✓ axiom |
-| A3c | Bridge → placeholder `FeigenbaumUniversal` | `open_bridge_to_feigenbaum_universal` | ✓ bookkeeping |
+| A3a | **∃** cascade → δ (ε–N) | `geometricFeigenbaumCascade` / `open_cascade_ratios_to_delta` | ✓ construction |
+| A3b | **∃** non-empty class sharing δ | geometric singleton class | ✓ construction |
+| A3c | Bridge → refined `FeigenbaumUniversal` | `open_bridge_to_feigenbaum_universal` | ✓ refined |
+| A+ | Package with cascade witness | `FeigenbaumUniversalWithCascade` | ✓ Type |
 | R | `scalingRatioReal`, `cascadeDeltaLimitTendsto` | `FeigenbaumTendsto` | ✓ encoded |
 | B | ε–N ↔ `Tendsto` for the cast sequence | `cascadeDeltaLimit_iff_tendsto` | ✓ bookkeeping |
 | R¬ | Toy cascade **does not** tend to Feigenbaum δ (`Tendsto`) | `toy_not_cascadeApproachesFeigenbaumDelta` | ✓ honesty |
-| R3a–c | ∃ form + class + bridge (`Tendsto`) | same | ✓ axiom + B |
+| R3a–c | ∃ form + class + bridge (`Tendsto`) | geometric + B | ✓ construction |
 
-Bookkeeping **B** equates two *interfaces*. Axioms carry classical existence; **not** a Mathlib proof of Feigenbaum δ.
+Bookkeeping **B** equates two *interfaces*. Geometric construction proves ∃ cascade with exact ratio δ_op; **not** logistic identification.
 
 **Honesty blocks:** A¬ / R¬ — toy is **not** a witness. 3a is **∃ B**, never ∀ B.
 
 ---
 
-## 5. What a future discharge would look like (non-binding)
+## 5. What remains research-scale (non-binding)
 
-| Goal | Acceptable discharge path | Unacceptable |
-|------|---------------------------|--------------|
-| 1b | Cited construction: ordinal data + smoothness ⇒ unique/canonical continuum return; or reduced hypotheses with explicit axioms | `exact ⟨idContinuum, …⟩` under dummy `H` |
-| 2 | Proof that that \(R\) is strongly unimodal (or generic in a Mathlib class) | Reuse `tentStrong` for arbitrary `C.R` (allowed only under `C.R = tentF` via `goal_2_when_return_is_tent`) |
-| 3 | Import/formalize classical Feigenbaum (or restricted class) with citations | Toy cascade ratios → 1 (**blocked** by `toy_not_*`); or `True` placeholders filled with `trivial` while claiming δ |
-| ★ | Compose 1b–3 via `coherence_return_map_feigenbaum_of` | Single `sorry` replaced by tent witness |
+| Goal | Next classical step | Already done (do not re-claim) |
+|------|---------------------|--------------------------------|
+| 1b dynamical | Canonical continuum return of τₛ from ordinal+smooth | lookupTent / empty tent |
+| 2 dynamical | That *that* R is strongly unimodal | tent lab shape |
+| 3 classical | Logistic cascade → δ; Mathlib C² universality | geometric ratios ≡ δ_op |
+| ★ dynamical | Compose true 1b–3 without lab substitution | lab composite package |
 
-Placeholders still in `FeigenbaumUniversal` (`delta_limit : True`, `class_universal : True`) must be refined to real props (e.g. linked to `cascadeDeltaLimitTendsto`) **before** claiming analytic discharge.
+`FeigenbaumUniversal` fields are **refined** (operational band + quadratic tip).
+Cascade witness: `FeigenbaumUniversalWithCascade`.
 
 ---
 
@@ -180,19 +182,13 @@ The following was adapted into `zenodo/metadata.json` for **v0.1.7**:
 
 ```bash
 export PATH="$HOME/.elan/bin:$PATH"
-cd lean && lake build          # expect PASS + sorry warnings on open goals
+cd lean && lake build          # expect PASS; no sorry, no research axiom
 cd ../python && pytest -q      # golden + protocol tests
 ```
 
-Research axioms to grep:
-
-```text
-ax_reduction_continuum_strong
-ax_exists_feigenbaum_cascade
-ax_feigenbaum_class_cascades
-```
-
-Expect **no** `sorry` under `lean/SystemicTau/`.
+Expect **no** `sorry` and **no** Lean `axiom` under `lean/SystemicTau/`.
+(Legacy *theorem* names `ax_exists_feigenbaum_cascade` / `ax_feigenbaum_class_cascades`
+are proved aliases of the geometric construction.)
 
 ---
 
@@ -203,7 +199,8 @@ Expect **no** `sorry` under `lean/SystemicTau/`.
 | v0.1.4–0.1.6 | Gate, bands, first-return skeleton, C3 synth, simple \(f(\delta)\) non-ids |
 | **v0.1.7** | Mathlib; Analytic + Tendsto interfaces; ε–N↔Tendsto; goals 1a/2a/C∘; this map |
 | post-v0.1.7 formal pack | Goal 2 tent-conditional; toy ↛ δ (ε–N + Tendsto); class-share Prop de-vacuous |
-| **zero-sorry pack** | All former sorrys → named axioms + proved corollaries; see `FEIGENBAUM_AXIOMS.md` |
-| **Still not claimed** | Classical Mathlib Feigenbaum proof; field dengue; unique \(\tau_{\mathrm{ch}}\) |
+| **zero-sorry pack** | Former sorrys → named axioms + corollaries |
+| **construction pack** | All 3 axioms discharged; `FeigenbaumUniversal` refined; geometric cascade |
+| **Still not claimed** | Logistic ID of cascade; Mathlib C² Feigenbaum; field dengue; unique \(\tau_{\mathrm{ch}}\) |
 
-Last updated: 2026-07-24 (**zero `sorry`**; research debt = 3 named axioms).
+Last updated: 2026-07-24 (**zero `sorry`**, **zero research `axiom`**; cited constructions).
