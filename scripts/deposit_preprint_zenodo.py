@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Deposit the operational-standard preprint PDF (+ source) to Zenodo.
 
-Creates a *new* publication concept (not a software newversion).
-
   export ZENODO_TOKEN=...   # or ~/.zenodo_token
   python3 scripts/deposit_preprint_zenodo.py --publish
+  python3 scripts/deposit_preprint_zenodo.py --newversion --publish
 """
 from __future__ import annotations
 
@@ -24,15 +23,6 @@ META_PATH = ROOT / "zenodo" / "preprint_metadata.json"
 STATE_PATH = ROOT / "zenodo" / "preprint_deposition_state.json"
 PAPER = ROOT / "papers" / "preprint-standard-formal"
 
-FILES = [
-    PAPER / "pins" / "standard-formal-v0.1.8-r3.pdf",
-    PAPER / "main.tex",
-    PAPER / "VERSION",
-    PAPER / "CHANGELOG.md",
-    PAPER / "README.md",
-    PAPER / "pins" / "SHA256SUMS",
-]
-
 
 def token_and_base() -> tuple[str, str]:
     tok = os.environ.get("ZENODO_TOKEN", "").strip()
@@ -48,9 +38,47 @@ def token_and_base() -> tuple[str, str]:
     return tok, base
 
 
+def doc_version() -> str:
+    return (PAPER / "VERSION").read_text(encoding="utf-8").strip()
+
+
+def file_list() -> list[Path]:
+    ver = doc_version()
+    pdf = PAPER / "pins" / f"standard-formal-v{ver}.pdf"
+    return [
+        pdf,
+        PAPER / "main.tex",
+        PAPER / "VERSION",
+        PAPER / "CHANGELOG.md",
+        PAPER / "README.md",
+        PAPER / "pins" / "SHA256SUMS",
+    ]
+
+
+def clear_files(base: str, dep_id: int, headers: dict) -> None:
+    r = requests.get(f"{base}/api/deposit/depositions/{dep_id}", headers=headers, timeout=60)
+    r.raise_for_status()
+    for f in r.json().get("files", []):
+        fid = f.get("id")
+        if fid is None:
+            continue
+        dr = requests.delete(
+            f"{base}/api/deposit/depositions/{dep_id}/files/{fid}",
+            headers=headers,
+            timeout=60,
+        )
+        if dr.status_code not in (200, 204, 404):
+            dr.raise_for_status()
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--publish", action="store_true")
+    ap.add_argument(
+        "--newversion",
+        action="store_true",
+        help="New version of the preprint concept (from preprint_deposition_state.json)",
+    )
     ap.add_argument("--sandbox", action="store_true")
     args = ap.parse_args()
 
@@ -60,20 +88,48 @@ def main() -> None:
 
     headers = {"Authorization": f"Bearer {tok}"}
     meta = json.loads(META_PATH.read_text(encoding="utf-8"))
+    # keep metadata version in sync with VERSION file
+    meta["metadata"]["version"] = doc_version()
 
-    missing = [str(p) for p in FILES if not p.is_file()]
+    files = file_list()
+    missing = [str(p) for p in files if not p.is_file()]
     if missing:
         sys.exit("Missing files:\n  " + "\n  ".join(missing))
 
-    print(f"Creating preprint deposition at {base} ...")
-    r = requests.post(f"{base}/api/deposit/depositions", json={}, headers=headers, timeout=60)
-    r.raise_for_status()
-    dep = r.json()
-    dep_id = dep["id"]
-    bucket = dep["links"]["bucket"]
-    print(f"  deposition id = {dep_id}")
+    if args.newversion:
+        if not STATE_PATH.is_file():
+            sys.exit(f"Missing {STATE_PATH}; cannot --newversion without prior state.")
+        prev = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+        prev_id = prev["deposition_id"]
+        print(f"Requesting new preprint version from deposition {prev_id} at {base} ...")
+        r = requests.post(
+            f"{base}/api/deposit/depositions/{prev_id}/actions/newversion",
+            headers=headers,
+            timeout=60,
+        )
+        r.raise_for_status()
+        dep = r.json()
+        draft_url = dep.get("links", {}).get("latest_draft")
+        if not draft_url:
+            sys.exit(f"No latest_draft in newversion response: {json.dumps(dep)[:500]}")
+        dr = requests.get(draft_url, headers=headers, timeout=60)
+        dr.raise_for_status()
+        dep = dr.json()
+        dep_id = dep["id"]
+        bucket = dep["links"]["bucket"]
+        print(f"  draft deposition id = {dep_id}")
+        print("  clearing inherited files ...")
+        clear_files(base, dep_id, headers)
+    else:
+        print(f"Creating preprint deposition at {base} ...")
+        r = requests.post(f"{base}/api/deposit/depositions", json={}, headers=headers, timeout=60)
+        r.raise_for_status()
+        dep = r.json()
+        dep_id = dep["id"]
+        bucket = dep["links"]["bucket"]
+        print(f"  deposition id = {dep_id}")
 
-    for path in FILES:
+    for path in files:
         name = path.name
         print(f"  uploading {name} ({path.stat().st_size} bytes) ...")
         with path.open("rb") as fh:

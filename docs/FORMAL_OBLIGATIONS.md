@@ -10,11 +10,11 @@ construction / lab package**, and what remains **research-scale**.
 **Construction map:** [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md) ·  
 **Mathlib / Tendsto:** [`MATHLIB.md`](MATHLIB.md)
 
-**Published archive:** **v0.1.8** — DOI [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882) · concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
+**Published archive:** **v0.1.9** — DOI [10.5281/zenodo.21536462](https://doi.org/10.5281/zenodo.21536462) · concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 **Prior pin (v0.1.7):** [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)  
 **Prior pin (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  
 
-**`main` / v0.1.8 content:** zero `sorry`, zero research `axiom`;
+**`main` / v0.1.9 content:** zero `sorry`, zero research `axiom`;
 logistic **scale-ID**, C²/Schwarzian algebra, **non-tent** τₛ lab return (see §7.2).
 
 ---

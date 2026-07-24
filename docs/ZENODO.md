@@ -6,9 +6,10 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.8)** | `10.5281/zenodo.21522882` | https://doi.org/10.5281/zenodo.21522882 |
+| **This version (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
-| Record page (v0.1.8) | — | https://zenodo.org/records/21522882 |
+| Record page (v0.1.9) | — | https://zenodo.org/records/21536462 |
+| **v0.1.8** | `10.5281/zenodo.21522882` | https://doi.org/10.5281/zenodo.21522882 |
 | **v0.1.7** | `10.5281/zenodo.21522346` | https://doi.org/10.5281/zenodo.21522346 |
 | **v0.1.6** | `10.5281/zenodo.21516523` | https://doi.org/10.5281/zenodo.21516523 |
 | **v0.1.5** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
@@ -18,15 +19,16 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **Preprint 0.1.8-r3** | `10.5281/zenodo.21523232` | https://doi.org/10.5281/zenodo.21523232 |
+| **Preprint 0.1.9-r1** | `10.5281/zenodo.21536465` | https://doi.org/10.5281/zenodo.21536465 |
 | **Concept** (preprint series) | `10.5281/zenodo.21523231` | https://doi.org/10.5281/zenodo.21523231 |
-| Record page | — | https://zenodo.org/records/21523232 |
+| Record page | — | https://zenodo.org/records/21536465 |
+| Prior preprint 0.1.8-r3 | `10.5281/zenodo.21523232` | https://doi.org/10.5281/zenodo.21523232 |
 | Deposit script | `scripts/deposit_preprint_zenodo.py` | metadata `zenodo/preprint_metadata.json` |
 | State | `zenodo/preprint_deposition_state.json` | — |
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
-## v0.1.8 description source
+## v0.1.9 description source
 
 Deposit description is in `zenodo/metadata.json` (adapted from
 [`FORMAL_OBLIGATIONS.md` §7.2](FORMAL_OBLIGATIONS.md)).
@@ -61,9 +63,11 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
-| `10.5281/zenodo.21523232` | **English operational-standard preprint** (0.1.8-r3) |
+| `10.5281/zenodo.21536465` | **English operational-standard preprint** (0.1.9-r1) |
+| `10.5281/zenodo.21523232` | Prior preprint 0.1.8-r3 |
 | `10.5281/zenodo.21523231` | Preprint concept / always-latest document version |
-| `10.5281/zenodo.21522882` | This formal monorepo (v0.1.8) |
+| `10.5281/zenodo.21536462` | This formal monorepo (v0.1.9) |
+| `10.5281/zenodo.21522882` | Prior monorepo v0.1.8 |
 | `10.5281/zenodo.21516059` | Software concept / always-latest |
 | `10.5281/zenodo.21522346` | Pin v0.1.7 |
 | `10.5281/zenodo.21516523` | Pin v0.1.6 |
@@ -77,7 +81,7 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 ```bash
 # 1. Bump papers/preprint-standard-formal/VERSION (e.g. 0.1.8-r4)
 # 2. Freeze pins/standard-formal-v….pdf + update zenodo/preprint_metadata.json
-# 3. python3 scripts/deposit_preprint_zenodo.py --publish
+# 3. python3 scripts/deposit_preprint_zenodo.py --newversion --publish
 #    (currently creates a *new* concept each run; for concept continuity,
 #     extend the script with newversion against preprint_deposition_state.json)
 # 4. Record DOI in this file + papers/preprint-standard-formal/README.md

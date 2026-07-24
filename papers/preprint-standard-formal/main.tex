@@ -41,19 +41,19 @@
   A Machine-Checkable Operational Standard\\
   for Systemic Tau \(\taus\) and the Discrete Extramental Clock (RECD)\\[0.6em]
   \large Lean~4 formalization, laboratory constructions,\\
-  and open scrutiny program (v0.1.8)%
+  and open scrutiny program (v0.1.9)%
 }
 \author{%
   Johel Padilla-Villanueva\\
   \small University of Puerto Rico, Medical Sciences Campus\\
   \small ORCID: \href{https://orcid.org/0000-0002-5797-6931}{0000-0002-5797-6931}\\
   \small \texttt{https://github.com/johelpadilla/systemic-tau-formal}\\
-  \small Preprint DOI: \href{https://doi.org/10.5281/zenodo.21523232}{10.5281/zenodo.21523232}\\
-  \small Software version DOI: \href{https://doi.org/10.5281/zenodo.21522882}{10.5281/zenodo.21522882}\\
+  \small Preprint DOI: \href{https://doi.org/10.5281/zenodo.21536465}{10.5281/zenodo.21536465}\\
+  \small Software version DOI: \href{https://doi.org/10.5281/zenodo.21536462}{10.5281/zenodo.21536462}\\
   \small Software concept DOI: \href{https://doi.org/10.5281/zenodo.21516059}{10.5281/zenodo.21516059}\\[0.4em]
-  \small \textbf{Software:} v0.1.8
+  \small \textbf{Software:} v0.1.9
   \quad·\quad
-  \textbf{Preprint:} 0.1.8-r3
+  \textbf{Preprint:} 0.1.9-r1
   \quad·\quad
   \textbf{Date:} 2026-07-24
 }
@@ -64,7 +64,7 @@
 
 \begin{abstract}
 \noindent
-We present \texttt{systemic-tau-formal}~v0.1.8, an open monorepository that states the operational core of the Systemic Tau (\(\taus\)) paradigm and the Discrete Extramental Clock (RECD) in a form accepted by a formal verifier. The Lean~4 + Mathlib package encodes regime bands, the gate function \(g(\taus)\), partition and monotonicity lemmas, and a laboratory construction package that links the operational criterion to period-doubling cascade ideas and Feigenbaum's constant \(\delta\). The artifact is accompanied by a Python reference core, golden rational bridges, continuous integration, and a citable Zenodo deposit.
+We present \texttt{systemic-tau-formal}~v0.1.9, an open monorepository that states the operational core of the Systemic Tau (\(\taus\)) paradigm and the Discrete Extramental Clock (RECD) in a form accepted by a formal verifier. The Lean~4 + Mathlib package encodes regime bands, the gate function \(g(\taus)\), partition and monotonicity lemmas, and a laboratory construction package that links the operational criterion to period-doubling cascade ideas and Feigenbaum's constant \(\delta\). The artifact is accompanied by a Python reference core, golden rational bridges, continuous integration, and a citable Zenodo deposit.
 
 What is offered is not a closed narrative of dynamical universality, but a verifiable operational standard: an explicit decision rule, a machine checker that accepts it, and an open door to public scrutiny. Laboratory maps and scale identifications are presented as named, cited constructions, not as field theorems.
 \end{abstract}
@@ -82,9 +82,14 @@ Frameworks that speak of synchrony, regime, and warning in complex systems are o
 
 The Systemic Tau paradigm reads multivariate coherence through an index \(\taus\)---the mean of windowed Kendall-type rank correlations---and a Discrete Extramental Clock (RECD) whose gate \(g(\taus)\) translates that index into a regime signal. This preprint records an \emph{operational standard} together with a \emph{laboratory construction package}. It is not a proof of classical Feigenbaum universality. It is not a derivation of field \(\taus\) dynamics from first principles of a physical continuum.
 
-The methodological thesis is simple: the operational core must be writable in a form that a formal verifier accepts. The monorepository \texttt{systemic-tau-formal} realizes that thesis. It exposes definitions, lemmas, and constructions in Lean~4; aligns a Python reference core; and deposits citable versions with DOIs. Version 0.1.8 under \texttt{SystemicTau/} builds with no \texttt{sorry} holes and no author-added research axioms. That is how the paradigm presents itself: as an auditable criterion.
+The methodological thesis is simple: the operational core must be writable in a form that a formal verifier accepts. The monorepository \texttt{systemic-tau-formal} realizes that thesis. It exposes definitions, lemmas, and constructions in Lean~4; aligns a Python reference core; and deposits citable versions with DOIs. Version 0.1.9 under \texttt{SystemicTau/} builds with no \texttt{sorry} holes and no author-added research axioms. That is how the paradigm presents itself: as an auditable criterion.
 
-Relative to v0.1.7, this release closes former research holes as named laboratory constructions (including a non-tent continuous return). It adds logistic scale identification and a \(C^2\)/Schwarzian package, and aligns the honesty documentation with the formal pin.
+Relative to v0.1.8, this release adds a unique operational inverse-scale bridge
+\(f(\delta)=c/\delta\) pinned at \(\deltaop\) (module \texttt{ThresholdFromDelta}),
+extends the simple closed-form non-identity class for \(\tauch\), and registers
+four-level ontology claims for the threshold package. Laboratory Feigenbaum
+constructions from v0.1.8 are retained; classical free-\(c\) derivation of
+\(\tauch\) remains open.
 
 %------------------------------------------------------------------
 \section{What is offered to the community}
@@ -114,7 +119,7 @@ In one sentence: the paradigm is no longer only a discourse; it is offered as sh
   \node[box, fill=orange!10, right=0.55cm of py] (docs) {\textbf{Docs}\\protocol\\challenges};
   \node[box, fill=purple!8, right=0.55cm of docs] (ci) {\textbf{CI}\\lake + pytest\\GitHub};
   \node[box, fill=yellow!15, below=0.85cm of $(lean)!0.5!(ci)$] (zen)
-    {\textbf{Zenodo} \texttt{v0.1.8}\\version DOI + concept DOI};
+    {\textbf{Zenodo} \texttt{v0.1.9}\\version DOI + concept DOI};
   \draw[arr] (lean) -- (py);
   \draw[arr] (py) -- (docs);
   \draw[arr] (docs) -- (ci);
@@ -421,26 +426,27 @@ The point for a non-Lean reader is simple: \(C^2\)/Schwarzian vocabulary lives i
 
 \begin{table}[H]
 \centering
-\caption{Lean modules under \texttt{SystemicTau/} (v0.1.8).}
+\caption{Lean modules under \texttt{SystemicTau/} (v0.1.9).}
 \label{tab:modules}
 \begin{tabular}{@{}llclp{5.4cm}@{}}
 \toprule
 \textbf{Module} & \textbf{Lines} & \textbf{Status} & \textbf{Content} \\
 \midrule
 \texttt{Basic} & \(\sim\)50 & Core & Types, \(\deltaop\), window, regimes \\
-\texttt{Thresholds} & \(\sim\)180 & Core & Bands, classification, trichotomy \\
+\texttt{Thresholds} & \(\sim\)240 & Core & Bands, trichotomy, simple \(f(\delta)\) non-IDs \\
+\texttt{ThresholdFromDelta} & \(\sim\)500 & Core & Unique inverse-scale \(f(\delta)=c/\delta\) \\
 \texttt{RECD} & \(\sim\)240 & Core & Gate \(g\), antitonicity, samples \\
 \texttt{FeigenbaumReduction} & \(\sim\)1050 & Lab & Returns, composite package \\
 \texttt{FeigenbaumAnalytic} & \(\sim\)440 & Lab & Geometric cascade, \(\varepsilon\)--\(N\) \\
 \texttt{FeigenbaumTendsto} & \(\sim\)280 & Lab & Equivalence with \texttt{Tendsto} \\
 \texttt{FeigenbaumLogistic} & \(\sim\)250 & Lab & Logistic scale identification \\
 \texttt{FeigenbaumSchwarzian} & \(\sim\)200 & Lab & Quadratic tip, Schwarzian \\
-\texttt{Ontology} & \(\sim\)40 & Spec & Level architecture (separate layer) \\
+\texttt{Ontology} & \(\sim\)70 & Spec & L0--L3 levels; stratified claims \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The \texttt{SystemicTau/} directory of version 0.1.8 builds end to end in Lean~4.14 with Mathlib~\texttt{v4.14.0}~\cite{lean4,mathlib}.
+The \texttt{SystemicTau/} directory of version 0.1.9 builds end to end in Lean~4.14 with Mathlib~\texttt{v4.14.0}~\cite{lean4,mathlib}.
 
 \subsection{Formal status summary}
 
@@ -448,7 +454,7 @@ Table~\ref{tab:status} states, in one place, what the checker has accepted, what
 
 \begin{table}[H]
 \centering
-\caption{Formal status of the v0.1.8 package under \texttt{SystemicTau/}.}
+\caption{Formal status of the v0.1.9 package under \texttt{SystemicTau/}.}
 \label{tab:status}
 \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.8cm}X@{}}
 \toprule
@@ -457,7 +463,10 @@ Proved (core) &
 Band ordering \(\tauch<\taust\); nonnegative trichotomy of \texttt{classify};
 gate formula on \([0,\tauch)\); antitonicity of \(g\) on that half-band;
 positive intermediate closure \(g=0\); canonical samples;
-gate prefactor bounds \(0<p<1\); gap \(2/\deltaop>\tauch\).
+gate prefactor bounds \(0<p<1\); gap \(2/\deltaop>\tauch\);
+finite simple closed forms \(\neq\tauch\) (ten rational candidates);
+unique inverse-scale bridge \(f(\delta)=c/\delta\) with
+\(f(\deltaop)=\tauch\) and \(\taust=1/2\) (class-conditional uniqueness).
 \smallskip\end{minipage} \\
 \midrule
 Proved (lab lemmas) &
@@ -483,7 +492,8 @@ Explicitly open &
 Termwise superstable logistic roots;
 Mathlib \(C^2\)-open renormalization / fixed-point universality~\cite{lyubich1999};
 field-derived continuum return of \(\taus\) (not a cited lab map);
-unique closed form \(\tauch=f(\delta)\) beyond finite simple non-identities;
+classical free-\(c\) derivation of \(\tauch\) from pure Feigenbaum
+(naive \(f=2/\delta\) fails machine-checked);
 multi-site empirical P1/P4 discharge.
 \smallskip\end{minipage} \\
 \bottomrule
@@ -494,8 +504,8 @@ multi-site empirical P1/P4 discharge.
 \section{Python reference core and open science}
 %------------------------------------------------------------------
 
-The monorepository is not limited to the proof assistant. It includes a Python core with golden rationals aligned to Lean (\texttt{python/core/golden.py}) and \texttt{pytest} tests; synthetic fixtures, noise and anti-synchrony protocols, and a first-return twin for numerical exploration; data paths and notebooks for field series (e.g., \emph{Aedes}) and synthetic cross-domain kits; continuous integration (\texttt{lake build} + \texttt{pytest}) on GitHub Actions; and release \texttt{v0.1.8} with version DOI
-\href{https://doi.org/10.5281/zenodo.21522882}{10.5281/zenodo.21522882}
+The monorepository is not limited to the proof assistant. It includes a Python core with golden rationals aligned to Lean (\texttt{python/core/golden.py}) and \texttt{pytest} tests; synthetic fixtures, noise and anti-synchrony protocols, and a first-return twin for numerical exploration; data paths and notebooks for field series (e.g., \emph{Aedes}) and synthetic cross-domain kits; continuous integration (\texttt{lake build} + \texttt{pytest}) on GitHub Actions; and release \texttt{v0.1.9} with version DOI
+\href{https://doi.org/10.5281/zenodo.21536462}{10.5281/zenodo.21536462}
 and concept DOI
 \href{https://doi.org/10.5281/zenodo.21516059}{10.5281/zenodo.21516059},
 under MIT license with citation metadata (\texttt{CITATION.cff}).
@@ -570,7 +580,7 @@ This preprint does not claim to settle the classical Feigenbaum universality the
 \section{Conclusion}
 %------------------------------------------------------------------
 
-We have presented \texttt{systemic-tau-formal}~v0.1.8 as a Lean-accepted operational standard for Systemic Tau and RECD, together with a laboratory construction package and an open scrutiny program. The repository offers:
+We have presented \texttt{systemic-tau-formal}~v0.1.9 as a Lean-accepted operational standard for Systemic Tau and RECD, together with a laboratory construction package and an open scrutiny program. The repository offers:
 
 \begin{enumerate}[leftmargin=1.4em]
   \item rational definitions of \(\taust\), \(\tauch\), and \(g(\taus)\);
@@ -586,10 +596,10 @@ To others, the artifact says that this paradigm can already be inspected from ou
 %------------------------------------------------------------------
 
 Source code and releases: \url{https://github.com/johelpadilla/systemic-tau-formal}.\\
-Software version associated with this text: \texttt{v0.1.8}.\\
-Preprint document version: \texttt{0.1.8-r3} (2026-07-24).\\
-Preprint DOI: \href{https://doi.org/10.5281/zenodo.21523232}{10.5281/zenodo.21523232}.\\
-Software version DOI: \href{https://doi.org/10.5281/zenodo.21522882}{10.5281/zenodo.21522882}.\\
+Software version associated with this text: \texttt{v0.1.9}.\\
+Preprint document version: \texttt{0.1.9-r1} (2026-07-24).\\
+Preprint DOI: \href{https://doi.org/10.5281/zenodo.21536465}{10.5281/zenodo.21536465}.\\
+Software version DOI: \href{https://doi.org/10.5281/zenodo.21536462}{10.5281/zenodo.21536462}.\\
 Software concept DOI: \href{https://doi.org/10.5281/zenodo.21516059}{10.5281/zenodo.21516059}.\\
 Related production package on PyPI: \texttt{systemictau}.\\[0.4em]
 Minimal verification:
@@ -605,29 +615,29 @@ The author acknowledges the Lean and Mathlib communities for the formal verifica
 
 %------------------------------------------------------------------
 \appendix
-\section{Release note relative to v0.1.7}
+\section{Release note relative to v0.1.8}
 \label{app:changelog}
 
-Version 0.1.8 is a formal-track pin of the laboratory construction pack:
+Version 0.1.9 is a formal-track pin of the threshold-bridge pack on top of the
+v0.1.8 laboratory construction release:
 
 \begin{itemize}[leftmargin=1.2em]
-  \item Zero \texttt{sorry} and zero author research \texttt{axiom} under \texttt{SystemicTau/}.
-  \item Former open goals discharged only as named laboratory constructions.
-  \item Non-tent continuous return \texttt{tauReturnFour}; refined composite package.
-  \item Logistic scale identification; \(C^2\) tip and Schwarzian package.
-  \item Honesty documentation aligned with the formal pin
-        (\texttt{STATUS.md}, \texttt{FORMAL\_OBLIGATIONS.md},
-        \texttt{FEIGENBAUM\_STATUS.md}).
+  \item Module \texttt{ThresholdFromDelta}: unique operational
+        \(f(\delta)=c/\delta\) with \(c_\star=\tauch\cdot\deltaop\).
+  \item Extended \texttt{failedSimpleCandidates} (ten rational non-identities).
+  \item Ontology L0--L3 registry and \texttt{stratifiedFour} bookkeeping.
+  \item Still zero \texttt{sorry} and zero author research \texttt{axiom}.
+  \item Retained from v0.1.8: non-tent return, logistic scale-ID, Schwarzian pack.
 \end{itemize}
 
 \section{Expanded module map}
 \label{app:modules}
 
-Table~\ref{tab:modules-detail} expands the inventory of Section~5 for readers who want a denser map of the Lean surface. Line counts are approximate at the v0.1.8 pin.
+Table~\ref{tab:modules-detail} expands the inventory of Section~5 for readers who want a denser map of the Lean surface. Line counts are approximate at the v0.1.9 pin.
 
 \begin{table}[H]
 \centering
-\caption{Expanded \texttt{SystemicTau/} module map (v0.1.8).}
+\caption{Expanded \texttt{SystemicTau/} module map (v0.1.9).}
 \label{tab:modules-detail}
 \begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}p{1.4cm}X@{}}
 \toprule
@@ -638,7 +648,12 @@ Table~\ref{tab:modules-detail} expands the inventory of Section~5 for readers wh
   window default; regime enum; gate prefactor \(p\). \\
 \texttt{Thresholds} & Core &
   \(\taust,\tauch\); \texttt{classify}; nonnegative trichotomy;
-  band ordering; proximity gap \(2/\deltaop>\tauch\). \\
+  band ordering; proximity gap \(2/\deltaop>\tauch\);
+  extended simple-form non-identities. \\
+\texttt{ThresholdFromDelta} & Core &
+  Inverse-scale class; unique \(c_\star\); antitonicity of \(f\);
+  pair recovery at \(\deltaop\); gate/partition compatibility;
+  honesty block for pure \(2/\delta\). \\
 \texttt{RECD} & Core &
   \texttt{gate}; chaos closed form; antitonicity;
   intermediate zero; stable/antiSync saturations; samples;
@@ -658,7 +673,8 @@ Table~\ref{tab:modules-detail} expands the inventory of Section~5 for readers wh
   Formal derivatives; quadratic tip; Schwarzian \(\le 0\) off critical point;
   \texttt{FeigenbaumUniversalC2}. \\
 \texttt{Ontology} & Spec &
-  Level architecture (discourse layer; not an operational theorem). \\
+  L0--L3 levels; well-sited claims; \texttt{stratifiedFour}
+  (discourse layer; not an operational theorem). \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -737,15 +753,15 @@ J.~Padilla-Villanueva.
 
 \bibitem{systemic-tau-formal}
 J.~Padilla-Villanueva.
-\newblock systemic-tau-formal: Machine-verifiable Systemic Tau (\(\taus\)) and RECD (v0.1.8).
+\newblock systemic-tau-formal: Machine-verifiable Systemic Tau (\(\taus\)) and RECD (v0.1.9).
 \newblock Zenodo, 2026.
-\newblock \href{https://doi.org/10.5281/zenodo.21522882}{doi:10.5281/zenodo.21522882}.
+\newblock \href{https://doi.org/10.5281/zenodo.21536462}{doi:10.5281/zenodo.21536462}.
 
 \bibitem{preprint-standard-formal}
 J.~Padilla-Villanueva.
-\newblock A machine-checkable operational standard for Systemic Tau \(\taus\) and the Discrete Extramental Clock (RECD) (preprint 0.1.8-r3).
+\newblock A machine-checkable operational standard for Systemic Tau \(\taus\) and the Discrete Extramental Clock (RECD) (preprint 0.1.9-r1).
 \newblock Zenodo, 2026.
-\newblock \href{https://doi.org/10.5281/zenodo.21523232}{doi:10.5281/zenodo.21523232}.
+\newblock \href{https://doi.org/10.5281/zenodo.21536465}{doi:10.5281/zenodo.21536465}.
 
 \end{thebibliography}
 

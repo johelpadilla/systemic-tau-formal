@@ -2,19 +2,22 @@ cff-version: 1.2.0
 message: "If you use Systemic Tau / RECD formal materials, please cite as below."
 type: software
 title: "systemic-tau-formal — Machine-verifiable Systemic Tau (τₛ) + RECD"
-version: "0.1.8"
+version: "0.1.9"
 date-released: "2026-07-24"
 license: MIT
-doi: "10.5281/zenodo.21522882"
+doi: "10.5281/zenodo.21536462"
 repository-code: "https://github.com/johelpadilla/systemic-tau-formal"
-url: "https://doi.org/10.5281/zenodo.21522882"
+url: "https://doi.org/10.5281/zenodo.21536462"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21522882"
-    description: "This version (v0.1.8)"
+    value: "10.5281/zenodo.21536462"
+    description: "This version (v0.1.9)"
   - type: doi
     value: "10.5281/zenodo.21516059"
     description: "Concept DOI (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.21522882"
+    description: "v0.1.8"
   - type: doi
     value: "10.5281/zenodo.21522346"
     description: "v0.1.7"
@@ -39,34 +42,7 @@ keywords:
   - systemic tau
   - RECD
   - Feigenbaum
-  - early warning signals
   - Lean 4
   - Mathlib
-  - complex systems
-  - ordinal dynamics
-preferred-citation:
-  type: software
-  authors:
-    - family-names: "Padilla-Villanueva"
-      given-names: "Johel"
-      orcid: "https://orcid.org/0000-0002-5797-6931"
-  title: "systemic-tau-formal: Machine-verifiable Systemic Tau (τₛ) and RECD"
-  version: "0.1.8"
-  year: 2026
-  doi: "10.5281/zenodo.21522882"
-  url: "https://doi.org/10.5281/zenodo.21522882"
-references:
-  - type: report
-    authors:
-      - family-names: "Padilla-Villanueva"
-        given-names: "Johel"
-    title: "Síntesis Magna del Tau Sistémico"
-    year: 2026
-    doi: "10.5281/zenodo.20576241"
-  - type: software
-    authors:
-      - family-names: "Padilla-Villanueva"
-        given-names: "Johel"
-    title: "systemictau (PyPI)"
-    year: 2026
-    doi: "10.5281/zenodo.20576241"
+  - formal verification
+  - early warning signals

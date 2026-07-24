@@ -13,6 +13,7 @@ Public status after **v0.1.8** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Release `v0.1.6`: C3 synthetic kits, first-return Python twin, τ_ch simple-candidate non-identity, Stress-Test 2026 board
 - [x] Release `v0.1.7`: Mathlib + Tendsto interfaces; ε–N↔Tendsto; goals 1a/2a/C∘; `docs/FORMAL_OBLIGATIONS.md`
 - [x] Release `v0.1.8`: zero sorry/axiom; logistic scale-ID; C²/Schwarzian; non-tent τₛ lab return; docs aligned
+- [x] Release `v0.1.9`: unique inverse-scale f(δ); extended candidates; ontology L0–L3; Zenodo software+preprint
 
 ## Near term (v0.2)
 
