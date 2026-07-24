@@ -77,10 +77,10 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 ## Citation / Zenodo
 
 - GitHub release: **`v0.1.10`**  
-- **DOI (v0.1.10):** *assigned at Zenodo deposit*  
+- **DOI (v0.1.10):** [10.5281/zenodo.21537465](https://doi.org/10.5281/zenodo.21537465)  
 - **DOI (v0.1.9):** [10.5281/zenodo.21536462](https://doi.org/10.5281/zenodo.21536462)
 - **DOI (v0.1.8):** [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882)  
-- Record: https://zenodo.org/records/21536462  
+- Record: https://zenodo.org/records/21537465  
 - **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 - **DOI (v0.1.7):** [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)  
 - **DOI (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  

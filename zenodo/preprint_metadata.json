@@ -3,7 +3,7 @@
     "title": "A Machine-Checkable Operational Standard for Systemic Tau τₛ and the Discrete Extramental Clock (RECD)",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "description": "<p>We present <strong>systemic-tau-formal</strong> v0.1.10 as documented in this English preprint (document version <strong>0.1.10-r1</strong>): an open monorepository that states the operational core of the Systemic Tau (τₛ) paradigm and the Discrete Extramental Clock (RECD) in a form accepted by a formal verifier.</p>\n<p><strong>New in this document/software pin:</strong> termwise superstable logistic roots (period 1 and 2 unique; period-4 cascade-window existence; secondary residual zero ~3.96); hybrid cascade with geometric tail and δ-limit; free-c operational uniqueness retained. Formal Rolle mono discharge, true termwise SS for all n, and C²-open map-space renorm remain research-scale open.</p>\n<p>The Lean&nbsp;4 + Mathlib package encodes regime bands, the gate function <em>g</em>(τₛ), partition and monotonicity lemmas, and a laboratory construction package linked to period-doubling cascade ideas and Feigenbaum’s constant δ. Accompanied by a Python reference core, golden rational bridges, continuous integration, and a citable Zenodo software deposit.</p>\n<p><em>Source:</em> <a href=\"https://github.com/johelpadilla/systemic-tau-formal\">github.com/johelpadilla/systemic-tau-formal</a> · path <code>papers/preprint-standard-formal/</code>.</p>\n<p><em>Software pin:</em> systemic-tau-formal <strong>v0.1.10</strong> — concept DOI <a href=\"https://doi.org/10.5281/zenodo.21516059\">10.5281/zenodo.21516059</a> (version DOI assigned at software deposit).</p>",
+    "description": "<p>We present <strong>systemic-tau-formal</strong> v0.1.10 as documented in this English preprint (document version <strong>0.1.10-r2</strong>): an open monorepository that states the operational core of the Systemic Tau (τₛ) paradigm and the Discrete Extramental Clock (RECD) in a form accepted by a formal verifier.</p>\n<p><strong>New in this document/software pin:</strong> termwise superstable logistic roots (period 1 and 2 unique; period-4 cascade-window existence; secondary residual zero ~3.96); hybrid cascade with geometric tail and δ-limit; free-c operational uniqueness retained. Formal Rolle mono discharge, true termwise SS for all n, and C²-open map-space renorm remain research-scale open.</p>\n<p>The Lean&nbsp;4 + Mathlib package encodes regime bands, the gate function <em>g</em>(τₛ), partition and monotonicity lemmas, and a laboratory construction package linked to period-doubling cascade ideas and Feigenbaum’s constant δ. Accompanied by a Python reference core, golden rational bridges, continuous integration, and a citable Zenodo software deposit.</p>\n<p><em>Source:</em> <a href=\"https://github.com/johelpadilla/systemic-tau-formal\">github.com/johelpadilla/systemic-tau-formal</a> · path <code>papers/preprint-standard-formal/</code>.</p>\n<p><em>Software pin:</em> systemic-tau-formal <strong>v0.1.10</strong> — DOI <a href=\"https://doi.org/10.5281/zenodo.21537465\">10.5281/zenodo.21537465</a> (concept <a href=\"https://doi.org/10.5281/zenodo.21516059\">10.5281/zenodo.21516059</a>).</p>",
     "creators": [
       {
         "name": "Padilla-Villanueva, Johel",
@@ -27,8 +27,14 @@
     "license": "cc-by-4.0",
     "access_right": "open",
     "language": "eng",
-    "version": "0.1.10-r1",
+    "version": "0.1.10-r2",
     "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.21537465",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "doi"
+      },
       {
         "identifier": "10.5281/zenodo.21516059",
         "relation": "isSupplementTo",
@@ -36,7 +42,7 @@
         "scheme": "doi"
       },
       {
-        "identifier": "10.5281/zenodo.21536484",
+        "identifier": "10.5281/zenodo.21537484",
         "relation": "isNewVersionOf",
         "resource_type": "publication",
         "scheme": "doi"
@@ -54,6 +60,6 @@
         "scheme": "doi"
       }
     ],
-    "notes": "Preprint document 0.1.10-r1 aligned to software v0.1.10. Does not claim classical Feigenbaum universality, termwise SS for all n, or free-c without pin. Files: frozen PDF + LaTeX source + VERSION/CHANGELOG."
+    "notes": "Preprint document 0.1.10-r2: title-page DOI sync for software v0.1.10 / preprint 10.5281/zenodo.21537484. Scientific content same as 0.1.10-r1."
   }
 }

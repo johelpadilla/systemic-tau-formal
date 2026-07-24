@@ -3,6 +3,13 @@
 Document ID: `preprint-standard-formal`  
 Software pin: `systemic-tau-formal` **v0.1.10**
 
+## 0.1.10-r2 — 2026-07-24
+
+Title-page / metadata sync: Zenodo preprint DOI 10.5281/zenodo.21537494 and software DOI 10.5281/zenodo.21537465.
+Scientific content identical to 0.1.10-r1.
+
+Frozen PDF: `pins/standard-formal-v0.1.10-r2.pdf`
+
 ## 0.1.10-r1 — 2026-07-24
 
 Aligned to software **v0.1.10**:
