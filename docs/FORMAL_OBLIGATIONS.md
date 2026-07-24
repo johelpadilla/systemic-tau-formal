@@ -9,9 +9,9 @@ version note: what Lean **checks**, what is **bookkeeping**, and what remains
 **Feigenbaum narrative:** [`FEIGENBAUM_STATUS.md`](FEIGENBAUM_STATUS.md) ·  
 **Mathlib / Tendsto:** [`MATHLIB.md`](MATHLIB.md)
 
-**Public repo tip (post-v0.1.6 formal track):** commit `3b1d937` and later on `main`.  
-**Released DOI pin:** still **v0.1.6** → [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  
-until a deliberate new version is deposited (this file is **prep**, not a release).
+**Release:** **v0.1.7** packages this map + the formal track on `main` (Mathlib → Tendsto → 1a/2a → obligations).  
+**Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
+**Prior pin (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)
 
 ---
 
@@ -148,15 +148,15 @@ Synthetic kits and proxy CSVs are **operational demos**, not field validation.
 
 ---
 
-## 7. Suggested text for next Zenodo version (draft)
+## 7. Zenodo version note (v0.1.7)
 
-> **Formal track since v0.1.6 (not yet a separate release at time of writing this prep note).**  
+The following was adapted into `zenodo/metadata.json` for **v0.1.7**:
+
+> **Formal track packaged as v0.1.7.**  
 > Mathlib 4.14 wired; Feigenbaum cascade interfaces (ε–N) and Real/`Tendsto` shapes encoded.  
 > Proved bookkeeping: rational ε–N ↔ metric `Tendsto` for cast scaling ratios; functional finite Poincaré pairs admit a total realizer (goal 1a); strong unimodality implies quadratic location (goal 2a); composite package under granted continuum+strong+universal hypotheses.  
 > **Still open (honest `sorry`):** dynamical continuum return from ordinal+smooth (1b), strong unimodality of that return (2), Feigenbaum δ universality (3), and the composite from hypotheses alone.  
 > Operational RECD gate and band lemmas remain machine-checked. Unique \(\tau_{\mathrm{ch}}=f(\delta)\) remains open beyond finite simple non-identities.
-
-Copy/adapt into `zenodo/metadata.json` only when cutting a real version bump.
 
 ---
 
@@ -186,7 +186,7 @@ open_cascade_tendsto_feigenbaum_delta
 | Milestone | Formal honesty note |
 |-----------|---------------------|
 | v0.1.4–0.1.6 | Gate, bands, first-return skeleton, C3 synth, simple \(f(\delta)\) non-ids |
-| post-0.1.6 `main` | Mathlib; Analytic + Tendsto interfaces; ε–N↔Tendsto; goals 1a/2a/C∘ |
+| **v0.1.7** | Mathlib; Analytic + Tendsto interfaces; ε–N↔Tendsto; goals 1a/2a/C∘; this map |
 | **Still not claimed** | Full Feigenbaum reduction; field dengue; unique \(\tau_{\mathrm{ch}}\) |
 
-Last updated: 2026-07-23 (obligations map for v0.2 prep).
+Last updated: 2026-07-23 (shipped with **v0.1.7**).

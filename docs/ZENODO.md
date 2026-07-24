@@ -4,23 +4,21 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.6)** | `10.5281/zenodo.21516523` | https://doi.org/10.5281/zenodo.21516523 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
+| **v0.1.7** | *(record after publish; concept DOI above always points to latest)* | — |
+| **v0.1.6** | `10.5281/zenodo.21516523` | https://doi.org/10.5281/zenodo.21516523 |
 | **v0.1.5** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
 | **v0.1.4** | `10.5281/zenodo.21516060` | https://doi.org/10.5281/zenodo.21516060 |
 | Record page (v0.1.6) | — | https://zenodo.org/records/21516523 |
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
-## Draft notes for next version (not deposited yet)
+## v0.1.7 description source
 
-Post-v0.1.6 formal track on `main` (Mathlib, Tendsto, goals 1a/2a, obligations map)
-is summarized for the next deposit description in:
+Deposit description is in `zenodo/metadata.json` (adapted from
+[`FORMAL_OBLIGATIONS.md` §7](FORMAL_OBLIGATIONS.md)).
 
-[`FORMAL_OBLIGATIONS.md` §7](FORMAL_OBLIGATIONS.md) (suggested Zenodo blurb).
-
-Do **not** claim Feigenbaum goals 1b–3 closed. Prefer version **v0.1.7** (docs+formal
-bookkeeping) or **v0.2** if bundling workshop/data milestones.
+Do **not** claim Feigenbaum goals 1b–3 closed in the Zenodo abstract.
 
 ## New versions
 
@@ -49,8 +47,8 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
-| `10.5281/zenodo.21516523` | This formal monorepo (v0.1.6) |
-| `10.5281/zenodo.21516059` | Concept / always-latest |
+| Concept `10.5281/zenodo.21516059` | Always-latest formal monorepo (until v0.1.7 version DOI recorded) |
+| `10.5281/zenodo.21516523` | Pin v0.1.6 |
 | `10.5281/zenodo.21516329` | Pin v0.1.5 |
 | `10.5281/zenodo.21516060` | Pin v0.1.4 |
 | `10.5281/zenodo.20576241` | Broader Systemic Tau corpus / prior software |

@@ -3,13 +3,13 @@
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516523.svg)](https://doi.org/10.5281/zenodo.21516523)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516059.svg)](https://doi.org/10.5281/zenodo.21516059)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
-Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.6**  
+Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.7**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
-**DOI (this version):** https://doi.org/10.5281/zenodo.21516523  
-**Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
+**Concept DOI (all versions → latest):** https://doi.org/10.5281/zenodo.21516059  
+**DOI (v0.1.6):** https://doi.org/10.5281/zenodo.21516523
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 
@@ -146,11 +146,12 @@ See [`CITATION.cff`](CITATION.cff).
 
 | What | Identifier |
 |------|------------|
-| This formal monorepo (v0.1.6) | [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523) |
+| This formal monorepo (v0.1.7) | Concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) *(version DOI after Zenodo publish)* |
 | Concept DOI (always latest) | [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) |
+| v0.1.6 (archived) | [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523) |
 | v0.1.5 (archived) | [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329) |
 | v0.1.4 (archived) | [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060) |
-| GitHub | https://github.com/johelpadilla/systemic-tau-formal · release `v0.1.6` |
+| GitHub | https://github.com/johelpadilla/systemic-tau-formal · release `v0.1.7` |
 | Prior Systemic Tau corpus / software archive | [10.5281/zenodo.20576241](https://doi.org/10.5281/zenodo.20576241) |
 
 ```bibtex
@@ -161,9 +162,9 @@ See [`CITATION.cff`](CITATION.cff).
   month        = jul,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {0.1.6},
-  doi          = {10.5281/zenodo.21516523},
-  url          = {https://doi.org/10.5281/zenodo.21516523}
+  version      = {0.1.7},
+  doi          = {10.5281/zenodo.21516059},
+  url          = {https://doi.org/10.5281/zenodo.21516059}
 }
 ```
 
@@ -193,4 +194,4 @@ systemic-tau-formal/
 
 ---
 
-*v0.1.6 · 2026-07-23 · Ready for incremental formalization and public scrutiny.*
+*v0.1.7 · 2026-07-23 · Formal track (Mathlib / Tendsto / 1a–2a / obligations) under public scrutiny.*

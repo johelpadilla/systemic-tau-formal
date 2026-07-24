@@ -49,18 +49,17 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 ## Citation / Zenodo
 
-- GitHub release: `v0.1.6`  
+- GitHub release: `v0.1.7`  
+- **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) (version DOI filled after Zenodo publish)  
 - **DOI (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  
-- **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 - **DOI (v0.1.5):** [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329)  
 - **DOI (v0.1.4):** [10.5281/zenodo.21516060](https://doi.org/10.5281/zenodo.21516060)  
-- Record: https://zenodo.org/records/21516523  
 - Deposit guide: [`docs/ZENODO.md`](docs/ZENODO.md)  
 - Prior corpus DOI: `10.5281/zenodo.20576241`
 
 ## Next formal targets
 
 See [`ROADMAP.md`](ROADMAP.md), [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md),  
-and the single-page honesty board [`docs/FORMAL_OBLIGATIONS.md`](docs/FORMAL_OBLIGATIONS.md) (v0.2 prep).
+and the single-page honesty board [`docs/FORMAL_OBLIGATIONS.md`](docs/FORMAL_OBLIGATIONS.md).
 
-Last updated: 2026-07-23 (FORMAL_OBLIGATIONS map; 1a/2a/Tendsto bookkeeping ✓; 1b/2/3 open).
+Last updated: 2026-07-23 (release **v0.1.7**: formal track + obligations map).

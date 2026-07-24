@@ -1,6 +1,6 @@
 # Systemic Tau Stress-Test 2026 — workshop brief
 
-**Status:** public invitation · **Repo version:** v0.1.6+  
+**Status:** public invitation · **Repo version:** v0.1.7+  
 **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 **Labels:** organization is `[OPERACIONAL]`; outcomes of attacks are `[EMPÍRICO]` / `[TEOREMA]` / philosophy as appropriate.
 
@@ -44,7 +44,7 @@ Templates: `.github/ISSUE_TEMPLATE/`.
 
 | Block | Hours (local) | Activity |
 |-------|----------------|----------|
-| **T0** | 0–2 | Clone v0.1.6+, run `pytest` + optional `lake build`; pick track |
+| **T0** | 0–2 | Clone v0.1.7+, run `pytest` + optional `lake build`; pick track |
 | **T1** | 2–8 | Reproduce notebook 01 + 04 (P3) or tent Feigenbaum module |
 | **T2** | 8–24 | Attack: own data / surrogate / domain transfer / formal gap note |
 | **T3** | 24–36 | Write protocol §7 report or Lean PR sketch |
@@ -110,6 +110,7 @@ Submit a critique that **names which horn** of Baron’s trilemma is allegedly r
 
 Cite the monorepo version you attacked:
 
+- v0.1.7: concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) (version DOI after publish)
 - v0.1.6: [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)
 - Concept / latest: [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)
 - v0.1.5: [10.5281/zenodo.21516329](https://doi.org/10.5281/zenodo.21516329)  
