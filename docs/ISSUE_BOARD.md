@@ -43,20 +43,26 @@ Use GitHub issues as the board of record. This file is the static map.
 Report failures with template **Contradiction / falsification**.  
 List: [`FALSIFIABLE_PREDICTIONS.md`](FALSIFIABLE_PREDICTIONS.md).
 
-## Formal open goals (Feigenbaum)
+## Formal Feigenbaum track (lab / construction vs research)
 
-| Goal | Lean name | Status |
-|------|-----------|--------|
+| Goal | Lean name | Status on `main` |
+|------|-----------|------------------|
 | 1a | `exists_realizer_of_functional` | **proved** (bookkeeping) |
-| 1b | `open_ordinal_induces_continuum_return` | `open-goal` |
+| 1b | `open_ordinal_induces_continuum_return` | **construction** (`lookupTent`) — not field dynamics |
 | 2a | `goal_2a_quadratic_of_strong` | **proved** |
-| 2 | `open_return_strongly_unimodal` | `open-goal` |
-| 3 | `open_analytic_feigenbaum` | `open-goal` |
-| Composite skeleton | `coherence_return_map_feigenbaum_of` | **proved** (if 1–3 granted) |
-| Composite from H | `coherence_return_map_feigenbaum` | `open-goal` |
+| 2 | `open_return_strongly_unimodal` | **lab construction** (tent continuum) |
+| 2τ | `open_return_strongly_unimodal_tau` | **lab construction** (non-tent `tauReturnFour`) |
+| 3 pkg | `open_analytic_feigenbaum` | **refined package** (band + quadratic; not Mathlib renorm) |
+| 3 C² / L-ID | `FeigenbaumUniversalC2`, logistic scale-ID | **algebra + scale identification** |
+| Composite skeleton | `coherence_return_map_feigenbaum_of` | **proved** (if continuum+strong+U granted) |
+| Composite from H | `coherence_return_map_feigenbaum` | **lab package** (default non-tent ★) |
+
+**Still research-scale (not “open sorry”):** termwise superstable roots; Mathlib C²-open renorm; field-derived τₛ return.
 
 Status narrative: [`FEIGENBAUM_STATUS.md`](FEIGENBAUM_STATUS.md) ·  
-Single-page map: [`FORMAL_OBLIGATIONS.md`](FORMAL_OBLIGATIONS.md).
+Single-page map: [`FORMAL_OBLIGATIONS.md`](FORMAL_OBLIGATIONS.md) ·  
+Constructions: [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md).  
+Live GitHub issue #5 may lag this table — prefer docs on `main`.
 
 ## Workshop
 

@@ -1,6 +1,6 @@
 # Roadmap
 
-Public status after **v0.1.7** (concept DOI [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)).
+Public status after **v0.1.8** (concept DOI [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)).
 
 ## Done
 
@@ -12,11 +12,13 @@ Public status after **v0.1.7** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Release `v0.1.5`: fixtures, P3/P4, Feigenbaum first-return skeleton, Binder
 - [x] Release `v0.1.6`: C3 synthetic kits, first-return Python twin, τ_ch simple-candidate non-identity, Stress-Test 2026 board
 - [x] Release `v0.1.7`: Mathlib + Tendsto interfaces; ε–N↔Tendsto; goals 1a/2a/C∘; `docs/FORMAL_OBLIGATIONS.md`
+- [x] Release `v0.1.8`: zero sorry/axiom; logistic scale-ID; C²/Schwarzian; non-tent τₛ lab return; docs aligned
 
 ## Near term (v0.2)
 
 - [x] Formal obligations map for scrutiny (`docs/FORMAL_OBLIGATIONS.md`)
 - [x] Cut release **v0.1.7** + Zenodo new version (formal bookkeeping track)
+- [x] Cut release **v0.1.8** + Zenodo (construction pack + honesty docs)
 - [ ] Cut **v0.2** when workshop date and/or licensed Aedes intake land (or further formal discharge)
 - [x] Documented Jupyter notebooks 01–03 (with CLI `.py` twins)
 - [x] Feigenbaum module: strong unimodality example + honest open/sorry split (`docs/FEIGENBAUM_STATUS.md`)

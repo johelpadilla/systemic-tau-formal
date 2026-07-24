@@ -2,7 +2,7 @@
   "metadata": {
     "title": "systemic-tau-formal: Machine-verifiable Systemic Tau (τₛ) and RECD",
     "upload_type": "software",
-    "description": "<p><strong>systemic-tau-formal</strong> v0.1.7 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (τₛ) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p><p><strong>What is new in v0.1.7 (formal track)</strong></p><ul><li><strong>Mathlib 4.14</strong> wired (<code>mathlib4@v4.14.0</code>); cascade / scaling ε–N interfaces in <code>FeigenbaumAnalytic</code>; Real/<code>Tendsto</code> claim shapes in <code>FeigenbaumTendsto</code>.</li><li><strong>Bookkeeping proved:</strong> rational ε–N ↔ metric <code>Tendsto</code> for cast scaling ratios; goal <strong>1a</strong> (functional finite Poincaré pairs admit a total realizer); goal <strong>2a</strong> (strong unimodality ⇒ quadratic tip location); composite package under granted continuum+strong+universal hypotheses.</li><li><strong>Honesty board:</strong> single-page <code>docs/FORMAL_OBLIGATIONS.md</code> (proved vs open DAG for peer scrutiny).</li></ul><p><strong>Still open (honest <code>sorry</code>)</strong></p><ul><li>Dynamical continuum return from ordinal+smooth (<strong>1b</strong>)</li><li>Strong unimodality of that return (<strong>2</strong>)</li><li>Feigenbaum δ universality package (<strong>3</strong>) and composite from hypotheses alone</li><li>Unique closed-form τ_ch = f(δ) beyond finite simple non-identities</li></ul><p><strong>Stack</strong></p><ul><li><strong>Lean 4.14</strong> + Mathlib: operational gate g(τₛ), band lemmas, Feigenbaum partial formalization (1a/2a closed; 1b–3 open).</li><li><strong>Python</strong> reference core + golden rational bridge + pytest; C3 synthetic kits; first-return twin (from v0.1.6).</li><li>Public falsifiable predictions, experimental protocol, epistemic labels, Stress-Test 2026 board.</li></ul><p>Companion production package: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p><p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 are Feigenbaum-motivated defaults; ε–N↔Tendsto is interface equivalence, <strong>not</strong> a proof that physical cascades limit to δ≈4.669… . Do not discharge research goals via tent/toy witnesses.</p>",
+    "description": "<p><strong>systemic-tau-formal</strong> v0.1.8 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (τₛ) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p><p><strong>What is new in v0.1.8 (formal track, post-v0.1.7 packs)</strong></p><ul><li><strong>Zero <code>sorry</code> and zero research <code>axiom</code></strong> under <code>SystemicTau/</code>. Former open goals are discharged only as <strong>named cited constructions / laboratory packages</strong>, not as classical dynamical theorems from bare ordinal+smooth hypotheses.</li><li><strong>Reduction:</strong> continuum realizers via <code>lookupTent</code>; tent lab continuum (goal 2); <strong>non-tent</strong> continuum return <code>tauReturnFour</code> (logistic conjugacy on the coherence interval); composite ★ uses the non-tent return + refined <code>FeigenbaumUniversal</code> (operational δ-band + quadratic tip). Tent composite retained as alternate.</li><li><strong>Analytic:</strong> geometric cascade with exact ratio δ_op; ε–N ↔ <code>Tendsto</code> bookkeeping; toy cascade honesty blocks (does <strong>not</strong> approach δ).</li><li><strong>Logistic scale-ID</strong> (<code>FeigenbaumLogistic</code>): logistic-anchored parameter sequence shares ratios with the geometric model (landmarks r₀=2, r₁=3); <strong>not</strong> termwise identification with classical superstable roots.</li><li><strong>C² / Schwarzian</strong> (<code>FeigenbaumSchwarzian</code>): formal derivatives of the logistic map; <code>HasC2QuadraticTip</code>; Schwarzian ≤ 0 off the critical point; <code>FeigenbaumUniversalC2</code>. <strong>Not</strong> Mathlib C²-open renormalization / universality.</li><li><strong>Docs honesty board:</strong> <code>docs/FORMAL_OBLIGATIONS.md</code> §7 splits historical v0.1.7 from this pin; aligned <code>STATUS.md</code> / <code>FEIGENBAUM_STATUS.md</code>.</li></ul><p><strong>Still research-scale (not closed classical theorems)</strong></p><ul><li>Termwise / asymptotic logistic superstable roots</li><li>Mathlib C²-open renorm fixed point / universality</li><li>Field-derived continuum return of τₛ (not a cited lab map)</li><li>Unique closed-form τ_ch = f(δ) beyond finite simple non-identities</li><li>Stronger multi-site empirical P1/P4 discharge</li></ul><p><strong>Stack</strong></p><ul><li><strong>Lean 4.14</strong> + Mathlib: operational gate g(τₛ), band lemmas, Feigenbaum lab/construction track (modules: Reduction, Analytic, Tendsto, Schwarzian, Logistic).</li><li><strong>Python</strong> reference core + golden rational bridge + pytest; C3 synthetic kits; first-return twin; Aedes field intake path.</li><li>Public falsifiable predictions, experimental protocol, epistemic labels, Stress-Test 2026 board.</li></ul><p>Companion production package: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p><p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 are Feigenbaum-motivated defaults; ε–N↔Tendsto is interface equivalence, <strong>not</strong> a proof that physical cascades limit to δ≈4.669… . Lab maps (tent / tauReturn) are <strong>not</strong> claimed as field τₛ dynamics. Scale-ID is <strong>not</strong> termwise superstable identification.</p>",
     "creators": [
       {
         "name": "Padilla-Villanueva, Johel",
@@ -16,6 +16,8 @@
       "Feigenbaum",
       "Lean 4",
       "Mathlib",
+      "Schwarzian",
+      "logistic map",
       "early warning signals",
       "complex systems",
       "ordinal dynamics",
@@ -25,7 +27,7 @@
     "license": "mit",
     "access_right": "open",
     "language": "eng",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "related_identifiers": [
       {
         "identifier": "https://github.com/johelpadilla/systemic-tau-formal",
@@ -40,12 +42,12 @@
         "scheme": "doi"
       },
       {
-        "identifier": "10.5281/zenodo.21516523",
+        "identifier": "10.5281/zenodo.21522346",
         "relation": "isNewVersionOf",
         "resource_type": "software",
         "scheme": "doi"
       }
     ],
-    "notes": "CI: GitHub Actions (pytest + lake build). Verify: clone, lake build, pytest -q. Concept DOI: 10.5281/zenodo.21516059. Formal obligations map: docs/FORMAL_OBLIGATIONS.md."
+    "notes": "CI: GitHub Actions (pytest + lake build). Verify: clone, lake build, pytest -q. Concept DOI: 10.5281/zenodo.21516059. Formal obligations map: docs/FORMAL_OBLIGATIONS.md. Zero sorry / zero research axiom under lean/SystemicTau/."
   }
 }

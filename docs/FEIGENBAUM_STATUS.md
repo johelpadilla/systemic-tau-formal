@@ -66,4 +66,7 @@ Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md).
 2. Mathlib C²-open universality + renorm fixed point.  
 3. Field-derived continuum return of τₛ (not a cited lab map).
 
-Last updated: 2026-07-24 (logistic ID + Schwarzian + non-tent τₛ return).
+**Zenodo:** **v0.1.8** (this pin) · concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) · see `FORMAL_OBLIGATIONS` §7.  
+**Module board:** [`../STATUS.md`](../STATUS.md).
+
+Last updated: 2026-07-24 (v0.1.8: logistic scale-ID + Schwarzian + non-tent τₛ return; docs cross-aligned).

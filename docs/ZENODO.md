@@ -4,21 +4,22 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.7)** | `10.5281/zenodo.21522346` | https://doi.org/10.5281/zenodo.21522346 |
+| **This version (v0.1.8)** | *set in `deposition_state.json` after publish* | concept latest |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
+| **v0.1.7** | `10.5281/zenodo.21522346` | https://doi.org/10.5281/zenodo.21522346 |
 | **v0.1.6** | `10.5281/zenodo.21516523` | https://doi.org/10.5281/zenodo.21516523 |
 | **v0.1.5** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
 | **v0.1.4** | `10.5281/zenodo.21516060` | https://doi.org/10.5281/zenodo.21516060 |
-| Record page (v0.1.7) | — | https://zenodo.org/records/21522346 |
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
-## v0.1.7 description source
+## v0.1.8 description source
 
 Deposit description is in `zenodo/metadata.json` (adapted from
-[`FORMAL_OBLIGATIONS.md` §7](FORMAL_OBLIGATIONS.md)).
+[`FORMAL_OBLIGATIONS.md` §7.2](FORMAL_OBLIGATIONS.md)).
 
-Do **not** claim Feigenbaum goals 1b–3 closed in the Zenodo abstract.
+Do **not** claim classical Feigenbaum universality, termwise superstable roots,
+or field-derived τₛ return in the Zenodo abstract. Lab / construction discharge is OK.
 
 ## New versions
 
@@ -47,8 +48,9 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
-| `10.5281/zenodo.21522346` | This formal monorepo (v0.1.7) |
+| Version DOI in `CITATION.cff` / `deposition_state.json` | This formal monorepo (v0.1.8) |
 | `10.5281/zenodo.21516059` | Concept / always-latest |
+| `10.5281/zenodo.21522346` | Pin v0.1.7 |
 | `10.5281/zenodo.21516523` | Pin v0.1.6 |
 | `10.5281/zenodo.21516329` | Pin v0.1.5 |
 | `10.5281/zenodo.21516060` | Pin v0.1.4 |
