@@ -143,7 +143,8 @@ Placeholders still in `FeigenbaumUniversal` (`delta_limit : True`, `class_univer
 | Aedes field under `data/aedes/raw/` (SJU1/2/3 2018) | ✓ CSV + nb 07 |
 | P3 on field Aedes (ρ≤0.20, no re-fit) | ✓ nb 08 + tests |
 | P1 with pre-registered `endpoints.json` | ○ scaffold only (example file) |
-| More years/sites + P4 field | ○ pending |
+| P4 field scan on SJU1–3 (structure vs baselines) | ✓ nb 09 + tests; **no strong-anti premise** on 2018 matrices (honest) |
+| More years/sites (anti-regime windows for true P4 discharge) | ○ pending |
 | C3 **field** results (not synthetic kits) | ○ pending |
 | Workshop Stress-Test 2026 date / host | ○ issue #1 |
 | P1–P4 on real series | ○ community |

@@ -43,6 +43,7 @@ None of these are Lean theorems.
 | Label | `[CONJETURA]` operationalized by gate \(g = −1\) vs \(g = +1\) |
 | Failure mode | Identical Δt statistics (distribution of increments) across anti vs sync after controls |
 | Notes | Compare increment histograms and run-length structure |
+| Ops | Synthetic: `python/tests/test_p4_anti_sync.py`. Field scan: `notebooks/09_aedes_p4_field.py` + `core.p4_field_scan`. 2018 SJU1–3 multi-trap matrices are **co-moving** (positive mean pairwise corr) → status `no_strong_anti_regime` (premise not met; not a silent “pass”). True field discharge needs windows with `τₛ ≤ −0.41` mass. |
 
 ## How to report a falsification
 

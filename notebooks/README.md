@@ -1,7 +1,7 @@
 # Notebooks
 
 Interactive demos for Systemic Tau (τₛ) + RECD.  
-CLI twins (same logic, no Jupyter): `01_*.py` … `08_*.py`.
+CLI twins (same logic, no Jupyter): `01_*.py` … `09_*.py`.
 
 | Notebook | Content | Label |
 |----------|---------|--------|
@@ -13,6 +13,7 @@ CLI twins (same logic, no Jupyter): `01_*.py` … `08_*.py`.
 | [`06_cross_domain_c3.py`](06_cross_domain_c3.py) | Finance / EEG / grid-like synthetic C3 kits | `[OPERACIONAL]` not field data |
 | [`07_aedes_field_report.py`](07_aedes_field_report.py) | τₛ/RECD on `data/aedes/raw/` (SJU1–3) | `[EMPÍRICO]` series; P1 not scored |
 | [`08_aedes_p3_field.py`](08_aedes_p3_field.py) | P3 noise on field Aedes ρ≤0.20 | field + protocol noise |
+| [`09_aedes_p4_field.py`](09_aedes_p4_field.py) | P4 structure vs sync/anti baselines | field EMPÍRICO; no false anti discharge |
 
 ## Run in the browser (Binder)
 
@@ -45,6 +46,7 @@ python notebooks/05_first_return_poincare.py --plot   # optional PNG
 python notebooks/06_cross_domain_c3.py
 python notebooks/07_aedes_field_report.py
 python notebooks/08_aedes_p3_field.py
+python notebooks/09_aedes_p4_field.py
 ```
 
 ## Epistemic rules

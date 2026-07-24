@@ -12,6 +12,14 @@ from .regimes import (
     regime_fracs,
     regime_vector,
 )
+from .p4_sync import (
+    p4_baseline_metrics,
+    p4_clock_metrics,
+    p4_field_scan,
+    p4_nearest_baseline,
+    p4_series_report,
+    pairwise_corr_stats,
+)
 from .first_return import (
     first_return_crossing,
     first_return_from_local_maxima,
@@ -53,6 +61,12 @@ __all__ = [
     "regime_agreement",
     "regime_fracs",
     "p3_noise_scan",
+    "pairwise_corr_stats",
+    "p4_clock_metrics",
+    "p4_baseline_metrics",
+    "p4_nearest_baseline",
+    "p4_series_report",
+    "p4_field_scan",
     "first_return_crossing",
     "first_return_from_local_maxima",
     "nonneg_pred",
