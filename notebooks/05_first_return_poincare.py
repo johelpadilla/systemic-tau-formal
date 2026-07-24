@@ -47,7 +47,10 @@ def main():
 
     print(f"\nUp-crossing 0 section: n={len(sec_up)}  return_pairs={len(pairs_up)}")
     print("\nLean twins: sectionValues / returnPairs / FirstReturnData")
-    print("Open: continuum extension + strong unimodality (named sorry goals).")
+    print(
+        "Lab/construction track discharged (v0.1.8+); research residual: "
+        "field-derived continuum return + classical renorm (see FEIGENBAUM_STATUS)."
+    )
 
     # Optional scatter (headless-friendly) — good first issue #8
     if pairs_max and "--plot" in sys.argv:

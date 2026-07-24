@@ -6,6 +6,7 @@
 -/
 import SystemicTau.Basic
 import SystemicTau.Thresholds
+import SystemicTau.ThresholdFromDelta
 import SystemicTau.RECD
 import SystemicTau.FeigenbaumReduction
 import SystemicTau.FeigenbaumAnalytic

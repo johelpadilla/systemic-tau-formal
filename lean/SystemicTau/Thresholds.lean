@@ -137,6 +137,27 @@ def oneOverDelta : Rat :=
 def deltaMinusOne_over_twoDelta : Rat :=
   (feigenbaumDeltaNum - feigenbaumDeltaDen : Rat) / (2 * feigenbaumDeltaNum)
 
+/-- 2/(δ + 1). -/
+def twoOverDeltaPlusOne : Rat :=
+  (2 * feigenbaumDeltaDen : Rat) / (feigenbaumDeltaNum + feigenbaumDeltaDen)
+
+/-- (δ − 2)/δ. -/
+def deltaMinusTwo_over_delta : Rat :=
+  (feigenbaumDeltaNum - 2 * feigenbaumDeltaDen : Rat) / feigenbaumDeltaNum
+
+/-- 3/(2δ). -/
+def threeOverTwoDelta : Rat :=
+  (3 * feigenbaumDeltaDen : Rat) / (2 * feigenbaumDeltaNum)
+
+/-- 4/δ² (rational). -/
+def fourOverDeltaSq : Rat :=
+  (4 * (feigenbaumDeltaDen : Rat) * feigenbaumDeltaDen) /
+    ((feigenbaumDeltaNum : Rat) * feigenbaumDeltaNum)
+
+/-- 5/δ. -/
+def fiveOverDelta : Rat :=
+  (5 * feigenbaumDeltaDen : Rat) / feigenbaumDeltaNum
+
 /-- [TEOREMA] 2/δ ≠ τ_ch (already 2/δ > τ_ch). -/
 theorem twoOverDelta_ne_tauChaos : twoOverDelta ≠ tauChaos := by
   intro h
@@ -155,13 +176,35 @@ theorem deltaMinusOne_over_twoDelta_ne_tauChaos :
     deltaMinusOne_over_twoDelta ≠ tauChaos := by
   native_decide
 
+/-- [TEOREMA] 2/(δ+1) ≠ τ_ch. -/
+theorem twoOverDeltaPlusOne_ne_tauChaos : twoOverDeltaPlusOne ≠ tauChaos := by
+  native_decide
+
+/-- [TEOREMA] (δ−2)/δ ≠ τ_ch. -/
+theorem deltaMinusTwo_over_delta_ne_tauChaos :
+    deltaMinusTwo_over_delta ≠ tauChaos := by
+  native_decide
+
+/-- [TEOREMA] 3/(2δ) ≠ τ_ch. -/
+theorem threeOverTwoDelta_ne_tauChaos : threeOverTwoDelta ≠ tauChaos := by
+  native_decide
+
+/-- [TEOREMA] 4/δ² ≠ τ_ch. -/
+theorem fourOverDeltaSq_ne_tauChaos : fourOverDeltaSq ≠ tauChaos := by
+  native_decide
+
+/-- [TEOREMA] 5/δ ≠ τ_ch. -/
+theorem fiveOverDelta_ne_tauChaos : fiveOverDelta ≠ tauChaos := by
+  native_decide
+
 /-- [TEOREMA] τ_st ≠ τ_ch (band separation). -/
 theorem tauStable_ne_tauChaos : tauStable ≠ tauChaos := by
   exact ne_of_gt tauChaos_lt_tauStable
 
 /--
   Finite candidate class that fails equality with operational τ_ch.
-  Extending the class is welcome; closing a *unique* f(δ)=τ_ch remains open.
+  Extended (issue #7). Unique *operational* inverse-scale bridge is in
+  `ThresholdFromDelta`; classical free-\(c\) derivation remains open.
 -/
 structure FailedSimpleCandidates where
   two_over_delta : twoOverDelta ≠ tauChaos := twoOverDelta_ne_tauChaos
@@ -169,15 +212,29 @@ structure FailedSimpleCandidates where
   gate_prefactor : gatePrefactor ≠ tauChaos := gatePrefactor_ne_tauChaos
   half_prefactor : deltaMinusOne_over_twoDelta ≠ tauChaos :=
     deltaMinusOne_over_twoDelta_ne_tauChaos
+  two_over_delta_plus_one : twoOverDeltaPlusOne ≠ tauChaos :=
+    twoOverDeltaPlusOne_ne_tauChaos
+  delta_minus_two_over_delta : deltaMinusTwo_over_delta ≠ tauChaos :=
+    deltaMinusTwo_over_delta_ne_tauChaos
+  three_over_two_delta : threeOverTwoDelta ≠ tauChaos :=
+    threeOverTwoDelta_ne_tauChaos
+  four_over_delta_sq : fourOverDeltaSq ≠ tauChaos := fourOverDeltaSq_ne_tauChaos
+  five_over_delta : fiveOverDelta ≠ tauChaos := fiveOverDelta_ne_tauChaos
   stable_band : tauStable ≠ tauChaos := tauStable_ne_tauChaos
 
 def failedSimpleCandidates : FailedSimpleCandidates := {}
 
 /--
-  [CONJETURA] Universal thresholds determined by δ without dataset fit.
-  Partial progress: finite simple-form class ruled out (`failedSimpleCandidates`).
-  Remaining: choose a canonical f(δ) = τ_ch with zero residual, or prove no
-  unique simple form exists among a larger agreed class.
+  [CONJETURA] Classical derivation of τ_ch from pure Feigenbaum theory (no free scale).
+
+  Partial progress (this file): finite simple-form class ruled out
+  (`failedSimpleCandidates`).
+
+  **Closed in inverse-scale class** (see `ThresholdFromDelta.lean`):
+  unique \(f(\delta)=c/\delta\) with \(f(\delta_{\mathrm{op}})=\tau_{\mathrm{ch}}\),
+  \(c_\star=\tau_{\mathrm{ch}}\cdot\delta_{\mathrm{op}}\), plus band partition /
+  gate compatibility. Classical residual remains open there as
+  `classical_naive_two_over_delta_fails` / research tracker.
 -/
 theorem thresholds_from_delta_open : True := trivial
 

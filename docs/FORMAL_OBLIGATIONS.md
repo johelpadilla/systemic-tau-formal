@@ -52,8 +52,9 @@ logistic **scale-ID**, C²/Schwarzian algebra, **non-tent** τₛ lab return (se
 | Bands τ_st = 1/2, τ_ch operational | `Thresholds.lean`, golden tests | ✓ operational + lemmas |
 | Gate \(g\) laws (stable / chaotic / anti-sync) | `RECD.lean` | ✓ theorem |
 | Nonneg trichotomy / asymmetry of gate | docs + tests + Lean | ✓ |
-| Finite simple \(f(\delta)=\tau_{\mathrm{ch}}\) candidates | `failedSimpleCandidates` | ✓ non-identity (not full uniqueness) |
-| Unique closed-form \(\tau_{\mathrm{ch}}=f(\delta)\) | — | ○ open (medium term) |
+| Finite simple \(f(\delta)=\tau_{\mathrm{ch}}\) candidates | `failedSimpleCandidates` (10 forms) | ✓ non-identity |
+| Unique inverse-scale \(f(\delta)=c/\delta\) at pin | `ThresholdFromDelta` | ✓ uniqueness in class |
+| Classical free-\(c\) derivation of \(\tau_{\mathrm{ch}}\) | — | ○ open (research-scale) |
 
 ---
 

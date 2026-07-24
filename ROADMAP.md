@@ -43,8 +43,9 @@ Public status after **v0.1.8** (concept DOI [10.5281/zenodo.21516059](https://do
 
 ## Medium term
 
-- [x] Partial: finite simple f(δ) candidates ≠ τ_ch (`docs/TAU_CH_DELTA.md`, Lean `failedSimpleCandidates`)
-- [ ] Full derivation of τ_ch from δ *or* agreed larger class with uniqueness/non-existence
+- [x] Partial: finite simple f(δ) candidates ≠ τ_ch (`docs/TAU_CH_DELTA.md`, Lean `failedSimpleCandidates`, 10 forms)
+- [x] Unique operational inverse-scale bridge \(f(\delta)=c/\delta\) (`ThresholdFromDelta.lean`)
+- [ ] Classical free-\(c\) derivation of τ_ch from pure Feigenbaum *or* larger class without operational pin
 - [ ] Cross-domain **field** results (licensed data) — pending community / intake
 - [ ] Workshop date / host (issue #1)
 

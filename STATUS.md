@@ -15,7 +15,8 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Module | Claim class | Status | Notes |
 |--------|-------------|--------|-------|
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque; **Mathlib** ℚ |
-| `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** vs τ_ch |
+| `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** (10 forms) vs τ_ch |
+| `ThresholdFromDelta` | mix | **Builds + lemmas** | unique inverse-scale \(f(\delta)=c/\delta\); ontology L0–L3 package |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
 | `FeigenbaumReduction` | mix | **0 sorry, 0 axiom** | 1a/1b `lookupTent`; 2 tent lab; **2τ `tauReturnFour`**; ★ **non-tent**; `logisticStrong` |
 | `FeigenbaumAnalytic` | mix | **0 sorry, 0 axiom** | geometric cascade ratios ≡ δ_op; 3a/3b; toy ↛ δ |
@@ -23,7 +24,7 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `FeigenbaumSchwarzian` | mix | **0 sorry, 0 axiom** | C² tip \(f''≠0\); Schwarzian ≤ 0 (logistic formal derivatives); `FeigenbaumUniversalC2` |
 | `FeigenbaumLogistic` | mix | **0 sorry, 0 axiom** | logistic-anchored cascade **scale-ID** with geometric (not superstable roots) |
 | Mathlib | dep | **wired** | mathlib4 `v4.14.0` · Real/Topology · [`docs/MATHLIB.md`](docs/MATHLIB.md) |
-| `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
+| `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns; `stratifiedFour` / well-sited claims |
 
 ## Ops / empirical (not Lean discharge)
 
