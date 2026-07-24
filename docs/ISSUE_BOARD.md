@@ -45,12 +45,15 @@ List: [`FALSIFIABLE_PREDICTIONS.md`](FALSIFIABLE_PREDICTIONS.md).
 
 ## Formal open goals (Feigenbaum)
 
-| Goal | Lean name | Label |
-|------|-----------|-------|
-| 1 | `open_ordinal_induces_continuum_return` | `open-goal` |
+| Goal | Lean name | Status |
+|------|-----------|--------|
+| 1a | `exists_realizer_of_functional` | **proved** (bookkeeping) |
+| 1b | `open_ordinal_induces_continuum_return` | `open-goal` |
+| 2a | `goal_2a_quadratic_of_strong` | **proved** |
 | 2 | `open_return_strongly_unimodal` | `open-goal` |
 | 3 | `open_analytic_feigenbaum` | `open-goal` |
-| Composite | `coherence_return_map_feigenbaum` | `open-goal` |
+| Composite skeleton | `coherence_return_map_feigenbaum_of` | **proved** (if 1–3 granted) |
+| Composite from H | `coherence_return_map_feigenbaum` | `open-goal` |
 
 Status narrative: [`FEIGENBAUM_STATUS.md`](FEIGENBAUM_STATUS.md).
 

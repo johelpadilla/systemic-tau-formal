@@ -21,18 +21,25 @@ Epistemic labels: see `EPISTEMIC_LABELS.md`.
 | `stronglyUnimodal_has_quadratic` | `[TEOREMA]` | ✓ proved |
 | `conditional_quadratic_from_setup` | `[TEOREMA]` | ✓ proved |
 | Package inhabited | theorem | ✓ |
-| Ordinal data ⇒ continuum return | `[TEOREMA]` | **open** (`open_ordinal_induces_continuum_return`) |
-| Continuum return strongly unimodal | `[TEOREMA]` | **open** (`open_return_strongly_unimodal`) |
+| Goal 1a: functional pairs admit a realizer | `[TEOREMA · bookkeeping]` | ✓ `exists_realizer_of_functional` |
+| Goal 1b: ordinal+smooth ⇒ dynamical continuum return | `[TEOREMA]` | **open** (`open_ordinal_induces_continuum_return`) |
+| Goal 2a: strong unimodal ⇒ quadratic location | `[TEOREMA]` | ✓ `goal_2a_quadratic_of_strong` |
+| Goal 2: continuum return strongly unimodal | `[TEOREMA]` | **open** (`open_return_strongly_unimodal`) |
 | Analytic δ / class universality | `[TEOREMA]` | **open** (`open_analytic_feigenbaum`) |
-| Full composite reduction | `[TEOREMA]` | **open** (`coherence_return_map_feigenbaum`) |
+| Composite *under* hypotheses 1–3 | `[TEOREMA · bookkeeping]` | ✓ `coherence_return_map_feigenbaum_of` |
+| Full composite reduction (from H alone) | `[TEOREMA]` | **open** (`coherence_return_map_feigenbaum`) |
 
 ## Named open goals
 
 The main `sorry` is split so progress can land one lemma at a time:
 
-1. **`open_ordinal_induces_continuum_return`** — discrete Poincaré pairs extend to a total map on the coherence interval.  
+1. **Goal 1b** `open_ordinal_induces_continuum_return` — ordinal + smooth force a *dynamical* continuum first-return (not a mere interpolant).  
+   - **1a proved:** `exists_realizer_of_functional` — any *functional* finite pair list has *some* total realizer (`lookupPair`). Pure discrete graph theory.  
 2. **`open_return_strongly_unimodal`** — that map is strongly unimodal with quadratic tip.  
-3. **`open_analytic_feigenbaum`** — Feigenbaum δ-limit / class universality (real analysis; optional Mathlib).
+   - **2a proved:** `goal_2a_quadratic_of_strong` / `stronglyUnimodal_has_quadratic` — mode ⇒ quadratic location once strong unimodality is known.  
+3. **`open_analytic_feigenbaum`** — Feigenbaum δ-limit / class universality (real dynamics; ε–N ↔ `Tendsto` bookkeeping is already proved in `FeigenbaumTendsto`).
+
+**Composition skeleton (proved):** `coherence_return_map_feigenbaum_of` — if continuum map + strong unimodality + `FeigenbaumUniversal` are granted, the composite package follows. This does **not** discharge goals 1–3.
 
 Conditional progress already machine-checked: *if* a `PreprintReturnSetup` supplies strong unimodality, the quadratic-location obligation follows from the mode (`conditional_quadratic_from_setup`).
 
@@ -84,7 +91,8 @@ Mathlib notes: [`MATHLIB.md`](MATHLIB.md).
 
 ## Next formal steps
 
-1. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  
-2. Research discharge of 3aℝ for a cited cascade — **not** the toy sequence.  
-3. Lean goals 1–2 (ordinal→continuum return / strong unimodality).  
-4. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1–3.
+1. Research discharge of **1b** (dynamical continuum from ordinal+smooth — not lookup).  
+2. Research discharge of **2** (strong unimodality of that return).  
+3. Research discharge of **3 / 3aℝ** for a cited cascade — **not** the toy sequence.  
+4. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  
+5. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1b–3.

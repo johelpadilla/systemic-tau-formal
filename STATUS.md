@@ -12,7 +12,7 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque; **Mathlib** ℚ |
 | `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** vs τ_ch |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
-| `FeigenbaumReduction` | mix | **partial** | tent strong+period-2; first-return skeleton; 3 named open `sorry`s |
+| `FeigenbaumReduction` | mix | **partial** | tent + first-return; **1a/2a/composite-of-hyp** proved; 1b/2/3/`composite` open `sorry` |
 | `FeigenbaumAnalytic` | mix | **partial** | cascade / δ ε–N interfaces; open goals 3a–3c `sorry` |
 | `FeigenbaumTendsto` | mix | **partial** | Real / `Tendsto`; ε–N bridge **proved**; 3aℝ–3cℝ research `sorry` |
 | Mathlib | dep | **wired** | mathlib4 `v4.14.0` · Real/Topology for Tendsto · `docs/MATHLIB.md` |
@@ -62,4 +62,4 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 See [`ROADMAP.md`](ROADMAP.md) and [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md).
 
-Last updated: 2026-07-23 (ε–N ↔ Tendsto bookkeeping proved; 3aℝ research still open).
+Last updated: 2026-07-23 (Feigenbaum goals 1a/2a + composite-of-hypotheses proved; 1b/2/3 research open).

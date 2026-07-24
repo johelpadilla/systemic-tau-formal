@@ -13,12 +13,15 @@
   - iterate skeleton + tent period-2 example
   - first-return data from an abstract coherence series
   - conditional: StronglyUnimodal ⇒ HasQuadraticCriticalPoint
+  - bookkeeping: functional finite pairs admit a realizing map (goal 1a)
+  - bookkeeping: open goals 1–3 *compose* to the composite claim (still open inputs)
   - named open goals for the remaining reduction steps
 
   What remains open (`sorry`):
-  - that ordinal observability + smoothness *force* a continuum return map
-  - that such a return is strongly unimodal with quadratic tip
-  - full analytic Feigenbaum δ universality
+  - that ordinal observability + smoothness *force* a continuum return map (1b)
+  - that such a return is strongly unimodal with quadratic tip (2)
+  - full analytic Feigenbaum δ universality (3)
+  - the composite without assuming 1–3
 
   Papers: catalog 09 / 11 / 12; Zenodo monorepo DOI 10.5281/zenodo.21516060
 -/
@@ -266,6 +269,177 @@ structure ContinuumReturnMap where
 def agreesOnPairs (R : Rat → Rat) (pairs : List (Rat × Rat)) : Prop :=
   pairs.all fun p => decide (R p.1 = p.2) = true
 
+/-- Unfold `List.all` + `decide` into a membership form convenient for proofs. -/
+theorem agreesOnPairs_iff (R : Rat → Rat) (pairs : List (Rat × Rat)) :
+    agreesOnPairs R pairs ↔ ∀ p ∈ pairs, R p.1 = p.2 := by
+  simp [agreesOnPairs, List.all_eq_true, decide_eq_true_eq]
+
+/-- Empty pair list is realized by every map. -/
+theorem agreesOnPairs_nil (R : Rat → Rat) : agreesOnPairs R ([] : List (Rat × Rat)) := by
+  simp [agreesOnPairs]
+
+/--
+  Finite relation is a partial function: same abscissa ⇒ same ordinate.
+  Needed for a total realizer to exist without conflicts.
+-/
+def IsFunctional (pairs : List (Rat × Rat)) : Prop :=
+  ∀ p q, p ∈ pairs → q ∈ pairs → p.1 = q.1 → p.2 = q.2
+
+/-- Empty relation is functional. -/
+theorem IsFunctional_nil : IsFunctional ([] : List (Rat × Rat)) := by
+  intro p q hp; cases hp
+
+/-- Singleton relation is functional. -/
+theorem IsFunctional_singleton (x y : Rat) : IsFunctional [(x, y)] := by
+  intro p q hp hq hxy
+  simp only [List.mem_singleton] at hp hq
+  subst hp; subst hq; rfl
+
+/--
+  Two-point return chain `(x,y), (y,z)` is functional unless `x = y` forces `y = z`.
+  Special case used by short section sequences.
+-/
+theorem IsFunctional_two_chain {x y z : Rat} (h : x = y → y = z) :
+    IsFunctional [(x, y), (y, z)] := by
+  intro p q hp hq heq
+  simp at hp hq
+  rcases hp with rfl | rfl
+  · rcases hq with rfl | rfl
+    · rfl
+    · exact h heq
+  · rcases hq with rfl | rfl
+    · exact (h heq.symm).symm
+    · rfl
+
+/-- Lookup along a pair list; first match wins; else `default`. -/
+def lookupPair (pairs : List (Rat × Rat)) (default : Rat → Rat) (x : Rat) : Rat :=
+  match pairs with
+  | [] => default x
+  | (a, b) :: rest => if a = x then b else lookupPair rest default x
+
+theorem lookupPair_nil (d : Rat → Rat) (x : Rat) : lookupPair [] d x = d x := rfl
+
+theorem lookupPair_cons_hit (a b : Rat) (rest : List (Rat × Rat)) (d : Rat → Rat) :
+    lookupPair ((a, b) :: rest) d a = b := by
+  simp [lookupPair]
+
+theorem lookupPair_cons_miss (a b x : Rat) (rest : List (Rat × Rat)) (d : Rat → Rat)
+    (h : a ≠ x) : lookupPair ((a, b) :: rest) d x = lookupPair rest d x := by
+  simp [lookupPair, h]
+
+/-- Singleton pairs are realized by the constant-at-x map (or lookup). -/
+theorem agreesOnPairs_singleton (x y : Rat) :
+    agreesOnPairs (lookupPair [(x, y)] id) [(x, y)] := by
+  rw [agreesOnPairs_iff]
+  intro p hp
+  simp at hp
+  subst hp
+  simp [lookupPair]
+
+/-- Empty pairs are realized by any map. -/
+theorem exists_realizer_nil :
+    ∃ R : Rat → Rat, agreesOnPairs R ([] : List (Rat × Rat)) :=
+  ⟨id, agreesOnPairs_nil id⟩
+
+/-- Singleton functional pairs admit a realizer. -/
+theorem exists_realizer_singleton (x y : Rat) :
+    ∃ R : Rat → Rat, agreesOnPairs R [(x, y)] :=
+  ⟨lookupPair [(x, y)] id, agreesOnPairs_singleton x y⟩
+
+/--
+  Under functionality, membership in a cons list and a realizer of the tail
+  still need a global realizer — discharged for the recursive pattern via
+  `lookupPair_eq_of_mem` below.
+-/
+theorem lookupPair_eq_of_mem
+    (pairs : List (Rat × Rat)) (d : Rat → Rat) (hf : IsFunctional pairs)
+    (p : Rat × Rat) (hp : p ∈ pairs) :
+    lookupPair pairs d p.1 = p.2 := by
+  induction pairs with
+  | nil =>
+    simp at hp
+  | cons head rest ih =>
+    have hp' : p = head ∨ p ∈ rest := (List.mem_cons).1 hp
+    cases hp' with
+    | inl heq =>
+      -- p equals head pair
+      cases head with
+      | mk a b =>
+        have hpab : p = (a, b) := heq
+        subst hpab
+        simp [lookupPair]
+    | inr hmem =>
+      cases head with
+      | mk a b =>
+        by_cases hax : a = p.1
+        · have hy : b = p.2 :=
+            hf (a, b) p (by exact List.mem_cons_self (a, b) rest)
+              (List.mem_cons_of_mem (a, b) hmem) hax
+          simp [lookupPair, hax, hy]
+        · have hf_rest : IsFunctional rest := by
+            intro u v hu hv e
+            exact hf u v (List.mem_cons_of_mem _ hu) (List.mem_cons_of_mem _ hv) e
+          have ih' : lookupPair rest d p.1 = p.2 := ih hf_rest hmem
+          simp [lookupPair, hax, ih']
+
+/--
+  [TEOREMA · bookkeeping · goal 1a]
+  Every *functional* finite pair list is realized by some total map
+  (`lookupPair` with identity default). This is pure discrete graph theory —
+  **not** the dynamical continuum return induced by ordinal+smooth hypotheses.
+-/
+theorem exists_realizer_of_functional
+    (pairs : List (Rat × Rat)) (hf : IsFunctional pairs) :
+    ∃ R : Rat → Rat, agreesOnPairs R pairs := by
+  refine ⟨lookupPair pairs id, ?_⟩
+  rw [agreesOnPairs_iff]
+  intro p hp
+  exact lookupPair_eq_of_mem pairs id hf p hp
+
+/--
+  Identity continuum map on the coherence interval (laboratory extension default).
+-/
+def idContinuum : ContinuumReturnMap where
+  I := coherenceInterval
+  R := id
+  maps_into := by
+    intro x hx1 hx2
+    exact ⟨hx1, hx2⟩
+
+/--
+  Continuum map from a functional pair list: lookup with identity default,
+  domain/codomain forced into the coherence band only as an *obligation* on pairs.
+  For bookkeeping we build the raw realizer; `maps_into` uses the identity
+  fallback and requires pair ordinates already in-band when hit — here we only
+  package a continuum map when the realizer is `lookupPair` and we can prove
+  maps_into for the special case of identity default on coherence by clamping
+  is *not* introduced (would be operational). Instead we expose the raw realizer
+  and a continuum package for the empty/identity case.
+-/
+def continuumOfRealizer (R : Rat → Rat)
+    (hmap : ∀ x, coherenceInterval.a ≤ x → x ≤ coherenceInterval.b →
+      coherenceInterval.a ≤ R x ∧ R x ≤ coherenceInterval.b) :
+    ContinuumReturnMap where
+  I := coherenceInterval
+  R := R
+  maps_into := hmap
+
+/-- Identity realizer maps the coherence interval into itself. -/
+theorem id_maps_coherence :
+    ∀ x, coherenceInterval.a ≤ x → x ≤ coherenceInterval.b →
+      coherenceInterval.a ≤ (id : Rat → Rat) x ∧ (id : Rat → Rat) x ≤ coherenceInterval.b := by
+  intro x hx1 hx2; exact ⟨hx1, hx2⟩
+
+/--
+  [TEOREMA · bookkeeping · goal 1a continuum form]
+  Empty Poincaré data admits the identity continuum return on coherence.
+  Base case of discrete→continuum extension (not the dynamical claim).
+-/
+theorem exists_continuum_for_empty_pairs :
+    ∃ C : ContinuumReturnMap, agreesOnPairs C.R ([] : List (Rat × Rat)) := by
+  refine ⟨idContinuum, ?_⟩
+  exact agreesOnPairs_nil idContinuum.R
+
 /--
   Full preprint setup: series + section + continuum extension + unimodality claim.
   Fields after `smooth` are the obligations; only structure is free.
@@ -311,12 +485,44 @@ theorem section_zeroSeries_nonneg (n : Nat) :
   simp [sectionValues, CoherenceSeries.values, zeroSeries, nonnegPred, List.map_replicate,
     List.filter_replicate]
 
-/-! ### Named open goals (honest split of the main claim) -/
+/-- Constant-zero section: two samples give a single fixed-point return pair. -/
+theorem returnPairs_zero_two :
+    returnPairs (List.replicate 2 (0 : Rat)) = [((0 : Rat), 0)] := by
+  native_decide
+
+theorem returnPairs_zero_three :
+    returnPairs (List.replicate 3 (0 : Rat)) = [((0 : Rat), 0), (0, 0)] := by
+  native_decide
+
+theorem IsFunctional_zero_pairs_two :
+    IsFunctional (returnPairs (List.replicate 2 (0 : Rat))) := by
+  simp only [returnPairs_zero_two]
+  exact IsFunctional_singleton 0 0
+
+/-- Goal 1a sanity: zero fixed-point pairs admit a realizer. -/
+theorem exists_realizer_zero_pairs_two :
+    ∃ R : Rat → Rat,
+      agreesOnPairs R (returnPairs (List.replicate 2 (0 : Rat))) :=
+  exists_realizer_of_functional _ IsFunctional_zero_pairs_two
+
+/-! ### Named open goals (honest split of the main claim)
+
+  Goal 1 is split:
+  · **1a** (proved): functional finite pairs admit *some* realizing total map.
+  · **1b** (open): ordinal + smooth hypotheses induce a *dynamical* continuum
+    first-return on the coherence interval (not a mere interpolant).
+
+  Goal 2 remains open in full; quadratic tip follows from strong unimodality
+  once 2’s unimodality half is known (`stronglyUnimodal_has_quadratic`).
+
+  Goal 3: analytic δ / class universality — see `FeigenbaumAnalytic` / `FeigenbaumTendsto`
+  (ε–N ↔ Tendsto bookkeeping is proved; cascade → Feigenbaum δ is open).
+-/
 
 /--
-  OPEN GOAL 1 — Ordinal + smooth hypotheses induce a continuum first-return map
+  OPEN GOAL 1b — Ordinal + smooth hypotheses induce a continuum first-return map
   on the coherence interval that realizes the discrete Poincaré pairs.
-  Status: `sorry` (research-level; not tent-map substitution).
+  Status: `sorry` (research-level; not tent-map substitution; not mere lookup 1a).
 -/
 theorem open_ordinal_induces_continuum_return
     (_H : ReductionHypotheses) (_s : CoherenceSeries) (_pred : Rat → Bool) :
@@ -327,6 +533,8 @@ theorem open_ordinal_induces_continuum_return
 /--
   OPEN GOAL 2 — That continuum return is strongly unimodal with quadratic tip.
   Status: `sorry`.
+  Partial: `HasQuadraticCriticalPoint` follows from `StronglyUnimodal` once the
+  unimodality half is known (`stronglyUnimodal_has_quadratic`).
 -/
 theorem open_return_strongly_unimodal
     (_H : ReductionHypotheses) (_C : ContinuumReturnMap) :
@@ -335,10 +543,20 @@ theorem open_return_strongly_unimodal
   sorry
 
 /--
+  [TEOREMA · bookkeeping · goal 2a]
+  Strong unimodality of a continuum return already yields the quadratic-location
+  package via the mode (no extra analysis).
+-/
+theorem goal_2a_quadratic_of_strong
+    (U : StronglyUnimodal) (C : ContinuumReturnMap) (_hsame : U.f = C.R) :
+    HasQuadraticCriticalPoint U.toUnimodalMap :=
+  stronglyUnimodal_has_quadratic U
+
+/--
   OPEN GOAL 3 — Analytic Feigenbaum universality (δ-limit / class universality).
-  Status: `sorry` (requires real analysis / optional Mathlib).
-  Refined claim shapes: `SystemicTau.FeigenbaumAnalytic` (cascade, ratios, ε–N limit).
-  Opt-in Mathlib enablement: `docs/MATHLIB.md`.
+  Status: `sorry` (requires real dynamics / Mathlib analysis beyond bookkeeping).
+  Refined claim shapes: `SystemicTau.FeigenbaumAnalytic` (cascade, ratios, ε–N limit)
+  and `SystemicTau.FeigenbaumTendsto` (`Tendsto` form; ε–N ↔ Tendsto **proved**).
 -/
 theorem open_analytic_feigenbaum
     (_U : UnimodalMap) (_hq : HasQuadraticCriticalPoint _U) :
@@ -346,9 +564,27 @@ theorem open_analytic_feigenbaum
   sorry
 
 /--
+  [TEOREMA · bookkeeping] Logical composition of goals 1–3.
+  If continuum return, strong unimodality, and Feigenbaum package are all granted
+  for a setup, the composite reduction claim holds. Does **not** discharge 1–3.
+-/
+theorem coherence_return_map_feigenbaum_of
+    (_H : ReductionHypotheses)
+    (C : ContinuumReturnMap)
+    (U : StronglyUnimodal)
+    (hsame : U.f = C.R)
+    (hF : FeigenbaumUniversal U.toUnimodalMap) :
+    ∃ U' : StronglyUnimodal,
+      HasQuadraticCriticalPoint U'.toUnimodalMap ∧
+        FeigenbaumUniversal U'.toUnimodalMap := by
+  refine ⟨U, ?_, hF⟩
+  exact goal_2a_quadratic_of_strong U C hsame
+
+/--
   [TEOREMA] target — reduction from ordinal + smooth hypotheses to a
   strongly unimodal return map with Feigenbaum package.
   Status: open; composition of open goals 1–3 (not discharged by tent example).
+  See `coherence_return_map_feigenbaum_of` for the discharged composition skeleton.
 -/
 theorem coherence_return_map_feigenbaum
     (_H : ReductionHypotheses) :
@@ -381,12 +617,18 @@ structure ReductionStatus where
   conditional_quadratic_ok : True := trivial
   /-- Tent period-2 orbit. -/
   tent_period2_ok : True := trivial
-  /-- Ordinal observability ⇒ continuum return. OPEN. -/
+  /-- Goal 1a: functional pairs admit a realizer. PROVED. -/
+  goal_1a_functional_realizer_ok : True := trivial
+  /-- Goal 1b: ordinal+smooth ⇒ dynamical continuum return. OPEN. -/
   from_ordinal_open : True := trivial
-  /-- Continuum return strongly unimodal. OPEN. -/
+  /-- Goal 2: continuum return strongly unimodal. OPEN. -/
   unimodal_return_open : True := trivial
-  /-- Analytic Feigenbaum δ limit. OPEN. -/
+  /-- Goal 2a: strong ⇒ quadratic location. PROVED. -/
+  goal_2a_quadratic_ok : True := trivial
+  /-- Goal 3: Analytic Feigenbaum δ limit. OPEN. -/
   delta_analytic_open : True := trivial
+  /-- Composite skeleton under hypotheses 1–3. PROVED composition. -/
+  composite_of_hypotheses_ok : True := trivial
 
 def currentStatus : ReductionStatus := {}
 

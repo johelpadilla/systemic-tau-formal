@@ -23,7 +23,8 @@ Public status after **v0.1.6** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] First-return Python twin + notebook 05
 - [x] C3 synthetic starters + notebook 06 + `docs/CROSS_DOMAIN.md`
 - [x] Workshop brief + issue board
-- [ ] Discharge open goals 1–3 / composite reduction `sorry` (research-level)
+- [x] Feigenbaum goal **1a** (functional pairs realizer) + **2a** (strong⇒quadratic) + composite-of-hypotheses skeleton
+- [ ] Discharge open goals **1b–3** / composite from `H` alone (research-level)
 - [ ] **Licensed** real Aedes / dengue into `data/aedes/raw/` (intake path ready)
 - [x] Mathlib dependency wired (`mathlib4` v4.14.0) + `FeigenbaumAnalytic` claim shapes
 - [x] Real/`Tendsto` claim shapes (`FeigenbaumTendsto`; limit still open/`sorry`)
