@@ -4,14 +4,14 @@
 |-------|--------|
 | **Title** | A Machine-Checkable Operational Standard for Systemic Tau τₛ and the Discrete Extramental Clock (RECD) |
 | **Subtitle** | Lean 4 formalization, laboratory constructions, and open scrutiny program (v0.1.8) |
-| **Document version** | `0.1.8-r2` |
+| **Document version** | `0.1.8-r3` |
 | **Software pin** | `systemic-tau-formal` **v0.1.8** |
 | **Software DOI** | [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882) |
 | **Concept DOI** | [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) |
 | **Date** | 2026-07-24 |
 | **Source** | `main.tex` |
 | **Build** | `xelatex main.tex` (×2 recommended) |
-| **Frozen PDF** | `pins/standard-formal-v0.1.8-r2.pdf` |
+| **Frozen PDF** | `pins/standard-formal-v0.1.8-r3.pdf` |
 
 ## Build
 
@@ -33,7 +33,7 @@ Requires XeLaTeX, Times New Roman (or edit `\setmainfont`), and standard TeX pac
 
 ## Citation (provisional)
 
-Padilla-Villanueva, J. (2026). *A Machine-Checkable Operational Standard for Systemic Tau τₛ and the Discrete Extramental Clock (RECD)* (preprint 0.1.8-r2; software v0.1.8).  
+Padilla-Villanueva, J. (2026). *A Machine-Checkable Operational Standard for Systemic Tau τₛ and the Discrete Extramental Clock (RECD)* (preprint 0.1.8-r3; software v0.1.8).  
 https://github.com/johelpadilla/systemic-tau-formal  
 Software DOI: https://doi.org/10.5281/zenodo.21522882
 

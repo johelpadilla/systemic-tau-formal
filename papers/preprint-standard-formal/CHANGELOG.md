@@ -3,6 +3,18 @@
 Document ID: `preprint-standard-formal`  
 Software pin: `systemic-tau-formal` **v0.1.8** (DOI 10.5281/zenodo.21522882)
 
+## 0.1.8-r3 — 2026-07-24
+
+Residual polish after positive review of r2 (non-blocking layout/readability):
+
+- Table 4 split: **Proved (core)** vs **Proved (lab lemmas)** for faster scanning.
+- Figure 3: hatched greyscale-safe strip for positive intermediate band (\(g=0\)).
+- §§5.1–5.4: connecting sentences for non-Lean readers.
+- \(\deltaop\): explicit fixed ten-decimal truncation wording + non-uniqueness of approximant.
+- Table 5 (`modules-detail`) pinned with `[H]` + `\clearpage` before bibliography (no longer floats into References).
+
+Frozen PDF: `pins/standard-formal-v0.1.8-r3.pdf`
+
 ## 0.1.8-r2 — 2026-07-24
 
 Second printable English revision after external feedback on the v0.1.8 prototype.
@@ -20,7 +32,7 @@ Second printable English revision after external feedback on the v0.1.8 prototyp
 - Consistent macros `\taus`, `\taust`, `\tauch`, `\deltaop`.
 - Layout fixes for band labels and float placement (r2 polish).
 
-Frozen PDF: `pins/standard-formal-v0.1.8-r2.pdf`
+Frozen PDF: `pins/standard-formal-v0.1.8-r2.pdf` (superseded by r3).
 
 ## 0.1.8-r1 — 2026-07-24
 

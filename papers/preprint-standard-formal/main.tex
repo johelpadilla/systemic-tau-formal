@@ -15,7 +15,7 @@
 \usepackage{tabularx}
 \usepackage{float}
 
-\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric,patterns}
 
 \setmainfont{Times New Roman}
 \setsansfont{Helvetica}
@@ -52,7 +52,7 @@
   \small Concept DOI: \href{https://doi.org/10.5281/zenodo.21516059}{10.5281/zenodo.21516059}\\[0.4em]
   \small \textbf{Software:} v0.1.8
   \quad·\quad
-  \textbf{Preprint:} 0.1.8-r2
+  \textbf{Preprint:} 0.1.8-r3
   \quad·\quad
   \textbf{Date:} 2026-07-24
 }
@@ -204,7 +204,11 @@ A laboratory rational approximation
   = \frac{46692016091}{10000000000}
   \approx 4.6692016091
 \]
-is introduced. The fraction is a fixed ten-decimal truncation of the classical Feigenbaum constant \(\delta\) as tabulated in the period-doubling literature~\cite{feigenbaum1978,briggs1991}, encoded as numerator and denominator naturals in Lean (\texttt{feigenbaumDeltaNum}/\texttt{feigenbaumDeltaDen}). The gate prefactor is
+is introduced. Explicitly: \(\deltaop\) is a \emph{fixed} rational approximation to classical \(\delta\), obtained by truncating the tabulated expansion to ten decimal places
+(\(4.6692016091\ldots\mapsto 46692016091/10^{10}\)), following high-precision values in the period-doubling literature~\cite{feigenbaum1978,briggs1991}.
+The numerator and denominator are encoded as naturals in Lean
+(\texttt{feigenbaumDeltaNum}/\texttt{feigenbaumDeltaDen}); the package does not claim that this rational is the unique ``best'' approximant, only that it is the operational pin used throughout.
+The gate prefactor is
 \[
   p = \frac{\deltaop-1}{\deltaop}.
 \]
@@ -238,10 +242,13 @@ The reference gate law \(g:\mathbb{Q}\to\mathbb{Q}\) is defined piecewise by
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[x=2.4cm,y=1.55cm,font=\small]
-  % regions
+  % regions (patterns + fills: readable in greyscale print)
   \fill[red!12] (-2.35,-1.35) rectangle (-0.41,1.45);
   \fill[yellow!18] (-0.41,-1.35) rectangle (0.41,1.45);
-  \fill[orange!12] (0.41,-1.35) rectangle (0.50,1.45);
+  % positive intermediate: denser hatch so g=0 band survives greyscale
+  \fill[black!18] (0.41,-1.35) rectangle (0.50,1.45);
+  \fill[pattern=north east lines, pattern color=black!55]
+    (0.41,-1.35) rectangle (0.50,1.45);
   \fill[green!12] (0.50,-1.35) rectangle (1.75,1.45);
   % axes
   \draw[-{Latex}] (-2.4,0) -- (1.9,0) node[right] {\(\tau\)};
@@ -267,12 +274,13 @@ The reference gate law \(g:\mathbb{Q}\to\mathbb{Q}\) is defined piecewise by
   % region labels
   \node[font=\scriptsize\bfseries] at (-1.35,1.25) {antiSync};
   \node[font=\scriptsize\bfseries] at (0,1.25) {chaotic};
-  \node[font=\scriptsize\bfseries,orange!70!black] at (0.455,1.25) {\rotatebox{90}{int.}};
+  \node[font=\scriptsize\bfseries] at (0.455,1.25) {\rotatebox{90}{int.}};
   \node[font=\scriptsize\bfseries] at (1.15,1.25) {stable};
 \end{tikzpicture}
 \caption{Schematic of operational bands on the \(\tau\)-axis and the piecewise gate
-\(g(\tau)\) from Equation~\eqref{eq:gate}. Note the asymmetric treatment of the
-anti-synchronous ray (\(g=-1\)) relative to the positive intermediate band (\(g=0\)).}
+\(g(\tau)\) from Equation~\eqref{eq:gate}. The narrow hatched strip is the positive
+intermediate band where \(g=0\). Note the asymmetric treatment of the anti-synchronous
+ray (\(g=-1\)) relative to that strip.}
 \label{fig:bands-gate}
 \end{figure}
 
@@ -384,23 +392,33 @@ The constructions live in dedicated Lean modules and build together with the cor
 
 \subsection{Reduction and return maps}
 
-The reduction module formalizes realizers of functional pairs, a laboratory continuum based on the tent map, and a continuous non-tent return \texttt{tauReturnFour} (logistically conjugate on a coherence interval). The laboratory composite package combines that return with a refined \texttt{FeigenbaumUniversal} object (operational \(\delta\)-band and quadratic tip). The bridge is the existence of citable, verified constructions---not informal narrative.
+The first laboratory layer asks a concrete question: which maps may stand in, inside the checker, for a return of a coherence-like coordinate?
+The reduction module answers with named objects rather than prose: realizers of functional pairs, a laboratory continuum based on the tent map, and a continuous non-tent return \texttt{tauReturnFour} (logistically conjugate on a coherence interval).
+A composite package then pairs that return with a refined \texttt{FeigenbaumUniversal} object (operational \(\delta\)-band and quadratic tip).
+The scientific claim at this layer is modest: the bridge exists as citable, verified constructions---not as informal narrative.
 
 \subsection{Analytic cascade and topology}
 
-A geometric parameter cascade with exact ratio \(\deltaop\) is defined. Its scaling ratios are proved equal to \(\deltaop\). Within the formalism, the \(\varepsilon\)--\(N\) notion of cascade limit is equivalent to a \texttt{Tendsto}-style convergence statement. Honesty blocks include toy cascades that do \emph{not} approach \(\deltaop\), so the checker distinguishes models that satisfy the scaling ratio from those that do not.
+Once return maps are available, the package freezes a geometric parameter cascade whose exact ratio is \(\deltaop\).
+Scaling ratios of that cascade are proved equal to \(\deltaop\).
+Within the formalism, the classical \(\varepsilon\)--\(N\) notion of cascade limit is shown equivalent to a \texttt{Tendsto}-style convergence statement, so topological language and sequential bookkeeping stay aligned.
+Honesty blocks include toy cascades that do \emph{not} approach \(\deltaop\); the checker therefore distinguishes models that satisfy the scaling ratio from those that do not.
 
 \subsection{Logistic scale identification}
 
-A logistic module anchors a parameter sequence at landmarks \(r_0=2\), \(r_1=3\) and proves that this sequence shares scale (ratios) with the geometric cascade. It is a laboratory scale identification, expressed in Lean, between two parameter charts.
+The logistic chart is the usual first contact for readers of one-dimensional dynamics.
+A dedicated module anchors a parameter sequence at landmarks \(r_0=2\), \(r_1=3\) and proves that this sequence shares scale (ratios) with the geometric cascade above.
+It is a laboratory scale identification between two parameter charts, expressed in Lean: not a claim that field \(\taus\) is logistic, but a shared ruler for later comparison.
 
 \subsection{Quadratic tip and Schwarzian}
 
-On the logistic map, formal derivatives, a quadratic tip with \(f''\ne 0\) at the critical point, the Schwarzian inequality off the critical point, and a \texttt{FeigenbaumUniversalC2} package assembling the operational band and tip are formalized. The package places \(C^2\)/Schwarzian language inside the accepted artifact~\cite{singer1978}.
+Classical route-to-chaos arguments rely on tip geometry and Schwarzian control~\cite{singer1978}.
+On the logistic map, the package formalizes derivatives, a quadratic tip with \(f''\ne 0\) at the critical point, the Schwarzian inequality off the critical point, and a \texttt{FeigenbaumUniversalC2} assembly of operational band and tip.
+The point for a non-Lean reader is simple: \(C^2\)/Schwarzian vocabulary lives inside the accepted artifact, ready for attack or extension, without being smuggled into the operational core of Equation~\eqref{eq:gate}.
 
 \subsection{Module inventory}
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Lean modules under \texttt{SystemicTau/} (v0.1.8).}
 \label{tab:modules}
@@ -427,35 +445,46 @@ The \texttt{SystemicTau/} directory of version 0.1.8 builds end to end in Lean~4
 
 Table~\ref{tab:status} states, in one place, what the checker has accepted, what is packaged as named laboratory construction, and what remains an open research obligation. This table is part of the scientific claim of the release.
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Formal status of the v0.1.8 package under \texttt{SystemicTau/}.}
 \label{tab:status}
-\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.6cm}X@{}}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.8cm}X@{}}
 \toprule
-Proved &
+Proved (core) &
+\begin{minipage}[t]{\linewidth}\raggedright\smallskip
 Band ordering \(\tauch<\taust\); nonnegative trichotomy of \texttt{classify};
 gate formula on \([0,\tauch)\); antitonicity of \(g\) on that half-band;
 positive intermediate closure \(g=0\); canonical samples;
-gate prefactor bounds \(0<p<1\); gap \(2/\deltaop>\tauch\);
-geometric cascade ratios equal to \(\deltaop\);
+gate prefactor bounds \(0<p<1\); gap \(2/\deltaop>\tauch\).
+\smallskip\end{minipage} \\
+\midrule
+Proved (lab lemmas) &
+\begin{minipage}[t]{\linewidth}\raggedright\smallskip
+Geometric cascade ratios equal to \(\deltaop\);
 \(\varepsilon\)--\(N\) \(\Leftrightarrow\) \texttt{Tendsto} bookkeeping;
 logistic scale identification with the geometric chart;
 Schwarzian \(\le 0\) off the critical point (formal derivatives);
-quadratic tip package; zero \texttt{sorry} and zero author research \texttt{axiom}. \\
+quadratic tip package; zero \texttt{sorry} and zero author research \texttt{axiom}
+under \texttt{SystemicTau/}.
+\smallskip\end{minipage} \\
 \midrule
 Laboratory constructions (named, accepted) &
+\begin{minipage}[t]{\linewidth}\raggedright\smallskip
 \texttt{lookupTent} realizers; tent continuum return;
 non-tent continuum return \texttt{tauReturnFour};
 refined \texttt{FeigenbaumUniversal} / \texttt{FeigenbaumUniversalC2};
-composite laboratory packages built from the above. \\
+composite laboratory packages built from the above.
+\smallskip\end{minipage} \\
 \midrule
 Explicitly open &
-Termwise superstable logistic roots; Mathlib \(C^2\)-open renormalization /
-fixed-point universality~\cite{lyubich1999};
+\begin{minipage}[t]{\linewidth}\raggedright\smallskip
+Termwise superstable logistic roots;
+Mathlib \(C^2\)-open renormalization / fixed-point universality~\cite{lyubich1999};
 field-derived continuum return of \(\taus\) (not a cited lab map);
 unique closed form \(\tauch=f(\delta)\) beyond finite simple non-identities;
-multi-site empirical P1/P4 discharge. \\
+multi-site empirical P1/P4 discharge.
+\smallskip\end{minipage} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -557,7 +586,7 @@ To others, the artifact says that this paradigm can already be inspected from ou
 
 Source code and releases: \url{https://github.com/johelpadilla/systemic-tau-formal}.\\
 Software version associated with this text: \texttt{v0.1.8}.\\
-Preprint document version: \texttt{0.1.8-r2} (2026-07-24).\\
+Preprint document version: \texttt{0.1.8-r3} (2026-07-24).\\
 Version DOI: \href{https://doi.org/10.5281/zenodo.21522882}{10.5281/zenodo.21522882}.\\
 Concept DOI: \href{https://doi.org/10.5281/zenodo.21516059}{10.5281/zenodo.21516059}.\\
 Related production package on PyPI: \texttt{systemictau}.\\[0.4em]
@@ -594,7 +623,7 @@ Version 0.1.8 is a formal-track pin of the laboratory construction pack:
 
 Table~\ref{tab:modules-detail} expands the inventory of Section~5 for readers who want a denser map of the Lean surface. Line counts are approximate at the v0.1.8 pin.
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Expanded \texttt{SystemicTau/} module map (v0.1.8).}
 \label{tab:modules-detail}
@@ -632,6 +661,7 @@ Table~\ref{tab:modules-detail} expands the inventory of Section~5 for readers wh
 \end{tabularx}
 \end{table}
 
+\clearpage
 %------------------------------------------------------------------
 \begin{thebibliography}{99}
 
