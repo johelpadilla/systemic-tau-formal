@@ -5,6 +5,7 @@ from .tau import compute_taus, kendall_tau
 from .recd import accumulate_time, gate_function, compute_recd_increments
 from .golden import gate_rat, golden_payload
 from .io_data import load_matrix_csv, save_matrix_csv
+from .aedes_io import AedesLoadResult, discover_matrix_csvs, load_aedes_sites
 from .first_return import (
     first_return_crossing,
     first_return_from_local_maxima,
@@ -39,6 +40,9 @@ __all__ = [
     "golden_payload",
     "load_matrix_csv",
     "save_matrix_csv",
+    "AedesLoadResult",
+    "discover_matrix_csvs",
+    "load_aedes_sites",
     "first_return_crossing",
     "first_return_from_local_maxima",
     "nonneg_pred",

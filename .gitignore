@@ -30,8 +30,13 @@ venv/
 .vscode/
 *.swp
 
-# Data (keep READMEs; ignore large raw dumps by default)
-data/aedes/raw/
+# Data: track standardized Aedes CSVs + README/manifest; ignore bulk dumps
+data/aedes/raw/*
+!data/aedes/raw/README.md
+!data/aedes/raw/manifest.json
+!data/aedes/raw/*.csv
+data/aedes/raw/**/*.xls
+data/aedes/raw/**/*.xlsx
 data/**/*.zip
 data/**/*.tar.gz
 data/synthetic/cross_domain_last_run.json

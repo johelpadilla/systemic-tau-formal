@@ -2,10 +2,10 @@
 
 ## Layout
 
-| Path | Role |
-|------|------|
-| `proxy/` | **Committed** synthetic two-site stand-in (`[OPERACIONAL]`) |
-| `raw/` | **Not in git** — place licensed field CSVs here (see `.gitignore`) |
+| Path | Role | Label |
+|------|------|--------|
+| `proxy/` | Committed synthetic two-site stand-in | `[OPERACIONAL]` |
+| `raw/` | Field / thesis trap matrices (CSV) | `[EMPÍRICO]` when real series |
 
 ## Proxy fixtures (`proxy/`)
 
@@ -15,21 +15,25 @@
 | `Candelaria_proxy.csv` | Later onset of volatility (demo “transition”) |
 | `manifest.json` | Schema + seeds; **not** calendar-stamped field data |
 
-These are **not** Caño Martín Peña / Candelaria entomology. Notebook `02_aedes_puerto_rico` loads them and runs the τₛ + RECD pipeline.
+Names are **not** field entomology. Notebook `02_aedes_puerto_rico` falls back here only if `raw/` has no CSVs.
 
-## Real data intake (when license permits)
+## Field intake (`raw/`)
 
-1. Obtain clear license / data-use terms and citation of the agency/study.  
-2. De-identify if required.  
-3. Drop CSVs under `data/aedes/raw/` (ignored by git by default).  
-4. Document source + license in a local `raw/LICENSE.txt` (do not commit secrets).  
-5. Point the loader in notebook 02 at `raw/` instead of `proxy/`.  
-6. Report outcomes as `[EMPÍRICO]` only for those series.
+See [`raw/README.md`](raw/README.md). Committed starter:
 
-Sibling applied pipelines: `~/grok-work/tau-sistemic`.
+- `raw/San_Juan_SJU3_2018_12traps.csv` — San Juan SJU-3, 2018, 12 traps
 
-Regenerate proxies:
+Drop additional matrix CSVs under `raw/`, register them in `raw/manifest.json`, and re-run notebook 02 / tests.
+
+```bash
+python notebooks/02_aedes_puerto_rico.py
+cd python && pytest -q tests/test_aedes_raw.py
+```
+
+Regenerate **proxy only** (never overwrites `raw/`):
 
 ```bash
 cd python && python scripts/export_fixtures.py
 ```
+
+Sibling research tree: `~/grok-work/tau-sistemic`.

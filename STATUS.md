@@ -19,11 +19,12 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | `Ontology` | `[AFIRMACIÓN ONTOLÓGICA]` | **Spec builds** | Levels + trilemma horns |
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
-| Aedes proxy | `[OPERACIONAL]` | **CSV** | `data/aedes/proxy/` (not field data) |
+| Aedes proxy | `[OPERACIONAL]` | **CSV** | `data/aedes/proxy/` (fallback only) |
+| Aedes field (`raw/`) | `[EMPÍRICO]` | **CSV + loader** | `San_Juan_SJU3_2018_12traps.csv` · `load_aedes_sites` |
 | C3 synthetic kits | `[OPERACIONAL]` | **generators + nb** | finance/EEG/grid · `docs/CROSS_DOMAIN.md` |
 | First-return twin | `[OPERACIONAL]` | **Python + nb 05** | `python/core/first_return.py` |
-| Real Aedes raw | `[EMPÍRICO]` | **pending license** | drop under `data/aedes/raw/` |
-| C3 field results | `[EMPÍRICO]` | **pending** | licensed intake + community |
+| More Aedes series | `[EMPÍRICO]` | **intake ready** | add matrix CSVs under `data/aedes/raw/` |
+| C3 field results | `[EMPÍRICO]` | **pending** | community / other domains |
 | CI | ops | **Workflow** | ubuntu-latest dual jobs |
 
 ## Asymmetry of the operational gate
@@ -64,4 +65,4 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 See [`ROADMAP.md`](ROADMAP.md), [`docs/FEIGENBAUM_STATUS.md`](docs/FEIGENBAUM_STATUS.md),  
 and the single-page honesty board [`docs/FORMAL_OBLIGATIONS.md`](docs/FORMAL_OBLIGATIONS.md).
 
-Last updated: 2026-07-23 (release **v0.1.7**: formal track + obligations map).
+Last updated: 2026-07-23 (Aedes `raw/` intake: SJU3 2018 + raw-first loader).

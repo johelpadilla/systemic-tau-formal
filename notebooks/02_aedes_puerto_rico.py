@@ -1,11 +1,8 @@
 """
-02 — Aedes Puerto Rico schema demo.
+02 — Aedes Puerto Rico trap pipeline.
 
-Loads committed proxy CSVs under data/aedes/proxy/ when present;
-otherwise generates the same series in-memory.
-
-[OPERACIONAL] Not an empirical claim about Caño Martín Peña / Candelaria.
-When real trap CSVs are licensed into data/aedes/raw/, swap the loader only.
+Prefers field matrices under data/aedes/raw/ ([EMPÍRICO]).
+Falls back to committed proxy CSVs or in-memory generators ([OPERACIONAL]).
 """
 
 from __future__ import annotations
@@ -18,29 +15,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "python"))
 
-from core import (  # noqa: E402
-    accumulate_time,
-    aedes_proxy_two_sites,
-    compute_taus,
-    load_matrix_csv,
-)
-
-PROXY_DIR = ROOT / "data" / "aedes" / "proxy"
-
-
-def load_sites() -> dict:
-    sites = {}
-    for name in ("Cano_Martin_Pena_proxy", "Candelaria_proxy"):
-        path = PROXY_DIR / f"{name}.csv"
-        if path.is_file():
-            sites[name] = load_matrix_csv(path)
-        else:
-            break
-    if len(sites) == 2:
-        print(f"Loaded proxy CSVs from {PROXY_DIR.relative_to(ROOT)}")
-        return sites
-    print("Proxy CSVs missing — generating in-memory (run scripts/export_fixtures.py).")
-    return aedes_proxy_two_sites()
+from core import accumulate_time, compute_taus, load_aedes_sites  # noqa: E402
 
 
 def summarize(name, X):
@@ -55,11 +30,21 @@ def summarize(name, X):
 
 
 def main():
-    print("=== 02_aedes_puerto_rico (SYNTHETIC PROXY) ===")
-    print("Replace with data/aedes/raw/* when license permits.\n")
-    sites = load_sites()
-    for name, X in sites.items():
-        summarize(name, np.maximum(np.asarray(X, dtype=float), 0.0))
+    result = load_aedes_sites(root=ROOT, prefer_raw=True)
+    tag = f"{result.label} · source={result.source}"
+    if result.directory is not None:
+        try:
+            rel = result.directory.relative_to(ROOT)
+        except ValueError:
+            rel = result.directory
+        print(f"=== 02_aedes_puerto_rico ({tag}) ===")
+        print(f"Loaded from {rel}\n")
+    else:
+        print(f"=== 02_aedes_puerto_rico ({tag}) ===")
+        print("No CSV fixtures — in-memory proxy generator.\n")
+
+    for name, X in result.sites.items():
+        summarize(name, np.asarray(X, dtype=float))
 
 
 if __name__ == "__main__":

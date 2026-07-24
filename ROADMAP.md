@@ -29,7 +29,8 @@ Public status after **v0.1.7** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Workshop brief + issue board
 - [x] Feigenbaum goal **1a** (functional pairs realizer) + **2a** (strong⇒quadratic) + composite-of-hypotheses skeleton
 - [ ] Discharge open goals **1b–3** / composite from `H` alone (research-level)
-- [ ] **Licensed** real Aedes / dengue into `data/aedes/raw/` (intake path ready)
+- [x] Real Aedes into `data/aedes/raw/` (SJU3 2018 12-trap matrix + raw-first loader)
+- [ ] Expand `raw/` with more sites / years; report P1–P4 as `[EMPÍRICO]`
 - [x] Mathlib dependency wired (`mathlib4` v4.14.0) + `FeigenbaumAnalytic` claim shapes
 - [x] Real/`Tendsto` claim shapes (`FeigenbaumTendsto`; limit still open/`sorry`)
 - [x] ε–N ↔ `Tendsto` bookkeeping proved (`cascadeDeltaLimit_iff_tendsto`)

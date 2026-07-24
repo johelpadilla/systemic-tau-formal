@@ -140,7 +140,8 @@ Placeholders still in `FeigenbaumUniversal` (`delta_limit : True`, `class_univer
 
 | Item | Status |
 |------|--------|
-| Licensed Aedes / dengue raw under `data/aedes/raw/` | ○ pending license |
+| Aedes field under `data/aedes/raw/` (SJU3 2018 starter) | ✓ intake + CSV · expand as needed |
+| More years/sites + full P1–P4 field reports | ○ pending |
 | C3 **field** results (not synthetic kits) | ○ pending |
 | Workshop Stress-Test 2026 date / host | ○ issue #1 |
 | P1–P4 on real series | ○ community |

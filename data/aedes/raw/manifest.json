@@ -1,0 +1,17 @@
+{
+  "schema": "systemic-tau-formal/aedes-raw/v1",
+  "label": "[EMPÍRICO]",
+  "note": "Field / thesis-derived trap matrices. Not synthetic proxy.",
+  "files": [
+    {
+      "path": "San_Juan_SJU3_2018_12traps.csv",
+      "site_id": "San_Juan_SJU3_2018",
+      "T": 30,
+      "N": 12,
+      "sampling": "calendar DATE column + weekly trap counts",
+      "year": 2018,
+      "region": "San Juan, Puerto Rico (SJU-3 cluster)",
+      "provenance": "Standardized long export from thesis / PRVCU-related trap program; copied from tau-sistemic Standardized_Long_Datasets"
+    }
+  ]
+}
