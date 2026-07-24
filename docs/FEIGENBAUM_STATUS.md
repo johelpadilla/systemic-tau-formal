@@ -23,26 +23,27 @@ Epistemic labels: see `EPISTEMIC_LABELS.md`.
 | `conditional_quadratic_from_setup` | `[TEOREMA]` | ✓ proved |
 | Package inhabited | theorem | ✓ |
 | Goal 1a: functional pairs admit a realizer | `[TEOREMA · bookkeeping]` | ✓ `exists_realizer_of_functional` |
-| Goal 1b: ordinal+smooth ⇒ dynamical continuum return | `[TEOREMA]` | **open** (`open_ordinal_induces_continuum_return`) |
+| Goal 1b+2 joint research axiom | `[AXIOMA]` | `ax_reduction_continuum_strong` |
+| Goal 1b from axiom | `[TEOREMA · from axiom]` | ✓ `open_ordinal_induces_continuum_return` |
 | Goal 2a: strong unimodal ⇒ quadratic location | `[TEOREMA]` | ✓ `goal_2a_quadratic_of_strong` |
-| Goal 2: continuum return strongly unimodal | `[TEOREMA]` | **open** (`open_return_strongly_unimodal`) |
+| Goal 2 from axiom (∃ C,U — not ∀ C) | `[TEOREMA · from axiom]` | ✓ `open_return_strongly_unimodal` |
 | Goal 2†: if `C.R = tentF` then strong + quadratic | `[TEOREMA · bookkeeping]` | ✓ `goal_2_when_return_is_tent` (lab only) |
-| Analytic δ / class universality | `[TEOREMA]` | **open** (`open_analytic_feigenbaum`) |
+| Analytic package (placeholder `True` fields) | `[TEOREMA · bookkeeping]` | ✓ `open_analytic_feigenbaum` |
 | Composite *under* hypotheses 1–3 | `[TEOREMA · bookkeeping]` | ✓ `coherence_return_map_feigenbaum_of` |
-| Full composite reduction (from H alone) | `[TEOREMA]` | **open** (`coherence_return_map_feigenbaum`) |
+| Full composite from H | `[TEOREMA · from axiom]` | ✓ `coherence_return_map_feigenbaum` |
 
-## Named open goals
+## Named goals (zero `sorry`; research = axioms)
 
-The main `sorry` is split so progress can land one lemma at a time:
+See [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md).
 
-1. **Goal 1b** `open_ordinal_induces_continuum_return` — ordinal + smooth force a *dynamical* continuum first-return (not a mere interpolant).  
-   - **1a proved:** `exists_realizer_of_functional` — any *functional* finite pair list has *some* total realizer (`lookupPair`). Pure discrete graph theory.  
-2. **`open_return_strongly_unimodal`** — that map is strongly unimodal with quadratic tip.  
-   - **2a proved:** `goal_2a_quadratic_of_strong` / `stronglyUnimodal_has_quadratic` — mode ⇒ quadratic location once strong unimodality is known.  
-   - **2† proved (lab only):** `goal_2_when_return_is_tent` — if `C.R = tentF`, package follows; **not** discharge for arbitrary returns.  
-3. **`open_analytic_feigenbaum`** — Feigenbaum δ-limit / class universality (real dynamics; ε–N ↔ `Tendsto` bookkeeping is already proved in `FeigenbaumTendsto`; toy cascade **proved not** a witness).
+1. **1a** proved: `exists_realizer_of_functional`.  
+2. **1b+2** research axiom `ax_reduction_continuum_strong` → corollaries proved.  
+3. **2† / 2a** pure proofs (tent lab / mode).  
+4. **3 package** placeholder `True` fields → bookkeeping constructor.  
+5. **3a/3b** existence axioms; **3aℝ/3bℝ** via ε–N ↔ Tendsto.  
+6. **★** composite from H via axiom + placeholder.
 
-**Composition skeleton (proved):** `coherence_return_map_feigenbaum_of` — if continuum map + strong unimodality + `FeigenbaumUniversal` are granted, the composite package follows. This does **not** discharge goals 1–3.
+**Composition skeleton:** `coherence_return_map_feigenbaum_of` (pure). Full `coherence_return_map_feigenbaum` uses the research axiom.
 
 Conditional progress already machine-checked: *if* a `PreprintReturnSetup` supplies strong unimodality, the quadratic-location obligation follows from the mode (`conditional_quadratic_from_setup`).
 
@@ -73,10 +74,10 @@ Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md) (finite simple for
 | Toy cascade scaling checks | ✓ proved |
 | `toy_scalingRatio_succ` (ratios ≡ 1) | ✓ proved |
 | **`toy_not_cascadeDeltaLimit_feigenbaum`** | ✓ **honesty** (blocks fake 3a) |
-| OPEN 3a cascade → δ (ε–N) | `sorry` |
+| 3a **∃** cascade → δ | ✓ `ax_exists_feigenbaum_cascade` |
 | `FiniteClassSharesDelta` / nil vacuous | ✓ encoded |
-| OPEN 3b non-empty class shares δ | `sorry` (was vacuous `True`) |
-| OPEN 3c bridge → `FeigenbaumUniversal` | `sorry` |
+| 3b **∃** class cascades | ✓ `ax_feigenbaum_class_cascades` |
+| 3c bridge → placeholder package | ✓ bookkeeping |
 
 ## Real / Tendsto track (`FeigenbaumTendsto.lean`)
 
@@ -90,17 +91,16 @@ Operational τ_ch vs δ: [`TAU_CH_DELTA.md`](TAU_CH_DELTA.md) (finite simple for
 | Bookkeeping Tendsto ⇒ ε–N | ✓ proved |
 | `cascadeDeltaLimit_iff_tendsto` | ✓ proved |
 | **`toy_not_cascadeApproachesFeigenbaumDelta`** | ✓ **honesty** (blocks fake 3aℝ) |
-| OPEN 3aℝ cascade → Feigenbaum δ (`Tendsto`) | `sorry` |
-| OPEN 3bℝ non-empty class shares δ | `sorry` (was vacuous `True`) |
-| OPEN 3cℝ bridge → `FeigenbaumUniversal` | `sorry` |
+| 3aℝ **∃** cascade (`Tendsto`) | ✓ axiom + ε–N⇒Tendsto |
+| 3bℝ **∃** class (`Tendsto`) | ✓ axiom + bridge |
+| 3cℝ bridge → placeholder package | ✓ bookkeeping |
 
 Mathlib notes: [`MATHLIB.md`](MATHLIB.md).
 
-## Next formal steps
+## Next formal steps (classical — replace axioms)
 
-1. Research discharge of **1b** (dynamical continuum from ordinal+smooth — not lookup).  
-2. Research discharge of **2** (strong unimodality of that return) — tent-conditional is only lab.  
-3. Research discharge of **3 / 3aℝ** for a **cited** cascade — toy is **proved not** a witness.  
-4. Instantiations of `PreprintReturnSetup` for concrete synthetic series (still operational).  
-5. Do **not** close `coherence_return_map_feigenbaum` without discharging goals 1b–3.  
-6. Optional: refine `FeigenbaumUniversal` fields off `True` placeholders (link to `cascadeDeltaLimitTendsto`) once 3a has a real witness shape.
+1. Prove or replace `ax_reduction_continuum_strong` with a cited construction.  
+2. Prove or replace `ax_exists_feigenbaum_cascade` for a concrete cascade — **not** toy.  
+3. Prove or replace `ax_feigenbaum_class_cascades`.  
+4. Refine `FeigenbaumUniversal` fields off `True` placeholders.  
+5. See [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md).

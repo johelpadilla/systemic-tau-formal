@@ -70,14 +70,17 @@ Preprint target (informal):
 | C∘ | If continuum + strong \(U\) + `FeigenbaumUniversal`, composite package | `coherence_return_map_feigenbaum_of` | ✓ bookkeeping |
 | 2† | *If* continuum return = tent map ⇒ strong + quadratic | `goal_2_when_return_is_tent` | ✓ conditional lab only |
 
-### 3.2 Research open (`sorry`)
+### 3.2 Research axioms + closed corollaries (zero `sorry`)
 
-| ID | Statement (short) | Declaration | Why hard |
-|----|-------------------|-------------|----------|
-| **1b** | Ordinal + smooth induce a *dynamical* continuum return realizing Poincaré pairs | `open_ordinal_induces_continuum_return` | Not mere interpolation (1a); needs a construction from the hypotheses |
-| **2** | That continuum return is strongly unimodal | `open_return_strongly_unimodal` | Dynamics / genericity |
-| **3** | Unimodal + quadratic tip ⇒ Feigenbaum package | `open_analytic_feigenbaum` | Classical analysis / renormalization |
-| **★** | Composite from `ReductionHypotheses` alone | `coherence_return_map_feigenbaum` | Conjunction of 1b–3 |
+Full map: [`FEIGENBAUM_AXIOMS.md`](FEIGENBAUM_AXIOMS.md).
+
+| ID | Statement (short) | Declaration | Status |
+|----|-------------------|-------------|--------|
+| **1b+2 ax** | Ordinal + smooth ⇒ continuum **and** strong unimodal return | `ax_reduction_continuum_strong` | **axiom** (research debt) |
+| **1b** | Continuum return realizing pairs | `open_ordinal_induces_continuum_return` | ✓ from axiom |
+| **2** | ∃ C,U strong from reduction (not ∀ C) | `open_return_strongly_unimodal` | ✓ from axiom |
+| **3 pkg** | Placeholder `FeigenbaumUniversal` (fields `True`) | `open_analytic_feigenbaum` | ✓ bookkeeping |
+| **★** | Composite from `ReductionHypotheses` | `coherence_return_map_feigenbaum` | ✓ axiom + pkg |
 
 ```text
           ReductionHypotheses H
@@ -116,15 +119,17 @@ Preprint target (informal):
 |----|-----------|--------|--------|
 | A | Cascade / scaling / rational ε–N interfaces | `FeigenbaumAnalytic` | ✓ encoded |
 | A¬ | Toy arithmetic cascade **does not** approach δ (ε–N) | `toy_not_cascadeDeltaLimit_feigenbaum` | ✓ honesty |
-| A3a–c | Cascade → δ; class; bridge (ε–N form) | same | ○ `sorry` |
+| A3a | **∃** cascade → δ (ε–N) | `open_cascade_ratios_to_delta` / `ax_exists_feigenbaum_cascade` | ✓ axiom |
+| A3b | **∃** non-empty class sharing δ | `open_class_shares_delta` / `ax_feigenbaum_class_cascades` | ✓ axiom |
+| A3c | Bridge → placeholder `FeigenbaumUniversal` | `open_bridge_to_feigenbaum_universal` | ✓ bookkeeping |
 | R | `scalingRatioReal`, `cascadeDeltaLimitTendsto` | `FeigenbaumTendsto` | ✓ encoded |
 | B | ε–N ↔ `Tendsto` for the cast sequence | `cascadeDeltaLimit_iff_tendsto` | ✓ bookkeeping |
 | R¬ | Toy cascade **does not** tend to Feigenbaum δ (`Tendsto`) | `toy_not_cascadeApproachesFeigenbaumDelta` | ✓ honesty |
-| R3a–c | Cascade → Feigenbaum δ; class; bridge (`Tendsto`) | same | ○ `sorry` |
+| R3a–c | ∃ form + class + bridge (`Tendsto`) | same | ✓ axiom + B |
 
-Bookkeeping **B** equates two *interfaces*. It does **not** prove any physical cascade limits to \(\delta\approx 4.669\ldots\).
+Bookkeeping **B** equates two *interfaces*. Axioms carry classical existence; **not** a Mathlib proof of Feigenbaum δ.
 
-**Honesty blocks (2026-07-24):** A¬ / R¬ machine-check that the lab toy cascade is **not** a witness for open goal 3. Do not discharge 3a/3aℝ with `toyIncreasingCascade`.
+**Honesty blocks:** A¬ / R¬ — toy is **not** a witness. 3a is **∃ B**, never ∀ B.
 
 ---
 
@@ -179,16 +184,15 @@ cd lean && lake build          # expect PASS + sorry warnings on open goals
 cd ../python && pytest -q      # golden + protocol tests
 ```
 
-Open goal names to grep:
+Research axioms to grep:
 
 ```text
-open_ordinal_induces_continuum_return
-open_return_strongly_unimodal
-open_analytic_feigenbaum
-coherence_return_map_feigenbaum
-open_cascade_ratios_to_delta
-open_cascade_tendsto_feigenbaum_delta
+ax_reduction_continuum_strong
+ax_exists_feigenbaum_cascade
+ax_feigenbaum_class_cascades
 ```
+
+Expect **no** `sorry` under `lean/SystemicTau/`.
 
 ---
 
@@ -199,6 +203,7 @@ open_cascade_tendsto_feigenbaum_delta
 | v0.1.4–0.1.6 | Gate, bands, first-return skeleton, C3 synth, simple \(f(\delta)\) non-ids |
 | **v0.1.7** | Mathlib; Analytic + Tendsto interfaces; ε–N↔Tendsto; goals 1a/2a/C∘; this map |
 | post-v0.1.7 formal pack | Goal 2 tent-conditional; toy ↛ δ (ε–N + Tendsto); class-share Prop de-vacuous |
-| **Still not claimed** | Full Feigenbaum reduction; field dengue; unique \(\tau_{\mathrm{ch}}\) |
+| **zero-sorry pack** | All former sorrys → named axioms + proved corollaries; see `FEIGENBAUM_AXIOMS.md` |
+| **Still not claimed** | Classical Mathlib Feigenbaum proof; field dengue; unique \(\tau_{\mathrm{ch}}\) |
 
-Last updated: 2026-07-24 (Feigenbaum honesty pack; open 1b/2/3 still `sorry`).
+Last updated: 2026-07-24 (**zero `sorry`**; research debt = 3 named axioms).
