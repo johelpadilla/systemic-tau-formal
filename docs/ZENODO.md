@@ -4,8 +4,9 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.8)** | *set in `deposition_state.json` after publish* | concept latest |
+| **This version (v0.1.8)** | `10.5281/zenodo.21522882` | https://doi.org/10.5281/zenodo.21522882 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
+| Record page (v0.1.8) | — | https://zenodo.org/records/21522882 |
 | **v0.1.7** | `10.5281/zenodo.21522346` | https://doi.org/10.5281/zenodo.21522346 |
 | **v0.1.6** | `10.5281/zenodo.21516523` | https://doi.org/10.5281/zenodo.21516523 |
 | **v0.1.5** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
@@ -48,7 +49,7 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
-| Version DOI in `CITATION.cff` / `deposition_state.json` | This formal monorepo (v0.1.8) |
+| `10.5281/zenodo.21522882` | This formal monorepo (v0.1.8) |
 | `10.5281/zenodo.21516059` | Concept / always-latest |
 | `10.5281/zenodo.21522346` | Pin v0.1.7 |
 | `10.5281/zenodo.21516523` | Pin v0.1.6 |

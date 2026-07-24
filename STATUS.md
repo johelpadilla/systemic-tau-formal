@@ -72,7 +72,8 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 ## Citation / Zenodo
 
 - GitHub release: **`v0.1.8`**  
-- **DOI (v0.1.8):** *filled after Zenodo publish* · concept [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
+- **DOI (v0.1.8):** [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882)  
+- Record: https://zenodo.org/records/21522882  
 - **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 - **DOI (v0.1.7):** [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)  
 - **DOI (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  
@@ -93,4 +94,4 @@ Do **not** re-open discharged lab/construction goals as if they were `sorry`.
 
 Roadmap overview: [`ROADMAP.md`](ROADMAP.md).
 
-Last updated: 2026-07-24 (v0.1.8 cut: docs aligned + formal pack; Zenodo version DOI after publish).
+Last updated: 2026-07-24 (v0.1.8 published: 10.5281/zenodo.21522882).
