@@ -6,10 +6,11 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.11)** | *pending publish* | pin after deposit |
+| **This version (v0.1.11)** | `10.5281/zenodo.21581189` | https://doi.org/10.5281/zenodo.21581189 |
 | **Prior (v0.1.10)** | `10.5281/zenodo.21537465` | https://doi.org/10.5281/zenodo.21537465 |
 | **Prior (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
+| Record page (v0.1.11) | — | https://zenodo.org/records/21581189 |
 | Record page (v0.1.10) | — | https://zenodo.org/records/21537465 |
 | Record page (v0.1.9) | — | https://zenodo.org/records/21536462 |
 | **v0.1.8** | `10.5281/zenodo.21522882` | https://doi.org/10.5281/zenodo.21522882 |
@@ -73,7 +74,8 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 | `10.5281/zenodo.21537494` | **English operational-standard preprint** (0.1.9-r2) |
 | `10.5281/zenodo.21523232` | Prior preprint 0.1.8-r3 |
 | `10.5281/zenodo.21523231` | Preprint concept / always-latest document version |
-| `10.5281/zenodo.21537465` | This formal monorepo (v0.1.10) |
+| `10.5281/zenodo.21581189` | This formal monorepo (v0.1.11) |
+| `10.5281/zenodo.21537465` | Prior monorepo v0.1.10 |
 | `10.5281/zenodo.21536462` | Prior monorepo v0.1.9 |
 | `10.5281/zenodo.21522882` | Prior monorepo v0.1.8 |
 | `10.5281/zenodo.21516059` | Software concept / always-latest |

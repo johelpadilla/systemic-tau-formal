@@ -3,12 +3,12 @@
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21537465.svg)](https://doi.org/10.5281/zenodo.21537465)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21581189.svg)](https://doi.org/10.5281/zenodo.21581189)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
 Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.11**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
-**DOI (this version):** *pending Zenodo publish* (concept: https://doi.org/10.5281/zenodo.21516059)  
+**DOI (this version):** https://doi.org/10.5281/zenodo.21581189  
 **Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
@@ -154,7 +154,8 @@ See [`CITATION.cff`](CITATION.cff).
 
 | What | Identifier |
 |------|------------|
-| This formal monorepo (v0.1.9) | [10.5281/zenodo.21537465](https://doi.org/10.5281/zenodo.21537465) |
+| This formal monorepo (v0.1.11) | [10.5281/zenodo.21581189](https://doi.org/10.5281/zenodo.21581189) |
+| Prior software v0.1.10 | [10.5281/zenodo.21537465](https://doi.org/10.5281/zenodo.21537465) |
 | Prior software v0.1.8 | [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882) |
 | Concept DOI (always latest) | [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059) |
 | v0.1.7 (archived) | [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346) |
@@ -172,9 +173,9 @@ See [`CITATION.cff`](CITATION.cff).
   month        = jul,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {0.1.9},
-  doi          = {10.5281/zenodo.21537465},
-  url          = {https://doi.org/10.5281/zenodo.21537465}
+  version      = {0.1.11},
+  doi          = {10.5281/zenodo.21581189},
+  url          = {https://doi.org/10.5281/zenodo.21581189}
 }
 ```
 

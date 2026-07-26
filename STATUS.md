@@ -94,10 +94,11 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 ## Citation / Zenodo
 
 - GitHub release: **`v0.1.11`**  
-- **DOI (v0.1.11):** *pending Zenodo publish* (will pin after `deposit_zenodo.py --newversion --publish`)  
+- **DOI (v0.1.11):** [10.5281/zenodo.21581189](https://doi.org/10.5281/zenodo.21581189)  
 - **DOI (v0.1.10):** [10.5281/zenodo.21537465](https://doi.org/10.5281/zenodo.21537465)  
 - **DOI (v0.1.9):** [10.5281/zenodo.21536462](https://doi.org/10.5281/zenodo.21536462)
 - **DOI (v0.1.8):** [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882)  
+- Record: https://zenodo.org/records/21581189
 - Record (v0.1.10): https://zenodo.org/records/21537465  
 - **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 - **DOI (v0.1.7):** [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)  

@@ -1,0 +1,28 @@
+{
+  "deposition_id": 21581189,
+  "base": "https://zenodo.org",
+  "conceptrecid": "21516059",
+  "doi": "10.5281/zenodo.21581189",
+  "version": "0.1.11",
+  "links": {
+    "self": "https://zenodo.org/api/records/21581189",
+    "html": "https://zenodo.org/records/21581189",
+    "doi": "https://doi.org/10.5281/zenodo.21581189",
+    "parent_doi": "https://doi.org/10.5281/zenodo.21516059",
+    "badge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.21581189.svg",
+    "conceptbadge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.21516059.svg",
+    "files": "https://zenodo.org/api/records/21581189/files",
+    "bucket": "https://zenodo.org/api/files/aad4a5dd-dc46-4a01-9dff-49adc4b01c9c",
+    "latest_draft": "https://zenodo.org/api/deposit/depositions/21581189",
+    "latest_draft_html": "https://zenodo.org/deposit/21581189",
+    "publish": "https://zenodo.org/api/deposit/depositions/21581189/actions/publish",
+    "edit": "https://zenodo.org/api/deposit/depositions/21581189/actions/edit",
+    "discard": "https://zenodo.org/api/deposit/depositions/21581189/actions/discard",
+    "newversion": "https://zenodo.org/api/deposit/depositions/21581189/actions/newversion",
+    "record": "https://zenodo.org/api/records/21581189",
+    "record_html": "https://zenodo.org/record/21581189",
+    "latest": "https://zenodo.org/api/records/21581189/versions/latest",
+    "latest_html": "https://zenodo.org/records/21581189/latest"
+  },
+  "published": true
+}
