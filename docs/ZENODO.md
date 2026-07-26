@@ -6,7 +6,8 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.10)** | `10.5281/zenodo.21537465` | https://doi.org/10.5281/zenodo.21537465 |
+| **This version (v0.1.11)** | *pending publish* | pin after deposit |
+| **Prior (v0.1.10)** | `10.5281/zenodo.21537465` | https://doi.org/10.5281/zenodo.21537465 |
 | **Prior (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
 | Record page (v0.1.10) | — | https://zenodo.org/records/21537465 |
@@ -33,13 +34,14 @@
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
-## v0.1.10 description source
+## v0.1.11 description source
 
-Deposit description is in `zenodo/metadata.json` (adapted from
-[`FORMAL_OBLIGATIONS.md` §7.2](FORMAL_OBLIGATIONS.md)).
+Deposit description is in `zenodo/metadata.json` (Module CT residual pack +
+prior Feigenbaum honesty). See also [`RECD_vs_Thermodynamic_Time.md`](RECD_vs_Thermodynamic_Time.md).
 
 Do **not** claim classical Feigenbaum universality, termwise superstable roots,
-or field-derived τₛ return in the Zenodo abstract. Lab / construction discharge is OK.
+Skorokhod continuum limits, or field-derived τₛ return in the Zenodo abstract.
+Lab / pathwise discrete discharge is OK.
 
 ## New versions
 

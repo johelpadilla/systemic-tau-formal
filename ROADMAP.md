@@ -15,6 +15,7 @@ Public status after **v0.1.8** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] Release `v0.1.8`: zero sorry/axiom; logistic scale-ID; C²/Schwarzian; non-tent τₛ lab return; docs aligned
 - [x] Release `v0.1.9`: unique inverse-scale f(δ); extended candidates; ontology L0–L3; Zenodo software+preprint
 - [x] Release `v0.1.10`: superstable termwise + cascade honesty pack; hybrid R_n; Zenodo software+preprint
+- [x] Release `v0.1.11`: Module CT residual pack (RECD CT-1..4, ContLim+noise, π/Kendall, OP-CT-8 monoidal); 0 sorry
 
 ## Near term (v0.2)
 

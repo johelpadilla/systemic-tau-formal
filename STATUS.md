@@ -14,10 +14,25 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 
 | Module | Claim class | Status | Notes |
 |--------|-------------|--------|-------|
-| `Basic` | definitions | **Builds** | Window, numPairs, Kendall opaque; **Mathlib** ℚ |
+| `Basic` | definitions | **Builds** | Window, numPairs; **combinatorial `kendallTau`** (not opaque); **Mathlib** ℚ |
 | `Thresholds` | mix | **Builds + lemmas** | bands; trichotomy; **failedSimpleCandidates** (10 forms) vs τ_ch |
 | `ThresholdFromDelta` | mix | **Builds + lemmas** | unique inverse-scale \(f(\delta)=c/\delta\); ontology L0–L3 package |
 | `RECD` | definitions + lemmas | **Builds** | gate laws; **gate_of_stable / gate_of_antiSync** |
+| `RECD_Monotonicity` | `[TEOREMA]` CT-3 | **Builds + 0 sorry** | sign lemma; `recdAccum`; monotone iff ticks ≥ 0; gate support `g<0 ↔ τ≤-τ_ch`; anti-sync descent |
+| `RECD_OrdinalEntropy` | `[TEOREMA]` CT-4A/B | **Builds + 0 sorry** | `posPart`/`negPart`; `ordinalSigmaTick/Accum`; Σ≥0 for α∈[0,1]; CT-4B Σ=T under g≥0; anti-sync clock/production split |
+| `RECD_Variation` | `[TEOREMA]` CT-3 quant. | **Builds + 0 sorry** | `δ^{-k}≤1`; anti-sync count; `negVarAccum`; `T_N ≥ −B·M` under `‖τ‖≤B` and ≤M anti-sync visits |
+| `RECD_Immersion` | `[TEOREMA]` mesh + σ | **Builds + 0 sorry** | uniform mesh `s_n=n·h`; `immerseNode`/`immerseAffine`; `sigmaRECD≥0` on every cell; CT-4B mesh form |
+| `RECD_CT1` | `[TEOREMA]` CT-1 skeleton | **Builds + 0 sorry** | stable frozen-depth; strict mono; bi-Lipschitz vs index and mesh; const-stable sample |
+| `RECD_CT2` | `[TEOREMA]` CT-2 elementary | **Builds + 0 sorry** | InfOften anti-sync; not eventually nondec; density → reverse mass linear; period-2 true non-mono |
+| `RECD_BV` | `[TEOREMA]` immersion BV/Lip | **Builds + 0 sorry** | cell Lip exact; TV=∑\|ΔT\|; \|T\|≤TV; period-2 TV linear |
+| `RECD_Oriented` | `[TEOREMA]` OP-CT-8 elementary | **Builds + 0 sorry** | classical clock; orientation-respecting obstruction; stable is classical |
+| `RECD_ContLim` | mix OP-CT-5 scaffold | **Builds + 0 sorry** | H1–H4 props; obstruction; equi-Lip; const-stable Tendsto linear |
+| `RECD_Projection` | mix π + estimator | **Builds + 0 sorry** | `systemicTauWindow`; `projectPath`; `EstimatorNoise`; stable under \|ε\|≤η |
+| `RECD_CT1_Noise` | `[TEOREMA]` CT-1 residual | **Builds + 0 sorry** | noise-robust CT-1; tick Lip; accum noise bound; shift/inc semigroup intertwining |
+| `RECD_Monoidal` | `[TEOREMA]` OP-CT-8 residual | **Builds + 0 sorry** | `NatMonoidHom`; `OrientedMonoidBridge` obstruction; `pathTensor` classical closure |
+| `RECD_ContLimFull` | mix OP-CT-5 residual | **Builds + 0 sorry** | const-mass ContLim; uniform envelope; equicont modulus; projected ContLim |
+| `RECD_ContLim_Noise` | `[TEOREMA]` OP-CT-5 noise residual | **Builds + 0 sorry** | stable band under NoiseBounded; accum gap ≤N·δ^{-k}·η; equi-Lip immersion; small-η mono; ContLimNoisePackage |
+| `RECD_ResearchOpen` | `[CONJETURA]` registry | **Builds + 0 sorry** | Schnakenberg/CT-4C; LDP; nested RECD interfaces (honest open board) |
 | `FeigenbaumReduction` | mix | **0 sorry, 0 axiom** | 1a/1b `lookupTent`; 2 tent lab; **2τ `tauReturnFour`**; ★ **non-tent**; `logisticStrong` |
 | `FeigenbaumAnalytic` | mix | **0 sorry, 0 axiom** | geometric cascade ratios ≡ δ_op; 3a/3b; toy ↛ δ |
 | `FeigenbaumTendsto` | mix | **0 sorry, 0 axiom** | ε–N ↔ `Tendsto`; 3aℝ–3cℝ via geometric |
@@ -78,11 +93,12 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 
 ## Citation / Zenodo
 
-- GitHub release: **`v0.1.10`**  
+- GitHub release: **`v0.1.11`**  
+- **DOI (v0.1.11):** *pending Zenodo publish* (will pin after `deposit_zenodo.py --newversion --publish`)  
 - **DOI (v0.1.10):** [10.5281/zenodo.21537465](https://doi.org/10.5281/zenodo.21537465)  
 - **DOI (v0.1.9):** [10.5281/zenodo.21536462](https://doi.org/10.5281/zenodo.21536462)
 - **DOI (v0.1.8):** [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882)  
-- Record: https://zenodo.org/records/21537465  
+- Record (v0.1.10): https://zenodo.org/records/21537465  
 - **Concept DOI:** [10.5281/zenodo.21516059](https://doi.org/10.5281/zenodo.21516059)  
 - **DOI (v0.1.7):** [10.5281/zenodo.21522346](https://doi.org/10.5281/zenodo.21522346)  
 - **DOI (v0.1.6):** [10.5281/zenodo.21516523](https://doi.org/10.5281/zenodo.21516523)  
@@ -104,4 +120,4 @@ Do **not** re-open discharged lab/construction goals as if they were `sorry`.
 
 Roadmap overview: [`ROADMAP.md`](ROADMAP.md).
 
-Last updated: 2026-07-24 (honesty pack: secondary zero; mono-conditional unique; hybrid geometric; 0 sorry).
+Last updated: 2026-07-25 (CT BV + ContLim scaffold + OP-CT-8 orientation; 0 sorry).

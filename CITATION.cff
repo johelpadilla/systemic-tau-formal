@@ -2,19 +2,19 @@ cff-version: 1.2.0
 message: "If you use Systemic Tau / RECD formal materials, please cite as below."
 type: software
 title: "systemic-tau-formal — Machine-verifiable Systemic Tau (τₛ) + RECD"
-version: "0.1.10"
-date-released: "2026-07-24"
+version: "0.1.11"
+date-released: "2026-07-25"
 license: MIT
-doi: "10.5281/zenodo.21537465"
+doi: "10.5281/zenodo.21516059"
 repository-code: "https://github.com/johelpadilla/systemic-tau-formal"
-url: "https://doi.org/10.5281/zenodo.21537465"
+url: "https://doi.org/10.5281/zenodo.21516059"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21537465"
-    description: "This version (v0.1.10)"
-  - type: doi
     value: "10.5281/zenodo.21516059"
-    description: "Concept DOI (all versions)"
+    description: "Concept DOI (all versions — pin version DOI after Zenodo publish)"
+  - type: doi
+    value: "10.5281/zenodo.21537465"
+    description: "v0.1.10"
   - type: doi
     value: "10.5281/zenodo.21536462"
     description: "v0.1.9"

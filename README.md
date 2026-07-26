@@ -6,9 +6,9 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21537465.svg)](https://doi.org/10.5281/zenodo.21537465)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
-Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.10**  
+Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.11**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
-**DOI (this version):** https://doi.org/10.5281/zenodo.21537465  
+**DOI (this version):** *pending Zenodo publish* (concept: https://doi.org/10.5281/zenodo.21516059)  
 **Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
