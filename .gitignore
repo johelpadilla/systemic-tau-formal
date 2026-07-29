@@ -48,6 +48,29 @@ data/synthetic/cross_domain_last_run.json
 data/aedes/raw/last_field_report.json
 data/aedes/raw/last_p3_field.json
 data/aedes/raw/endpoints.json
+data/aedes/raw/endpoints_candidates.json
+data/aedes/raw/protocol_lock.json
+data/aedes/raw/last_p1_aedes_score.json
+# External clinical incidence (may contain licensed dumps); keep examples only
+data/aedes/external/*
+!data/aedes/external/README.md
+!data/aedes/external/incidence.example.csv
+
+# CHB-MIT P1-EEG: keep docs/examples/fixtures + v1.1 locked scores; ignore bulk EDFs
+data/chbmit/raw/
+data/**/*.edf
+data/**/*.edf.seizures
+data/chbmit/endpoints.json
+data/chbmit/endpoints_candidates.json
+data/chbmit/protocol_lock.json
+data/chbmit/last_*.json
+!data/chbmit/README.md
+!data/chbmit/endpoints.example.json
+!data/chbmit/protocol_lock.example.json
+!data/chbmit/fixtures/
+!data/chbmit/fixtures/**
+!data/chbmit/v1.1/
+!data/chbmit/v1.1/**
 
 # Local secrets
 secrets.*

@@ -1,0 +1,41 @@
+{
+  "scored": true,
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "label": "[EMP\u00cdRICO]",
+  "source": "provided",
+  "endpoints_sha256": "7cbc0ac603ed4c271e5ef6c760f7018817b947e751d72b27b04f5b6cd910f54a",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "n_scored": 1,
+  "n_hit": 0,
+  "hit_rate": 0.0,
+  "rows": [
+    {
+      "file": "Vitoria_BR_top15RG_2008_2012.csv",
+      "series_key": "Vitoria_BR_top15RG_2008_2012",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 174,
+      "t_star": 12,
+      "lead": 162,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    }
+  ],
+  "honesty": "P1-Aedes v1.0.0: multi-trap \u03c4\u209b vs external t_obs only. Does not promote trap-surge exploratory leads. Spatial scale: neighborhood traps vs municipal/island clinical if used."
+}

@@ -3,6 +3,7 @@
 Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 
 **Public repo:** https://github.com/johelpadilla/systemic-tau-formal  
+**Release:** **v0.1.12** — P1 instrument + multi-domain residual pack  
 **CI:** `.github/workflows/ci.yml` — Python pytest + Lean `lake build`  
 **Toolchain:** Lean 4.14.0 via elan  
 **Python:** Lean-aligned golden rationals in `python/core/golden.py`
@@ -50,10 +51,18 @@ Epistemic labels follow [`docs/EPISTEMIC_LABELS.md`](docs/EPISTEMIC_LABELS.md).
 | Golden bridge | `[OPERACIONAL]` | **Tests** | `test_lean_golden.py` |
 | Synthetic fixtures | `[OPERACIONAL]` | **CSV + tests** | `data/synthetic/`, P3/P4 harness |
 | Aedes proxy | `[OPERACIONAL]` | **CSV** | `data/aedes/proxy/` (fallback only) |
-| Aedes field (`raw/`) | `[EMPÍRICO]` | **3 series + P3/P4 + field return** | SJU1/2/3 · nb 07–11; P1 scaffold; exploratory leads only |
+| Aedes field (`raw/`) | `[EMPÍRICO]` | **3 series + P3/P4 + field return** | SJU1/2/3 · nb 07–11; exploratory leads only |
 | Field return multi-site | `[EMPÍRICO]` diagnostic | **Board v2** | `core.field_return` · not lab unimodality |
 | P1 exploratory trap-surge | `[EMPÍRICO]` characterization | **Tests** | never `pre_registered`; true P1 still open |
+| **P1-Aedes external \(t_{\mathrm{obs}}\)** | `[EMPÍRICO]` dengue residual | **Protocol FREEZE + Vitória scored FAIL** | SJU 2018 clinical null; Vitória top-15 yearly **0/5** — [`docs/P1_AEDES_VITORIA_REPORT.md`](docs/P1_AEDES_VITORIA_REPORT.md) |
+| **P1-ILI external FluSurv** | `[EMPÍRICO]` flu residual | **v1.0.0 LOCKED + scored (EWS FAIL)** | HHS1–10 %wILI → FluSurv peak **0/10**; p75 **1/10** — [`docs/P1_ILI_REPORT.md`](docs/P1_ILI_REPORT.md) · nb 15 |
+| P1-EEG CHB-MIT v1.0.0 | `[EMPÍRICO]` C3 clinical | **chb01 LOCKED + scored (EWS FAIL)** | Hit 1/7; C1 FP 42/42; [`docs/P1_EEG_CHB01_PILOT_REPORT.md`](docs/P1_EEG_CHB01_PILOT_REPORT.md); **not** dengue P1 |
+| P1-EEG CHB-MIT v1.1.0 | `[EMPÍRICO]` C3 clinical | **LOCKED + scored; track PAUSED** | Hit 0/7; C1 FP 27/42; gates PASS; not convenient for paradigm EWS — [`docs/P1_EEG_CHB01_PILOT_REPORT_v1.1.md`](docs/P1_EEG_CHB01_PILOT_REPORT_v1.1.md) |
 | C3 synthetic kits | `[OPERACIONAL]` | **generators + nb** | finance/EEG/grid · `docs/CROSS_DOMAIN.md` |
+| **P1-Synthetic Canonical** | `[OPERACIONAL]` instrument | **G1–G4 INSTRUMENT_PASS** | plant **20/20** hit; nulls clean · [`docs/P1_SYNTHETIC_CANONICAL.md`](docs/P1_SYNTHETIC_CANONICAL.md) · report · nb 16 |
+| **C1 synthetic companion** | `[OPERACIONAL]` C1 stress | **C1_STRESS_FAIL (C1C)** | plant FP 0; sync alert 0; **noise FP 1.0** ambient chaos · `last_c1.json` |
+| **P1 fail-triptych** | `[OPERACIONAL]` synthesis | **CLOSED** | instrument PASS + field residual + C1 ambient FAIL · [`docs/P1_FAIL_TRIPTYCH.md`](docs/P1_FAIL_TRIPTYCH.md) |
+| **P1 C1 guard design** | `[OPERACIONAL]` design only | **SKETCH (not impl.)** | pre-order guard candidates + admission gates · [`docs/P1_C1_GUARD_DESIGN.md`](docs/P1_C1_GUARD_DESIGN.md) |
 | First-return twin | `[OPERACIONAL]` | **Python + nb 05** | `python/core/first_return.py` |
 | More Aedes series | `[EMPÍRICO]` | **intake ready** | CSVs under `data/aedes/raw/` |
 | C3 field results | `[EMPÍRICO]` | **pending** | community / other domains |
@@ -94,7 +103,8 @@ Mathlib notes: [`docs/MATHLIB.md`](docs/MATHLIB.md).
 ## Citation / Zenodo
 
 - GitHub release: **`v0.1.11`**  
-- **DOI (v0.1.11):** [10.5281/zenodo.21581189](https://doi.org/10.5281/zenodo.21581189)  
+- **Module CT technical note DOI:** [10.5281/zenodo.21582078](https://doi.org/10.5281/zenodo.21582078) (concept [10.5281/zenodo.21582077](https://doi.org/10.5281/zenodo.21582077)) · https://zenodo.org/records/21582078  
+- **DOI (v0.1.11 software):** [10.5281/zenodo.21581189](https://doi.org/10.5281/zenodo.21581189)  
 - **DOI (v0.1.10):** [10.5281/zenodo.21537465](https://doi.org/10.5281/zenodo.21537465)  
 - **DOI (v0.1.9):** [10.5281/zenodo.21536462](https://doi.org/10.5281/zenodo.21536462)
 - **DOI (v0.1.8):** [10.5281/zenodo.21522882](https://doi.org/10.5281/zenodo.21522882)  

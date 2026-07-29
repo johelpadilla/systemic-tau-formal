@@ -1,0 +1,121 @@
+{
+  "schema": "systemic-tau-formal/aedes-endpoints/v1",
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "status": "pre_registered",
+  "label": "[EMP\u00cdRICO]",
+  "method": "first_exceed_year_p75",
+  "design": {
+    "segmentation": "epidemiological_year_a_priori",
+    "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori",
+    "t_obs_rule": "first_exceed_year_p75 citywide Cases within year",
+    "doi": "10.6084/m9.figshare.7905254.v1"
+  },
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "series": [
+    {
+      "file": "Vitoria_BR_top15RG_2008.csv",
+      "series_key": "Vitoria_BR_top15RG_2008",
+      "t_obs": 12,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "first_exceed_year_p75 citywide Cases year=2008 thr=86.00",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "first_exceed_year_p75",
+        "year": 2008,
+        "weekofyear": 13,
+        "total_cases": 225.0,
+        "threshold_p75": 86.0,
+        "peak_row": 13,
+        "peak_cases": 366.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2009.csv",
+      "series_key": "Vitoria_BR_top15RG_2009",
+      "t_obs": 9,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "first_exceed_year_p75 citywide Cases year=2009 thr=238.25",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "first_exceed_year_p75",
+        "year": 2009,
+        "weekofyear": 10,
+        "total_cases": 306.0,
+        "threshold_p75": 238.25,
+        "peak_row": 11,
+        "peak_cases": 514.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2010.csv",
+      "series_key": "Vitoria_BR_top15RG_2010",
+      "t_obs": 9,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "first_exceed_year_p75 citywide Cases year=2010 thr=100.00",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "first_exceed_year_p75",
+        "year": 2010,
+        "weekofyear": 10,
+        "total_cases": 100.0,
+        "threshold_p75": 100.0,
+        "peak_row": 18,
+        "peak_cases": 140.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2011.csv",
+      "series_key": "Vitoria_BR_top15RG_2011",
+      "t_obs": 10,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "first_exceed_year_p75 citywide Cases year=2011 thr=176.00",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "first_exceed_year_p75",
+        "year": 2011,
+        "weekofyear": 11,
+        "total_cases": 188.0,
+        "threshold_p75": 176.0,
+        "peak_row": 17,
+        "peak_cases": 559.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2012.csv",
+      "series_key": "Vitoria_BR_top15RG_2012",
+      "t_obs": 0,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "first_exceed_year_p75 citywide Cases year=2012 thr=63.75",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "first_exceed_year_p75",
+        "year": 2012,
+        "weekofyear": 1,
+        "total_cases": 84.0,
+        "threshold_p75": 63.75,
+        "peak_row": 1,
+        "peak_cases": 91.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    }
+  ]
+}

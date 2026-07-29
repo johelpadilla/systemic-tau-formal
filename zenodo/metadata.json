@@ -2,7 +2,7 @@
   "metadata": {
     "title": "systemic-tau-formal: Machine-verifiable Systemic Tau (τₛ) and RECD",
     "upload_type": "software",
-    "description": "<p><strong>systemic-tau-formal</strong> v0.1.11 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (τₛ) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p>\n<p><strong>What is new in v0.1.11 — Module CT residual pack (0 sorry / 0 research axiom)</strong></p>\n<ul>\n<li><strong>RECD / CT core:</strong> CT-3 monotonicity, CT-4A/B ordinal entropy, CT-3 quantitative variation, mesh immersion + σ_RECD, CT-1 stable bi-Lipschitz, CT-2 InfOften anti-sync non-mono, BV/TV immersion, OP-CT-8 orientation non-equivalence.</li>\n<li><strong>Projection π + Kendall:</strong> combinatorial <code>kendallTau</code> (not opaque); <code>systemicTauWindow</code>, <code>projectPath</code>; estimator noise envelope.</li>\n<li><strong>CT-1 residual:</strong> noise-robust mono; accum gap |T̂−T|≤N·δ^{-k}·η; discrete shift/increment semigroup intertwining.</li>\n<li><strong>OP-CT-5 ContLim:</strong> H1–H4 scaffold; const-mass ContLim; uniform envelope + equicontinuous modulus; projected ContLim.</li>\n<li><strong>ContLim + noise (new):</strong> <code>RECD_ContLim_Noise</code> — stable/degraded band under NoiseBounded; equi-Lip immersion with modulus δ^{-k}(M+η); small-η mono of estimated immersion; <code>ContLimNoisePackage</code>.</li>\n<li><strong>OP-CT-8 monoidal residual:</strong> Nat monoid homs; oriented monoid bridge obstruction; path tensor classical closure.</li>\n<li><strong>Research registry:</strong> Schnakenberg/CT-4C, ordinal LDP, nested RECD as honest <code>Prop</code> interfaces (not axioms).</li>\n</ul>\n<p><strong>Still research-scale (not claimed discharged)</strong></p>\n<ul>\n<li>Full C([0,∞)) for random projected processes / Skorokhod</li>\n<li>Kendall consistency in probability; continuum Markov P_t intertwining</li>\n<li>Schnakenberg/CT-4C full; ordinal LDP rate function; nested multi-scale ContLim</li>\n<li>Mathlib CategoryTheory monoidal functors on Top</li>\n</ul>\n<p>Companion: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p>\n<p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 remain protocol pins; no continuum thermodynamic axiom is added to Lean.</p>",
+    "description": "<p><strong>systemic-tau-formal</strong> v0.1.12 is an open monorepo for machine-checkable formalization and reproducible reference code of the <em>Systemic Tau</em> (τₛ) paradigm and the <em>Discrete Extramental Clock</em> (RECD).</p>\n<p><strong>What is new in v0.1.12 — P1 instrument + multi-domain residual pack</strong></p>\n<ul>\n<li><strong>P1-Synthetic Canonical v1.0.0:</strong> order→chaos plant with planted t_obs; frozen detector w=13, θ_ch=0.41, min_run=4, lead [4,6]; G1–G4 <strong>INSTRUMENT_PASS</strong> (plant 20/20 hits).</li>\n<li><strong>C1 companion:</strong> false-early-warning stress; C1A/B PASS; <strong>C1C FAIL</strong> on pure ambient noise (FP rate 1.0) → C1_STRESS_FAIL.</li>\n<li><strong>Field residual (same freeze):</strong> Aedes Vitória external t_obs 0/5; ILI HHS→FluSurv peak 0/10 (p75 1/10); EEG CHB-MIT v1.0/v1.1 pilots archived and paused.</li>\n<li><strong>Honest synthesis:</strong> docs/P1_FAIL_TRIPTYCH.md (instrument PASS · field residual · C1 ambient FAIL). Optional C1 guard design only (docs/P1_C1_GUARD_DESIGN.md) — not implemented.</li>\n<li><strong>Reproduce:</strong> notebooks/16_p1_synthetic_canonical.py run|c1; pytest tests/test_p1_synthetic.py (+ domain suites).</li>\n</ul>\n<p><strong>Honesty (do not overclaim)</strong></p>\n<ul>\n<li>INSTRUMENT_PASS ≠ multi-domain EWS discharge.</li>\n<li>No dengue / flu / seizure forecasting skill is claimed under the frozen chaos-band rule.</li>\n<li>CHB-MIT raw EDFs are <em>not</em> redistributed; protocols and locked scores are.</li>\n</ul>\n<p><strong>Prior (v0.1.11) still included:</strong> Module CT residual pack — pathwise RECD/CT Lean discharge with 0 sorry / 0 research axiom under SystemicTau/.</p>\n<p>Companion: PyPI <code>systemictau</code>. Prior corpus DOI: <a href=\"https://doi.org/10.5281/zenodo.20576241\">10.5281/zenodo.20576241</a>.</p>\n<p><em>Epistemic honesty:</em> operational thresholds 0.50 / 0.41 remain protocol pins; no continuum thermodynamic axiom is added to Lean.</p>",
     "creators": [
       {
         "name": "Padilla-Villanueva, Johel",
@@ -16,20 +16,20 @@
       "Feigenbaum",
       "Lean 4",
       "Mathlib",
-      "threshold bridge",
-      "inverse scale",
-      "Schwarzian",
-      "logistic map",
       "early warning signals",
-      "complex systems",
+      "false positives",
+      "synthetic validation",
+      "Kendall tau",
       "ordinal dynamics",
+      "complex systems",
       "formal verification",
-      "cross-domain"
+      "cross-domain",
+      "negative results"
     ],
     "license": "mit",
     "access_right": "open",
     "language": "eng",
-    "version": "0.1.11",
+    "version": "0.1.12",
     "related_identifiers": [
       {
         "identifier": "https://github.com/johelpadilla/systemic-tau-formal",
@@ -44,7 +44,7 @@
         "scheme": "doi"
       },
       {
-        "identifier": "10.5281/zenodo.21537465",
+        "identifier": "10.5281/zenodo.21581189",
         "relation": "isNewVersionOf",
         "resource_type": "software",
         "scheme": "doi"
@@ -54,8 +54,14 @@
         "relation": "isDocumentedBy",
         "resource_type": "publication",
         "scheme": "doi"
+      },
+      {
+        "identifier": "10.5281/zenodo.21582078",
+        "relation": "isDocumentedBy",
+        "resource_type": "publication",
+        "scheme": "doi"
       }
     ],
-    "notes": "CI: GitHub Actions (pytest + lake build). Verify: clone, lake build, pytest -q. Concept DOI: 10.5281/zenodo.21516059. Formal obligations: docs/FORMAL_OBLIGATIONS.md. Zero sorry / zero research axiom under lean/SystemicTau/."
+    "notes": "CI: GitHub Actions (pytest + lake build). Verify: clone, lake build, pytest -q. Concept DOI: 10.5281/zenodo.21516059. P1 synthesis: docs/P1_FAIL_TRIPTYCH.md. Zero sorry / zero research axiom under lean/SystemicTau/."
   }
 }

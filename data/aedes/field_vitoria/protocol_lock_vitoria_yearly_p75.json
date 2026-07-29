@@ -1,0 +1,24 @@
+{
+  "schema": "systemic-tau-formal/aedes-protocol-lock/v1",
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "endpoints_sha256": "5edb2ded8e44af32369ec88e0d19ffbd0e824b47010b89f8d03bfd5d760c6802",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "locked_at_utc": "2026-07-29T02:13:40Z",
+  "n_series": 5,
+  "n_pre_registered": 5,
+  "extra": {
+    "method": "first_exceed_year_p75"
+  },
+  "lock_sha256": "e0f639e9ef7a22f199a16bf9967b98003a5befbf7450e9842079745204736aa0"
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "systemic-tau-formal/p1-syn-gates/v1",
+  "protocol": "P1_SYNTHETIC_CANONICAL",
+  "protocol_version": "1.0.0",
+  "gates_pass": true,
+  "verdict": "INSTRUMENT_PASS",
+  "gates": {
+    "G1": {
+      "id": "G1",
+      "name": "detection_lag_in_window",
+      "pass": true,
+      "detail": {
+        "lag_median": 9.0,
+        "lag_min": 7,
+        "lag_max": 9,
+        "failures": []
+      }
+    },
+    "G2": {
+      "id": "G2",
+      "name": "plant_hit_rate",
+      "pass": true,
+      "detail": {
+        "hit_rate": 1.0,
+        "n_hit": 20,
+        "n_scored": 20,
+        "threshold": 0.8,
+        "lead_median": 4.0
+      }
+    },
+    "G3": {
+      "id": "G3",
+      "name": "pure_sync_null",
+      "pass": true,
+      "detail": {
+        "hit_rate": 0.0,
+        "no_signal_rate": 1.0,
+        "n_scored": 10
+      }
+    },
+    "G4": {
+      "id": "G4",
+      "name": "pure_noise_false_ews",
+      "pass": true,
+      "detail": {
+        "hit_rate": 0.0,
+        "n_hit": 0,
+        "n_scored": 10,
+        "threshold": 0.1
+      }
+    }
+  },
+  "honesty": "Instrument PASS does not discharge empirical P1. Instrument FAIL means rethink t*/lead/window before more field domains."
+}

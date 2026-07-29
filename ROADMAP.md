@@ -39,8 +39,23 @@ Public status after **v0.1.8** (concept DOI [10.5281/zenodo.21516059](https://do
 - [x] P1 endpoint scaffold (`endpoints.example.json` + scorer; no invented dates)
 - [x] Field-derived multi-site return + exploratory trap-surge leads (nb 11; **not** P1 discharge)
 - [x] Empirical board v2 wires `field_return` + `p1_exploratory` (`docs/FIELD_EMPIRICAL_STATUS.md`)
-- [ ] Fill real `endpoints.json` (pre-registered external t_obs) and score true P1
-- [ ] Expand `raw/` with more years / municipalities
+- [x] P1-Aedes protocol v1.0.0 design freeze — `docs/P1_AEDES_EXTERNAL_TOBS.md` + `calendar_map.json` + lock/score CLI (nb 14)
+- [ ] Fill real Aedes `endpoints.json` (pre-registered **external** clinical/intervention \(t_{\mathrm{obs}}\)) and score true P1
+- [ ] Intake 2018 San Juan / PR **weekly dengue cases** under `data/aedes/external/` (known gap; DengAI ends ~2013)
+- [x] P1-EEG clinical track scaffold (CHB-MIT protocol v1.0.0, lock+score+C1, CI synthetic)
+- [x] P1-EEG first locked pilot on real CHB-MIT EDFs (`chb01`, 2026-07-27): hit 1/7, C1 FP 1.0 — see `docs/P1_EEG_CHB01_PILOT_REPORT.md`
+- [x] P1-EEG v1.1.0 *a priori* design freeze — `docs/P1_EEG_CHBMIT_v1.1.md`
+- [x] P1-EEG v1.1.0 implement + G1–G4 PASS + lock + score + C1 + report (`chb01`, 2026-07-29): hit **0/7**, C1 FP **0.643** — `docs/P1_EEG_CHB01_PILOT_REPORT_v1.1.md`
+- [x] **EEG track paused (2026-07-29):** not convenient for paradigm EWS proof after v1.0 ambient-chaos + v1.1 order-timing fails; freeze history kept; no v1.2 unless program reopens explicitly
+- [x] True P1 multi-site **Aedes** score with external domain \(t_{\mathrm{obs}}\) — Vitória yearly **0/5** (miss_lead); pipeline unlocked, EWS not supported
+- [x] **P1-ILI v1.0.0** design freeze + Delphi intake + lock/score — HHS→FluSurv peak **0/10**; p75 **1/10** (`docs/P1_ILI_REPORT.md`)
+- [x] **P1-Synthetic Canonical v1.0.0** instrument validation — plant **20/20**, G1–G4 **INSTRUMENT_PASS** (`docs/P1_SYNTHETIC_CANONICAL_REPORT.md`; nb 16)
+- [x] **C1 synthetic companion** — C1A/B PASS, **C1C FAIL** (noise FP 1.0) → `C1_STRESS_FAIL` (`last_c1.json`)
+- [x] **P1 fail-triptych** synthesis — instrument / field residual / C1 stress (`docs/P1_FAIL_TRIPTYCH.md`)
+- [x] **P1 C1 guard design sketch** (not implemented) — `docs/P1_C1_GUARD_DESIGN.md`
+- [ ] Optional: implement C1 guard only after checklist freeze in `P1_C1_GUARD_DESIGN.md` (new protocol version)
+- [ ] Expand Aedes `raw/` with more years / municipalities (or new protocol version before re-score)
+- [ ] Optional P1-ILI v1.1 only if **a priori** redesign of \(t^*\) / endpoint (do not retune on current lock)
 - [x] Mathlib dependency wired (`mathlib4` v4.14.0) + `FeigenbaumAnalytic` claim shapes
 - [x] Real/`Tendsto` claim shapes (`FeigenbaumTendsto`; limit still open/`sorry`)
 - [x] ε–N ↔ `Tendsto` bookkeeping proved (`cascadeDeltaLimit_iff_tendsto`)

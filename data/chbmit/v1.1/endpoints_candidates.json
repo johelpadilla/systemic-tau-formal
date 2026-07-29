@@ -1,0 +1,191 @@
+{
+  "schema": "systemic-tau-formal/chbmit-endpoints/v1",
+  "protocol_id": "P1_EEG_CHBMIT",
+  "protocol_version": "1.1.0",
+  "domain": "EEG_seizure_onset",
+  "label": "[EMPÍRICO]",
+  "dataset": {
+    "name": "CHB-MIT Scalp EEG Database",
+    "version": "1.0.0",
+    "doi": "10.13026/C2K01R",
+    "url": "https://physionet.org/content/chbmit/1.0.0/",
+    "license": "ODC-By-1.0"
+  },
+  "aggregation": {
+    "epoch_s": 2.0,
+    "feature": "log_bandpower_4_chmean",
+    "bands_hz": [
+      [
+        0.5,
+        4.0
+      ],
+      [
+        4.0,
+        8.0
+      ],
+      [
+        8.0,
+        13.0
+      ],
+      [
+        13.0,
+        30.0
+      ]
+    ],
+    "fs_hz_expected": 256
+  },
+  "lead_window_s": [
+    30.0,
+    300.0
+  ],
+  "min_preictal_s": 300.0,
+  "note": "P1-EEG v1.1.0. Set pre_registered:true only after human review and AFTER precondition G1–G4 pass. Not dengue P1.",
+  "series": [
+    {
+      "case": "chb01",
+      "record": "chb01_03",
+      "edf": "chb01/chb01_03.edf",
+      "seizure_index": 0,
+      "t_obs_s": 2996.0,
+      "t_end_s": 3036.0,
+      "t_obs_unit": "seconds_from_edf_start",
+      "endpoint_definition": "CHB-MIT annotated seizure start (clinical) from chbNN-summary.txt",
+      "source": "chbmit-summary",
+      "pre_registered": false,
+      "eligible_for_score": true,
+      "ineligible_reason": null,
+      "file_duration_s": 3600.0
+    },
+    {
+      "case": "chb01",
+      "record": "chb01_04",
+      "edf": "chb01/chb01_04.edf",
+      "seizure_index": 0,
+      "t_obs_s": 1467.0,
+      "t_end_s": 1494.0,
+      "t_obs_unit": "seconds_from_edf_start",
+      "endpoint_definition": "CHB-MIT annotated seizure start (clinical) from chbNN-summary.txt",
+      "source": "chbmit-summary",
+      "pre_registered": false,
+      "eligible_for_score": true,
+      "ineligible_reason": null,
+      "file_duration_s": 3600.0
+    },
+    {
+      "case": "chb01",
+      "record": "chb01_15",
+      "edf": "chb01/chb01_15.edf",
+      "seizure_index": 0,
+      "t_obs_s": 1732.0,
+      "t_end_s": 1772.0,
+      "t_obs_unit": "seconds_from_edf_start",
+      "endpoint_definition": "CHB-MIT annotated seizure start (clinical) from chbNN-summary.txt",
+      "source": "chbmit-summary",
+      "pre_registered": false,
+      "eligible_for_score": true,
+      "ineligible_reason": null,
+      "file_duration_s": 3600.0
+    },
+    {
+      "case": "chb01",
+      "record": "chb01_16",
+      "edf": "chb01/chb01_16.edf",
+      "seizure_index": 0,
+      "t_obs_s": 1015.0,
+      "t_end_s": 1066.0,
+      "t_obs_unit": "seconds_from_edf_start",
+      "endpoint_definition": "CHB-MIT annotated seizure start (clinical) from chbNN-summary.txt",
+      "source": "chbmit-summary",
+      "pre_registered": false,
+      "eligible_for_score": true,
+      "ineligible_reason": null,
+      "file_duration_s": 3600.0
+    },
+    {
+      "case": "chb01",
+      "record": "chb01_18",
+      "edf": "chb01/chb01_18.edf",
+      "seizure_index": 0,
+      "t_obs_s": 1720.0,
+      "t_end_s": 1810.0,
+      "t_obs_unit": "seconds_from_edf_start",
+      "endpoint_definition": "CHB-MIT annotated seizure start (clinical) from chbNN-summary.txt",
+      "source": "chbmit-summary",
+      "pre_registered": false,
+      "eligible_for_score": true,
+      "ineligible_reason": null,
+      "file_duration_s": 3600.0
+    },
+    {
+      "case": "chb01",
+      "record": "chb01_21",
+      "edf": "chb01/chb01_21.edf",
+      "seizure_index": 0,
+      "t_obs_s": 327.0,
+      "t_end_s": 420.0,
+      "t_obs_unit": "seconds_from_edf_start",
+      "endpoint_definition": "CHB-MIT annotated seizure start (clinical) from chbNN-summary.txt",
+      "source": "chbmit-summary",
+      "pre_registered": false,
+      "eligible_for_score": true,
+      "ineligible_reason": null,
+      "file_duration_s": 3600.0
+    },
+    {
+      "case": "chb01",
+      "record": "chb01_26",
+      "edf": "chb01/chb01_26.edf",
+      "seizure_index": 0,
+      "t_obs_s": 1862.0,
+      "t_end_s": 1963.0,
+      "t_obs_unit": "seconds_from_edf_start",
+      "endpoint_definition": "CHB-MIT annotated seizure start (clinical) from chbNN-summary.txt",
+      "source": "chbmit-summary",
+      "pre_registered": false,
+      "eligible_for_score": true,
+      "ineligible_reason": null,
+      "file_duration_s": 2325.0
+    }
+  ],
+  "frozen_params": {
+    "protocol_id": "P1_EEG_CHBMIT",
+    "protocol_version": "1.1.0",
+    "fs_hz_expected": 256,
+    "epoch_s": 2.0,
+    "feature": "log_bandpower_4_chmean",
+    "bands_hz": [
+      [
+        0.5,
+        4.0
+      ],
+      [
+        4.0,
+        8.0
+      ],
+      [
+        8.0,
+        13.0
+      ],
+      [
+        13.0,
+        30.0
+      ]
+    ],
+    "bandpower_collapse": "chmean",
+    "bandpower_eps": 1e-12,
+    "fft_window": "hann",
+    "min_channels": 8,
+    "window_size": 13,
+    "stride": 1,
+    "min_run": 4,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_preictal_s": 300.0,
+    "lead_lo_s": 30.0,
+    "lead_hi_s": 300.0,
+    "c1_horizon_s": 600.0,
+    "c1_gap_from_seizure_s": 1800.0,
+    "eval_crop": "preictal_to_onset",
+    "t_star": "first_sustained_order_band_run"
+  }
+}

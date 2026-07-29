@@ -1,0 +1,90 @@
+{
+  "schema": "systemic-tau-formal/p1-syn-protocol-lock/v1",
+  "protocol": "P1_SYNTHETIC_CANONICAL",
+  "protocol_version": "1.0.0",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "row_index",
+    "phi_phenom": 13,
+    "c1_horizon": 13
+  },
+  "generator_config": {
+    "T": 120,
+    "N": 6,
+    "t_switch": 40,
+    "noise_pre": 0.02,
+    "period": 52.0,
+    "plant_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sync_seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "noise_seeds": [
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209
+    ]
+  },
+  "gates": {
+    "G1_lag_lo": 0,
+    "G1_lag_hi": 13,
+    "G2_min_hit_rate": 0.8,
+    "G3_max_hit_rate": 0.0,
+    "G3_require_all_no_signal": true,
+    "G4_max_hit_rate": 0.1
+  },
+  "c1_gates": {
+    "C1A_plant_max_fp_rate": 0.1,
+    "C1B_sync_max_alert_rate": 0.0,
+    "C1C_noise_max_fp_rate": 0.2,
+    "C1C_required_for_c1_pass": true
+  },
+  "endpoints_sha256": "0a398861fef5a5c358a5408bd076ccc4b17530191b544d6a1a630f6b30d46796",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "locked_at_utc": "2026-07-29T02:53:36Z",
+  "n_series": 40,
+  "n_pre_registered": 40,
+  "lock_sha256": "da470b3d67492bd09a125beec8391d2270090f54abc42ea6505583bc5fc8d366"
+}

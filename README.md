@@ -3,13 +3,14 @@
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21581189.svg)](https://doi.org/10.5281/zenodo.21581189)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516059.svg)](https://doi.org/10.5281/zenodo.21516059)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
-Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.11**  
+Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.12**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
-**DOI (this version):** https://doi.org/10.5281/zenodo.21581189  
-**Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
+**DOI (concept / all versions):** https://doi.org/10.5281/zenodo.21516059  
+**DOI (v0.1.11 pin):** https://doi.org/10.5281/zenodo.21581189  
+*(v0.1.12 version DOI recorded after Zenodo publish)*
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 
@@ -76,6 +77,15 @@ Jupyter (from repo root, after `pip install -e ".[dev]"` in `python/`):
 | [`notebooks/08_aedes_p3_field.py`](notebooks/08_aedes_p3_field.py) | P3 noise scan on field Aedes (ρ≤20%) |
 | [`notebooks/09_aedes_p4_field.py`](notebooks/09_aedes_p4_field.py) | P4 structure vs baselines (no false anti discharge) |
 | [`notebooks/10_aedes_empirical_board.py`](notebooks/10_aedes_empirical_board.py) | Unified P1/P3/P4 empirical board |
+| [`notebooks/12_chbmit_p1_eeg.py`](notebooks/12_chbmit_p1_eeg.py) | **P1-EEG v1.0.0** CHB-MIT clinical onset (parse/lock/score/C1) — track paused |
+| [`notebooks/13_chbmit_p1_eeg_v11.py`](notebooks/13_chbmit_p1_eeg_v11.py) | **P1-EEG v1.1.0** precondition/lock/score/C1 (order + bandpower) — track paused |
+| [`notebooks/14_aedes_p1_external.py`](notebooks/14_aedes_p1_external.py) | **P1-Aedes v1.0.0** external \(t_{\mathrm{obs}}\) propose/lock/score |
+| [`notebooks/15_ili_p1_external.py`](notebooks/15_ili_p1_external.py) | **P1-ILI v1.0.0** HHS %wILI → FluSurv external \(t_{\mathrm{obs}}\) |
+| [`notebooks/16_p1_synthetic_canonical.py`](notebooks/16_p1_synthetic_canonical.py) | **P1-Synthetic** plant/nulls + G1–G4 + C1 companion |
+| [`docs/P1_FAIL_TRIPTYCH.md`](docs/P1_FAIL_TRIPTYCH.md) | **P1 synthesis:** instrument PASS · field residual · C1 ambient FAIL |
+| [`docs/P1_AEDES_EXTERNAL_TOBS.md`](docs/P1_AEDES_EXTERNAL_TOBS.md) | **P1-Aedes** multi-trap + external clinical protocol |
+| [`docs/P1_EEG_CHB01_PILOT_REPORT_v1.1.md`](docs/P1_EEG_CHB01_PILOT_REPORT_v1.1.md) | **P1-EEG v1.1.0** chb01 pilot (hit 0/7; gates PASS; paused) |
+| [`papers/p1-instrument-note/`](papers/p1-instrument-note/) | Short-note outline for the P1 instrument package |
 
 CLI twins (no Jupyter required):
 

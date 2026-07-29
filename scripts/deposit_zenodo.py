@@ -71,14 +71,81 @@ def package_version() -> str:
     return str(meta["metadata"]["version"])
 
 
+# Never ship bulk clinical/raw dumps (CHB-MIT EDFs are multi-GB).
+EXCLUDE_PARTS = {
+    ".venv",
+    ".lake",
+    "__pycache__",
+    ".pytest_cache",
+    ".git",
+    "egg-info",
+}
+EXCLUDE_SUFFIXES = {".pyc", ".olean", ".edf", ".edf.seizures", ".pem"}
+EXCLUDE_NAME_FRAGMENTS = (".egg-info",)
+# Path prefixes relative to repo root
+EXCLUDE_PREFIXES = (
+    "data/chbmit/raw/",
+    "data/aedes/external/",  # keep examples only via git tracking
+)
+
+
+def _should_skip(rel: Path) -> bool:
+    s = rel.as_posix()
+    if any(s == p.rstrip("/") or s.startswith(p) for p in EXCLUDE_PREFIXES):
+        # Allow documented examples under external/
+        if s in {
+            "data/aedes/external/README.md",
+            "data/aedes/external/incidence.example.csv",
+        }:
+            return False
+        if s.startswith("data/aedes/external/"):
+            return True
+    if any(part in EXCLUDE_PARTS or part.endswith(EXCLUDE_NAME_FRAGMENTS) for part in rel.parts):
+        return True
+    if rel.suffix.lower() in EXCLUDE_SUFFIXES:
+        return True
+    name = rel.name.lower()
+    if name.endswith(".edf") or name.endswith(".edf.seizures"):
+        return True
+    return False
+
+
 def build_archive(dest: Path, version: str) -> Path:
-    """Zip releasable tree (no .git, no venv, no .lake)."""
+    """Zip releasable tree.
+
+    Prefer ``git ls-files`` so the deposit matches the committed release and never
+    drags untracked multi-GB raw EDFs. Fall back to a filtered directory walk.
+    """
+    import subprocess
+
     zip_path = dest / f"systemic-tau-formal-{version}.zip"
-    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        for rel in INCLUDE_FILES:
-            p = ROOT / rel
-            if p.is_file():
-                zf.write(p, arcname=f"systemic-tau-formal/{rel}")
+    paths: list[Path] = []
+
+    try:
+        out = subprocess.check_output(
+            ["git", "-C", str(ROOT), "ls-files", "-z"],
+            stderr=subprocess.DEVNULL,
+        )
+        for raw in out.split(b"\0"):
+            if not raw:
+                continue
+            rel = Path(raw.decode("utf-8", errors="surrogateescape"))
+            if _should_skip(rel):
+                continue
+            # Only package release-relevant trees/files
+            top = rel.parts[0] if rel.parts else ""
+            if rel.as_posix() in INCLUDE_FILES or top in INCLUDE_DIRS:
+                p = ROOT / rel
+                if p.is_file():
+                    paths.append(rel)
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        paths = []
+
+    if not paths:
+        for rel_s in INCLUDE_FILES:
+            p = ROOT / rel_s
+            if p.is_file() and not _should_skip(Path(rel_s)):
+                paths.append(Path(rel_s))
         for d in INCLUDE_DIRS:
             base = ROOT / d
             if not base.exists():
@@ -86,16 +153,15 @@ def build_archive(dest: Path, version: str) -> Path:
             for p in base.rglob("*"):
                 if not p.is_file():
                     continue
-                if any(
-                    part in {".venv", ".lake", "__pycache__", ".pytest_cache", "egg-info"}
-                    or part.endswith(".egg-info")
-                    for part in p.parts
-                ):
+                rel = p.relative_to(ROOT)
+                if _should_skip(rel):
                     continue
-                if p.suffix in {".pyc", ".olean"}:
-                    continue
-                arc = p.relative_to(ROOT)
-                zf.write(p, arcname=f"systemic-tau-formal/{arc}")
+                paths.append(rel)
+
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+        for rel in sorted(set(paths), key=lambda x: x.as_posix()):
+            p = ROOT / rel
+            zf.write(p, arcname=f"systemic-tau-formal/{rel.as_posix()}")
     return zip_path
 
 

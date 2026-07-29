@@ -5,7 +5,9 @@
 | Path | Role | Label |
 |------|------|--------|
 | `proxy/` | Committed synthetic two-site stand-in | `[OPERACIONAL]` |
-| `raw/` | Field / thesis trap matrices (CSV) | `[EMPÍRICO]` when real series |
+| `raw/` | San Juan 2018 multi-trap matrices (thesis) | `[EMPÍRICO]` |
+| `field_vitoria/` | Vitória BR 2008–2012 MosquiTRAP + P1 locks/scores | `[EMPÍRICO]` |
+| `external/` | Clinical / intervention series for \(t_{\mathrm{obs}}\) | external only |
 
 ## Proxy fixtures (`proxy/`)
 

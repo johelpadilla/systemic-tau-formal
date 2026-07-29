@@ -1,0 +1,117 @@
+{
+  "schema": "systemic-tau-formal/aedes-endpoints/v1",
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "status": "pre_registered",
+  "label": "[EMP\u00cdRICO]",
+  "geo": "Vitoria_Brazil",
+  "design": {
+    "segmentation": "epidemiological_year_a_priori",
+    "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori",
+    "t_obs_rule": "peak_week citywide Cases within that year only",
+    "note": "t_obs from Cases only; \u03c4* not inspected before lock",
+    "doi": "10.6084/m9.figshare.7905254.v1"
+  },
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "series": [
+    {
+      "file": "Vitoria_BR_top15RG_2008.csv",
+      "series_key": "Vitoria_BR_top15RG_2008",
+      "t_obs": 13,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "External clinical peak_week citywide Cases year=2008 (weekofyear=14, cases=366.0). Not trap-surge.",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "peak_week",
+        "year": 2008,
+        "weekofyear": 14,
+        "tot_week": 14,
+        "total_cases": 366.0,
+        "annual_sum_cases": 2981.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2009.csv",
+      "series_key": "Vitoria_BR_top15RG_2009",
+      "t_obs": 11,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "External clinical peak_week citywide Cases year=2009 (weekofyear=12, cases=514.0). Not trap-surge.",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "peak_week",
+        "year": 2009,
+        "weekofyear": 12,
+        "tot_week": 65,
+        "total_cases": 514.0,
+        "annual_sum_cases": 7502.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2010.csv",
+      "series_key": "Vitoria_BR_top15RG_2010",
+      "t_obs": 18,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "External clinical peak_week citywide Cases year=2010 (weekofyear=19, cases=140.0). Not trap-surge.",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "peak_week",
+        "year": 2010,
+        "weekofyear": 19,
+        "tot_week": 124,
+        "total_cases": 140.0,
+        "annual_sum_cases": 4166.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2011.csv",
+      "series_key": "Vitoria_BR_top15RG_2011",
+      "t_obs": 17,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "External clinical peak_week citywide Cases year=2011 (weekofyear=18, cases=559.0). Not trap-surge.",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "peak_week",
+        "year": 2011,
+        "weekofyear": 18,
+        "tot_week": 175,
+        "total_cases": 559.0,
+        "annual_sum_cases": 8427.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2012.csv",
+      "series_key": "Vitoria_BR_top15RG_2012",
+      "t_obs": 1,
+      "t_obs_unit": "row_index_0_based_within_year_slice",
+      "endpoint_definition": "External clinical peak_week citywide Cases year=2012 (weekofyear=2, cases=91.0). Not trap-surge.",
+      "pre_registered": true,
+      "external": {
+        "ok": true,
+        "method": "peak_week",
+        "year": 2012,
+        "weekofyear": 2,
+        "tot_week": 211,
+        "total_cases": 91.0,
+        "annual_sum_cases": 1811.0
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv"
+    }
+  ]
+}

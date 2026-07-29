@@ -1,0 +1,69 @@
+{
+  "schema": "systemic-tau-formal/p1-eeg-protocol-lock/v1",
+  "protocol_id": "P1_EEG_CHBMIT",
+  "protocol_version": "1.1.0",
+  "created_utc": "2026-07-29T01:43:41Z",
+  "endpoints_sha256": "e4fa3c2902a1e729a8cdaa12966b16b49b724612a7a64c4c471c261e4e266ae8",
+  "precondition_diagnostic_sha256": "dd30a326a434ac7f0e507dde08f6dc2b755a848fb703f3435ad99d5d4bcce892",
+  "precondition_gates": {
+    "G1_ambient_chaos": true,
+    "G2_order_exists": true,
+    "G3_not_frozen_order": true,
+    "G4_sample_size": true,
+    "all_pass": true,
+    "mean_chaos_occ": 0.6238854382332644,
+    "mean_order_occ": 0.11455486542443064,
+    "n_usable_windows": 42,
+    "thresholds": {
+      "chaos_occ_max": 0.9,
+      "order_occ_min": 0.02,
+      "order_occ_max": 0.95,
+      "min_windows": 5
+    }
+  },
+  "frozen_params": {
+    "protocol_id": "P1_EEG_CHBMIT",
+    "protocol_version": "1.1.0",
+    "fs_hz_expected": 256,
+    "epoch_s": 2.0,
+    "feature": "log_bandpower_4_chmean",
+    "bands_hz": [
+      [
+        0.5,
+        4.0
+      ],
+      [
+        4.0,
+        8.0
+      ],
+      [
+        8.0,
+        13.0
+      ],
+      [
+        13.0,
+        30.0
+      ]
+    ],
+    "bandpower_collapse": "chmean",
+    "bandpower_eps": 1e-12,
+    "fft_window": "hann",
+    "min_channels": 8,
+    "window_size": 13,
+    "stride": 1,
+    "min_run": 4,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_preictal_s": 300.0,
+    "lead_lo_s": 30.0,
+    "lead_hi_s": 300.0,
+    "c1_horizon_s": 600.0,
+    "c1_gap_from_seizure_s": 1800.0,
+    "eval_crop": "preictal_to_onset",
+    "t_star": "first_sustained_order_band_run"
+  },
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "n_series": 7,
+  "n_pre_registered": 7,
+  "note": "Score refuses if endpoints or diagnostic hash mismatches. v1.1 requires precondition G1–G4 pass."
+}

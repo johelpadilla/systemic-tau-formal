@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "title": "Discrete Extramental Time versus Classical Thermodynamic Time: A Formal Confrontation",
+    "upload_type": "publication",
+    "publication_type": "technicalnote",
+    "description": "<p><strong>Technical note — Module CT</strong> of <code>systemic-tau-formal</code> v0.1.11. A machine-checked confrontation between the Relational Extramental Discrete Clock (RECD) and the absolute continuous time of classical nonequilibrium thermodynamics.</p>\n<p><strong>Principal formal results (Lean 4, 0 sorry under <code>SystemicTau/</code>):</strong></p>\n<ul>\n<li><strong>CT-3:</strong> global monotonicity of the RECD accumulant is equivalent to nonnegativity of ticks (and gate support).</li>\n<li><strong>CT-2:</strong> sustained anti-synchronization forbids eventual nondecreasing recovery.</li>\n<li><strong>OP-CT-8 (discrete):</strong> no orientation-respecting bridge from reverse-recurrent RECD walks into a classical discrete clock.</li>\n<li><strong>CT-1:</strong> local bi-Lipschitz order embedding in the stable frozen-depth regime (with controlled estimator-noise gap).</li>\n<li><strong>CT-4A/B:</strong> ordinal production <em>Σ</em><sup>RECD</sup> ≥ 0 by construction even when the clock recedes; production coincides with net displacement only when the gate is nonnegative.</li>\n</ul>\n<p>Controlled ContLim hypotheses (H1–H4), immersion, projection, and noise envelopes are recorded at the pathwise discrete level. Empirical series are not used as premises. Research residuals (Schnakenberg bridge CT-4C, probabilistic ContLim, LDP, continuum monoidal functors) are listed as open interfaces, not theorems.</p>\n<p><em>Software pin:</em> systemic-tau-formal <strong>v0.1.11</strong> — DOI <a href=\"https://doi.org/10.5281/zenodo.21581189\">10.5281/zenodo.21581189</a> (concept <a href=\"https://doi.org/10.5281/zenodo.21516059\">10.5281/zenodo.21516059</a>).</p>\n<p><em>Source path:</em> <code>papers/module-ct-note/</code> · repository <a href=\"https://github.com/johelpadilla/systemic-tau-formal\">github.com/johelpadilla/systemic-tau-formal</a>.</p>",
+    "creators": [
+      {
+        "name": "Padilla-Villanueva, Johel",
+        "affiliation": "University of Puerto Rico, Medical Sciences Campus",
+        "orcid": "0000-0002-5797-6931"
+      }
+    ],
+    "keywords": [
+      "RECD",
+      "Relational Extramental Discrete Clock",
+      "thermodynamic time",
+      "Systemic Tau",
+      "orientation",
+      "monotonicity",
+      "ordinal entropy production",
+      "Lean 4",
+      "Mathlib",
+      "formal verification",
+      "Module CT",
+      "technical note"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "language": "eng",
+    "version": "0.1",
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.21581189",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.5281/zenodo.21516059",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/johelpadilla/systemic-tau-formal",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "url"
+      },
+      {
+        "identifier": "10.5281/zenodo.21537494",
+        "relation": "cites",
+        "resource_type": "publication",
+        "scheme": "doi"
+      }
+    ],
+    "notes": "Technical note Module CT v0.1, aligned with systemic-tau-formal software pin v0.1.11. Distinct concept from the software monorepo deposit and from the operational-standard preprint series."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "systemic-tau-formal/ili-protocol-lock/v1",
+  "protocol": "P1_ILI_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "endpoints_sha256": "3eb70f58868fc7ed64b5961c8911dc29a06e7d989758e5dee20bf6332527388b",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "locked_at_utc": "2026-07-29T02:29:22Z",
+  "n_series": 10,
+  "n_pre_registered": 10,
+  "extra": {
+    "design": {
+      "channels": "HHS1-10 ILINet wILI a_priori",
+      "t_obs_rule": "FluSurv network_all rate_overall first_exceed_season_p75 within season",
+      "note": "t_obs from FluSurv only; \u03c4* not inspected before lock",
+      "exclude_seasons": "2020+ a priori (COVID surveillance disruption)",
+      "sources": {
+        "channels": "Delphi Epidata fluview (CDC ILINet)",
+        "t_obs": "Delphi Epidata flusurv location=network_all"
+      }
+    },
+    "method": "first_exceed_season_p75",
+    "n_seasons": 10
+  },
+  "lock_sha256": "b13b267390c9c1b0de2b66e8b73ff59ce23c40275e059a4fccd0a03ddd4ece51"
+}

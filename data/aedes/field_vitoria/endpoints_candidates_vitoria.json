@@ -1,0 +1,43 @@
+{
+  "schema": "systemic-tau-formal/aedes-endpoints/v1",
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "status": "candidates_not_pre_registered",
+  "label": "[EMP\u00cdRICO]",
+  "geo": "Vitoria_Brazil",
+  "source_note": "Figshare Dengue and mosquito surveillance, Vitoria, Brazil (10.6084/m9.figshare.7905254.v1). Citywide Cases peak 2011; channels = top 15 RG by mosquito sum (a priori, not cases).",
+  "method": "peak_week",
+  "year": 2011,
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "series": [
+    {
+      "file": "Vitoria_BR_top15RG_2008_2012.csv",
+      "series_key": "Vitoria_BR_top15RG_2008_2012",
+      "t_obs": 174,
+      "t_obs_unit": "row_index_0_based",
+      "endpoint_definition": "External clinical: citywide dengue-like Cases peak_week within 2011 (year chosen a priori as max annual sum 2008-2012). Not trap-surge.",
+      "pre_registered": false,
+      "external": {
+        "ok": true,
+        "method": "peak_week",
+        "year": 2011,
+        "weekofyear": 18,
+        "tot_week": 175,
+        "total_cases": 559.0,
+        "reason": "argmax citywide Cases in year 2011"
+      },
+      "source_incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv",
+      "external_weekofyear": 18,
+      "reason": "mapped tot_week\u2192row; set pre_registered true after human review"
+    }
+  ]
+}

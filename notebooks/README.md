@@ -16,6 +16,11 @@ CLI twins (same logic, no Jupyter): `01_*.py` … `11_*.py`.
 | [`09_aedes_p4_field.py`](09_aedes_p4_field.py) | P4 structure vs sync/anti baselines | field EMPÍRICO; no false anti discharge |
 | [`10_aedes_empirical_board.py`](10_aedes_empirical_board.py) | Unified board v2 (P1/P3/P4 + field return) | one honest field dashboard |
 | [`11_aedes_field_return.py`](11_aedes_field_return.py) | Multi-site field return + exploratory leads | critical path; not P1 discharge |
+| [`12_chbmit_p1_eeg.py`](12_chbmit_p1_eeg.py) | P1-EEG CHB-MIT v1.0 (paused track) | clinical EEG residual |
+| [`13_chbmit_p1_eeg_v11.py`](13_chbmit_p1_eeg_v11.py) | P1-EEG v1.1 order polarity | clinical EEG residual |
+| [`14_aedes_p1_external.py`](14_aedes_p1_external.py) | P1-Aedes external clinical \(t_{\mathrm{obs}}\) | dengue residual |
+| [`15_ili_p1_external.py`](15_ili_p1_external.py) | P1-ILI HHS→FluSurv lock/score | flu residual; 0/10 primary |
+| [`16_p1_synthetic_canonical.py`](16_p1_synthetic_canonical.py) | P1-Synthetic Canonical plant + nulls | instrument PASS; not field |
 
 ## Run in the browser (Binder)
 
@@ -51,6 +56,10 @@ python notebooks/08_aedes_p3_field.py
 python notebooks/09_aedes_p4_field.py
 python notebooks/10_aedes_empirical_board.py
 python notebooks/11_aedes_field_return.py
+python notebooks/14_aedes_p1_external.py status
+python notebooks/15_ili_p1_external.py status
+python notebooks/15_ili_p1_external.py score
+python notebooks/16_p1_synthetic_canonical.py run
 ```
 
 ## Epistemic rules

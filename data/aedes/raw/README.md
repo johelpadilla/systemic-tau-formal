@@ -48,9 +48,12 @@ python notebooks/10_aedes_empirical_board.py   # unified P1/P3/P4 board
 - nb 10 aggregates P1/P3/P4 + **field return** + **exploratory leads** (`build_empirical_board` v2).
 - nb 11 — multi-site **field-derived first-return** + trap-surge exploratory leads
   (`core.field_return`, `exploratory_lead_scan`). See `docs/FIELD_EMPIRICAL_STATUS.md`.
-- For true P1: copy `endpoints.example.json` → `endpoints.json` (gitignored), set
-  `t_obs` + `pre_registered: true` from an **external** domain date. Scorer:
-  `python/core/p1_endpoints.py`. Trap-surge leads are **never** auto-promoted to P1.
+- For true P1: protocol [`docs/P1_AEDES_EXTERNAL_TOBS.md`](../../../docs/P1_AEDES_EXTERNAL_TOBS.md) v1.0.0.
+  Calendar: `calendar_map.json`. External clinical under `../external/`.
+  CLI: `python notebooks/14_aedes_p1_external.py status|propose|lock|score`.
+  Copy `endpoints.example.json` → `endpoints.json` (gitignored) only after external
+  `t_obs` + `pre_registered: true`. Trap-surge leads are **never** auto-promoted to P1.
+  **Blocker:** 2018 weekly dengue cases (DengAI ends ~2013).
 
 ## How to add more (multi-year intake)
 

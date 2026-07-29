@@ -45,6 +45,31 @@ None of these are Lean theorems.
 | Notes | Compare increment histograms and run-length structure |
 | Ops | Synthetic: `python/tests/test_p4_anti_sync.py`. Field scan: `notebooks/09_aedes_p4_field.py` + `core.p4_field_scan`. 2018 SJU1–3 multi-trap matrices are **co-moving** (positive mean pairwise corr) → status `no_strong_anti_regime` (premise not met; not a silent “pass”). True field discharge needs windows with `τₛ ≤ −0.41` mass. |
 
+## P1-Aedes (field multi-trap; external clinical endpoint)
+
+**Statement.** Under protocol [`P1_AEDES_EXTERNAL_TOBS.md`](P1_AEDES_EXTERNAL_TOBS.md) v1.0.0, on committed multi-trap Aedes matrices (`data/aedes/raw/`), the RECD/τₛ pipeline produces a sustained chaos-band ascent signal \(t^*\) with lead \(\mathrm{lead}=t_{\mathrm{obs}}-t^*\) in **[4, 6] weeks** before an **external** domain transition (clinical dengue week or documented intervention), mapped via `calendar_map.json`.
+
+| Field | Value |
+|-------|--------|
+| Label | `[EMPÍRICO]` dengue / vector residual (paradigm P1) |
+| Endpoint | External weekly clinical / intervention only — **not** trap-surge |
+| Precondition | `pre_registered` + protocol lock SHA-256; external incidence under `data/aedes/external/` |
+| Failure mode | Systematic `miss_lead` / `no_signal` under frozen \(w=13\), \(\theta=0.41\), min_run=4 |
+| Ops | `notebooks/14_aedes_p1_external.py`; status: tooling ready; **2018 cases intake open** |
+| Note | DengAI San Juan incidence ends ~2013; 2018 traps require separate clinical series |
+
+## P1-EEG (domain transfer; clinical endpoint) — track paused
+
+**Statement.** Under protocol [`P1_EEG_CHBMIT.md`](P1_EEG_CHBMIT.md) v1.0.0, on CHB-MIT scalp EEG aggregated to 1 s RMS per channel, the RECD/τₛ pipeline produces a sustained chaos-band ascent signal \(t^*\) with lead \(\mathrm{lead}=t_{\mathrm{obs}}-t^*\) in **[30, 300] seconds** before **clinically annotated seizure onset** (`t_obs` from PhysioNet summaries), for seizures with ≥300 s pre-ictal history in-file.
+
+| Field | Value |
+|-------|--------|
+| Label | `[EMPÍRICO]` C3 neuro (not dengue P1 weeks) |
+| Endpoint | CHB-MIT seizure start (DOI [10.13026/C2K01R](https://doi.org/10.13026/C2K01R)) |
+| Precondition | `pre_registered` + protocol lock SHA-256; ≥8 EEG channels; min preictal 300 s |
+| Failure mode | Systematic `miss_lead` / `no_signal` / high C1 interictal FP rate under frozen params |
+| Ops | `notebooks/12_chbmit_p1_eeg.py`; **track paused 2026-07-29** after v1.0/v1.1 fails |
+
 ## How to report a falsification
 
 Open a GitHub issue with label `contradiction`, attach:

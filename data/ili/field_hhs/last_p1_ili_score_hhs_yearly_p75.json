@@ -1,0 +1,167 @@
+{
+  "scored": true,
+  "protocol": "P1_ILI_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "label": "[EMP\u00cdRICO]",
+  "source": "field",
+  "endpoints_sha256": "3eb70f58868fc7ed64b5961c8911dc29a06e7d989758e5dee20bf6332527388b",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "n_scored": 10,
+  "n_hit": 1,
+  "hit_rate": 0.1,
+  "rows": [
+    {
+      "file": "HHS_wILI_2010-11.csv",
+      "series_key": "HHS_wILI_2010-11",
+      "season": "2010-11",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "reason": "no sustained chaos-band run found for t*",
+      "t_obs": 15,
+      "t_star": null,
+      "lead": null,
+      "verdict": "no_signal"
+    },
+    {
+      "file": "HHS_wILI_2011-12.csv",
+      "series_key": "HHS_wILI_2011-12",
+      "season": "2011-12",
+      "pre_registered": true,
+      "scored": true,
+      "pass": true,
+      "t_obs": 21,
+      "t_star": 16,
+      "lead": 5,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead in window",
+      "verdict": "hit"
+    },
+    {
+      "file": "HHS_wILI_2012-13.csv",
+      "series_key": "HHS_wILI_2012-13",
+      "season": "2012-13",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "reason": "no sustained chaos-band run found for t*",
+      "t_obs": 11,
+      "t_star": null,
+      "lead": null,
+      "verdict": "no_signal"
+    },
+    {
+      "file": "HHS_wILI_2013-14.csv",
+      "series_key": "HHS_wILI_2013-14",
+      "season": "2013-14",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "reason": "no sustained chaos-band run found for t*",
+      "t_obs": 11,
+      "t_star": null,
+      "lead": null,
+      "verdict": "no_signal"
+    },
+    {
+      "file": "HHS_wILI_2014-15.csv",
+      "series_key": "HHS_wILI_2014-15",
+      "season": "2014-15",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "reason": "no sustained chaos-band run found for t*",
+      "t_obs": 10,
+      "t_star": null,
+      "lead": null,
+      "verdict": "no_signal"
+    },
+    {
+      "file": "HHS_wILI_2015-16.csv",
+      "series_key": "HHS_wILI_2015-16",
+      "season": "2015-16",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "reason": "no sustained chaos-band run found for t*",
+      "t_obs": 19,
+      "t_star": null,
+      "lead": null,
+      "verdict": "no_signal"
+    },
+    {
+      "file": "HHS_wILI_2016-17.csv",
+      "series_key": "HHS_wILI_2016-17",
+      "season": "2016-17",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 13,
+      "t_star": 22,
+      "lead": -9,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    },
+    {
+      "file": "HHS_wILI_2017-18.csv",
+      "series_key": "HHS_wILI_2017-18",
+      "season": "2017-18",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "reason": "no sustained chaos-band run found for t*",
+      "t_obs": 12,
+      "t_star": null,
+      "lead": null,
+      "verdict": "no_signal"
+    },
+    {
+      "file": "HHS_wILI_2018-19.csv",
+      "series_key": "HHS_wILI_2018-19",
+      "season": "2018-19",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "reason": "no sustained chaos-band run found for t*",
+      "t_obs": 18,
+      "t_star": null,
+      "lead": null,
+      "verdict": "no_signal"
+    },
+    {
+      "file": "HHS_wILI_2019-20.csv",
+      "series_key": "HHS_wILI_2019-20",
+      "season": "2019-20",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 12,
+      "t_star": 22,
+      "lead": -10,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    }
+  ],
+  "honesty": "P1-ILI v1.0.0: HHS1\u201310 wILI \u03c4\u209b vs FluSurv network_all peak only. Does not use national ILI as t_obs. COVID seasons 2020+ excluded a priori."
+}

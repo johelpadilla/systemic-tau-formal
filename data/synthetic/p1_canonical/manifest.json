@@ -1,0 +1,1069 @@
+{
+  "schema": "systemic-tau-formal/p1-syn-manifest/v1",
+  "protocol": "P1_SYNTHETIC_CANONICAL",
+  "protocol_version": "1.0.0",
+  "n_series": 40,
+  "matrices": [
+    {
+      "file": "plant_seed000.csv",
+      "series_key": "plant_seed000",
+      "panel": "plant",
+      "seed": 0,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 0.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed001.csv",
+      "series_key": "plant_seed001",
+      "panel": "plant",
+      "seed": 1,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 1.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed002.csv",
+      "series_key": "plant_seed002",
+      "panel": "plant",
+      "seed": 2,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 2.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed003.csv",
+      "series_key": "plant_seed003",
+      "panel": "plant",
+      "seed": 3,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 3.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed004.csv",
+      "series_key": "plant_seed004",
+      "panel": "plant",
+      "seed": 4,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 4.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed005.csv",
+      "series_key": "plant_seed005",
+      "panel": "plant",
+      "seed": 5,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 5.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed006.csv",
+      "series_key": "plant_seed006",
+      "panel": "plant",
+      "seed": 6,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 6.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed007.csv",
+      "series_key": "plant_seed007",
+      "panel": "plant",
+      "seed": 7,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 7.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed008.csv",
+      "series_key": "plant_seed008",
+      "panel": "plant",
+      "seed": 8,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 8.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed009.csv",
+      "series_key": "plant_seed009",
+      "panel": "plant",
+      "seed": 9,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 9.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed010.csv",
+      "series_key": "plant_seed010",
+      "panel": "plant",
+      "seed": 10,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 10.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed011.csv",
+      "series_key": "plant_seed011",
+      "panel": "plant",
+      "seed": 11,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 11.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed012.csv",
+      "series_key": "plant_seed012",
+      "panel": "plant",
+      "seed": 12,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 12.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed013.csv",
+      "series_key": "plant_seed013",
+      "panel": "plant",
+      "seed": 13,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 13.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed014.csv",
+      "series_key": "plant_seed014",
+      "panel": "plant",
+      "seed": 14,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 14.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed015.csv",
+      "series_key": "plant_seed015",
+      "panel": "plant",
+      "seed": 15,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 15.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed016.csv",
+      "series_key": "plant_seed016",
+      "panel": "plant",
+      "seed": 16,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 16.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed017.csv",
+      "series_key": "plant_seed017",
+      "panel": "plant",
+      "seed": 17,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 17.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed018.csv",
+      "series_key": "plant_seed018",
+      "panel": "plant",
+      "seed": 18,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 18.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "plant_seed019.csv",
+      "series_key": "plant_seed019",
+      "panel": "plant",
+      "seed": 19,
+      "t_obs": 53,
+      "t_switch": 40,
+      "phi_phenom": 13,
+      "pre_registered": true,
+      "generator": "p1_canonical_panel",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "plant",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": 40.0,
+        "phi_phenom": 13.0,
+        "t_obs": 53.0,
+        "noise_pre": 0.02,
+        "period": 52.0,
+        "seed": 19.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel"
+      }
+    },
+    {
+      "file": "pure_sync_seed100.csv",
+      "series_key": "pure_sync_seed100",
+      "panel": "pure_sync",
+      "seed": 100,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 100.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed101.csv",
+      "series_key": "pure_sync_seed101",
+      "panel": "pure_sync",
+      "seed": 101,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 101.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed102.csv",
+      "series_key": "pure_sync_seed102",
+      "panel": "pure_sync",
+      "seed": 102,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 102.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed103.csv",
+      "series_key": "pure_sync_seed103",
+      "panel": "pure_sync",
+      "seed": 103,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 103.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed104.csv",
+      "series_key": "pure_sync_seed104",
+      "panel": "pure_sync",
+      "seed": 104,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 104.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed105.csv",
+      "series_key": "pure_sync_seed105",
+      "panel": "pure_sync",
+      "seed": 105,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 105.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed106.csv",
+      "series_key": "pure_sync_seed106",
+      "panel": "pure_sync",
+      "seed": 106,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 106.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed107.csv",
+      "series_key": "pure_sync_seed107",
+      "panel": "pure_sync",
+      "seed": 107,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 107.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed108.csv",
+      "series_key": "pure_sync_seed108",
+      "panel": "pure_sync",
+      "seed": 108,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 108.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_sync_seed109.csv",
+      "series_key": "pure_sync_seed109",
+      "panel": "pure_sync",
+      "seed": 109,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_sync",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_sync",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 109.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync"
+      }
+    },
+    {
+      "file": "pure_noise_seed200.csv",
+      "series_key": "pure_noise_seed200",
+      "panel": "pure_noise",
+      "seed": 200,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 200.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed201.csv",
+      "series_key": "pure_noise_seed201",
+      "panel": "pure_noise",
+      "seed": 201,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 201.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed202.csv",
+      "series_key": "pure_noise_seed202",
+      "panel": "pure_noise",
+      "seed": 202,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 202.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed203.csv",
+      "series_key": "pure_noise_seed203",
+      "panel": "pure_noise",
+      "seed": 203,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 203.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed204.csv",
+      "series_key": "pure_noise_seed204",
+      "panel": "pure_noise",
+      "seed": 204,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 204.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed205.csv",
+      "series_key": "pure_noise_seed205",
+      "panel": "pure_noise",
+      "seed": 205,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 205.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed206.csv",
+      "series_key": "pure_noise_seed206",
+      "panel": "pure_noise",
+      "seed": 206,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 206.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed207.csv",
+      "series_key": "pure_noise_seed207",
+      "panel": "pure_noise",
+      "seed": 207,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 207.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed208.csv",
+      "series_key": "pure_noise_seed208",
+      "panel": "pure_noise",
+      "seed": 208,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 208.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    },
+    {
+      "file": "pure_noise_seed209.csv",
+      "series_key": "pure_noise_seed209",
+      "panel": "pure_noise",
+      "seed": 209,
+      "t_obs": 60,
+      "t_switch": null,
+      "phi_phenom": null,
+      "pre_registered": true,
+      "generator": "p1_canonical_null_noise",
+      "shape": [
+        120,
+        6
+      ],
+      "meta": {
+        "panel": "pure_noise",
+        "T": 120.0,
+        "N": 6.0,
+        "t_switch": null,
+        "t_obs": 60.0,
+        "seed": 209.0,
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise"
+      }
+    }
+  ],
+  "generated_at_utc": "2026-07-29T02:53:36Z"
+}

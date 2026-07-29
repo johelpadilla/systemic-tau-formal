@@ -1,0 +1,26 @@
+{
+  "schema": "systemic-tau-formal/aedes-protocol-lock/v1",
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "endpoints_sha256": "7cbc0ac603ed4c271e5ef6c760f7018817b947e751d72b27b04f5b6cd910f54a",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "locked_at_utc": "2026-07-29T02:12:41Z",
+  "n_series": 1,
+  "n_pre_registered": 1,
+  "extra": {
+    "site": "Vitoria_BR_top15RG_2008_2012",
+    "incidence": "data/aedes/external/vitoria_dengue_cases_2008_2012.csv",
+    "doi": "10.6084/m9.figshare.7905254.v1"
+  },
+  "lock_sha256": "cad52f8ad915c21af6eab4ebf50d69fe47cbed2c9a4a3f3cce688aaeb21386ab"
+}

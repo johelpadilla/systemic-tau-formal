@@ -1,0 +1,626 @@
+{
+  "track": "C1_interictal_CHB-MIT",
+  "protocol_version": "1.1.0",
+  "t_star_polarity": "order",
+  "n_files": 7,
+  "n_windows_total": 42,
+  "n_alert_total": 27,
+  "n_false_positive_total": 27,
+  "fp_rate_per_window": 0.6428571428571429,
+  "panels": [
+    {
+      "protocol_id": "P1_EEG_CHBMIT",
+      "protocol_version": "1.1.0",
+      "track": "C1_interictal",
+      "t_star_polarity": "order",
+      "n_windows": 15,
+      "n_alert": 9,
+      "n_false_positive": 9,
+      "fp_rate_per_window": 0.6,
+      "approx_window_hours": 1.25,
+      "windows": [
+        {
+          "start_epoch": 0,
+          "end_epoch": 149,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 22,
+            "t_star_s": 44.0
+          }
+        },
+        {
+          "start_epoch": 30,
+          "end_epoch": 179,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 52,
+            "t_star_s": 104.0
+          }
+        },
+        {
+          "start_epoch": 60,
+          "end_epoch": 209,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 22,
+            "t_star_s": 44.0
+          }
+        },
+        {
+          "start_epoch": 90,
+          "end_epoch": 239,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 97,
+            "t_star_s": 194.0
+          }
+        },
+        {
+          "start_epoch": 120,
+          "end_epoch": 269,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 67,
+            "t_star_s": 134.0
+          }
+        },
+        {
+          "start_epoch": 150,
+          "end_epoch": 299,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 37,
+            "t_star_s": 74.0
+          }
+        },
+        {
+          "start_epoch": 180,
+          "end_epoch": 329,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 86,
+            "t_star_s": 172.0
+          }
+        },
+        {
+          "start_epoch": 210,
+          "end_epoch": 359,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 56,
+            "t_star_s": 112.0
+          }
+        },
+        {
+          "start_epoch": 240,
+          "end_epoch": 389,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 26,
+            "t_star_s": 52.0
+          }
+        },
+        {
+          "start_epoch": 270,
+          "end_epoch": 419,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 300,
+          "end_epoch": 449,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 330,
+          "end_epoch": 479,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 360,
+          "end_epoch": 509,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 390,
+          "end_epoch": 539,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 420,
+          "end_epoch": 569,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        }
+      ],
+      "note": "Interictal C1 stress (order polarity); not P1 discharge.",
+      "edf": "chb01/chb01_03.edf",
+      "record": "chb01_03"
+    },
+    {
+      "protocol_id": "P1_EEG_CHBMIT",
+      "protocol_version": "1.1.0",
+      "track": "C1_interictal",
+      "t_star_polarity": "order",
+      "n_windows": 1,
+      "n_alert": 1,
+      "n_false_positive": 1,
+      "fp_rate_per_window": 1.0,
+      "approx_window_hours": 0.08333333333333333,
+      "windows": [
+        {
+          "start_epoch": 1650,
+          "end_epoch": 1799,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 135,
+            "t_star_s": 270.0
+          }
+        }
+      ],
+      "note": "Interictal C1 stress (order polarity); not P1 discharge.",
+      "edf": "chb01/chb01_04.edf",
+      "record": "chb01_04"
+    },
+    {
+      "protocol_id": "P1_EEG_CHBMIT",
+      "protocol_version": "1.1.0",
+      "track": "C1_interictal",
+      "t_star_polarity": "order",
+      "n_windows": 0,
+      "n_alert": 0,
+      "n_false_positive": 0,
+      "fp_rate_per_window": null,
+      "approx_window_hours": 0.0,
+      "windows": [],
+      "note": "Interictal C1 stress (order polarity); not P1 discharge.",
+      "edf": "chb01/chb01_15.edf",
+      "record": "chb01_15"
+    },
+    {
+      "protocol_id": "P1_EEG_CHBMIT",
+      "protocol_version": "1.1.0",
+      "track": "C1_interictal",
+      "t_star_polarity": "order",
+      "n_windows": 8,
+      "n_alert": 4,
+      "n_false_positive": 4,
+      "fp_rate_per_window": 0.5,
+      "approx_window_hours": 0.6666666666666666,
+      "windows": [
+        {
+          "start_epoch": 1440,
+          "end_epoch": 1589,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1470,
+          "end_epoch": 1619,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1500,
+          "end_epoch": 1649,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 124,
+            "t_star_s": 248.0
+          }
+        },
+        {
+          "start_epoch": 1530,
+          "end_epoch": 1679,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 94,
+            "t_star_s": 188.0
+          }
+        },
+        {
+          "start_epoch": 1560,
+          "end_epoch": 1709,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 64,
+            "t_star_s": 128.0
+          }
+        },
+        {
+          "start_epoch": 1590,
+          "end_epoch": 1739,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 34,
+            "t_star_s": 68.0
+          }
+        },
+        {
+          "start_epoch": 1620,
+          "end_epoch": 1769,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1650,
+          "end_epoch": 1799,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        }
+      ],
+      "note": "Interictal C1 stress (order polarity); not P1 discharge.",
+      "edf": "chb01/chb01_16.edf",
+      "record": "chb01_16"
+    },
+    {
+      "protocol_id": "P1_EEG_CHBMIT",
+      "protocol_version": "1.1.0",
+      "track": "C1_interictal",
+      "t_star_polarity": "order",
+      "n_windows": 0,
+      "n_alert": 0,
+      "n_false_positive": 0,
+      "fp_rate_per_window": null,
+      "approx_window_hours": 0.0,
+      "windows": [],
+      "note": "Interictal C1 stress (order polarity); not P1 discharge.",
+      "edf": "chb01/chb01_18.edf",
+      "record": "chb01_18"
+    },
+    {
+      "protocol_id": "P1_EEG_CHBMIT",
+      "protocol_version": "1.1.0",
+      "track": "C1_interictal",
+      "t_star_polarity": "order",
+      "n_windows": 18,
+      "n_alert": 13,
+      "n_false_positive": 13,
+      "fp_rate_per_window": 0.7222222222222222,
+      "approx_window_hours": 1.5,
+      "windows": [
+        {
+          "start_epoch": 1140,
+          "end_epoch": 1289,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 22,
+            "t_star_s": 44.0
+          }
+        },
+        {
+          "start_epoch": 1170,
+          "end_epoch": 1319,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 27,
+            "t_star_s": 54.0
+          }
+        },
+        {
+          "start_epoch": 1200,
+          "end_epoch": 1349,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 14,
+            "t_star_s": 28.0
+          }
+        },
+        {
+          "start_epoch": 1230,
+          "end_epoch": 1379,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 12,
+            "t_star_s": 24.0
+          }
+        },
+        {
+          "start_epoch": 1260,
+          "end_epoch": 1409,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1290,
+          "end_epoch": 1439,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1320,
+          "end_epoch": 1469,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1350,
+          "end_epoch": 1499,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1380,
+          "end_epoch": 1529,
+          "alert": false,
+          "false_positive": false,
+          "probe": {
+            "alert": false,
+            "reason": "no_order_run",
+            "t_star_epoch": null,
+            "t_star_s": null
+          }
+        },
+        {
+          "start_epoch": 1410,
+          "end_epoch": 1559,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 121,
+            "t_star_s": 242.0
+          }
+        },
+        {
+          "start_epoch": 1440,
+          "end_epoch": 1589,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 91,
+            "t_star_s": 182.0
+          }
+        },
+        {
+          "start_epoch": 1470,
+          "end_epoch": 1619,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 61,
+            "t_star_s": 122.0
+          }
+        },
+        {
+          "start_epoch": 1500,
+          "end_epoch": 1649,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 31,
+            "t_star_s": 62.0
+          }
+        },
+        {
+          "start_epoch": 1530,
+          "end_epoch": 1679,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 46,
+            "t_star_s": 92.0
+          }
+        },
+        {
+          "start_epoch": 1560,
+          "end_epoch": 1709,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 16,
+            "t_star_s": 32.0
+          }
+        },
+        {
+          "start_epoch": 1590,
+          "end_epoch": 1739,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 19,
+            "t_star_s": 38.0
+          }
+        },
+        {
+          "start_epoch": 1620,
+          "end_epoch": 1769,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 12,
+            "t_star_s": 24.0
+          }
+        },
+        {
+          "start_epoch": 1650,
+          "end_epoch": 1799,
+          "alert": true,
+          "false_positive": true,
+          "probe": {
+            "alert": true,
+            "reason": "sustained_order_run",
+            "t_star_epoch": 12,
+            "t_star_s": 24.0
+          }
+        }
+      ],
+      "note": "Interictal C1 stress (order polarity); not P1 discharge.",
+      "edf": "chb01/chb01_21.edf",
+      "record": "chb01_21"
+    },
+    {
+      "protocol_id": "P1_EEG_CHBMIT",
+      "protocol_version": "1.1.0",
+      "track": "C1_interictal",
+      "t_star_polarity": "order",
+      "n_windows": 0,
+      "n_alert": 0,
+      "n_false_positive": 0,
+      "fp_rate_per_window": null,
+      "approx_window_hours": 0.0,
+      "windows": [],
+      "note": "Interictal C1 stress (order polarity); not P1 discharge.",
+      "edf": "chb01/chb01_26.edf",
+      "record": "chb01_26"
+    }
+  ],
+  "note": "C1 stress order polarity; not P1 discharge."
+}

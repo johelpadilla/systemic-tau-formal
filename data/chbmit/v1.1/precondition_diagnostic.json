@@ -1,0 +1,449 @@
+{
+  "schema": "systemic-tau-formal/p1-eeg-precondition/v1",
+  "protocol_id": "P1_EEG_CHBMIT",
+  "protocol_version": "1.1.0",
+  "created_utc": "2026-07-29T01:43:31Z",
+  "frozen_params": {
+    "protocol_id": "P1_EEG_CHBMIT",
+    "protocol_version": "1.1.0",
+    "fs_hz_expected": 256,
+    "epoch_s": 2.0,
+    "feature": "log_bandpower_4_chmean",
+    "bands_hz": [
+      [
+        0.5,
+        4.0
+      ],
+      [
+        4.0,
+        8.0
+      ],
+      [
+        8.0,
+        13.0
+      ],
+      [
+        13.0,
+        30.0
+      ]
+    ],
+    "bandpower_collapse": "chmean",
+    "bandpower_eps": 1e-12,
+    "fft_window": "hann",
+    "min_channels": 8,
+    "window_size": 13,
+    "stride": 1,
+    "min_run": 4,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_preictal_s": 300.0,
+    "lead_lo_s": 30.0,
+    "lead_hi_s": 300.0,
+    "c1_horizon_s": 600.0,
+    "c1_gap_from_seizure_s": 1800.0,
+    "eval_crop": "preictal_to_onset",
+    "t_star": "first_sustained_order_band_run"
+  },
+  "cases": [
+    "chb01"
+  ],
+  "n_windows": 42,
+  "windows": [
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 0,
+      "end_epoch": 149,
+      "chaos_occ": 0.45652173913043476,
+      "mid_occ": 0.3188405797101449,
+      "order_occ": 0.2246376811594203,
+      "n_finite": 138
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 30,
+      "end_epoch": 179,
+      "chaos_occ": 0.5066666666666667,
+      "mid_occ": 0.35333333333333333,
+      "order_occ": 0.14,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 60,
+      "end_epoch": 209,
+      "chaos_occ": 0.47333333333333333,
+      "mid_occ": 0.37333333333333335,
+      "order_occ": 0.15333333333333332,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 90,
+      "end_epoch": 239,
+      "chaos_occ": 0.5066666666666667,
+      "mid_occ": 0.38,
+      "order_occ": 0.11333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 120,
+      "end_epoch": 269,
+      "chaos_occ": 0.6133333333333333,
+      "mid_occ": 0.28,
+      "order_occ": 0.10666666666666667,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 150,
+      "end_epoch": 299,
+      "chaos_occ": 0.5733333333333334,
+      "mid_occ": 0.3,
+      "order_occ": 0.12666666666666668,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 180,
+      "end_epoch": 329,
+      "chaos_occ": 0.6466666666666666,
+      "mid_occ": 0.22666666666666666,
+      "order_occ": 0.12666666666666668,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 210,
+      "end_epoch": 359,
+      "chaos_occ": 0.6133333333333333,
+      "mid_occ": 0.32,
+      "order_occ": 0.06666666666666667,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 240,
+      "end_epoch": 389,
+      "chaos_occ": 0.6466666666666666,
+      "mid_occ": 0.30666666666666664,
+      "order_occ": 0.04666666666666667,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 270,
+      "end_epoch": 419,
+      "chaos_occ": 0.6933333333333334,
+      "mid_occ": 0.2866666666666667,
+      "order_occ": 0.02,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 300,
+      "end_epoch": 449,
+      "chaos_occ": 0.6733333333333333,
+      "mid_occ": 0.32666666666666666,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 330,
+      "end_epoch": 479,
+      "chaos_occ": 0.6333333333333333,
+      "mid_occ": 0.36666666666666664,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 360,
+      "end_epoch": 509,
+      "chaos_occ": 0.7333333333333333,
+      "mid_occ": 0.26666666666666666,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 390,
+      "end_epoch": 539,
+      "chaos_occ": 0.7466666666666667,
+      "mid_occ": 0.25333333333333335,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_03.edf",
+      "start_epoch": 420,
+      "end_epoch": 569,
+      "chaos_occ": 0.76,
+      "mid_occ": 0.24,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_04.edf",
+      "start_epoch": 1650,
+      "end_epoch": 1799,
+      "chaos_occ": 0.6933333333333334,
+      "mid_occ": 0.2733333333333333,
+      "order_occ": 0.03333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1440,
+      "end_epoch": 1589,
+      "chaos_occ": 0.72,
+      "mid_occ": 0.24,
+      "order_occ": 0.04,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1470,
+      "end_epoch": 1619,
+      "chaos_occ": 0.72,
+      "mid_occ": 0.24666666666666667,
+      "order_occ": 0.03333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1500,
+      "end_epoch": 1649,
+      "chaos_occ": 0.7066666666666667,
+      "mid_occ": 0.23333333333333334,
+      "order_occ": 0.06,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1530,
+      "end_epoch": 1679,
+      "chaos_occ": 0.6866666666666666,
+      "mid_occ": 0.26,
+      "order_occ": 0.05333333333333334,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1560,
+      "end_epoch": 1709,
+      "chaos_occ": 0.6666666666666666,
+      "mid_occ": 0.26,
+      "order_occ": 0.07333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1590,
+      "end_epoch": 1739,
+      "chaos_occ": 0.58,
+      "mid_occ": 0.34,
+      "order_occ": 0.08,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1620,
+      "end_epoch": 1769,
+      "chaos_occ": 0.4533333333333333,
+      "mid_occ": 0.4666666666666667,
+      "order_occ": 0.08,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_16.edf",
+      "start_epoch": 1650,
+      "end_epoch": 1799,
+      "chaos_occ": 0.48,
+      "mid_occ": 0.4533333333333333,
+      "order_occ": 0.06666666666666667,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1140,
+      "end_epoch": 1289,
+      "chaos_occ": 0.3933333333333333,
+      "mid_occ": 0.2866666666666667,
+      "order_occ": 0.32,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1170,
+      "end_epoch": 1319,
+      "chaos_occ": 0.5533333333333333,
+      "mid_occ": 0.2,
+      "order_occ": 0.24666666666666667,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1200,
+      "end_epoch": 1349,
+      "chaos_occ": 0.62,
+      "mid_occ": 0.15333333333333332,
+      "order_occ": 0.22666666666666666,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1230,
+      "end_epoch": 1379,
+      "chaos_occ": 0.8066666666666666,
+      "mid_occ": 0.09333333333333334,
+      "order_occ": 0.1,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1260,
+      "end_epoch": 1409,
+      "chaos_occ": 0.9866666666666667,
+      "mid_occ": 0.013333333333333334,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1290,
+      "end_epoch": 1439,
+      "chaos_occ": 0.9533333333333334,
+      "mid_occ": 0.04666666666666667,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1320,
+      "end_epoch": 1469,
+      "chaos_occ": 0.9266666666666666,
+      "mid_occ": 0.07333333333333333,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1350,
+      "end_epoch": 1499,
+      "chaos_occ": 0.8933333333333333,
+      "mid_occ": 0.10666666666666667,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1380,
+      "end_epoch": 1529,
+      "chaos_occ": 0.88,
+      "mid_occ": 0.12,
+      "order_occ": 0.0,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1410,
+      "end_epoch": 1559,
+      "chaos_occ": 0.74,
+      "mid_occ": 0.18666666666666668,
+      "order_occ": 0.07333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1440,
+      "end_epoch": 1589,
+      "chaos_occ": 0.66,
+      "mid_occ": 0.20666666666666667,
+      "order_occ": 0.13333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1470,
+      "end_epoch": 1619,
+      "chaos_occ": 0.6,
+      "mid_occ": 0.20666666666666667,
+      "order_occ": 0.19333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1500,
+      "end_epoch": 1649,
+      "chaos_occ": 0.54,
+      "mid_occ": 0.22,
+      "order_occ": 0.24,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1530,
+      "end_epoch": 1679,
+      "chaos_occ": 0.3933333333333333,
+      "mid_occ": 0.25333333333333335,
+      "order_occ": 0.35333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1560,
+      "end_epoch": 1709,
+      "chaos_occ": 0.36,
+      "mid_occ": 0.2733333333333333,
+      "order_occ": 0.36666666666666664,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1590,
+      "end_epoch": 1739,
+      "chaos_occ": 0.34,
+      "mid_occ": 0.32666666666666666,
+      "order_occ": 0.3333333333333333,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1620,
+      "end_epoch": 1769,
+      "chaos_occ": 0.32666666666666666,
+      "mid_occ": 0.3933333333333333,
+      "order_occ": 0.28,
+      "n_finite": 150
+    },
+    {
+      "edf": "chb01/chb01_21.edf",
+      "start_epoch": 1650,
+      "end_epoch": 1799,
+      "chaos_occ": 0.24666666666666667,
+      "mid_occ": 0.4533333333333333,
+      "order_occ": 0.3,
+      "n_finite": 150
+    }
+  ],
+  "file_errors": [],
+  "gates": {
+    "G1_ambient_chaos": true,
+    "G2_order_exists": true,
+    "G3_not_frozen_order": true,
+    "G4_sample_size": true,
+    "all_pass": true,
+    "mean_chaos_occ": 0.6238854382332644,
+    "mean_order_occ": 0.11455486542443064,
+    "n_usable_windows": 42,
+    "thresholds": {
+      "chaos_occ_max": 0.9,
+      "order_occ_min": 0.02,
+      "order_occ_max": 0.95,
+      "min_windows": 5
+    }
+  },
+  "note": "Interictal occupancy only — no seizure lead scoring. all_pass required before v1.1 lock."
+}

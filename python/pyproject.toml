@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "systemic-tau-formal"
-version = "0.1.8"
+version = "0.1.12"
 description = "Reference Python core for Systemic Tau (τₛ) + RECD formal monorepo"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -19,6 +19,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0", "ipykernel>=6.0", "matplotlib>=3.7"]
+eeg = ["mne>=1.5", "pyedflib>=0.1.30"]
 full = ["systemictau>=3.0"]
 
 [project.urls]

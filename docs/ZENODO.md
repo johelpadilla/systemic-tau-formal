@@ -6,7 +6,8 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.11)** | `10.5281/zenodo.21581189` | https://doi.org/10.5281/zenodo.21581189 |
+| **This version (v0.1.12)** | *(pending publish)* | P1 instrument + multi-domain residual pack |
+| **Prior (v0.1.11)** | `10.5281/zenodo.21581189` | https://doi.org/10.5281/zenodo.21581189 |
 | **Prior (v0.1.10)** | `10.5281/zenodo.21537465` | https://doi.org/10.5281/zenodo.21537465 |
 | **Prior (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
@@ -18,6 +19,19 @@
 | **v0.1.6** | `10.5281/zenodo.21516523` | https://doi.org/10.5281/zenodo.21516523 |
 | **v0.1.5** | `10.5281/zenodo.21516329` | https://doi.org/10.5281/zenodo.21516329 |
 | **v0.1.4** | `10.5281/zenodo.21516060` | https://doi.org/10.5281/zenodo.21516060 |
+
+### Module CT technical note (publication)
+
+| Role | DOI | Link |
+|------|-----|------|
+| **Module CT note v0.1** | `10.5281/zenodo.21582078` | https://doi.org/10.5281/zenodo.21582078 |
+| **Concept** (note series) | `10.5281/zenodo.21582077` | https://doi.org/10.5281/zenodo.21582077 |
+| Record page | — | https://zenodo.org/records/21582078 |
+| Deposit script | `scripts/deposit_module_ct_note_zenodo.py` | metadata `zenodo/module_ct_note_metadata.json` |
+| State | `zenodo/module_ct_note_deposition_state.json` | — |
+| Source path | `papers/module-ct-note/` | PDF + Markdown + README |
+
+Distinct concept from the software monorepo and from the operational-standard preprint series.
 
 ### Operational-standard preprint (publication)
 
@@ -35,10 +49,17 @@
 
 Distinct from the prior Magna/software archive `10.5281/zenodo.20576241`.
 
+## v0.1.12 description source
+
+Deposit description is in `zenodo/metadata.json` (**P1 instrument + multi-domain residual**
+pack: synthetic INSTRUMENT_PASS, C1_STRESS_FAIL, Vitória/ILI/EEG residuals, fail-triptych).
+Synthesis: [`P1_FAIL_TRIPTYCH.md`](P1_FAIL_TRIPTYCH.md). Short-note outline:
+[`papers/p1-instrument-note/`](../papers/p1-instrument-note/).
+
 ## v0.1.11 description source
 
-Deposit description is in `zenodo/metadata.json` (Module CT residual pack +
-prior Feigenbaum honesty). See also [`RECD_vs_Thermodynamic_Time.md`](RECD_vs_Thermodynamic_Time.md).
+Module CT residual pack + prior Feigenbaum honesty. See also
+[`RECD_vs_Thermodynamic_Time.md`](RECD_vs_Thermodynamic_Time.md).
 
 Do **not** claim classical Feigenbaum universality, termwise superstable roots,
 Skorokhod continuum limits, or field-derived τₛ return in the Zenodo abstract.
@@ -71,14 +92,16 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 
 | Artifact | Cite when |
 |----------|-----------|
+| `10.5281/zenodo.21582078` | **Module CT technical note** (RECD vs classical thermodynamic time) |
+| `10.5281/zenodo.21582077` | Module CT note concept / always-latest document version |
 | `10.5281/zenodo.21537494` | **English operational-standard preprint** (0.1.9-r2) |
 | `10.5281/zenodo.21523232` | Prior preprint 0.1.8-r3 |
 | `10.5281/zenodo.21523231` | Preprint concept / always-latest document version |
-| `10.5281/zenodo.21581189` | This formal monorepo (v0.1.11) |
+| `10.5281/zenodo.21516059` | Software concept / always-latest (use until v0.1.12 version DOI lands) |
+| `10.5281/zenodo.21581189` | Formal monorepo v0.1.11 |
 | `10.5281/zenodo.21537465` | Prior monorepo v0.1.10 |
 | `10.5281/zenodo.21536462` | Prior monorepo v0.1.9 |
 | `10.5281/zenodo.21522882` | Prior monorepo v0.1.8 |
-| `10.5281/zenodo.21516059` | Software concept / always-latest |
 | `10.5281/zenodo.21522346` | Pin v0.1.7 |
 | `10.5281/zenodo.21516523` | Pin v0.1.6 |
 | `10.5281/zenodo.21516329` | Pin v0.1.5 |
@@ -95,4 +118,13 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 #    (currently creates a *new* concept each run; for concept continuity,
 #     extend the script with newversion against preprint_deposition_state.json)
 # 4. Record DOI in this file + papers/preprint-standard-formal/README.md
+```
+
+## Module CT technical note versions
+
+```bash
+# 1. Update papers/module-ct-note/ (md + rebuild PDF)
+# 2. Bump version in zenodo/module_ct_note_metadata.json
+# 3. python3 scripts/deposit_module_ct_note_zenodo.py --newversion --publish
+# 4. Record DOI in this file + papers/module-ct-note/README.md + STATUS.md
 ```

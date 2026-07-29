@@ -1,27 +1,42 @@
 {
   "schema": "systemic-tau-formal/aedes-endpoints/v1",
-  "note": "Copy to endpoints.json (gitignored). P1 scores only with non-null t_obs AND pre_registered:true. Use external domain dates (outbreak, intervention) — do not paste exploratory trap-surge indices as pre-registered.",
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
   "label": "[EMPÍRICO]",
+  "note": "Copy to endpoints.json (gitignored). P1 scores only with non-null t_obs AND pre_registered:true. Use external domain dates (outbreak, intervention) — do not paste exploratory trap-surge indices as pre-registered. See docs/P1_AEDES_EXTERNAL_TOBS.md and data/aedes/external/README.md.",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.50,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
   "series": [
     {
       "file": "San_Juan_SJU1_Repto_Metropolitano_2018.csv",
+      "series_key": "San_Juan_SJU1_Repto_Metropolitano_2018",
       "t_obs": null,
       "t_obs_unit": "row_index_0_based",
-      "endpoint_definition": "External domain transition (e.g. outbreak week, intervention) — not trap-surge max.",
+      "endpoint_definition": "External domain transition (e.g. outbreak week, intervention) — not trap-surge max. Map via calendar_map.json (epi week 4–52 → row = week − 4).",
       "pre_registered": false
     },
     {
       "file": "San_Juan_SJU2_2018_epiweeks.csv",
+      "series_key": "San_Juan_SJU2_2018_epiweeks",
       "t_obs": null,
       "t_obs_unit": "row_index_0_based",
-      "endpoint_definition": "External domain transition.",
+      "endpoint_definition": "External domain transition. Map via calendar_map.json (epi week 7–52 → row = week − 7).",
       "pre_registered": false
     },
     {
       "file": "San_Juan_SJU3_2018_12traps.csv",
+      "series_key": "San_Juan_SJU3_2018_12traps",
       "t_obs": null,
       "t_obs_unit": "row_index_0_based",
-      "endpoint_definition": "External domain transition.",
+      "endpoint_definition": "External domain transition. Map via calendar_map.json DATE/ISO weeks (nearest row if gap).",
       "pre_registered": false
     }
   ]

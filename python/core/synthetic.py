@@ -101,6 +101,105 @@ def regime_switch(
     return X, meta
 
 
+def p1_canonical_panel(
+    T: int = 120,
+    N: int = 6,
+    t_switch: int = 40,
+    *,
+    noise_pre: float = 0.02,
+    period: float = 52.0,
+    seed: int = 0,
+    phi_phenom: int = 13,
+) -> Tuple[np.ndarray, Dict[str, float]]:
+    """
+    P1-Synthetic Canonical plant: ordered seasonal → independent noise.
+
+    [OPERACIONAL] Ground-truth structural break at *t_switch*; planted
+    phenomenological event at t_obs = t_switch + phi_phenom (protocol v1.0.0
+    freezes phi_phenom = window_size = 13). Not field data.
+    """
+    t_switch = int(t_switch)
+    if not (2 <= t_switch < T - 2):
+        raise ValueError("t_switch must leave room on both sides of the break")
+    if N < 2:
+        raise ValueError("N >= 2 required")
+    A = synchronized_seasonal(
+        T=t_switch, N=N, period=period, noise=noise_pre, seed=seed
+    )
+    B = independent_noise(T=T - t_switch, N=N, seed=seed + 99)
+    scale = float(np.std(A)) or 1.0
+    B = B * scale + float(np.mean(A))
+    X = np.vstack([A, B])
+    phi = int(phi_phenom)
+    t_obs = t_switch + phi
+    if t_obs >= T:
+        raise ValueError("t_switch + phi_phenom must be < T")
+    meta = {
+        "panel": "plant",
+        "T": float(T),
+        "N": float(N),
+        "t_switch": float(t_switch),
+        "phi_phenom": float(phi),
+        "t_obs": float(t_obs),
+        "noise_pre": float(noise_pre),
+        "period": float(period),
+        "seed": float(seed),
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_panel",
+    }
+    return X, meta
+
+
+def p1_canonical_null_sync(
+    T: int = 120,
+    N: int = 6,
+    *,
+    noise_pre: float = 0.02,
+    period: float = 52.0,
+    seed: int = 100,
+    t_obs: Optional[int] = None,
+) -> Tuple[np.ndarray, Dict[str, float]]:
+    """Null control: pure ordered seasonal (expect no_signal under P1)."""
+    X = synchronized_seasonal(T=T, N=N, period=period, noise=noise_pre, seed=seed)
+    if t_obs is None:
+        t_obs = T // 2
+    meta = {
+        "panel": "pure_sync",
+        "T": float(T),
+        "N": float(N),
+        "t_switch": None,
+        "t_obs": float(t_obs),
+        "seed": float(seed),
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_sync",
+    }
+    return X, meta
+
+
+def p1_canonical_null_noise(
+    T: int = 120,
+    N: int = 6,
+    *,
+    seed: int = 200,
+    t_obs: Optional[int] = None,
+) -> Tuple[np.ndarray, Dict[str, float]]:
+    """Null control: pure IID noise (early t*; mid t_obs → miss_lead)."""
+    X = independent_noise(T=T, N=N, seed=seed)
+    if t_obs is None:
+        t_obs = T // 2
+    meta = {
+        "panel": "pure_noise",
+        "T": float(T),
+        "N": float(N),
+        "t_switch": None,
+        "t_obs": float(t_obs),
+        "seed": float(seed),
+        "label": "[OPERACIONAL]",
+        "generator": "p1_canonical_null_noise",
+    }
+    return X, meta
+
+
 def aedes_proxy_two_sites(
     T: int = 200,
     traps_per_site: int = 3,

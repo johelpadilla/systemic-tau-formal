@@ -1,0 +1,31 @@
+{
+  "schema": "systemic-tau-formal/aedes-protocol-lock/v1",
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "endpoints_sha256": "c56499ba0e195569fea6fab8394e0e4a46930e55783b053e156579ef7b02b5db",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "locked_at_utc": "2026-07-29T02:13:12Z",
+  "n_series": 5,
+  "n_pre_registered": 5,
+  "extra": {
+    "design": {
+      "segmentation": "epidemiological_year_a_priori",
+      "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori",
+      "t_obs_rule": "peak_week citywide Cases within that year only",
+      "note": "t_obs from Cases only; \u03c4* not inspected before lock",
+      "doi": "10.6084/m9.figshare.7905254.v1"
+    },
+    "n_years": 5
+  },
+  "lock_sha256": "8a30617ad9eaf8bbcbec04e24a80d8767d5cddd1d138864115307f322d5c8ff8"
+}

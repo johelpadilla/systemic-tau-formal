@@ -1,0 +1,105 @@
+{
+  "scored": true,
+  "protocol": "P1_AEDES_EXTERNAL_TOBS",
+  "protocol_version": "1.0.0",
+  "label": "[EMP\u00cdRICO]",
+  "source": "provided",
+  "endpoints_sha256": "c56499ba0e195569fea6fab8394e0e4a46930e55783b053e156579ef7b02b5db",
+  "git_commit": "731df8f5814e202484a8549f3c0363c754bab763",
+  "frozen_params": {
+    "window_size": 13,
+    "theta_chaos": 0.41,
+    "theta_stable": 0.5,
+    "min_run": 4,
+    "t_star": "first_sustained_chaos_ascent",
+    "lead_lo": 4,
+    "lead_hi": 6,
+    "lead_unit": "weeks_approx_row_index"
+  },
+  "n_scored": 5,
+  "n_hit": 0,
+  "hit_rate": 0.0,
+  "rows": [
+    {
+      "file": "Vitoria_BR_top15RG_2008.csv",
+      "series_key": "Vitoria_BR_top15RG_2008",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 13,
+      "t_star": 12,
+      "lead": 1,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2009.csv",
+      "series_key": "Vitoria_BR_top15RG_2009",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 11,
+      "t_star": 15,
+      "lead": -4,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2010.csv",
+      "series_key": "Vitoria_BR_top15RG_2010",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 18,
+      "t_star": 30,
+      "lead": -12,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2011.csv",
+      "series_key": "Vitoria_BR_top15RG_2011",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 17,
+      "t_star": 28,
+      "lead": -11,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    },
+    {
+      "file": "Vitoria_BR_top15RG_2012.csv",
+      "series_key": "Vitoria_BR_top15RG_2012",
+      "pre_registered": true,
+      "scored": true,
+      "pass": false,
+      "t_obs": 1,
+      "t_star": 12,
+      "lead": -11,
+      "lead_window": [
+        4,
+        6
+      ],
+      "reason": "lead outside 4\u20136 (or chosen window)",
+      "verdict": "miss_lead"
+    }
+  ],
+  "honesty": "P1-Aedes v1.0.0: multi-trap \u03c4\u209b vs external t_obs only. Does not promote trap-surge exploratory leads. Spatial scale: neighborhood traps vs municipal/island clinical if used."
+}

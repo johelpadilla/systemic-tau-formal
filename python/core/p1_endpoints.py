@@ -51,6 +51,36 @@ def first_sustained_chaos_ascent(
     return None
 
 
+def first_sustained_order_ascent(
+    tg: np.ndarray,
+    depth: np.ndarray,
+    *,
+    min_run: int = 4,
+    theta_stable: float = 0.50,
+) -> Optional[int]:
+    """
+    P1-EEG v1.1 polarity: first index where an *order-band* run of length
+    ≥ min_run begins (|τ| ≥ θ_stable). Hypersync / ordered co-movement proxy.
+
+    ``depth`` is accepted for API symmetry with chaos ascent; unused.
+    """
+    _ = depth  # API symmetry with first_sustained_chaos_ascent
+    order = (np.abs(tg) >= float(theta_stable)) & np.isfinite(tg)
+    i = 0
+    n = len(order)
+    while i < n:
+        if order[i]:
+            j = i
+            while j < n and order[j]:
+                j += 1
+            if j - i >= min_run:
+                return int(i)
+            i = j
+        else:
+            i += 1
+    return None
+
+
 def score_p1_for_series(
     X: np.ndarray,
     t_obs: int,

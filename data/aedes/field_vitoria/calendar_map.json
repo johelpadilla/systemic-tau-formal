@@ -1,0 +1,84 @@
+{
+  "schema": "systemic-tau-formal/aedes-calendar/v1",
+  "protocol_version": "1.0.0",
+  "geo": "Vitoria_Brazil",
+  "doi": "10.6084/m9.figshare.7905254.v1",
+  "series": {
+    "Vitoria_BR_top15RG_2008_2012": {
+      "file": "Vitoria_BR_top15RG_2008_2012.csv",
+      "calendar_kind": "sequential_tot_week",
+      "tot_week_start": 1,
+      "tot_week_end": 243,
+      "T": 243,
+      "N": 15,
+      "selection": {
+        "rule": "top_15_RG_by_sum_mosquitoes_full_span",
+        "rgs": [
+          68,
+          69,
+          71,
+          35,
+          66,
+          23,
+          4,
+          25,
+          58,
+          38,
+          19,
+          70,
+          45,
+          17,
+          62
+        ],
+        "note": "A priori on mosquito abundance only \u2014 not Cases"
+      },
+      "geo": "Vitoria_Brazil",
+      "source": "Figshare 10.6084/m9.figshare.7905254.v1 Leach et al. MosquiTRAP + dengue-like cases",
+      "row_to_tot_week": "row_index + 1",
+      "anchor_peak_candidate": {
+        "year": 2011,
+        "weekofyear": 18,
+        "tot_week": 175,
+        "total_cases": 559.0,
+        "t_obs_row_0_based": 174,
+        "method": "peak_week_within_year_2011",
+        "year_choice_reason": "maximum annual citywide dengue-like case sum among 2008-2012"
+      }
+    },
+    "Vitoria_BR_top15RG_2008": {
+      "file": "Vitoria_BR_top15RG_2008.csv",
+      "calendar_kind": "epidemiological_year_slice",
+      "year": 2008,
+      "geo": "Vitoria_Brazil",
+      "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori"
+    },
+    "Vitoria_BR_top15RG_2009": {
+      "file": "Vitoria_BR_top15RG_2009.csv",
+      "calendar_kind": "epidemiological_year_slice",
+      "year": 2009,
+      "geo": "Vitoria_Brazil",
+      "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori"
+    },
+    "Vitoria_BR_top15RG_2010": {
+      "file": "Vitoria_BR_top15RG_2010.csv",
+      "calendar_kind": "epidemiological_year_slice",
+      "year": 2010,
+      "geo": "Vitoria_Brazil",
+      "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori"
+    },
+    "Vitoria_BR_top15RG_2011": {
+      "file": "Vitoria_BR_top15RG_2011.csv",
+      "calendar_kind": "epidemiological_year_slice",
+      "year": 2011,
+      "geo": "Vitoria_Brazil",
+      "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori"
+    },
+    "Vitoria_BR_top15RG_2012": {
+      "file": "Vitoria_BR_top15RG_2012.csv",
+      "calendar_kind": "epidemiological_year_slice",
+      "year": 2012,
+      "geo": "Vitoria_Brazil",
+      "channels": "top_15_RG_by_sum_mosquitoes_full_span_a_priori"
+    }
+  }
+}
