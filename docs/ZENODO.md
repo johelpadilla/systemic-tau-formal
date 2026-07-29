@@ -6,7 +6,7 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.12)** | *(pending publish)* | P1 instrument + multi-domain residual pack |
+| **This version (v0.1.12)** | *(Zenodo pending — GitHub release live)* | https://github.com/johelpadilla/systemic-tau-formal/releases/tag/v0.1.12 |
 | **Prior (v0.1.11)** | `10.5281/zenodo.21581189` | https://doi.org/10.5281/zenodo.21581189 |
 | **Prior (v0.1.10)** | `10.5281/zenodo.21537465` | https://doi.org/10.5281/zenodo.21537465 |
 | **Prior (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
@@ -128,3 +128,15 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 # 3. python3 scripts/deposit_module_ct_note_zenodo.py --newversion --publish
 # 4. Record DOI in this file + papers/module-ct-note/README.md + STATUS.md
 ```
+
+## v0.1.12 publish log (2026-07-29)
+
+- Git tag + GitHub release: **v0.1.12** (commit `76c1641`), zip attached (~1.95 MB; no EDFs).
+- Zenodo `--newversion` created draft `21661989` then **file upload returned HTTP 400**
+  (`The file upload transfer failed`) for both bucket PUT and multipart; tiny-file
+  repro also failed. Empty draft discarded. Prior published state remains v0.1.11
+  (`deposition_id` 21581189).
+- Retry when Zenodo storage accepts uploads:
+  `python3 scripts/deposit_zenodo.py --newversion --publish`
+  then record the new version DOI in README / CITATION.cff / this table.
+- Pending note (local): `zenodo/deposition_state.v0.1.12-pending.json` (gitignored pattern optional).
