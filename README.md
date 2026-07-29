@@ -3,14 +3,13 @@
 **Machine-verifiable, open formalization of Systemic Tau (τₛ) + RECD**
 
 [![CI](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml/badge.svg)](https://github.com/johelpadilla/systemic-tau-formal/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516059.svg)](https://doi.org/10.5281/zenodo.21516059)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21684040.svg)](https://doi.org/10.5281/zenodo.21684040)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/johelpadilla/systemic-tau-formal/main?labpath=notebooks%2F01_synthetic_chaos.ipynb)
 
 Author: Johel Padilla-Villanueva · License: MIT · Version: **0.1.12**  
 **GitHub:** https://github.com/johelpadilla/systemic-tau-formal  
-**DOI (concept / all versions):** https://doi.org/10.5281/zenodo.21516059  
-**DOI (v0.1.11 pin):** https://doi.org/10.5281/zenodo.21581189  
-*(v0.1.12 version DOI recorded after Zenodo publish)*
+**DOI (this version):** https://doi.org/10.5281/zenodo.21684040  
+**Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21516059
 
 This monorepo elevates the existing Zenodo / PyPI corpus to a standard where:
 

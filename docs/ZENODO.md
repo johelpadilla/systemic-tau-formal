@@ -6,11 +6,12 @@
 
 | Role | DOI | Link |
 |------|-----|------|
-| **This version (v0.1.12)** | *(Zenodo pending — GitHub release live)* | https://github.com/johelpadilla/systemic-tau-formal/releases/tag/v0.1.12 |
+| **This version (v0.1.12)** | `10.5281/zenodo.21684040` | https://doi.org/10.5281/zenodo.21684040 |
 | **Prior (v0.1.11)** | `10.5281/zenodo.21581189` | https://doi.org/10.5281/zenodo.21581189 |
 | **Prior (v0.1.10)** | `10.5281/zenodo.21537465` | https://doi.org/10.5281/zenodo.21537465 |
 | **Prior (v0.1.9)** | `10.5281/zenodo.21536462` | https://doi.org/10.5281/zenodo.21536462 |
 | **Concept** (all versions → latest) | `10.5281/zenodo.21516059` | https://doi.org/10.5281/zenodo.21516059 |
+| Record page (v0.1.12) | — | https://zenodo.org/records/21684040 |
 | Record page (v0.1.11) | — | https://zenodo.org/records/21581189 |
 | Record page (v0.1.10) | — | https://zenodo.org/records/21537465 |
 | Record page (v0.1.9) | — | https://zenodo.org/records/21536462 |
@@ -97,7 +98,8 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 | `10.5281/zenodo.21537494` | **English operational-standard preprint** (0.1.9-r2) |
 | `10.5281/zenodo.21523232` | Prior preprint 0.1.8-r3 |
 | `10.5281/zenodo.21523231` | Preprint concept / always-latest document version |
-| `10.5281/zenodo.21516059` | Software concept / always-latest (use until v0.1.12 version DOI lands) |
+| `10.5281/zenodo.21684040` | This formal monorepo (v0.1.12) |
+| `10.5281/zenodo.21516059` | Software concept / always-latest |
 | `10.5281/zenodo.21581189` | Formal monorepo v0.1.11 |
 | `10.5281/zenodo.21537465` | Prior monorepo v0.1.10 |
 | `10.5281/zenodo.21536462` | Prior monorepo v0.1.9 |
@@ -132,11 +134,7 @@ Metadata template: `zenodo/metadata.json` (version field drives the zip name).
 ## v0.1.12 publish log (2026-07-29)
 
 - Git tag + GitHub release: **v0.1.12** (commit `76c1641`), zip attached (~1.95 MB; no EDFs).
-- Zenodo `--newversion` created draft `21661989` then **file upload returned HTTP 400**
-  (`The file upload transfer failed`) for both bucket PUT and multipart; tiny-file
-  repro also failed. Empty draft discarded. Prior published state remains v0.1.11
-  (`deposition_id` 21581189).
-- Retry when Zenodo storage accepts uploads:
-  `python3 scripts/deposit_zenodo.py --newversion --publish`
-  then record the new version DOI in README / CITATION.cff / this table.
-- Pending note (local): `zenodo/deposition_state.v0.1.12-pending.json` (gitignored pattern optional).
+- First Zenodo attempt failed (HTTP 400 on all file uploads); empty draft discarded.
+- **Retry succeeded:** `python3 scripts/deposit_zenodo.py --newversion --publish`
+  → deposition **21684040**, DOI **`10.5281/zenodo.21684040`**, concept `10.5281/zenodo.21516059`.
+- Record: https://zenodo.org/records/21684040

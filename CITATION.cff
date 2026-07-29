@@ -3,15 +3,18 @@ message: "If you use Systemic Tau / RECD formal materials, please cite as below.
 type: software
 title: "systemic-tau-formal — Machine-verifiable Systemic Tau (τₛ) + RECD"
 version: "0.1.12"
-date-released: "2026-07-28"
+date-released: "2026-07-29"
 license: MIT
-doi: "10.5281/zenodo.21516059"
+doi: "10.5281/zenodo.21684040"
 repository-code: "https://github.com/johelpadilla/systemic-tau-formal"
-url: "https://doi.org/10.5281/zenodo.21516059"
+url: "https://doi.org/10.5281/zenodo.21684040"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.21684040"
+    description: "This version (v0.1.12)"
+  - type: doi
     value: "10.5281/zenodo.21516059"
-    description: "Concept DOI (all versions; version DOI recorded after Zenodo publish)"
+    description: "Concept DOI (all versions)"
   - type: doi
     value: "10.5281/zenodo.21581189"
     description: "v0.1.11"
