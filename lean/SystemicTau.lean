@@ -8,6 +8,7 @@ import SystemicTau.Basic
 import SystemicTau.Thresholds
 import SystemicTau.ThresholdFromDelta
 import SystemicTau.RECD
+import SystemicTau.Cancellation
 import SystemicTau.RECD_Monotonicity
 import SystemicTau.RECD_OrdinalEntropy
 import SystemicTau.RECD_Variation
